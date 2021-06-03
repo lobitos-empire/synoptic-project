@@ -9,6 +9,37 @@ html(lang="en")
         title #{ title }
 
     body
-        include includes/tabT.pug
+        div.container
+            div.columns
+                div.column.col-12
+                    include includes/tabT.pug
 
-        h1 Tourists
+        div.container
+            div.columns
+                div.col-2
+                div.col-2
+                    div.card
+                        div.card-image
+                            img.img-responsive(src='../images/Attractions.jpg')
+                        div.card-header
+                            div.card-title.h5 Hottest
+                div.col-1
+
+                div.col-2
+                    div.card
+                        div.card-image
+                            img.img-responsive(src='../images/Attractions.jpg')
+                        div.card-header
+                            div.card-title.h5 Attractions
+                div.col-1
+
+                div.col-2
+                    div.card
+                        div.card-image
+                            img.img-responsive(src='../images/Hotels.jpg')
+                        div.card-header
+                            div.card-title.h5 Hotels
+                div.col-2
+
+
+

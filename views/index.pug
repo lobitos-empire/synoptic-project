@@ -1,10 +1,27 @@
+doctype html
 html(lang="en")
-head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible" content="IE=edge")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
+        link(rel="stylesheet" type="text/css" href="../styles/style.css")
+        title #{ title }
 
-    title #{ title }
+    body.backgroundimage
 
-body
-    p hi
+        div.hero
+            div.hero-body
+            div.container
+                div.columns
+                    div.column.col-3 col-3
+                        h1 Welcome
+                    div.column.col-3 col-3
+                        button.tButton Tourists
+
+                    div.column.col-3 col-3
+                        button.lButton Local Business
+                    div.column.col-3 col-3
+
+
+

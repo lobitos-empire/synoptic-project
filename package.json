@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "pug": "^3.0.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "@popperjs/core": "^2.9.2",
+    "mdb-ui-kit": "^3.6.0"
   },
   "keywords": [],
   "author": "",

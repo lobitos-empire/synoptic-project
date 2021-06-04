@@ -4,6 +4,26 @@
     width: 100%;
 }
 
+.localBusinessFont{
+    color: palevioletred;
+
+}
+.localBusinessCardText{
+    color: black;
+    font-size: medium;
+
+}
+body{
+    background-color: #CFF4D2;
+}
+.cardSubtitles{
+    font-size: medium;
+}
+.uploadBusinessCard{
+    background-image: url("../images/uploadimage.jpg");
+
+}
+
 h1{
     position: absolute;
     top: 20%;

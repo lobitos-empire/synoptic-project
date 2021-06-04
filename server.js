@@ -25,7 +25,7 @@ app.get('/localBusiness', (req, res) => {
 })
 function getTranslations(){
     let translationsList = [];
-    let rawData = fs.readFileSync('translations.json');
+    let rawData = fs.readFileSync('public/scripts/translations.json');
     let translations = JSON.parse(rawData).translations;
     for(let i =0; i < translations.length; i++){
         let translation = translations[i].english + " : " + translations[i].spanish;

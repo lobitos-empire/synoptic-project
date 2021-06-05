@@ -62,12 +62,7 @@ app.get('/explore', (req, res) => {
 function getTranslations(){
     let translationsList = [];
     let rawData = fs.readFileSync('public/scripts/translations.json');
-    let translations = JSON.parse(rawData).translations;
-    for(let i =0; i < translations.length; i++){
-        let translation = translations[i].english + " : " + translations[i].spanish;
-        translationsList.push(translation);
-    }
-    return translationsList;
+    return JSON.parse(rawData).translations;
 }
 app.listen(process.env.PORT || 8080, function () {
     console.log("Express server listening on port %d in %s mode",

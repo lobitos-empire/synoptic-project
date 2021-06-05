@@ -11,8 +11,22 @@ html(lang="en")
         title #{ title }
 
     body
-        headbar.navbar
         div.container
             div.columns
                 div.column.col-12
                     include includes/tabL.pug
+            form.form-horizontal
+                div.form-group
+                    div.col-3.col-sm-12
+                        label.form-label Nombre Del Dueño
+                    div.col-5.col-sm-12
+                        input.form-input(type="text" placeholder="Nombre Del Dueño" id="ownername")
+                div.form-group
+                    div.col-3.col-sm-12
+                        label.form-label Nombre del Negocio
+                    div.col-5.col-sm-12
+                        input.form-input(type="text" placeholder="Nombre del Negocio" id="businessname")
+
+
+
+

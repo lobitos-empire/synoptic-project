@@ -10,7 +10,7 @@ html(lang="en")
         link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
         title #{ title }
 
-    body
+    body.background
         div.container
             div.columns
                 div.column.col-12
@@ -26,6 +26,23 @@ html(lang="en")
                         label.form-label Nombre del Negocio
                     div.col-5.col-sm-12
                         input.form-input(type="text" placeholder="Nombre del Negocio" id="businessname")
+                div.form-group
+                    div.col-3.col-sm-12
+                        label.form-label Tipo de negocio
+                    div.col-5.col-sm-12
+                        select.form-select
+                            option Comidas y bebidas
+                            option Cosas para hacer
+                            option Servicios
+                            option Hoteles
+                            option Compras
+                            option Otra
+                div.form-group
+                    div.col-3.col-sm-12
+                        label.form-label Descripción del Negocio
+                    div.col-9.col-sm-12
+                        textarea.form-input(placeholder="Business Description" rows="3")
+
 
 
 

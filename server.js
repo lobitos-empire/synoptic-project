@@ -16,6 +16,11 @@ app.get('/tourist', (req, res) => {
         title: 'Tourists',
     })
 })
+app.get('/hottest', (req, res) => {
+    res.render('hottest',  {
+        title: 'Hottest',
+    })
+})
 app.get('/localBusiness', (req, res) => {
     res.render('localBusiness',  {
         title: 'Local Business',

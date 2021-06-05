@@ -12,14 +12,28 @@ html(lang="en")
 
         div.hero
             div.hero-body
-            div.container
-                div.columns
-                    div.column.col-3
-                        h1 Welcome
-                    div.column.col-3
-                        a(class = 'tButton', href="/tourist") Tourists
+                div.container
+                    div.columns
+                        div.column.col-6
+                            a(href="/index")
+                            img.logo.img-responsive(src="../images/logo1.png", alt="Logo")
 
-                    div.column.col-3
-                        a(class = 'lButton', href="/localBusiness") Local Business
+                        div.column.col-6
+                            include includes/translator.pug
 
-                    div.column.col-3
+
+                div.container
+                    div.columns
+                        div.column.col-3
+                            h1 Welcome to Lobitos
+
+                        div.column.col-3
+                            a.tButton(href="/tourist") Tourists
+
+                        div.column.col-3
+                            a.lButton(href="/localBusiness") Local Business
+
+                        div.column.col-3
+
+
+

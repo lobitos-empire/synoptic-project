@@ -326,7 +326,7 @@ body.background{
     border-radius: 10px;
 }
 .home{
-    top: 10px;
+    margin-top: 50%;
 }
 .businessCard{
     /*width: 300px;*/

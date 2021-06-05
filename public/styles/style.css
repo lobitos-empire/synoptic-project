@@ -270,6 +270,9 @@ body.background{
     background-attachment: fixed;
     background-size: cover;
 }
+.cardsAdjust{
+    margin-top: 3%;
+}
 
 
 
@@ -281,6 +284,10 @@ body.background{
     position: absolute;
     width: auto;
     height: 6rem;
+}
+.logo2{
+    height: 3.5rem;
+
 }
 .move{
     position: absolute;
@@ -318,7 +325,7 @@ body.background{
     /*width: 300px;*/
     /*height: 300px;*/
 
-    width: 75%;
+
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
     /*float: left;*/
@@ -332,7 +339,7 @@ body.background{
     /*width: 300px;*/
     /*height: 300px;*/
 
-    width: 75%;
+
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
     /*float: left;*/
@@ -343,7 +350,7 @@ body.background{
     /*width: 300px;*/
     /*height: 300px;*/
 
-    width: 75%;
+
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
     /*float: left;*/

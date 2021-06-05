@@ -11,12 +11,12 @@ html(lang="en")
         title #{ title }
 
     header.navbar.py-2.px-2
-            section.navbar-section
-                img(src="../images/smallLogo.png", alt="Logo").img-responsive
+            section.navbar-section.col-sm-12
+                img(src="../images/logo1.png", alt="Logo").logo2.img-responsive
                 a(href="/").btn.btn-link Home
-            section.navbar-center
+            section.navbar-center.col-sm-12
                 h3 Local Business
-            section.navbar-section
+            section.navbar-section.col-sm-12
                 include includes/spanish.pug
 
 
@@ -24,7 +24,7 @@ html(lang="en")
 
     body.background
 
-                                   div.container
+                                   div.container.cardsAdjust
                                         div.columns
                                             div.column.col-4.col-sm-12.my-2
                                                 div.card.uploadCard

@@ -1,7 +1,30 @@
+html{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.logo{
+    top: 1%;
+    left: 1%;
+    position: absolute;
+    width: auto;
+    height: 5rem;
+}
+
 .backgroundimage{
-    background-image: url("../images/home1.jfif");
-    /*background-size: cover;*/
-    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 100%;
+    height: auto;
+    background-color: #cff4d2;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%237be495' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23329d9c' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2373de96' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%231c8e98' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%236bd896' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%230d7e92' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2363d296' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%230d6f8a' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%235ccb96' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23175f7f' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2356c596' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23205072' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .localBusinessFont{
@@ -27,43 +50,337 @@ body{
 h1{
     position: absolute;
     top: 20%;
-    left: 33%;
-    font-family: Bahnschrift;
-    font-size: 100px;
+    left: 25%;
+    font-family: Oswald, serif;
+    font-size: 80px;
+    line-height: 100px;
+    font-weight: 400;
+    margin-top: 40px;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 a.tButton{
     position: absolute;
     top: 50%;
-    left: 25%;
-    right: 75%;
+    left: 40%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: #badce3;
-    border: none;
+    border:0.16em solid black;
     color: black;
-    padding: 15px 32px;
+    padding: 15px 75px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
-    border-radius: 15px;
+    font-size: 25px;
+    text-transform: uppercase;
+    border-radius: 40px;
+    font-weight: 600;
+    line-height: normal;
+    background: none;
+}
+
+.tButton:hover {
+    background: black;
+    color: #cff4d2;
 }
 
 a.lButton{
     position: absolute;
     top: 50%;
-    left: 75%;
-    right: 25%;
+    left: 60%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: #badce3;
+    background-color: black;
     border: none;
-    color: black;
-    padding: 15px 32px;
+    color: #cff4d2;
+    padding: 15px 75px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
-    border-radius: 15px;
+    font-size: 25px;
+    text-transform: uppercase;
+    border-radius: 40px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.lButton:hover {
+    background: none;
+    border:0.16em solid black;
+    color: black;
+}
+
+@media screen and (max-width: 1400px){
+    h1{
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        font-family: Oswald;
+        font-size: 50px;
+        line-height: 100px;
+        font-weight: 400;
+        margin-top: 40px;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    a.tButton{
+        display:block;
+        margin:0.4em auto;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        border:0.16em solid black;
+        color: black;
+        padding: 15px 45px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 25px;
+        text-transform: uppercase;
+        border-radius: 40px;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .tButton:hover {
+        background: black;
+        color: #cff4d2;
+    }
+
+    a.lButton{
+        display:block;
+        margin:0.4em auto;
+        top: 70%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: black;
+        border: none;
+        color: #cff4d2;
+        padding: 15px 45px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 25px;
+        text-transform: uppercase;
+        border-radius: 40px;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .lButton:hover {
+        background: none;
+        border:0.16em solid black;
+        color: black;
+    }
+
+}
+
+
+@media screen and (max-width: 600px){
+    h1{
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        font-family: Oswald;
+        font-size: 30px;
+        line-height: 50px;
+        font-weight: 400;
+        margin-top: 40px;
+        color: black;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    a.tButton{
+        display:block;
+        margin:0.4em auto;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        border:0.16em solid black;
+        color: black;
+        padding: 15px 25px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        text-transform: uppercase;
+        border-radius: 40px;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .tButton:hover {
+        background: black;
+        color: #cff4d2;
+    }
+
+    a.lButton{
+        display:block;
+        margin:0.4em auto;
+        top: 70%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: black;
+        border: none;
+        color: #cff4d2;
+        padding: 15px 25px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        text-transform: uppercase;
+        border-radius: 40px;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .lButton:hover {
+        background: none;
+        border:0.16em solid black;
+        color: black;
+    }
+
+}
+
+
+
+/*ul{*/
+/*    padding: 15px;*/
+/*}*/
+
+/*a{*/
+/*    padding: 15px;*/
+/*}*/
+
+
+#google_translate_element {
+    position: absolute;
+    top: 17px;
+    z-index: 99999;
+    right: 23px;
+}
+
+
+body.background{
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%237be495' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23329d9c' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2373de96' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%231c8e98' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%236bd896' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%230d7e92' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2363d296' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%230d6f8a' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%235ccb96' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23175f7f' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2356c596' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23205072' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+
+
+
+.logo1{
+    top: 0%;
+    left: 2%;
+    position: absolute;
+    width: auto;
+    height: 6rem;
+}
+.move{
+    position: absolute;
+    top: 20%;
+    left:10%;
+    /*margin-left: 10px;*/
+    /*padding: 100px;*/
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
+}
+
+.move.movePhraseCard{
+    position: absolute;
+    top: 67%;
+    left: 20%;
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
+}
+.card.spanishPhraseCard2{
+    width: 90%;
+    height: auto;
+    border-radius: 30px;
+}
+.header{
+    position: absolute;
+    top: 3%;
+    /*text-align: center;*/
+    left: 45%;
+    margin-top: 40px;
+    font-family: Oswald;
+    font-size: 50px;
+}
+
+/* Local Business Styles */
+
+.uploadCard{
+    /*width: 300px;*/
+    /*height: 300px;*/
+
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    /*float: left;*/
+    /*padding: 15px;*/
+    border-radius: 10px;
+}
+.businessCard{
+    /*width: 300px;*/
+    /*height: 300px;*/
+
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    /*float: left;*/
+    /*padding: 15px;*/
+    border-radius: 10px;
+}
+.exploreCard{
+    /*width: 300px;*/
+    /*height: 300px;*/
+
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    /*float: left;*/
+    /*padding: 15px;*/
+    border-radius: 10px;
+}
+
+
+
+/* Tourists Styles */
+
+.hottestCard{
+    /*width: 300px;*/
+    /*height: 300px;*/
+    width: 75%;
+    height: auto;
+
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
+    /*float: left;*/
+    /*padding: 15px;*/
+    border-radius: 10px;
+}
+.attractionCard{
+    /*width: 300px;*/
+    /*height: 300px;*/
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    /*float: left;*/
+    /*padding: 15px;*/
+    border-radius: 10px;
+}
+.hotelsCard{
+    /*width: 300px;*/
+    /*height: 300px;*/
+
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    /*float: left;*/
+    /*padding: 15px;*/
+    border-radius: 10px;
 }

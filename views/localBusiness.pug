@@ -10,7 +10,59 @@ html(lang="en")
         link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
         title #{ title }
 
-    body
+    body.background
+        div.container
+            div.columns
+                div.column.col-6
+                    a(href="/index")
+                    img.logo1(src="../images/logo1.png", alt="Logo")
+
+                div.column.col-6
+                    h3.header Local Business
+                    include includes/spanish.pug
+
+        div.move
+            div.container
+                div.columns
+                    div.column.col-4.col-sm-12.my-2
+                        div.card.uploadCard
+                            div.card-image
+                                img(src="../images/biggerPromote.png", alt="Upload local business").img-responsive
+                            div.card-header
+                                div.card-title.h3 Sube tu negocio!
+                                div.card-subtitle.cardSubtitles Upload your local businesses!
+                            div.card-body
+                                p1.localBusinessCardText Click the upload button to expose your business to local tourist
+                            div.card-footer
+                                a.button.btn.btn-primary.float-right(aria-label="Upload button", href="/upload") UPLOAD
+                                    i.icon.icon-upload
+
+
+                    div.column.col-4.col-sm-12.my-2
+                        div.card.businessCard
+                            div.card-image
+                                img(src="../images/biggerBusiness.png", alt="Explore local business").img-responsive
+                            div.card-header
+                                div.card-title.h4 Explore su negocio local!
+                                div.card-subtitle.cardSubtitles Explore local businesses.
+                            div.card-body
+                                p1.localBusinessCardText  Click the button on the top right corner to check out other local businesses and see tourist reviews!
+                            div.card-footer
+                                a.button.btn.btn-primary.float-right(aria-label="Upload button", href="/") EXPLORE LOCAL BUSINESS.
+
+
+                    div.column.col-4.col-sm-12.my-2
+                        div.card.exploreCard
+                            div.card-image
+                                img(src="../images/marketing.png", alt="Explore new markets").img-responsive
+                            div.card-header
+                                div.card-title.h4 Explorar nuevos mercados!
+                                div.card-subtitle.cardSubtitles Explore new markets.
+                            div.card-body
+                                p1.localBusinessCardText  Click the button on the top right corner to get suggested new markets that can be explored.
+                            div.card-footer
+                                button.btn.btn-primary.float-right(aria-label="Upload button") EXPLORE NEW MARKET
+
 
 h4 Local Business
 div.container

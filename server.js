@@ -17,12 +17,48 @@ app.get('/tourist', (req, res) => {
         title: 'Tourists',
         translations: getTranslations()
     })
-})
+});
+app.get('/hottest', (req, res) => {
+    res.render('hottest',  {
+        title: 'Hottest',
+    })
+});
+app.get('/attractions', (req, res) => {
+    res.render('attractions',  {
+        title: 'Attractions',
+    })
+});
+app.get('/hotels', (req, res) => {
+    res.render('hotels',  {
+        title: 'Hotels',
+    })
+});
+app.get('/contacts', (req, res) => {
+    res.render('contacts',  {
+        title: 'Contacts',
+    })
+});
+
 app.get('/localBusiness', (req, res) => {
     res.render('localBusiness',  {
         title: 'Local Business',
     })
 })
+app.get('/upload', (req, res) => {
+    res.render('upload',  {
+        title: 'Upload',
+    })
+});
+app.get('/business', (req, res) => {
+    res.render('business',  {
+        title: 'Business',
+    })
+});
+app.get('/explore', (req, res) => {
+    res.render('explore',  {
+        title: 'Explore New Markets',
+    })
+});
 function getTranslations(){
     let translationsList = [];
     let rawData = fs.readFileSync('public/scripts/translations.json');

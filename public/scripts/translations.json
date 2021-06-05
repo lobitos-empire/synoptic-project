@@ -1,11 +1,43 @@
 {
   "translations": [{
+    "category": "Greetings!",
     "english": "Hello",
     "spanish": "Hola"
   }
   ,{
-    "english": "Goodbye",
-    "spanish": "Adios"
+      "category": "Greetings!",
+      "english": "Goodbye",
+      "spanish": "Adios"
   }
+  ,{
+      "category": "Greetings!",
+      "english": "Good morning! ",
+      "spanish": "Buenos días!"
+    }
+  ,{
+      "category": "Greetings!",
+      "english": "Good night! ",
+      "spanish": "Buenas noches!"
+    },
+    {
+      "category": "Directions!",
+      "english": "Where can I get a taxi?",
+      "spanish": "¿Dónde puedo encontrar un taxi?"
+    },
+    {
+      "category": "Directions!",
+      "english": "Where can I get a taxi?",
+      "spanish": "¿Dónde puedo encontrar un taxi?"
+    },
+    {
+      "category": "At a restaurant",
+      "english": "Where can I get a taxi?",
+      "spanish": "¿Dónde puedo encontrar un taxi?"
+    },
+    {
+      "category": "At a restaurant",
+      "english": "Where can I get a taxi?",
+      "spanish": "¿Dónde puedo encontrar un taxi?"
+    }
   ]
 }

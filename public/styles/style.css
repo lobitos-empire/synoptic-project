@@ -364,3 +364,9 @@ body.background{
     /*padding: 15px;*/
     border-radius: 10px;
 }
+.searchBar{
+    position: absolute;
+    top: 41%;
+    left: 65%;
+
+}

@@ -346,6 +346,9 @@ body.background{
     /*padding: 15px;*/
     border-radius: 10px;
 }
+testing2{
+   background-color: pink;
+}
 .exploreCard{
     /*width: 300px;*/
     /*height: 300px;*/
@@ -356,6 +359,10 @@ body.background{
     /*float: left;*/
     /*padding: 15px;*/
     border-radius: 10px;
+}
+
+.uploadImage{
+    margin-right: 50%;
 }
 
 

@@ -15,33 +15,43 @@ html(lang="en")
             div.columns
                 div.column.col-12
                     include includes/tabL.pug
-            form.form-horizontal
-                div.form-group
-                    div.col-3.col-sm-12
-                        label.form-label Nombre Del Dueño
-                    div.col-5.col-sm-12
-                        input.form-input(type="text" placeholder="Nombre Del Dueño" id="ownername")
-                div.form-group
-                    div.col-3.col-sm-12
-                        label.form-label Nombre del Negocio
-                    div.col-5.col-sm-12
-                        input.form-input(type="text" placeholder="Nombre del Negocio" id="businessname")
-                div.form-group
-                    div.col-3.col-sm-12
-                        label.form-label Tipo de negocio
-                    div.col-5.col-sm-12
-                        select.form-select
-                            option Comidas y bebidas
-                            option Cosas para hacer
-                            option Servicios
-                            option Hoteles
-                            option Compras
-                            option Otra
-                div.form-group
-                    div.col-3.col-sm-12
-                        label.form-label Descripción del Negocio
-                    div.col-5.col-sm-12
-                        textarea.form-input(placeholder="Business Description" rows="3" maxlength="175")
+                div.column.col-7.col-sm-12.testing2
+                    form.form-horizontal
+                        div.form-group
+                            div.col-3.col-sm-12
+                                label.form-label Nombre Del Dueño
+                            div.col-5.col-sm-12
+                                input.form-input(type="text" placeholder="Nombre Del Dueño" id="ownername")
+                        div.form-group
+                            div.col-3.col-sm-12
+                                label.form-label Nombre del Negocio
+                            div.col-5.col-sm-12
+                                input.form-input(type="text" placeholder="Nombre del Negocio" id="businessname")
+                        div.form-group
+                            div.col-3.col-sm-12
+                                label.form-label Tipo de negocio
+                            div.col-5.col-sm-12
+                                select.form-select
+                                    option Comidas y bebidas
+                                    option Cosas para hacer
+                                    option Servicios
+                                    option Hoteles
+                                    option Compras
+                                    option Otra
+                        div.form-group
+                            div.col-3.col-sm-12
+                                label.form-label Descripción del Negocio
+                            div.col-5.col-sm-12
+                                textarea.form-input(placeholder="Business Description" rows="3" maxlength="175")
+                div.column.col-4.col-sm-12
+                        div.card
+                            div.card-image
+                                    input.form-input(type="file")
+                            div.card-header
+                                div.card-title.h3 Sube tu negocio!
+                            div.card-body
+                                p1 Upload an image that best represent your business.
+
 
 
 

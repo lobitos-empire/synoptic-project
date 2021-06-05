@@ -13,16 +13,19 @@ app.get('/', (req, res) => {
     })
 });
 app.get('/tourist', (req, res) => {
+
+    //Variable to store object filled with translation pairs
     let translations;
 
-    console.log(req.query.search);
-
+    //Check if a query has been requested
     if(req.query.search !== undefined && req.query.search !== ""){
         translations = searchTranslations(req.query.search.toLowerCase())
     }
     else{
         translations = getTranslations()
     }
+
+    //Render tourist view with the requested translations (default is all)
     res.render('tourist',  {
         title: 'Tourists',
         translations: translations
@@ -69,18 +72,40 @@ app.get('/explore', (req, res) => {
         title: 'Explore New Markets',
     })
 });
+
+//Method to get all translations stored in a JSON object
 function getTranslations(){
     let rawData = fs.readFileSync('public/scripts/translations.json');
     return JSON.parse(rawData).translations;
 }
+
+//Method to search through translations in the translations.json file based on a query
 function searchTranslations(query) {
-    console.log(query);
     let rawData = fs.readFileSync('public/scripts/translations.json');
     let translations = JSON.parse(rawData).translations;
+    let results;
 
-    return translations.filter((item) => {
-        return item.english.toLowerCase() === query;
+    //Try to get a perfect match using the more efficient .filter method
+    results = translations.filter((item) => {
+        if(item.english.toLowerCase() === query){
+            return item.english.toLowerCase() === query;
+        }
+        else if(item.spanish.toLowerCase() === query){
+            return item.spanish.toLowerCase() === query;
+        }
     });
+
+    //Resort to imperfect match if no perfect match found
+    if(results.length === 0){
+        for(let i = 0; i < translations.length; i++){
+            let item = translations[i];
+            if(item.english.toLowerCase().includes(query) || item.spanish.toLowerCase().includes(query)){
+                results.push(item);
+            }
+        }
+    }
+
+    return results
 }
 app.listen(process.env.PORT || 8080, function () {
     console.log("Express server listening on port %d in %s mode",

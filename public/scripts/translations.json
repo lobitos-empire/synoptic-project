@@ -8,17 +8,7 @@
       "category": "Greetings!",
       "english": "Goodbye",
       "spanish": "Adios"
-  }
-  ,{
-      "category": "Greetings!",
-      "english": "Good morning! ",
-      "spanish": "Buenos días!"
-    }
-  ,{
-      "category": "Greetings!",
-      "english": "Good night! ",
-      "spanish": "Buenas noches!"
-    },
+  },
     {
       "category": "Directions!",
       "english": "Where can I get a taxi?",
@@ -26,18 +16,18 @@
     },
     {
       "category": "Directions!",
-      "english": "Where can I get a taxi?",
-      "spanish": "¿Dónde puedo encontrar un taxi?"
+      "english": "Where’s the nearest bus stop?",
+      "spanish": "Dónde está la parada de autobús más cerca?"
     },
     {
       "category": "At a restaurant",
-      "english": "Where can I get a taxi?",
-      "spanish": "¿Dónde puedo encontrar un taxi?"
+      "english": "I’m a vegetarian",
+      "spanish": "Soy vegetariano/a?"
     },
     {
       "category": "At a restaurant",
-      "english": "Where can I get a taxi?",
-      "spanish": "¿Dónde puedo encontrar un taxi?"
+      "english": "The bill, please",
+      "spanish": "La cuenta, por favor"
     }
   ]
 }

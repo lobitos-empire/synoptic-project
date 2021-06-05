@@ -60,9 +60,10 @@ html(lang="en")
                                 div.card-title.h3 Spanish Phrases
                                 //Creating a search bar for users to search phrases that are not on the spanish phrase card
                             section.navbar-section(class="searchBar")
-                                div.input-group.input-inline
-                                    input.form-input(type="text", placeholder="search phrases")
-                                    button.btn.btn-primary.input-group-btn Search
+                                form(method="get", action='/tourist')
+                                    div.input-group.input-inline
+                                        input.form-input(name="search", id="search", type="text", placeholder="search phrases")
+                                        button.btn.btn-primary.input-group-btn Search
                             div.card-body
                                 // creating table to add spanish and english phrases within the card-body
                                 table.table.table-striped

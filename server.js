@@ -13,9 +13,19 @@ app.get('/', (req, res) => {
     })
 });
 app.get('/tourist', (req, res) => {
+    let translations;
+
+    console.log(req.query.search);
+
+    if(req.query.search !== undefined && req.query.search !== ""){
+        translations = searchTranslations(req.query.search.toLowerCase())
+    }
+    else{
+        translations = getTranslations()
+    }
     res.render('tourist',  {
         title: 'Tourists',
-        translations: getTranslations()
+        translations: translations
     })
 });
 app.get('/hottest', (req, res) => {
@@ -60,9 +70,17 @@ app.get('/explore', (req, res) => {
     })
 });
 function getTranslations(){
-    let translationsList = [];
     let rawData = fs.readFileSync('public/scripts/translations.json');
     return JSON.parse(rawData).translations;
+}
+function searchTranslations(query) {
+    console.log(query);
+    let rawData = fs.readFileSync('public/scripts/translations.json');
+    let translations = JSON.parse(rawData).translations;
+
+    return translations.filter((item) => {
+        return item.english.toLowerCase() === query;
+    });
 }
 app.listen(process.env.PORT || 8080, function () {
     console.log("Express server listening on port %d in %s mode",

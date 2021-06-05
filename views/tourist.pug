@@ -59,13 +59,15 @@ html(lang="en")
                             div.card-header
                                 div.card-title.h3 Spanish Phrases
                             div.card-body
+                                // creating table to add spanish and english phrases within the card-body
                                 table.table.table-striped
-                                    tr
-                                    th Greetings
-                                    th Directions
-                                    th Getting Around
-                                    th At Restaurant
-
-                                p Greeting! ~  Hello = Hola | Hello = Hola | Hello = Hola
-                                p Greeting! ~  Hello = Hola | Hello = Hola | Hello = Hola
+                                    thead
+                                        tr
+                                            th English
+                                            th Spanish
+                                    tbody
+                                        each n in translations
+                                            tr
+                                                td=n.english
+                                                td=n.spanish
 

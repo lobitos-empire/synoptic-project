@@ -1,0 +1,11 @@
+{
+  "translations": [{
+    "english": "Hello",
+    "spanish": "Hola"
+  }
+  ,{
+    "english": "Goodbye",
+    "spanish": "Adios"
+  }
+  ]
+}

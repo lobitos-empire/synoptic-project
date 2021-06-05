@@ -8,38 +8,45 @@ html(lang="en")
         link(rel="stylesheet" type="text/css" href="../styles/style.css")
         title #{ title }
 
-    body
+    body.backgroundimage(class='touristBackground')
         div.container
             div.columns
                 div.column.col-12
-                    include includes/tabT.pug
+                    a(href="/index")
+                    h3(class='TouristHeader') Tourists
+                    img.logo1(src="../images/logo1.png", alt="Logo")
 
-        div.container
+        div.move
             div.columns
-                div.col-2
-                div.col-2
-                    div.card
+                div.column.col-3
+                    div.card(class='hottestCard')
                         div.card-image
-                            img.img-responsive(src='../images/Attractions.jpg')
+                            img.img-responsive(src='../images/localBusiness.jpg',alt="Image of local businesses")
                         div.card-header
                             div.card-title.h5 Hottest
-                div.col-1
+                            div.card-subtitle.text-black Explore local businesses in Lobitos
 
-                div.col-2
-                    div.card
+                div.column.col-3
+                    div.card(class='attractionCard')
                         div.card-image
-                            img.img-responsive(src='../images/Attractions.jpg')
+                            img.img-responsive(class= 'attractionImg', src='../images/hotels.png',alt="Image of attractions")
                         div.card-header
                             div.card-title.h5 Attractions
-                div.col-1
+                            div.card-subtitle.text-black Explore Attractions in Lobitos
 
-                div.col-2
-                    div.card
+                div.column.col-3
+                    div.card(class='hotelsCard')
                         div.card-image
-                            img.img-responsive(src='../images/Hotels.jpg')
+                            img.img-responsive(src='../images/hotels.png',alt="Image of hotel")
                         div.card-header
                             div.card-title.h5 Hotels
-                div.col-2
+                            div.card-subtitle.text-black Explore Hotels in Lobitos
 
-
-
+        div.move(class='movePhraseCard')
+            div.column.col-4.col-sm-12.my-2
+                div.card(class='spanishPhraseCard2')
+                    div.card-header
+                        div.card-title.h5 Spanish Phrases
+                    div.card-body
+                        p Greeting! ~  Hello = Hola | Hello = Hola | Hello = Hola
+                        p Greeting! ~  Hello = Hola | Hello = Hola | Hello = Hola

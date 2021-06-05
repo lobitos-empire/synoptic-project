@@ -1,8 +1,8 @@
-.backgroundimage{
-    background-image: url("../images/home1.jfif");
-    /*background-size: cover;*/
-    width: 100%;
-}
+/*.backgroundimage{*/
+/*    background-image: url("../images/home1.jfif");*/
+/*    !*background-size: cover;*!*/
+/*    width: 100%;*/
+/*}*/
 
 h1{
     position: absolute;
@@ -47,3 +47,127 @@ a.lButton{
     font-size: 30px;
     border-radius: 15px;
 }
+
+body.touristBackground{
+    background-color: #ffffff;
+    /*background-color: #cff4d2;*/
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%237be495' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23329d9c' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2373de96' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%231c8e98' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%236bd896' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%230d7e92' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2363d296' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%230d6f8a' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%235ccb96' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23175f7f' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2356c596' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23205072' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+
+
+.card.hottestCard{
+
+
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 1%;
+    top: 1%;
+
+
+
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
+
+
+    border-radius: 30px;
+
+
+}
+
+.card.attractionCard{
+
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 39%;
+    top: 1%;
+    filter: drop-shadow(4px 5px 5px rgba(68, 177, 153, 0.559));
+    /*float: left;*/
+    /*padding: 15px;*/
+    border-radius: 30px;
+
+}
+
+.card.hotelsCard{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 77%;
+    top: 1%;
+
+    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    /*float: left;*/
+    /*padding: 15px;*/
+    border-radius: 30px;
+
+}
+/*.img-responsive.attractionImg{*/
+/*    border: 2px solid red;*/
+/*    border-radius: 50px;*/
+/*}*/
+/*div.touristTabs{*/
+/*    position: absolute;*/
+/*    width: 660px;*/
+/*    height: 44px;*/
+/*    left: 390px;*/
+/*    top: 46px;*/
+
+/*}*/
+
+.logo1{
+    top: 0%;
+    left: 2%;
+    position: absolute;
+    width: auto;
+    height: 6rem;
+}
+
+.move{
+
+    position: absolute;
+    width: 1016px;
+    height: 300px;
+    left: 212px;
+    top: 172px;
+
+    /*position: absolute;*/
+    /*top: 20%;*/
+    /*left:20%;*/
+    /*!*margin-left: 10px;*!*/
+
+    /*!*padding: 100px;*!*/
+
+    /*filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));*/
+
+}
+
+
+.move.movePhraseCard{
+    position: absolute;
+    top: 67%;
+    left: 20%;
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
+
+}
+
+.card.spanishPhraseCard2{
+    width: 900px;
+    height: 190px;
+    border-radius: 30px;
+}
+
+h3.TouristHeader{
+    position: absolute;
+    top: 3%;
+    /*text-align: center;*/
+    left: 45%;
+    margin-top: 40px;
+    font-family: Oswald;
+    font-size: 50px;
+
+}
+

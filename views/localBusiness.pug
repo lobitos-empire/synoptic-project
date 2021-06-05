@@ -13,9 +13,10 @@ html(lang="en")
     body.background
         div.container
             div.columns
-                div.column.col-6
-                    a(href="/index")
+                div.column.col-1
                     img.logo1(src="../images/logo1.png", alt="Logo")
+                div.column.col-5
+                    a(href="/").home Home
 
                 div.column.col-6
                     h3.header Local Business
@@ -46,7 +47,7 @@ html(lang="en")
                             div.card-body
                                 p1.localBusinessCardText  Haga clic en el botón en la esquina superior derecha para ver otras empresas locales y ver reseñas de turistas.
                             div.card-footer
-                                a.button.btn.btn-primary.float-right(aria-label="Upload button", href="/") EXPLORE LOCAL BUSINESS.
+                                a.button.btn.btn-primary.float-right(aria-label="Explore local business", href="/business") EXPLORE LOCAL BUSINESS.
 
 
                     div.column.col-4.col-sm-12.my-2
@@ -58,6 +59,7 @@ html(lang="en")
                             div.card-body
                                 p1.localBusinessCardText  Haga clic en el botón en la esquina superior derecha para obtener sugerencias de nuevos mercados que se pueden explorar.
                             div.card-footer
-                                button.btn.btn-primary.float-right(aria-label="Upload button") EXPLORE NEW MARKET
+                                a.button.btn.btn-primary.float-right(aria-label="Explore new markets", href="/explore") EXPLORE NEW MARKET.
+
 
 

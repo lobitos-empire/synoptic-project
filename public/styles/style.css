@@ -36,7 +36,7 @@ body{
     font-size: medium;
 
 }
-body{
+header{
     background-color: #CFF4D2;
 }
 .cardSubtitles{
@@ -324,6 +324,9 @@ body.background{
     /*float: left;*/
     /*padding: 15px;*/
     border-radius: 10px;
+}
+.home{
+    top: 10px;
 }
 .businessCard{
     /*width: 300px;*/

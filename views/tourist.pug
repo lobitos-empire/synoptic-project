@@ -6,6 +6,7 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
         link(rel="stylesheet" type="text/css" href="../styles/style.css")
+        link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
         title #{ title }
 
     body.background
@@ -19,8 +20,6 @@ html(lang="en")
                 div.column.col-6
                     h3.header Tourists
                     include includes/translator.pug
-
-
         div.move
             div.container
                 div.columns
@@ -59,10 +58,11 @@ html(lang="en")
                             div.card-header
                                 div.card-title.h3 Spanish Phrases
                                 //Creating a search bar for users to search phrases that are not on the spanish phrase card
-                            section.navbar-section(class="searchBar")
-                                div.input-group.input-inline
-                                    input.form-input(type="text", placeholder="search phrases")
-                                    button.btn.btn-primary.input-group-btn Search
+                                section.navbar-section(class="searchBar")
+                                    div.input-group.input-inline
+                                        input.form-input(type="text", placeholder="search phrases")
+                                        button.btn.btn-primary.input-group-btn
+                                            i.icon.icon-search
                             div.card-body
                                 // creating table to add spanish and english phrases within the card-body
                                 table.table.table-striped

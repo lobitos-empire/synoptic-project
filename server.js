@@ -2,11 +2,13 @@
 
 const express = require('express');
 const app = express();
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const middlewares = [bodyParser.urlencoded({extended:true})];
 var multer = require('multer');
 var upload = multer();
 app.engine('pug', require('pug').__express);
 app.use(express.static(__dirname + '/public'));
+app.use(middlewares);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 app.get('/', (req, res) => {
@@ -50,14 +52,19 @@ app.get('/localBusiness', (req, res) => {
         title: 'Local Business'
     })
 });
-app.post('/localBusiness', (req, res) => {
+app.post('/upload', (req, res) => {
     const fs = require('fs');
     const file = './localBusiness.json';
-    //create object from form
-    var OwnersName = req.query.OwnersName;
-    var BusinessName = req.query.BusinessName;
-    var BusinessType = req.query.BusinessType;
-    var BusinessDesc = req.query.BusinessDesc;
+    // //create object from form
+    // var OwnersName = req.body.ownerName;
+    // var BusinessName = req.body.businessName;
+    // var BusinessType = req.body.businessType;
+    // var BusinessDesc = req.body.businessDescription;
+    // //console.log();
+    // //console.log(BusinessName);
+    // console.log(BusinessType);
+    // console.log(BusinessDesc);
+    console.log(req.body);
 
 });
 app.get('/upload', (req, res) => {

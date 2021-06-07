@@ -56,14 +56,3 @@ html(lang="en")
                             p1.localBusinessCardText  Haga clic en el botón en la esquina superior derecha para obtener sugerencias de nuevos mercados que se pueden explorar.
                         div.card-footer
                             a.button.btn.btn-primary.float-right(aria-label="Explore new markets", href="/explore") EXPLORE NEW MARKET.
-
-        form(action='/localBusiness/', method='post')
-          label(for='OwnersName')  Owners Name:
-          input#OwnersName(type='text', name='OwnersName')
-          label(for='BusinessName')  Business Name:
-          input#BusinessName(type='text', name='BusinessName')
-          label(for='BusinessType')  Business Type:
-          input#BusinessType(type='text', name='BusinessType')
-          label(for='BusinessDesc')  Business Desc:
-          input#BusinessDesc(type='text', name='BusinessDesc')
-          input(type='submit', value='Submit')

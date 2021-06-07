@@ -19,10 +19,10 @@ app.get('/tourist', (req, res) => {
 
     //Check if a query has been requested
     if(req.query.search !== undefined && req.query.search !== ""){
-        translations = searchTranslations(req.query.search.toLowerCase())
+        translations = searchTranslations(req.query.search.toLowerCase());
     }
     else{
-        translations = getTranslations()
+        translations = getTranslations();
     }
 
     //Render tourist view with the requested translations (default is all)
@@ -76,7 +76,14 @@ app.get('/explore', (req, res) => {
 //Method to get all translations stored in a JSON object
 function getTranslations(){
     let rawData = fs.readFileSync('public/scripts/translations.json');
-    return JSON.parse(rawData).translations;
+    let translations = JSON.parse(rawData).translations;
+    let resultTranslations = {"translations": []};
+    for(let i = 0; i < translations.length; i++){
+        if(i % 2 === 0){
+            resultTranslations.translations.push(translations[i]);
+        }
+    }
+    return resultTranslations.translations;
 }
 
 //Method to search through translations in the translations.json file based on a query
@@ -103,6 +110,10 @@ function searchTranslations(query) {
                 results.push(item);
             }
         }
+    }
+
+    if(results.length === 0){
+        results.push({"catagory":"","english":"No Results","spanish":"No Hay Resultados"})
     }
 
     return results

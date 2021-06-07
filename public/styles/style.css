@@ -46,6 +46,9 @@ header{
     background-image: url("../images/uploadimage.jpg");
 
 }
+.moveuploadCard{
+    left: 50%;
+}
 
 h1{
     position: absolute;

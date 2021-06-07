@@ -114,10 +114,6 @@ app.post('/upload', async (req, res) => {
     });
 });
 
-
-
-
-})
 app.get('/upload', (req, res) => {
      res.render('upload', {
          title: 'Business Image Upload'

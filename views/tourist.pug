@@ -6,7 +6,6 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
         link(rel="stylesheet" type="text/css" href="../styles/style.css")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
         title #{ title }
 
     body.background
@@ -20,6 +19,8 @@ html(lang="en")
                 div.column.col-6
                     h3.header Tourists
                     include includes/translator.pug
+
+
         div.move
             div.container
                 div.columns
@@ -27,7 +28,7 @@ html(lang="en")
                         div.card.hottestCard
                             div.card-image
                                 a(href='/hottest')
-                                    img.img-responsive(src="../images/localBusiness.JPG", alt="Hottest")
+                                    img.img-responsive(src="../images/localBusiness.jpg", alt="Hottest")
                             div.card-header
                                 div.card-title.h3 Hottest
                                 div.card-subtitle.text-black Explore local businesses in Lobitos

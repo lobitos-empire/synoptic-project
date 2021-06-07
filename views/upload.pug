@@ -15,7 +15,7 @@ html(lang="en")
                 div.column.col-12
                     include includes/tabL.pug
                 div.column.col-7.col-sm-12
-                    form.form-horizontal(action="" id="uploadForm" method="post")
+                    form.form-horizontal(action="" id="uploadForm" method="post" enctype='multipart/form-data')
                             div.form-group
                                 div.col-3.col-sm-12
                                     label.form-label Nombre Del Dueño
@@ -51,6 +51,7 @@ html(lang="en")
                             div.card
                                 div.card-image
                                         input.form-input(type="file" required)
+                                        input.form-input(type='submit', name='uploadimage', value='Upload Image')
                                 div.card-header
                                     div.card-title.h3 Sube tu negocio!
                                 div.card-body
@@ -58,13 +59,3 @@ html(lang="en")
                                 div.card-footer
                                     a.button.btn.btn-primary.float-right(aria-label="Upload button", href="/upload") UPLOAD
                                         i.icon.icon-upload
-
-
-
-
-
-
-
-form(method='post', enctype='multipart/form-data')
-    input(type='file', name='imageupload')
-    input(type='submit', name='uploadimage', value='Upload Image')

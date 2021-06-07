@@ -74,7 +74,8 @@ app.get('/upload', (req, res) => {
             res.end();
         });
     });
-});app.get('/upload', (req, res) => {
+});
+app.get('/upload', (req, res) => {
     res.render('upload',  {
         title: 'Upload',
     })

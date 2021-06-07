@@ -46,6 +46,9 @@ header{
     background-image: url("../images/uploadimage.jpg");
 
 }
+.moveuploadCard{
+    left: 50%;
+}
 
 h1{
     position: absolute;
@@ -270,7 +273,12 @@ body.background{
     background-attachment: fixed;
     background-size: cover;
 }
-
+.cardsAdjust{
+    margin-top: 3%;
+}
+.reduceImage{
+    height: 5%;
+}
 
 
 
@@ -282,10 +290,16 @@ body.background{
     width: auto;
     height: 6rem;
 }
+.logo2{
+    height: 3.5rem;
+
+}
 .move{
     position: absolute;
     top: 20%;
     left:10%;
+    /*margin-left: 10px;*/
+    /*padding: 100px;*/
     filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
 }
 
@@ -313,26 +327,45 @@ body.background{
 /* Local Business Styles */
 
 .uploadCard{
+    /*width: 300px;*/
+    /*height: 300px;*/
 
-    width: 75%;
+
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    /*float: left;*/
+    /*padding: 15px;*/
     border-radius: 10px;
 }
 .home{
     margin-top: 50%;
 }
 .businessCard{
+    /*width: 300px;*/
+    /*height: 300px;*/
+
     width: 75%;
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    /*float: left;*/
+    /*padding: 15px;*/
     border-radius: 10px;
 }
+
 .exploreCard{
-    width: 75%;
+    /*width: 300px;*/
+    /*height: 300px;*/
+
+
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    /*float: left;*/
+    /*padding: 15px;*/
     border-radius: 10px;
+}
+
+.uploadImage{
+    display: inline;
 }
 
 
@@ -340,22 +373,35 @@ body.background{
 /* Tourists Styles */
 
 .hottestCard{
+    /*width: 300px;*/
+    /*height: 300px;*/
     width: 75%;
     height: auto;
 
     filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
+    /*float: left;*/
+    /*padding: 15px;*/
     border-radius: 10px;
 }
 .attractionCard{
+    /*width: 300px;*/
+    /*height: 300px;*/
     width: 75%;
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    /*float: left;*/
+    /*padding: 15px;*/
     border-radius: 10px;
 }
 .hotelsCard{
+    /*width: 300px;*/
+    /*height: 300px;*/
+
     width: 75%;
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    /*float: left;*/
+    /*padding: 15px;*/
     border-radius: 10px;
 }
 .searchBar{

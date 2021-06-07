@@ -65,3 +65,14 @@ html(lang="en")
 
 
 
+        form(method='post', enctype='multipart/form-data')
+        input#imageUpload(type='file', name='imageUpload')
+        label(for='OwnersName')  Owners Name:
+        input#OwnersName(type='text', name='OwnersName')
+        label(for='BusinessName')  Business Name:
+        input#BusinessName(type='text', name='BusinessName')
+        label(for='BusinessType')  Business Type:
+        input#BusinessType(type='text', name='BusinessType')
+        label(for='BusinessDesc')  Business Desc:
+        input#BusinessDesc(type='text', name='BusinessDesc')
+        input(type='submit', value='Submit')

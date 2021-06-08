@@ -10,7 +10,7 @@ html(lang="en")
         title #{ title }
 
     body.background
-        form.form-horizontal(action="/upload" id="uploadForm" method="post")
+        form.form-horizontal(action="/upload" id="uploadForm" method="post" enctype="multipart/form-data")
             div.container.my-2
                 div.columns
                     div.column.col-12
@@ -21,17 +21,17 @@ html(lang="en")
                                     div.col-5.col-sm-12
                                         label.form-label Nombre Del Dueño
                                     div.col-7.col-sm-12
-                                        input.form-input(type="text" placeholder="Nombre Del Dueño" id="ownerName" required)
+                                        input.form-input(type="text" placeholder="Nombre Del Dueño" id="ownerName" name="ownersName" required)
                                 div.form-group
                                     div.col-5.col-sm-12
                                         label.form-label Nombre del Negocio
                                     div.col-7.col-sm-12
-                                        input.form-input(type="text" placeholder="Nombre del Negocio" id="businessName" required)
+                                        input.form-input(type="text" placeholder="Nombre del Negocio" id="businessName" name="businessName" required)
                                 div.form-group
                                     div.col-5.col-sm-12
                                         label.form-label Tipo de negocio
                                     div.col-7.col-sm-12
-                                        select.form-select#businessType
+                                        select.form-select(id="businessType", name="businessType")
                                             option Comidas y bebidas
                                             option Cosas para hacer
                                             option Servicios
@@ -42,7 +42,7 @@ html(lang="en")
                                     div.col-5.col-sm-12
                                         label.form-label Descripción del Negocio
                                     div.col-7.col-sm-12
-                                        textarea.form-input(id="businessDescription" placeholder="Business Description" rows="3" maxlength="175" required)
+                                        textarea.form-input(id="businessDescription" placeholder="Business Description" rows="3" maxlength="175" name="businessDesc" required)
                                 div.form-group
                                     div.col-3
                                     div.column.col-6.col-sm-12
@@ -52,7 +52,7 @@ html(lang="en")
                         div.form-group.form
                             div.card.moveuploadCard
                                 div.card-image
-                                    input.form-input(type="file" required)
+                                    input.form-input(type="file" name="uploadImage" required)
                                 div.card-header
                                     div.card-title.h3 Sube tu negocio!
                                 div.card-body

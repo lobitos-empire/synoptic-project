@@ -42,10 +42,12 @@ header{
 .cardSubtitles{
     font-size: medium;
 }
-.uploadBusinessCard{
+.businessCardBackground{
     background-image: url("../images/uploadimage.jpg");
 
 }
+
+
 .moveuploadCard{
     left: 50%;
 }
@@ -323,6 +325,9 @@ body.background{
     font-family: Oswald;
     font-size: 50px;
 }
+.exploreTitle{
+    text-align: center;
+}
 
 /* Local Business Styles */
 
@@ -403,4 +408,11 @@ body.background{
     /*float: left;*/
     /*padding: 15px;*/
     border-radius: 10px;
+}
+.imageFillColumn{
+    column-fill: auto;
+}
+
+.cardImageExplore{
+    width:100%;
 }

@@ -10,52 +10,90 @@ html(lang="en")
         link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
         title #{ title }
 
-    body
+    body.background
         div.container
             div.columns
                 div.column.col-12
                     include includes/tabLExplore.pug
-                h3 Mercados explorables
-                div.container
-                    div.column.col-8.my-2
+        div.container
+            div.columns
+                div.column.col-3
+                div.column.col-6.col-sm-12
+                    h3.exploreTitle Mercados explorable
+                div.column.col-3
+        div.container
+            div.columns
+                div.column.col-2
+                div.column.col-8
+                    div.container
+                        div.column.col-12.my-2.col-sm-12
+                            div.card
+                                div.columns
+                                    div.column.col-3
+                                        div.card-image
+                                            img(src="../images/smallerCycling.png", alt="Cycling").img-responsive
+                                    div.column.col-6
+                                        div.card-body
+                                            h6 Tipo de industria: Ciclismo
+                                            h6 Descripción:
+                                            h6 Ingresos estimados:
+                        div.column.col-4
+
+                    div.container
+                        div.column.col-12.my-2.col-sm-12
+                            div.card
+                                div.columns
+                                    div.column.col-3
+                                        div.card-image
+                                            img(src="../images/finaltrekking.jpg", alt="Trekking").img-responsive
+                                    div.column.col-6
+                                        div.card-body
+                                            h6 Tipo de industria: Trekking
+                                            h6 Descripción:
+                                            h6 Ingresos estimados:
+                        div.column.col-4
+
+                    div.container
+                    div.column.col-12.my-2.col-sm-12
                         div.card
                             div.columns
                                 div.column.col-3
                                     div.card-image
-                                        img(src="../images/smallerCycling.png", alt="Cycling").img-responsive
+                                        img(src="../images/birdwatching.jpg", alt="Bird watching").img-responsive
                                 div.column.col-6
                                     div.card-body
-                                        h6 Tipo de industria: Ciclismo
+                                        h6 Tipo de industria: observación de aves
                                         h6 Descripción:
-                                        h6 Ingresos plausibles::
+                                        h6 Ingresos estimados:
                     div.column.col-4
 
-                div.container
-                    div.column.col-8.my-2
-                        div.card
-                            div.columns
-                                div.column.col-3
-                                    div.card-image
-                                        img(src="../images/finaltrekking.jpg", alt="Trekking").img-responsive
-                                div.column.col-6
-                                    div.card-body
-                                        h6 Tipo de industria: Trekking
-                                        h6 Descripción:
-                                        h6 Ingresos plausibles:
-                    div.column.col-4
+                    div.container
+                        div.column.col-12.my-2.col-sm-12
+                            div.card
+                                div.columns
+                                    div.column.col-3
+                                        div.card-image
+                                            img(src="../images/editedKiteSurfing.jpg", alt="Kite surfing").img-responsive
+                                    div.column.col-6
+                                        div.card-body
+                                            h6 Tipo de industria: surf de vela
+                                            h6 Descripción
+                                            h6 Ingresos estimados:
+                        div.column.col-4
 
-                div.container
-                div.column.col-8.my-2
-                    div.card
-                        div.columns
-                            div.column.col-3
-                                div.card-image
-                                    img(src="../images/birdwatching.jpg", alt="Bird watching").img-responsive
-                            div.column.col-6
-                                div.card-body
-                                    h6 Tipo de industria: Observación de aves
-                                    h6 Descripción:
-                                    h6 Ingresos plausibles:
-                div.column.col-4
+                    div.container
+                        div.column.col-12.my-2.col-sm-12
+                            div.card
+                                div.columns
+                                    div.column.col-3
+                                        div.card-image.cardImageExplore
+                                            img(src="../images/boatRiding.jpg", alt="Boat riding").img-responsive
+                                    div.column.col-6
+                                        div.card-body
+                                            h6 Tipo de industria: paseo en barco
+                                            h6 Descripción
+                                            h6 Ingresos estimados:
+                        div.column.col-4
+                div.column.col-2
 
 

@@ -27,6 +27,29 @@ body{
     background-size: cover;
 }
 
+.localBusinessFont{
+    color: palevioletred;
+
+}
+.localBusinessCardText{
+    color: black;
+    font-size: medium;
+
+}
+header{
+    background-color: #CFF4D2;
+}
+.cardSubtitles{
+    font-size: medium;
+}
+.uploadBusinessCard{
+    background-image: url("../images/uploadimage.jpg");
+
+}
+.moveuploadCard{
+    left: 50%;
+}
+
 h1{
     position: absolute;
     top: 20%;
@@ -250,7 +273,12 @@ body.background{
     background-attachment: fixed;
     background-size: cover;
 }
-
+.cardsAdjust{
+    margin-top: 3%;
+}
+.reduceImage{
+    height: 5%;
+}
 
 
 
@@ -261,6 +289,10 @@ body.background{
     position: absolute;
     width: auto;
     height: 6rem;
+}
+.logo2{
+    height: 3.5rem;
+
 }
 .move{
     position: absolute;
@@ -298,34 +330,42 @@ body.background{
     /*width: 300px;*/
     /*height: 300px;*/
 
-    width: 75%;
+
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
     /*float: left;*/
     /*padding: 15px;*/
     border-radius: 10px;
+}
+.home{
+    margin-top: 50%;
 }
 .businessCard{
     /*width: 300px;*/
     /*height: 300px;*/
 
-    width: 75%;
+
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
     /*float: left;*/
     /*padding: 15px;*/
     border-radius: 10px;
 }
+
 .exploreCard{
     /*width: 300px;*/
     /*height: 300px;*/
 
-    width: 75%;
+
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
     /*float: left;*/
     /*padding: 15px;*/
     border-radius: 10px;
+}
+
+.uploadImage{
+    display: inline;
 }
 
 

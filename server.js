@@ -58,6 +58,7 @@ app.get('/hottest', (req, res) => {
 app.get('/attractions', (req, res) => {
     res.render('attractions',  {
         title: 'Attractions',
+        attractions: getAttractions()
     })
 });
 app.get('/hotels', (req, res) => {
@@ -194,6 +195,23 @@ function searchTranslations(query) {
 
     return results
 }
+
+//Method to get a list of all attractions
+function getAttractions(){
+    let rawData = fs.readFileSync('business.json');
+    let businesses = JSON.parse(rawData).Businesses;
+    let results = [];
+
+    for(let i = 0; i < businesses.Categories.length; i++){
+        if(businesses.Categories[i].Category.CategoryName == "Cosas para hacer"){
+            for(let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++){
+                results.push(businesses.Categories[i].Category.CategoryData[j]);
+            }
+        }
+    }
+    return results;
+}
+
 app.listen(process.env.PORT || 8080, function () {
     console.log("Express server listening on port %d in %s mode",
         this.address().port, app.settings.env)

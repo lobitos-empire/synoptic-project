@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 const bodyParser = require('body-parser');
 const path = require("path");
 const formidable = require("formidable");
@@ -23,6 +24,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
@@ -148,10 +150,15 @@ app.get('/business', (req, res) => {
         title: 'Business',
     });
 });
+
 app.get('/explore', (req, res) => {
     res.render('explore', {
         title: 'Explore New Markets',
     });
+});
+
+app.post('/rating', (req, res)=>{
+    console.log(req);
 });
 
 //Method to get all translations stored in a JSON object

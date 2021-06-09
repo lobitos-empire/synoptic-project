@@ -64,6 +64,7 @@ app.get('/attractions', (req, res) => {
 app.get('/hotels', (req, res) => {
     res.render('hotels',  {
         title: 'Hotels',
+        hotels: getHotels()
     })
 });
 app.get('/contacts', (req, res) => {
@@ -207,6 +208,34 @@ function getAttractions(){
             for(let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++){
                 results.push(businesses.Categories[i].Category.CategoryData[j]);
             }
+        }
+    }
+    return results;
+}
+
+function getHotels(){
+    let rawData = fs.readFileSync('business.json');
+    let businesses = JSON.parse(rawData).Businesses;
+    let results = [];
+
+    for(let i = 0; i < businesses.Categories.length; i++){
+        if(businesses.Categories[i].Category.CategoryName == "Hoteles"){
+            for(let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++){
+                results.push(businesses.Categories[i].Category.CategoryData[j]);
+            }
+        }
+    }
+    return results;
+}
+
+function getAllBusinesses(){
+    let rawData = fs.readFileSync('business.json');
+    let businesses = JSON.parse(rawData).Businesses;
+    let results = [];
+
+    for(let i = 0; i < businesses.Categories.length; i++){
+        for(let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++){
+            results.push(businesses.Categories[i].Category.CategoryData[j]);
         }
     }
     return results;

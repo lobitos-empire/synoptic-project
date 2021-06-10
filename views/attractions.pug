@@ -6,9 +6,94 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
         link(rel="stylesheet" type="text/css" href="../styles/style.css")
+        link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
+        script(src="../scripts/tourist.js" defer)
         title #{ title }
+    body.background
+        div.container
+            div.columns
+                div.column.col-12
+                    include includes/tabTAttractions
+                    include includes/translator.pug
+        div.container.move2
+            div.column.col-12.my-2.col-sm-12
+                div.card
+                    div.columns
+                        div.column.col-3
+                            div.card-image
+                                img.img-responsive(src="../images/hottestIMG.png", alt="Seashells Crafts")
+                        div.column.col-6
+                            div.card-header
+                                div.card-title.h4 Surfing
+                            div.card-body
+                                p
+                                    b Description :
+                                    |
+                                    |  ..............
+                                p
+                                    b Location :
+                                    |
+                                    | ...............
 
+                        div.column.col-3
+                            div.card-body.vl
+                                p
+                                    b Estimate Payment :
+                                    |  50 sol
+                                p
+                                    b Tourist Interest :
+                                    |  50
+                                p
+                                    //b Rating :
+                                    //form-input#ratingForm.star-rating(method="post")
+                                    //    input#star5(type='radio' name='rate' value='5' onclick="postToController();")
+                                    //    label(for='star5' title='text') 5 stars
+                                    //    input#star4(type='radio' name='rate' value='4' onclick="postToController();")
+                                    //    label(for='star4' title='text') 4 stars
+                                    //    input#star3(type='radio' name='rate' value='3' onclick="postToController();")
+                                    //    label(for='star3' title='text') 3 stars
+                                    //    input#star2(type='radio' name='rate' value='2' onclick="postToController();")
+                                    //    label(for='star2' title='text') 2 stars
+                                    //    input#star1(type='radio' name='rate' value='1' onclick="postToController();")
+                                    //    label(for='star1' title='text') 1 star
 
+            div.column.col-12.my-2.col-sm-12
+                div.card
+                    div.columns
+                        div.column.col-3
+                            div.card-image
+                                img.img-responsive(src="../images/turtle.jpg", alt="Seashells Crafts")
+                        div.column.col-6
+                            div.card-header
+                                div.card-title.h4 Wildlife
+                            div.card-body
+                                p
+                                    b Description :
+                                    |
+                                    |  ..............
+                                p
+                                    b Location :
+                                    |
+                                    | ...............
 
-
-
+                        div.column.col-3
+                            div.card-body.vl
+                                p
+                                    b Estimate Payment :
+                                    |  50
+                                p
+                                    b Tourist Interest :
+                                    |  50
+                                p
+                                    //b Rating :
+                                    //form-input#ratingForm.star-rating(method="post")
+                                    //    input#star5(type='radio' name='rate' value='5' onclick="postToController();")
+                                    //    label(for='star5' title='text') 5 stars
+                                    //    input#star4(type='radio' name='rate' value='4' onclick="postToController();")
+                                    //    label(for='star4' title='text') 4 stars
+                                    //    input#star3(type='radio' name='rate' value='3' onclick="postToController();")
+                                    //    label(for='star3' title='text') 3 stars
+                                    //    input#star2(type='radio' name='rate' value='2' onclick="postToController();")
+                                    //    label(for='star2' title='text') 2 stars
+                                    //    input#star1(type='radio' name='rate' value='1' onclick="postToController();")
+                                    //    label(for='star1' title='text') 1 star

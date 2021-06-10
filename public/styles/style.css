@@ -262,6 +262,14 @@ body.background{
     width: auto;
     height: 6rem;
 }
+
+ul{
+    padding-top: 25px;
+    border: none;
+}
+.tab{
+    border-bottom: none;
+}
 .move{
     position: absolute;
     top: 20%;
@@ -339,11 +347,87 @@ body.background{
     margin-top: -2%;
     float: right;
 }
-.tabForTourist{
+/*.tabForTourist{*/
+/*    position: absolute;*/
+/*    top: 1%;*/
+/*    left: 10%*/
+/*}*/
+
+
+/*Style for hotel class*/
+.hotelCard{
+    width: 75%;
+    height: auto;
+
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
+    border-radius: 10px;
+}
+
+.text-green{
+    color: #5a5a5a;
+
+}
+
+.card-title.h4{
+    font-weight: bold;
+}
+.vl {
+    border-left: 1px solid black;
+    height: auto;
+}
+.move2{
     position: absolute;
-    top: 1%;
-    left: 10%
+    top: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /*left:10%;*/
+}
+.searchBar1{
+    margin-top: 50px;
+    margin-right: 50px;
+}
+.btn.btn-primary {
+    background: #329D9C;
+    border-color: #329D9C;
+    color: #fff;
+}
+.filter{
+    margin-top: 50px;
+}
 
-
-
+/* Star Rating */
+.star-rating {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.star-rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.star-rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.star-rating:not(:checked) > label:before {
+    content: '★ ';
+}
+.star-rating > input:checked ~ label {
+    color: #ffc700;
+}
+.star-rating:not(:checked) > label:hover,
+.star-rating:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.star-rating > input:checked + label:hover,
+.star-rating > input:checked + label:hover ~ label,
+.star-rating > input:checked ~ label:hover,
+.star-rating > input:checked ~ label:hover ~ label,
+.star-rating > label:hover ~ input:checked ~ label {
+    color: #c59b08;
 }

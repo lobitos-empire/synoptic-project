@@ -8,8 +8,40 @@ html(lang="en")
         link(rel="stylesheet" type="text/css" href="../styles/style.css")
         title #{ title }
 
-    body
+    body.background
         div.container
             div.columns
                 div.column.col-12
+                    h3.header Emergency details
                     include includes/tabT.pug
+
+        div.move
+            div.container
+                div.columns
+                    div.column.col-4.col-sm-12.my-2
+                        div.card.hottestCard
+                            div.card-image
+                                a(href='/hottest')
+                                    img.img-responsive(src="../images/localBusiness.jpg", alt="Hottest")
+                            div.card-header
+                                div.card-title.h3 Hottest
+                                div.card-subtitle.text-black Explore local businesses in Lobitos
+
+            div.container
+                div.columns
+                    div.column.col-12.col-sm-12.my-2
+                        div.card.spanishPhraseCard2
+                            div.card-header
+                                div.card-title.h3 Spanish Phrases
+                                //Creating a search bar for users to search phrases that are not on the spanish phrase card
+                                section.navbar-section(class="searchBar")
+                                    form(action="/tourist" method="get")
+                                        div.input-group.input-inline
+                                            input.form-input(type="text", placeholder="search phrases" name="search")
+                                            button.btn.btn-primary.input-group-btn
+                                                i.icon.icon-search
+                            div.card-body
+                                // creating table to add spanish and english phrases within the card-body
+                                table.table.table-striped
+
+

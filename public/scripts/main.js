@@ -3,7 +3,7 @@ if(window.location.pathname === "/upload"){
 //    console.log("yeet")
     //document.getElementById("uploadForm").submit();
     //document.getElementById("uploadForm").
-    document.getElementById("uploadImage").className="form-horizontal";
+        document.getElementById("uploadImage").className="form-horizontal";
     // Initializes default toast with duration of 10 seconds (this will not show the toast since init is set to true)
 })
     document.getElementById("uploadImage").addEventListener("submit", ()=> {

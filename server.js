@@ -27,6 +27,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 app.use(morgan('dev'));
 
+var tempName = "";
+
 app.get('/', (req, res) => {
     res.render('index', {
         title: 'Home',
@@ -130,6 +132,7 @@ app.post("/upload", (req, res) => {
     var businessDesc = req.body.businessDesc;
     var businessLoc = req.body.businessLoc;
     var businessPrice = req.body.businessPrice;
+    tempName = businessName;
 
     console.log(ownersName + businessName + businessType + businessDesc);
 
@@ -138,8 +141,8 @@ app.post("/upload", (req, res) => {
         "Business_Name": businessName,
         "Business_Type": businessType,
         "Business_Desc": businessDesc,
-        "Business_Location" : businessLoc,
-        "Business_Price" : businessPrice,
+        "Business_Location": businessLoc,
+        "Business_Price": businessPrice,
     };
 
     try {
@@ -169,7 +172,7 @@ app.post("/uploadImage", (req, res) => {
     form.parse(req, function (err, fields, files) {
         var oldPath = files.uploadImage.path;
         var extension = files.uploadImage.name.split(".")
-        var newPath = path.join(__dirname, 'uploadedImages') + '/' + fields.businessName + "." + extension[1];
+        var newPath = path.join(__dirname, 'uploadedImages') + '/' + tempName + "." + extension[1];
         var rawData = fs.readFileSync(oldPath);
 
         fs.writeFile(newPath, rawData, function (err) {

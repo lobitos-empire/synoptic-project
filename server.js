@@ -132,12 +132,12 @@ app.post("/upload", (req, res) => {
     console.log(ownersName + businessName + businessType + businessDesc);
 
     const business = {
-        "Owners Name": ownersName,
-        "Business Name": businessName,
-        "Business Type": businessType,
-        "Business Desc": businessDesc,
-        "Business Location" : businessLoc,
-        "Business Price" : businessPrice,
+        "Owners_Name": ownersName,
+        "Business_Name": businessName,
+        "Business_Type": businessType,
+        "Business_Desc": businessDesc,
+        "Business_Location" : businessLoc,
+        "Business_Price" : businessPrice,
     };
 
     try {
@@ -219,13 +219,13 @@ app.post('/rating', (req, res)=>{
 
     console.log(req);
     var businessRated = {
-        "Business Name": businessName,
-        "Business Type": businessType,
-        "Business Desc": businessDesc,
-        "Business Location" : businessLoc,
-        "Business Price" : businessPrice,
-        "Business Rating" : businessRating,
-        "Rating Count" : ratingCount,
+        "Business_Name": businessName,
+        "Business_Type": businessType,
+        "Business_Desc": businessDesc,
+        "Business_Location" : businessLoc,
+        "Business_Price" : businessPrice,
+        "Business_Rating" : businessRating,
+        "Rating_Count" : ratingCount,
     }
     let olddata = fs.readFileSync('business.json', 'utf8')
     olddata = JSON.parse(olddata);
@@ -241,13 +241,13 @@ app.post('/rating', (req, res)=>{
     //calculate new average rating
     businessRating = ((businessRating*ratingCount) + newBusinessRating) / ratingCount;
     businessRated = {
-        "Business Name": businessName,
-        "Business Type": businessType,
-        "Business Desc": businessDesc,
-        "Business Location" : businessLoc,
-        "Business Price" : businessPrice,
-        "Business Rating" : businessRating,
-        "Rating Count" : ratingCount,
+        "Business_Name": businessName,
+        "Business_Type": businessType,
+        "Business_Desc": businessDesc,
+        "Business_Location" : businessLoc,
+        "Business_Price" : businessPrice,
+        "Business_Rating" : businessRating,
+        "Rating_Count" : ratingCount,
     }
 
     for (let i = 0; i < olddata.Businesses.Categories.length; i++) {

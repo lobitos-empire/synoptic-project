@@ -6,20 +6,20 @@
           "CategoryName": "Comidas y bebidas",
           "CategoryData": [
             {
-              "Owners Name": "dskfd",
-              "Business Name": "dsjdoas",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "dsfjdns",
-              "Business Location": "64 Zoo Lane",
-              "Business Price": "10000"
+              "Owners_Name": "dskfd",
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000"
             },
             {
-              "Owners Name": "dsvbfds",
-              "Business Name": "dafdafa",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "sdfds",
-              "Business Location": "64 Zoo Lane",
-              "Business Price": "10000"
+              "Owners_Name": "dsvbfds",
+              "Business_Name": "dafdafa",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "sdfds",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000"
             }
 
           ]
@@ -31,12 +31,12 @@
           "CategoryData": [
             {},
             {
-              "Owners Name": "dsfkdsj",
-              "Business Name": "dksnjn",
-              "Business Type": "Cosas para hacer",
-              "Business Desc": "dsafdsf",
-              "Business Location": "64 Zoo Lane",
-              "Business Price": "10000"
+              "Owners_Name": "dsfkdsj",
+              "Business_Name": "dksnjn",
+              "Business_Type": "Cosas para hacer",
+              "Business_Desc": "dsafdsf",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000"
             }
           ]
         }
@@ -48,26 +48,26 @@
             {},
             {
               "Owners Name": "dsnfds",
-              "Business Name": "dsjfds",
-              "Business Type": "Servicios",
-              "Business Desc": "sadffaf",
-              "Business Location": "64 Zoo Lane",
-              "Business Price": "10000"
+              "Business_Name": "dsjfds",
+              "Business_Type": "Servicios",
+              "Business_Desc": "sadffaf",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000"
             },
             {
-              "Owners Name": "dsjddnfs",
-              "Business Name": "jdlsnllfds",
-              "Business Type": "Servicios",
-              "Business Desc": "adsfdsf",
-              "Business Location": "64 Zoo Lane",
-              "Business Price": "10000"
+              "Owners_Name": "dsjddnfs",
+              "Business_Name": "jdlsnllfds",
+              "Business_Type": "Servicios",
+              "Business_Desc": "adsfdsf",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000"
             },
             {
-              "Business Name": "testtest",
-              "Business Type": "Servicios",
-              "Business Desc": "test",
-              "Business Location": "64 Zoo Lane",
-              "Business Price": "10000"
+              "Business_Name": "testtest",
+              "Business_Type": "Servicios",
+              "Business_Desc": "test",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000"
             }
           ]
         }
@@ -103,12 +103,12 @@
           "RatingNumber": "",
           "CategoryData": [
             {
-              "Business Name": "dsjdoas",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "dsfjdns",
-              "Business Location": "64 Zoo Lane",
-              "Business Price": "10000",
-              "Rating Count": "0"
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000",
+              "Rating_Count": "0"
             }
           ]
         }
@@ -117,12 +117,12 @@
           "RatingNumber": "1",
           "CategoryData": [
             {
-              "Business Name": "dsjdoas",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "dsfjdns",
-              "Business Location": "64 Zoo Lane",
-              "Business Price": "10000",
-              "Rating Count": "1"
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000",
+              "Rating_Count": "1"
             }
           ]
         }
@@ -131,12 +131,12 @@
           "RatingNumber": "2",
           "CategoryData": [
             {
-              "Business Name": "dsjdoas",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "dsfjdns",
-              "Business Location": "64 Zoo Lane",
-              "Business Price": "10000",
-              "Rating Count": "1"
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000",
+              "Rating_Count": "1"
             }
           ]
         }
@@ -145,12 +145,12 @@
           "RatingNumber": "3",
           "CategoryData": [
             {
-              "Business Name": "dsjdoas",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "dsfjdns",
-              "Business Location": "64 Zoo Lane",
-              "Business Price": "10000",
-              "Rating Count": "1"
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000",
+              "Rating_Count": "1"
             }
           ]
         }
@@ -159,12 +159,12 @@
           "RatingNumber": "4",
           "CategoryData": [
             {
-              "Business Name": "dsjdoas",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "dsfjdns",
-              "Business Location": "64 Zoo Lane",
-              "Business Price": "10000",
-              "Rating Count": "1"
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000",
+              "Rating_Count": "1"
             }
           ]
         }
@@ -173,12 +173,12 @@
           "RatingNumber": "5",
           "CategoryData": [
             {
-              "Business Name": "dsjdoas",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "dsfjdns",
-              "Business Location": "64 Zoo Lane",
-              "Business Price": "10000",
-              "Rating Count": "1"
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000",
+              "Rating_Count": "1"
             }
           ]
         }

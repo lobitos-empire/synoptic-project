@@ -277,6 +277,11 @@ ul{
     border-color: #329D9C;
     color: #fff;
 }
+.btn.btn-primary:hover {
+    background: #329D9C;
+    border-color: #329D9C;
+    color: #fff;
+}
 .filter{
     margin-top: 50px;
 }

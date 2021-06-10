@@ -1,278 +1,105 @@
 doctype html
 html(lang="en")
     head
+        include includes/head.pug
 
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
-        link(rel="stylesheet" type="text/css" href="../styles/style.css")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
-        title #{ title }
-
-    body
+    body.background
         div.container
             div.columns
                 div.column.col-12
-                    include includes/tabL.pug
+                    include includes/tabLBusiness.pug
+                    include includes/spanish.pug
+
+        div.container
+            div.columns
+                div.column.col-1
+                div.column.col-1
+                div.column.col-7.text-right
+                    div.filter
+                        input#tag-0.filter-tag(type='radio' name='filter-radio' hidden='' checked='')
+                        input#tag-1.filter-tag(type='radio' name='filter-radio' hidden='')
+                        input#tag-2.filter-tag(type='radio' name='filter-radio' hidden='')
+                        input#tag-3.filter-tag(type='radio' name='filter-radio' hidden='')
+                        input#tag-4.filter-tag(type='radio' name='filter-radio' hidden='')
+                        input#tag-5.filter-tag(type='radio' name='filter-radio' hidden='')
+                        input#tag-6.filter-tag(type='radio' name='filter-radio' hidden='')
+
+                        div.filter-nav
+                            label.chip(for='tag-0') All
+                            label.chip(for='tag-1') Food & Drink
+                            label.chip(for='tag-2') Things To Do
+                            label.chip(for='tag-3') Services
+                            label.chip(for='tag-4') Hotels
+                            label.chip(for='tag-5') Purchases
+                            label.chip(for='tag-6') Others
+
+                        //div.filter-body
+                        //    div.filter-item.card(data-tag='tag-1')
+                        //
+                        //    div.filter-item.card(data-tag='tag-2')
+                        //
+                        //    div.filter-item.card(data-tag='tag-3')
+                        //
+                        //    div.filter-item.card(data-tag='tag-4')
+                        //
+                        //    div.filter-item.card(data-tag='tag-5')
+                        //
+                        //    div.filter-item.card(data-tag='tag-6')
+
+                div.column.col-3.text-right
+                    section.navebar-section.searchBar.searchBar1
+                        div.input-group.input-inline
+                            input.form-input(type="text", placeholder="Search ..." name="search")
+                            button.btn.btn-primary.input-group-btn
+                                i.icon.icon-search
+
+        //Quenni Business
+
+        div.container
+            div.column.col-12.my-2.col-sm-12
+
+                div.card
+                    div.columns
+                        div.column.col-3.col-sm-12
+                            div.card-image
+                                img.img-responsive(src="../images/seashell.JPG", alt="Seashells Crafts")
+                        div.column.col-6.col-sm-12
+                            div.card-header
+                                div.card-title.h4 Lobitos Crafts
+                            div.card-body
+                                p
+                                    b Business Owner :
+                                    |  Quenni Carreño
+
+                                p
+                                    b Business Type :
+                                    |  Things To Do
+
+                                p
+                                    b Description :
+                                    |  Along with a team of 30 other artisan women,
+                                    | I make crafts out of local materials, such as shells
+                                    | and bones, which are sold as souvenirs.
 
 
+                        div.column.col-3.col-sm-12
+                            div.card-body.vl
+                                p
+                                    b Number of Clicks :
+                                    |  50
+                                p
+                                    b Rating :
+                                    |
+                                    form-input.star-rating(method="post" action='/rating')
+                                        input#star5(type='radio' name='rate' value='5')
+                                        label(for='star5' title='text') 5 stars
+                                        input#star4(type='radio' name='rate' value='4')
+                                        label(for='star4' title='text') 4 stars
+                                        input#star3(type='radio' name='rate' value='3')
+                                        label(for='star3' title='text') 3 stars
+                                        input#star2(type='radio' name='rate' value='2')
+                                        label(for='star2' title='text') 2 stars
+                                        input#star1(type='radio' name='rate' value='1')
+                                        label(for='star1' title='text') 1 star
 
-.container.mx-auto
-    .flex.flex-wrap.-mx-4
-        .w-full.p-4(class='sm:w-1/2 md:w-1/2 xl:w-1/4')
-            a.c-card.block.bg-white.shadow-md.rounded-lg.overflow-hidden(href='' class='hover:shadow-xl')
-                .relative.pb-48.overflow-hidden
-                    img.absolute.inset-0.h-full.w-full.object-cover(src='https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80' alt='')
-                .p-4
-                    span.inline-block.px-2.py-1.leading-none.bg-orange-200.text-orange-800.rounded-full.font-semibold.uppercase.tracking-wide.text-xs Highlight
-                    h2.mt-2.mb-2.font-bold Purus Ullamcorper Inceptos Nibh
-                    p.text-sm
-                        | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
-                    .mt-3.flex.items-center
-                        span.text-sm.font-semibold ab
-                        span.font-bold.text-xl 45,00
-                        span.text-sm.font-semibold &euro;
-                .p-4.border-t.border-b.text-xs.text-gray-700
-                    span.flex.items-center.mb-1
-                        i.far.fa-clock.fa-fw.mr-2.text-gray-900
-                        |  3 Tage
-                    span.flex.items-center
-                        i.far.fa-address-card.fa-fw.text-gray-900.mr-2
-                        |  Erm&auml;&szlig;igung mit Karte
-                .p-4.flex.items-center.text-sm.text-gray-600
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-gray-400(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    span.ml-2 34 Bewertungen
-        .w-full.p-4(class='sm:w-1/2 md:w-1/2 xl:w-1/4')
-            a.c-card.block.bg-white.shadow-md.rounded-lg.overflow-hidden(href='' class='hover:shadow-xl')
-                .relative.pb-48.overflow-hidden
-                    img.absolute.inset-0.h-full.w-full.object-cover(src='https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80' alt='')
-                .p-4
-                    span.inline-block.px-2.py-1.leading-none.bg-orange-200.text-orange-800.rounded-full.font-semibold.uppercase.tracking-wide.text-xs Highlight
-                    h2.mt-2.mb-2.font-bold Purus Ullamcorper Inceptos Nibh
-                    p.text-sm
-                        | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
-                    .mt-3.flex.items-center
-                        span.text-sm.font-semibold ab
-                        span.font-bold.text-xl 45,00
-                        span.text-sm.font-semibold &euro;
-                .p-4.border-t.border-b.text-xs.text-gray-700
-                    span.flex.items-center.mb-1
-                        i.far.fa-clock.fa-fw.mr-2.text-gray-900
-                        |  3 Tage
-                    span.flex.items-center
-                        i.far.fa-address-card.fa-fw.text-gray-900.mr-2
-                        |  Erm&auml;&szlig;igung mit Karte
-                .p-4.flex.items-center.text-sm.text-gray-600
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-gray-400(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    span.ml-2 34 Bewertungen
-        .w-full.p-4(class='sm:w-1/2 md:w-1/2 xl:w-1/4')
-            a.c-card.block.bg-white.shadow-md.rounded-lg.overflow-hidden(href='' class='hover:shadow-xl')
-                .relative.pb-48.overflow-hidden
-                    img.absolute.inset-0.h-full.w-full.object-cover(src='https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80' alt='')
-                .p-4
-                    span.inline-block.px-2.py-1.leading-none.bg-orange-200.text-orange-800.rounded-full.font-semibold.uppercase.tracking-wide.text-xs Highlight
-                    h2.mt-2.mb-2.font-bold Purus Ullamcorper Inceptos Nibh
-                    p.text-sm
-                        | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
-                    .mt-3.flex.items-center
-                        span.text-sm.font-semibold ab
-                        span.font-bold.text-xl 45,00
-                        span.text-sm.font-semibold &euro;
-                .p-4.border-t.border-b.text-xs.text-gray-700
-                    span.flex.items-center.mb-1
-                        i.far.fa-clock.fa-fw.mr-2.text-gray-900
-                        |  3 Tage
-                    span.flex.items-center
-                        i.far.fa-address-card.fa-fw.text-gray-900.mr-2
-                        |  Erm&auml;&szlig;igung mit Karte
-                .p-4.flex.items-center.text-sm.text-gray-600
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-gray-400(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    span.ml-2 34 Bewertungen
-        .w-full.p-4(class='sm:w-1/2 md:w-1/2 xl:w-1/4')
-            a.c-card.block.bg-white.shadow-md.rounded-lg.overflow-hidden(href='' class='hover:shadow-xl')
-                .relative.pb-48.overflow-hidden
-                    img.absolute.inset-0.h-full.w-full.object-cover(src='https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80' alt='')
-                .p-4
-                    span.inline-block.px-2.py-1.leading-none.bg-orange-200.text-orange-800.rounded-full.font-semibold.uppercase.tracking-wide.text-xs Highlight
-                    h2.mt-2.mb-2.font-bold Purus Ullamcorper Inceptos Nibh
-                    p.text-sm
-                        | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
-                    .mt-3.flex.items-center
-                        span.text-sm.font-semibold ab
-                        span.font-bold.text-xl 45,00
-                        span.text-sm.font-semibold &euro;
-                .p-4.border-t.border-b.text-xs.text-gray-700
-                    span.flex.items-center.mb-1
-                        i.far.fa-clock.fa-fw.mr-2.text-gray-900
-                        |  3 Tage
-                    span.flex.items-center
-                        i.far.fa-address-card.fa-fw.text-gray-900.mr-2
-                        |  Erm&auml;&szlig;igung mit Karte
-                .p-4.flex.items-center.text-sm.text-gray-600
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-gray-400(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    span.ml-2 34 Bewertungen
-        .w-full.p-4(class='sm:w-1/2 md:w-1/2 xl:w-1/4')
-            a.c-card.block.bg-white.shadow-md.rounded-lg.overflow-hidden(href='' class='hover:shadow-xl')
-                .relative.pb-48.overflow-hidden
-                    img.absolute.inset-0.h-full.w-full.object-cover(src='https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80' alt='')
-                .p-4
-                    span.inline-block.px-2.py-1.leading-none.bg-orange-200.text-orange-800.rounded-full.font-semibold.uppercase.tracking-wide.text-xs Highlight
-                    h2.mt-2.mb-2.font-bold Purus Ullamcorper Inceptos Nibh
-                    p.text-sm
-                        | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
-                    .mt-3.flex.items-center
-                        span.text-sm.font-semibold ab
-                        span.font-bold.text-xl 45,00
-                        span.text-sm.font-semibold &euro;
-                .p-4.border-t.border-b.text-xs.text-gray-700
-                    span.flex.items-center.mb-1
-                        i.far.fa-clock.fa-fw.mr-2.text-gray-900
-                        |  3 Tage
-                    span.flex.items-center
-                        i.far.fa-address-card.fa-fw.text-gray-900.mr-2
-                        |  Erm&auml;&szlig;igung mit Karte
-                .p-4.flex.items-center.text-sm.text-gray-600
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-gray-400(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    span.ml-2 34 Bewertungen
-        .w-full.p-4(class='sm:w-1/2 md:w-1/2 xl:w-1/4')
-            a.c-card.block.bg-white.shadow-md.rounded-lg.overflow-hidden(href='' class='hover:shadow-xl')
-                .relative.pb-48.overflow-hidden
-                    img.absolute.inset-0.h-full.w-full.object-cover(src='https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80' alt='')
-                .p-4
-                    span.inline-block.px-2.py-1.leading-none.bg-orange-200.text-orange-800.rounded-full.font-semibold.uppercase.tracking-wide.text-xs Highlight
-                    h2.mt-2.mb-2.font-bold Purus Ullamcorper Inceptos Nibh
-                    p.text-sm
-                        | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
-                    .mt-3.flex.items-center
-                        span.text-sm.font-semibold ab
-                        span.font-bold.text-xl 45,00
-                        span.text-sm.font-semibold &euro;
-                .p-4.border-t.border-b.text-xs.text-gray-700
-                    span.flex.items-center.mb-1
-                        i.far.fa-clock.fa-fw.mr-2.text-gray-900
-                        |  3 Tage
-                    span.flex.items-center
-                        i.far.fa-address-card.fa-fw.text-gray-900.mr-2
-                        |  Erm&auml;&szlig;igung mit Karte
-                .p-4.flex.items-center.text-sm.text-gray-600
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-gray-400(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    span.ml-2 34 Bewertungen
-        .w-full.p-4(class='sm:w-1/2 md:w-1/2 xl:w-1/4')
-            a.c-card.block.bg-white.shadow-md.rounded-lg.overflow-hidden(href='' class='hover:shadow-xl')
-                .relative.pb-48.overflow-hidden
-                    img.absolute.inset-0.h-full.w-full.object-cover(src='https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80' alt='')
-                .p-4
-                    span.inline-block.px-2.py-1.leading-none.bg-orange-200.text-orange-800.rounded-full.font-semibold.uppercase.tracking-wide.text-xs Highlight
-                    h2.mt-2.mb-2.font-bold Purus Ullamcorper Inceptos Nibh
-                    p.text-sm
-                        | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
-                    .mt-3.flex.items-center
-                        span.text-sm.font-semibold ab
-                        span.font-bold.text-xl 45,00
-                        span.text-sm.font-semibold &euro;
-                .p-4.border-t.border-b.text-xs.text-gray-700
-                    span.flex.items-center.mb-1
-                        i.far.fa-clock.fa-fw.mr-2.text-gray-900
-                        |  3 Tage
-                    span.flex.items-center
-                        i.far.fa-address-card.fa-fw.text-gray-900.mr-2
-                        |  Erm&auml;&szlig;igung mit Karte
-                .p-4.flex.items-center.text-sm.text-gray-600
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-gray-400(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    span.ml-2 34 Bewertungen
-        .w-full.p-4(class='sm:w-1/2 md:w-1/2 xl:w-1/4')
-            a.c-card.block.bg-white.shadow-md.rounded-lg.overflow-hidden(href='' class='hover:shadow-xl')
-                .relative.pb-48.overflow-hidden
-                    img.absolute.inset-0.h-full.w-full.object-cover(src='https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80' alt='')
-                .p-4
-                    span.inline-block.px-2.py-1.leading-none.bg-orange-200.text-orange-800.rounded-full.font-semibold.uppercase.tracking-wide.text-xs Highlight
-                    h2.mt-2.mb-2.font-bold Purus Ullamcorper Inceptos Nibh
-                    p.text-sm
-                        | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
-                    .mt-3.flex.items-center
-                        span.text-sm.font-semibold ab
-                        span.font-bold.text-xl 45,00
-                        span.text-sm.font-semibold &euro;
-                .p-4.border-t.border-b.text-xs.text-gray-700
-                    span.flex.items-center.mb-1
-                        i.far.fa-clock.fa-fw.mr-2.text-gray-900
-                        |  3 Tage
-                    span.flex.items-center
-                        i.far.fa-address-card.fa-fw.text-gray-900.mr-2
-                        |  Erm&auml;&szlig;igung mit Karte
-                .p-4.flex.items-center.text-sm.text-gray-600
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-yellow-500(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    svg.h-4.w-4.fill-current.text-gray-400(viewbox='0 0 24 24' xmlns='http://www.w3.org/2000/svg')
-                        path(d='M8.128 19.825a1.586 1.586 0 0 1-1.643-.117 1.543 1.543 0 0 1-.53-.662 1.515 1.515 0 0 1-.096-.837l.736-4.247-3.13-3a1.514 1.514 0 0 1-.39-1.569c.09-.271.254-.513.475-.698.22-.185.49-.306.776-.35L8.66 7.73l1.925-3.862c.128-.26.328-.48.577-.633a1.584 1.584 0 0 1 1.662 0c.25.153.45.373.577.633l1.925 3.847 4.334.615c.29.042.562.162.785.348.224.186.39.43.48.704a1.514 1.514 0 0 1-.404 1.58l-3.13 3 .736 4.247c.047.282.014.572-.096.837-.111.265-.294.494-.53.662a1.582 1.582 0 0 1-1.643.117l-3.865-2-3.865 2z')
-                    span.ml-2 34 Bewertungen
+                                        input(hidden, value='')

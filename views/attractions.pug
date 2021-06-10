@@ -1,14 +1,7 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
-        link(rel="stylesheet" type="text/css" href="../styles/style.css")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
-        script(src="../scripts/tourist.js" defer)
-        title #{ title }
+        include includes/head.pug
     body.background
         div.container
             div.columns
@@ -16,48 +9,63 @@ html(lang="en")
                     include includes/tabTAttractions
                     include includes/translator.pug
         div.container.move2
-            div.column.col-12.my-2.col-sm-12
-                div.card
-                    div.columns
-                        div.column.col-3
-                            div.card-image
-                                img.img-responsive(src="../images/surfingIMG.jpg", alt="Seashells Crafts")
-                        div.column.col-6
-                            div.card-header
-                                div.card-title.h4 Surfing
-                            div.card-body
-                                p
-                                    b Description :
-                                    |
-                                    |  ..............
-                                p
-                                    b Location :
-                                    |
-                                    | ...............
+            div.column.col-12.my-2.col-sm-12.py-2
 
-                        div.column.col-3
-                            div.card-body.vl
-                                p
-                                    b Estimate Payment :
-                                    |  50 sol
-                                p
-                                    b Tourist Interest :
-                                    |  50
-                                p
-                                    //b Rating :
-                                    //form-input#ratingForm.star-rating(method="post")
-                                    //    input#star5(type='radio' name='rate' value='5' onclick="postToController();")
-                                    //    label(for='star5' title='text') 5 stars
-                                    //    input#star4(type='radio' name='rate' value='4' onclick="postToController();")
-                                    //    label(for='star4' title='text') 4 stars
-                                    //    input#star3(type='radio' name='rate' value='3' onclick="postToController();")
-                                    //    label(for='star3' title='text') 3 stars
-                                    //    input#star2(type='radio' name='rate' value='2' onclick="postToController();")
-                                    //    label(for='star2' title='text') 2 stars
-                                    //    input#star1(type='radio' name='rate' value='1' onclick="postToController();")
-                                    //    label(for='star1' title='text') 1 star
+                for n in attractions
 
-            div.column.col-12.my-2.col-sm-12
+                    div.card
+                        div.columns
+                            div.column.col-3
+                                div.card-image
+                                    img.img-responsive(src="!{n.Business_Img}", alt="Business Image")
+                            div.column.col-6
+                                div.card-header
+                                    div.card-title.h4
+                                        p !{n.Business_Name}
+
+                                div.card-body
+                                    p
+                                        b Business Owner :
+                                        |  !{n.Owners_Name}
+                                    p
+                                        b Business Type :
+                                        |  !{n.Business_Type}
+                                    p
+                                        b Description :
+                                        |  !{n.Business_Desc}
+
+                                    p
+                                        b Location :
+                                        |  !{n.Business_Location}
+
+                            div.column.col-3
+                                div.card-body.vl
+                                    p
+                                        b Estimate Payment :
+                                        |  !{n.Business_Price}
+                                    p
+                                        b Rating :
+                                        |
+                                        form-input.star-rating(method="post" action='/rating')
+                                            input#star5(type='radio' name='rate' value='5')
+                                            label(for='star5' title='text') 5 stars
+                                            input#star4(type='radio' name='rate' value='4')
+                                            label(for='star4' title='text') 4 stars
+                                            input#star3(type='radio' name='rate' value='3')
+                                            label(for='star3' title='text') 3 stars
+                                            input#star2(type='radio' name='rate' value='2')
+                                            label(for='star2' title='text') 2 stars
+                                            input#star1(type='radio' name='rate' value='1')
+                                            label(for='star1' title='text') 1 star
+
+                                            input(hidden, value='' name='ownersName')
+                                            input(hidden, value='' name='businessName')
+                                            input(hidden, value='' name='businessType')
+                                            input(hidden, value='' name='businessDesc')
+                                            input(hidden, value='' name='businessPrice')
+                                            input(hidden, value='' name='businessLoc')
+
+            div.column.col-12.my-2.col-sm-12.py-2
                 div.card
                     div.columns
                         div.column.col-3
@@ -97,3 +105,4 @@ html(lang="en")
                                     //    label(for='star2' title='text') 2 stars
                                     //    input#star1(type='radio' name='rate' value='1' onclick="postToController();")
                                     //    label(for='star1' title='text') 1 star
+

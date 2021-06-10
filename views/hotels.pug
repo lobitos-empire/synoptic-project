@@ -1,14 +1,8 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
-        link(rel="stylesheet" type="text/css" href="../styles/style.css")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
+        include includes/head.pug
         script(src="../scripts/tourist.js" defer)
-        title #{ title }
 
     body.background
 
@@ -22,7 +16,7 @@ html(lang="en")
                     div.column.col-4.col-sm-12.my-2
                         div.card.hotelCard#hotelModal-id
                             div.card-image
-                                img.img-responsive(src="../images/hotels.png", alt="Hotel Image")
+                                img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
                             div.card-header
                                 div.card-title.h4 La Casona
                                 div.card-subtitle.text-grey.text-italic Hotel
@@ -44,7 +38,7 @@ html(lang="en")
                     div.column.col-4.col-sm-12.my-2
                         div.card.hotelCard#hotelModal2-id
                             div.card-image
-                                    img.img-responsive(src="../images/hotels.png", alt="Hotel Image")
+                                    img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
                             div.card-header
                                 div.card-title.h4 Buenavista Lobitos
                                 div.card-subtitle.text-grey.text-italic Hotel
@@ -64,7 +58,7 @@ html(lang="en")
                     div.column.col-4.col-sm-12.my-2
                         div.card.hotelCard#hotelModal3-id
                             div.card-image
-                                    img.img-responsive(src="../images/hotels.png", alt="Hotel Image")
+                                    img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
                             div.card-header
                                 div.card-title.h4 El Hueco Villas
                                 div.card-subtitle.text-grey.text-italic Hotel
@@ -84,7 +78,7 @@ html(lang="en")
                     div.column.col-4.col-sm-12.my-2
                         div.card.hotelCard#hotelModal4-id
                             div.card-image
-                                    img.img-responsive(src="../images/hotels.png", alt="Explore local business")
+                                    img.img-responsive(src="../images/hotelss.jpg", alt="Explore local business")
                             div.card-header
                                 div.card-title.h4 Mahalo Lobitos Surf House
                                 div.card-subtitle.text-grey.text-italic Hotel
@@ -104,7 +98,7 @@ html(lang="en")
                     div.column.col-4.col-sm-12.my-2
                         div.card.hotelCard#hotelModal5-id
                             div.card-image
-                                    img.img-responsive(src="../images/hotels.png", alt="Explore local business")
+                                    img.img-responsive(src="../images/hotelss.jpg", alt="Explore local business")
                             div.card-header
                                 div.card-title.h4 Hotel Navego
                                 div.card-subtitle.text-grey.text-italic Hotel

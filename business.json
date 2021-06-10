@@ -9,56 +9,19 @@
               "Owners Name": "dskfd",
               "Business Name": "dsjdoas",
               "Business Type": "Comidas y bebidas",
-              "Business Desc": "dsfjdns"
+              "Business Desc": "dsfjdns",
+              "Business Location": "64 Zoo Lane",
+              "Business Price": "10000"
             },
             {
               "Owners Name": "dsvbfds",
               "Business Name": "dafdafa",
               "Business Type": "Comidas y bebidas",
-              "Business Desc": "sdfds"
-            },
-            {
-              "Owners Name": "asdsa",
-              "Business Name": "sadsda",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "sadsad"
-            },
-            {
-              "Owners Name": "Testificate Data",
-              "Business Name": "dnslkvndslkxnv",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "lgrndslknvksn"
-            },
-            {
-              "Owners Name": "testificatedata",
-              "Business Name": "fdbsjsdl",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "jjfndlsjnlf"
-            },
-            {
-              "Owners Name": "sakjdbca",
-              "Business Name": "kdvsjkdbs",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "dnsjlnsdl"
-            },
-            {
-              "Owners Name": "salcan",
-              "Business Name": "vndsndsl",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "vldsnljdsn"
-            },
-            {
-              "Owners Name": "dndslknvkds",
-              "Business Name": "fndlsdnflds",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "kdnskfds"
-            },
-            {
-              "Owners Name": "dna,dcnal",
-              "Business Name": "lndlsjfnvlkds",
-              "Business Type": "Comidas y bebidas",
-              "Business Desc": "lvdnslkncd"
+              "Business Desc": "sdfds",
+              "Business Location": "64 Zoo Lane",
+              "Business Price": "10000"
             }
+
           ]
         }
       },
@@ -71,7 +34,9 @@
               "Owners Name": "dsfkdsj",
               "Business Name": "dksnjn",
               "Business Type": "Cosas para hacer",
-              "Business Desc": "dsafdsf"
+              "Business Desc": "dsafdsf",
+              "Business Location": "64 Zoo Lane",
+              "Business Price": "10000"
             }
           ]
         }
@@ -85,18 +50,24 @@
               "Owners Name": "dsnfds",
               "Business Name": "dsjfds",
               "Business Type": "Servicios",
-              "Business Desc": "sadffaf"
+              "Business Desc": "sadffaf",
+              "Business Location": "64 Zoo Lane",
+              "Business Price": "10000"
             },
             {
               "Owners Name": "dsjddnfs",
               "Business Name": "jdlsnllfds",
               "Business Type": "Servicios",
-              "Business Desc": "adsfdsf"
+              "Business Desc": "adsfdsf",
+              "Business Location": "64 Zoo Lane",
+              "Business Price": "10000"
             },
             {
               "Business Name": "testtest",
               "Business Type": "Servicios",
-              "Business Desc": "test"
+              "Business Desc": "test",
+              "Business Location": "64 Zoo Lane",
+              "Business Price": "10000"
             }
           ]
         }
@@ -122,6 +93,93 @@
           "CategoryName": "Otra",
           "CategoryData": [
             {}
+          ]
+        }
+      }
+    ],
+    "Ratings": [
+      {
+        "Rating": {
+          "RatingNumber": "",
+          "CategoryData": [
+            {
+              "Business Name": "dsjdoas",
+              "Business Type": "Comidas y bebidas",
+              "Business Desc": "dsfjdns",
+              "Business Location": "64 Zoo Lane",
+              "Business Price": "10000",
+              "Rating Count": "0"
+            }
+          ]
+        }
+      }, {
+        "Rating": {
+          "RatingNumber": "1",
+          "CategoryData": [
+            {
+              "Business Name": "dsjdoas",
+              "Business Type": "Comidas y bebidas",
+              "Business Desc": "dsfjdns",
+              "Business Location": "64 Zoo Lane",
+              "Business Price": "10000",
+              "Rating Count": "1"
+            }
+          ]
+        }
+      }, {
+        "Rating": {
+          "RatingNumber": "2",
+          "CategoryData": [
+            {
+              "Business Name": "dsjdoas",
+              "Business Type": "Comidas y bebidas",
+              "Business Desc": "dsfjdns",
+              "Business Location": "64 Zoo Lane",
+              "Business Price": "10000",
+              "Rating Count": "1"
+            }
+          ]
+        }
+      }, {
+        "Rating": {
+          "RatingNumber": "3",
+          "CategoryData": [
+            {
+              "Business Name": "dsjdoas",
+              "Business Type": "Comidas y bebidas",
+              "Business Desc": "dsfjdns",
+              "Business Location": "64 Zoo Lane",
+              "Business Price": "10000",
+              "Rating Count": "1"
+            }
+          ]
+        }
+      }, {
+        "Rating": {
+          "RatingNumber": "4",
+          "CategoryData": [
+            {
+              "Business Name": "dsjdoas",
+              "Business Type": "Comidas y bebidas",
+              "Business Desc": "dsfjdns",
+              "Business Location": "64 Zoo Lane",
+              "Business Price": "10000",
+              "Rating Count": "1"
+            }
+          ]
+        }
+      }, {
+        "Rating": {
+          "RatingNumber": "5",
+          "CategoryData": [
+            {
+              "Business Name": "dsjdoas",
+              "Business Type": "Comidas y bebidas",
+              "Business Desc": "dsfjdns",
+              "Business Location": "64 Zoo Lane",
+              "Business Price": "10000",
+              "Rating Count": "1"
+            }
           ]
         }
       }

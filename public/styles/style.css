@@ -35,6 +35,30 @@ body{
 }
 
 /* Home Page Heading */
+.localBusinessFont{
+    color: palevioletred;
+
+}
+.localBusinessCardText{
+    color: black;
+    font-size: medium;
+
+}
+header{
+    background-color: #CFF4D2;
+}
+.cardSubtitles{
+    font-size: medium;
+}
+.businessCardBackground{
+    background-image: url("../images/uploadimage.jpg");
+
+}
+
+
+.moveuploadCard{
+    left: 50%;
+}
 
 h1{
     position: relative;
@@ -164,6 +188,9 @@ ul{
     margin-top: 40px;
     font-family: Oswald, serif;
     font-size: 50px;
+}
+.exploreTitle{
+    text-align: center;
 }
 
 
@@ -357,56 +384,11 @@ ul{
     padding-right: 5%;
     /*left:10%;*/
 }
-.searchBar1{
-    margin-top: 50px;
-    margin-right: 50px;
-}
-.btn.btn-primary {
-    background: #329D9C;
-    border-color: #329D9C;
-    color: #fff;
-}
-.filter{
-    margin-top: 50px;
+
+.imageFillColumn{
+    column-fill: auto;
 }
 
-/* Star Rating */
-.star-rating {
-    float: left;
-    height: 46px;
-    padding: 0 10px;
+.cardImageExplore{
+    width:100%;
 }
-.star-rating:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-}
-.star-rating:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
-}
-.star-rating:not(:checked) > label:before {
-    content: '★ ';
-}
-.star-rating > input:checked ~ label {
-    color: #ffc700;
-}
-.star-rating:not(:checked) > label:hover,
-.star-rating:not(:checked) > label:hover ~ label {
-    color: #deb217;
-}
-.star-rating > input:checked + label:hover,
-.star-rating > input:checked + label:hover ~ label,
-.star-rating > input:checked ~ label:hover,
-.star-rating > input:checked ~ label:hover ~ label,
-.star-rating > label:hover ~ input:checked ~ label {
-    color: #c59b08;
-}
-
-
-
-

@@ -301,6 +301,17 @@ body.background{
     position: relative;
     bottom:50%;
 }
+
+@media only screen and (max-width: 600px) {
+
+
+
+}
+.centerPasccode{
+    display:block;
+    margin: 0 auto;
+
+}
 .move{
     position: absolute;
     top: 20%;

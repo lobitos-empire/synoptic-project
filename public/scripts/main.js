@@ -9,7 +9,7 @@ if(window.location.pathname === "/upload"){
     document.getElementById("passCode").addEventListener('input', ()=>{
         if(document.getElementById("passCode").value === "0000"){
             document.getElementById("lbBody").className = "background";
-            document.getElementById("passCode").className = "d-invisible";
+            document.getElementById("passCodeDiv").className = "d-invisible";
         }
     })
 }

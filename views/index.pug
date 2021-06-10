@@ -1,12 +1,7 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
-        link(rel="stylesheet" type="text/css" href="../styles/style.css")
-        title #{ title }
+        include includes/head.pug
 
     body.backgroundimage
 
@@ -15,8 +10,8 @@ html(lang="en")
                 div.container
                     div.columns
                         div.column.col-6
-                            a(href="/index")
-                            img.logo.img-responsive(src="../images/logo1.png", alt="Logo")
+                            a(href="/")
+                                img.logo1.img-responsive(src="../images/logo1.png", alt="Logo")
 
                         div.column.col-6
                             include includes/translator.pug
@@ -24,16 +19,13 @@ html(lang="en")
 
                 div.container
                     div.columns
-                        div.column.col-3
+                        div.column.col-12.text-center
                             h1 Welcome to Lobitos
 
-                        div.column.col-3
+                div.container
+                    div.columns
+                        div.column.col-6.text-right.col-sm-12.my-2
                             a.tButton(href="/tourist") Tourists
 
-                        div.column.col-3
+                        div.column.col-6.text-left.col-sm-12.my-2
                             a.lButton(href="/localBusiness") Local Business
-
-                        div.column.col-3
-
-
-

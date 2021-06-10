@@ -1,18 +1,13 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
-        link(rel="stylesheet" type="text/css" href="../styles/style.css")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
-        title #{ title }
+        include includes/head.pug
+
     body.background
         header.navbar.py-2.px-2
             section.navbar-section.col-sm-12
-                img(src="../images/logo1.png", alt="Logo").logo2.img-responsive
                 a(href="/").btn.btn-link Home
+                    img(src="../images/logo1.png", alt="Logo").logo1.img-responsive
             section.navbar-center.col-sm-12
                 h3 Local Business
             section.navbar-section.col-sm-12

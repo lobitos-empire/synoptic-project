@@ -68,14 +68,31 @@ app.get('/hotels', (req, res) => {
         title: 'Hotels',
     })
 });
-
-
 app.get('/localBusiness', (req, res) => {
     res.render('localBusiness', {
         title: 'Local Business'
     })
 });
-
+app.get('/business', (req, res) => {
+    res.render('business', {
+        title: 'Business'
+    })
+});
+app.get('/upload', (req, res) => {
+    res.render('upload', {
+        title: 'Upload'
+    })
+});
+app.get('/explore', (req, res) => {
+    res.render('explore', {
+        title: 'Explore'
+    })
+});
+app.get('/contacts', (req, res) => {
+    res.render('contacts', {
+        title: 'Contacts'
+    })
+});
 
 app.post('/localBusiness', (req, res) => {
 });

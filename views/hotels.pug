@@ -1,55 +1,31 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
-        link(rel="stylesheet" type="text/css" href="../styles/style.css")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
-        title #{ title }
+        include includes/head.pug
 
     body.background
+        header
+            div.container
+                div.columns
+                    div.column.col-12
+                        a(href="/")
+                            img.logo1(src="../images/logo1.png", alt="Logo")
+                        include includes/tabT
 
-        div.container
-            div.columns
-                div.column.col-6
-                    a(href="/")
-                        img.logo1(src="../images/logo1.png", alt="Logo")
 
-                div.column.col-6
-                    //div.move(class="tabForTourist")
-                    //    include includes/tabT
         div.move
             div.container
                 div.columns
                     div.column.col-4.col-sm-12.my-2
                         div.card.hottestCard
                             div.card-image
-                                //div.modal-active
-                                //    div.modal.container
-                                //        div.modal-header
-                                //            div.modal-title.h5 Map
-                                //        div.model-body
-                                //            div.container
-                                //                p Some Text here
-
                                 img.img-responsive(src="../images/localBusiness.JPG", alt="Hottest")
                             div.card-header
-                                div.card-title.h3 La Casona de Lobitos
+                                div.card-title.h4 La Casona de Lobitos
                                 div.card-subtitle.text-gray Explore
                             div.card-body
                                 p Explore Attractions in Lobitos Explore Attractions in Lobitos Explore Attractions in Lobitos
-                        //#modal-id.modal.active
-                        //    a.modal-overlay(href='#close' aria-label='Close')
-                        //    .modal-container
-                        //        .modal-header
-                        //            //span#close(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
-                        //            .modal-title.h5 La Casona Map
-                        //        .modal-body
-                        //            .content
-                        //                img.img-responsive(src="../images/hotelMap1.JPG", alt="Explore local business")
-                        //        .modal-footer
+
 
                     div.column.col-4.col-sm-12.my-2
                         div.card.attractionCard

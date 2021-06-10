@@ -8,12 +8,14 @@ body{
     height: 100%;
 }
 
-.logo{
-    top: 1%;
+/* Home Style */
+
+.logo1{
+    top: 0;
     left: 1%;
     position: absolute;
     width: auto;
-    height: 5rem;
+    height: 6rem;
 }
 
 .backgroundimage{
@@ -22,61 +24,43 @@ body{
     max-width: 100%;
     height: auto;
     background-color: #cff4d2;
+
+    /* Reference to background Image
+    https://www.svgbackgrounds.com/#flat-mountains
+    */
+
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%237be495' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23329d9c' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2373de96' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%231c8e98' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%236bd896' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%230d7e92' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2363d296' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%230d6f8a' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%235ccb96' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23175f7f' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2356c596' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23205072' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
 }
 
-.localBusinessFont{
-    color: palevioletred;
-
-}
-.localBusinessCardText{
-    color: black;
-    font-size: medium;
-
-}
-header{
-    background-color: #CFF4D2;
-}
-.cardSubtitles{
-    font-size: medium;
-}
-.uploadBusinessCard{
-    background-image: url("../images/uploadimage.jpg");
-
-}
-.moveuploadCard{
-    left: 50%;
-}
+/* Home Page Heading */
 
 h1{
-    position: absolute;
-    top: 20%;
-    left: 25%;
+    position: relative;
+    top: 90%;
     font-family: Oswald, serif;
-    font-size: 80px;
+    font-size: 5vw;
     line-height: 100px;
     font-weight: 400;
-    margin-top: 40px;
     color: black;
     text-transform: uppercase;
-    text-align: center;
+    display: inline;
 }
 
+/* Tourist Button */
+
 a.tButton{
-    position: absolute;
-    top: 50%;
-    left: 40%;
+    position: relative;
+    top: 450%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     border:0.16em solid black;
     color: black;
     padding: 15px 75px;
-    text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 25px;
+    display: inline;
+    font-size: 1.6vw;
     text-transform: uppercase;
     border-radius: 40px;
     font-weight: 600;
@@ -89,20 +73,20 @@ a.tButton{
     color: #cff4d2;
 }
 
+/* Local Business Button */
+
 a.lButton{
-    position: absolute;
-    top: 50%;
-    left: 60%;
+    position: relative;
+    top: 450%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+    border:0.16em solid black;
     background-color: black;
-    border: none;
     color: #cff4d2;
     padding: 15px 75px;
-    text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 25px;
+    display: inline;
+    font-size: 1.6vw;
     text-transform: uppercase;
     border-radius: 40px;
     font-weight: 600;
@@ -115,149 +99,7 @@ a.lButton{
     color: black;
 }
 
-@media screen and (max-width: 1400px){
-    h1{
-        position: absolute;
-        top: 20%;
-        left: 30%;
-        font-family: Oswald;
-        font-size: 50px;
-        line-height: 100px;
-        font-weight: 400;
-        margin-top: 40px;
-        color: white;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    a.tButton{
-        display:block;
-        margin:0.4em auto;
-        top: 50%;
-        left: 50%;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        border:0.16em solid black;
-        color: black;
-        padding: 15px 45px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 25px;
-        text-transform: uppercase;
-        border-radius: 40px;
-        font-weight: 400;
-        line-height: normal;
-    }
-    .tButton:hover {
-        background: black;
-        color: #cff4d2;
-    }
-
-    a.lButton{
-        display:block;
-        margin:0.4em auto;
-        top: 70%;
-        left: 50%;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        background-color: black;
-        border: none;
-        color: #cff4d2;
-        padding: 15px 45px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 25px;
-        text-transform: uppercase;
-        border-radius: 40px;
-        font-weight: 400;
-        line-height: normal;
-    }
-    .lButton:hover {
-        background: none;
-        border:0.16em solid black;
-        color: black;
-    }
-
-}
-
-
-@media screen and (max-width: 600px){
-    h1{
-        position: absolute;
-        top: 20%;
-        left: 30%;
-        font-family: Oswald;
-        font-size: 30px;
-        line-height: 50px;
-        font-weight: 400;
-        margin-top: 40px;
-        color: black;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    a.tButton{
-        display:block;
-        margin:0.4em auto;
-        top: 50%;
-        left: 50%;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        border:0.16em solid black;
-        color: black;
-        padding: 15px 25px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 15px;
-        text-transform: uppercase;
-        border-radius: 40px;
-        font-weight: 400;
-        line-height: normal;
-    }
-    .tButton:hover {
-        background: black;
-        color: #cff4d2;
-    }
-
-    a.lButton{
-        display:block;
-        margin:0.4em auto;
-        top: 70%;
-        left: 50%;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        background-color: black;
-        border: none;
-        color: #cff4d2;
-        padding: 15px 25px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 15px;
-        text-transform: uppercase;
-        border-radius: 40px;
-        font-weight: 400;
-        line-height: normal;
-    }
-    .lButton:hover {
-        background: none;
-        border:0.16em solid black;
-        color: black;
-    }
-
-}
-
-
-
-/*ul{*/
-/*    padding: 15px;*/
-/*}*/
-
-/*a{*/
-/*    padding: 15px;*/
-/*}*/
-
+/* Google Translator */
 
 #google_translate_element {
     position: absolute;
@@ -266,12 +108,102 @@ a.lButton{
     right: 23px;
 }
 
+/* General All Pages */
+
+/* Reference to background image
+https://www.svgbackgrounds.com/#flat-mountains
+*/
 
 body.background{
     background-color: #ffffff;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%237be495' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23329d9c' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2373de96' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%231c8e98' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%236bd896' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%230d7e92' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2363d296' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%230d6f8a' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%235ccb96' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23175f7f' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2356c596' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23205072' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
+}
+
+/* Tabs Styling */
+
+ul{
+    padding-top: 25px;
+}
+.tab{
+    border-bottom: none;
+}
+
+.tab .tab-item.active a {
+    border-bottom-color: #329D9C;
+    color: #329D9C;
+}
+.tab .tab-item a {
+    border-bottom: .1rem solid transparent;
+    color: black;
+    display: block;
+    margin: 0 .4rem 0 0;
+    padding: .4rem .2rem .3rem .2rem;
+    text-decoration: none;
+}
+.tab .tab-item a:hover {
+    color: #329D9C;
+    display: block;
+    margin: 0 .4rem 0 0;
+    padding: .4rem .2rem .3rem .2rem;
+    text-decoration: none;
+}
+
+
+.move{
+    position: absolute;
+    top: 20%;
+    left:10%;
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
+}
+.header{
+    position: absolute;
+    top: 3%;
+    left: 45%;
+    margin-top: 40px;
+    font-family: Oswald, serif;
+    font-size: 50px;
+}
+
+
+/* Local Business Styles */
+
+.uploadCard{
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    border-radius: 10px;
+}
+.home{
+    margin-top: 50%;
+}
+.businessCard{
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    border-radius: 10px;
+}
+.exploreCard{
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    border-radius: 10px;
+}
+.uploadImage{
+    display: inline;
+}
+
+.localBusinessCardText{
+    color: black;
+    font-size: medium;
+}
+
+.cardSubtitles{
+    font-size: medium;
+}
+.uploadBusinessCard{
+    background-image: url("../images/uploadimage.jpg");
 }
 .cardsAdjust{
     margin-top: 3%;
@@ -280,29 +212,26 @@ body.background{
     height: 5%;
 }
 
+/* Tourists Styles */
 
-
-
-.logo1{
-    top: 0%;
-    left: 2%;
-    position: absolute;
-    width: auto;
-    height: 6rem;
-}
-.logo2{
-    height: 3.5rem;
-
-}
-.move{
-    position: absolute;
-    top: 20%;
-    left:10%;
-    /*margin-left: 10px;*/
-    /*padding: 100px;*/
+.hottestCard{
+    width: 75%;
+    height: auto;
     filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
+    border-radius: 10px;
 }
-
+.attractionCard{
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    border-radius: 10px;
+}
+.hotelsCard{
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    border-radius: 10px;
+}
 .move.movePhraseCard{
     position: absolute;
     top: 67%;
@@ -314,105 +243,83 @@ body.background{
     height: auto;
     border-radius: 30px;
 }
-.header{
-    position: absolute;
-    top: 3%;
-    /*text-align: center;*/
-    left: 45%;
-    margin-top: 40px;
-    font-family: Oswald;
-    font-size: 50px;
-}
 
-/* Local Business Styles */
-
-.uploadCard{
-    /*width: 300px;*/
-    /*height: 300px;*/
-
-
-    height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
-    /*float: left;*/
-    /*padding: 15px;*/
-    border-radius: 10px;
-}
-.home{
-    margin-top: 50%;
-}
-.businessCard{
-    /*width: 300px;*/
-    /*height: 300px;*/
-
-    width: 75%;
-    height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
-    /*float: left;*/
-    /*padding: 15px;*/
-    border-radius: 10px;
-}
-
-.exploreCard{
-    /*width: 300px;*/
-    /*height: 300px;*/
-
-
-    height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
-    /*float: left;*/
-    /*padding: 15px;*/
-    border-radius: 10px;
-}
-
-.uploadImage{
-    display: inline;
-}
-
-
-
-/* Tourists Styles */
-
-.hottestCard{
-    /*width: 300px;*/
-    /*height: 300px;*/
-    width: 75%;
-    height: auto;
-
-    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
-    /*float: left;*/
-    /*padding: 15px;*/
-    border-radius: 10px;
-}
-.attractionCard{
-    /*width: 300px;*/
-    /*height: 300px;*/
-    width: 75%;
-    height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
-    /*float: left;*/
-    /*padding: 15px;*/
-    border-radius: 10px;
-}
-.hotelsCard{
-    /*width: 300px;*/
-    /*height: 300px;*/
-
-    width: 75%;
-    height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
-    /*float: left;*/
-    /*padding: 15px;*/
-    border-radius: 10px;
-}
 .searchBar{
     margin-top: -2%;
     float: right;
 }
-.tabForTourist{
-    position: absolute;
-    top: 1%;
-    left: 10%
 
 
 
+/* Local Business - Other Business */
+
+.card-title.h4{
+    font-weight: bold;
 }
+
+.vl {
+    border-left: 1px solid black;
+    height: auto;
+}
+.move2{
+    position: absolute;
+    top: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /*left:10%;*/
+}
+.searchBar1{
+    margin-top: 50px;
+    margin-right: 50px;
+}
+.btn.btn-primary {
+    background: #329D9C;
+    border-color: #329D9C;
+    color: #fff;
+}
+.filter{
+    margin-top: 50px;
+}
+
+
+/* Star Rating */
+
+.star-rating {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.star-rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.star-rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.star-rating:not(:checked) > label:before {
+    content: '★ ';
+}
+.star-rating > input:checked ~ label {
+    color: #ffc700;
+}
+.star-rating:not(:checked) > label:hover,
+.star-rating:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.star-rating > input:checked + label:hover,
+.star-rating > input:checked + label:hover ~ label,
+.star-rating > input:checked ~ label:hover,
+.star-rating > input:checked ~ label:hover ~ label,
+.star-rating > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+
+
+

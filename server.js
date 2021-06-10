@@ -174,7 +174,9 @@ app.post("/upload", (req, res) => {
     } catch (err) {
         console.log(err);
     }
+});
 
+app.post("/uploadImage", (req, res) => {
     const form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
         var oldPath = files.uploadImage.path;
@@ -182,11 +184,12 @@ app.post("/upload", (req, res) => {
         var newPath = path.join(__dirname, 'uploadedImages') + '/' + fields.businessName + "." + extension[1];
         var rawData = fs.readFileSync(oldPath);
 
-        fs.writeFile(newPath, rawData, function (err){
-            if(err) console.log(err);
-            return res.send("Successful Image Upload");
+        fs.writeFile(newPath, rawData, function (err) {
+            if (err) console.log(err);
+            //return res.send("Successful Image Upload");
         })
     })
+});
 
 app.post('/rating', (req, res)=>{
     console.log(req);

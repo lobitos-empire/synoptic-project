@@ -68,11 +68,55 @@ app.get('/hottest', (req, res) => {
     });
 });
 
+app.get('/business', (req, res) => {
+    //pass var for the searched type here
+    var category;
+
+    //JSONParser jsonParser = new JSONParser();
+
+    //switch through categories and get objects
+    switch (category){
+        case "Comidas y bebidas":
+
+            break
+        case "Cosas para hacer":
+
+            break
+
+        case "Servicios":
+
+            break
+        case "Hoteles":
+
+            break
+        case "Compras":
+
+            break
+        case "Otra":
+
+            break
+        default:
+
+            break
+    }
+    //convert array of objects into readable format
+    //add to res.render below
+    res.render('business', {
+        title: 'Business'
+    })
+});
+
 app.get('/attractions', (req, res) => {
     res.render('attractions', {
         title: 'Attractions',
         attractions: getAttractions()
     });
+});
+
+app.get('/explore', (req, res) => {
+    res.render('explore', {
+        title: 'Explore'
+    })
 });
 
 app.get('/hotels', (req, res) => {
@@ -101,16 +145,6 @@ app.get('/upload', (req, res) => {
     res.render('upload', {
         title: 'Upload',
     });
-});
-app.get('/explore', (req, res) => {
-    res.render('explore', {
-        title: 'Explore'
-    })
-});
-app.get('/contacts', (req, res) => {
-    res.render('contacts', {
-        title: 'Contacts'
-    })
 });
 
 app.post("/upload", (req, res) => {
@@ -152,7 +186,9 @@ app.post('/localBusiness', (req, res) => {
     } catch (err) {
         console.log(err);
     }
+});
 
+app.post("/uploadImage", (req, res) => {
     const form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
         var oldPath = files.uploadImage.path;
@@ -162,60 +198,11 @@ app.post('/localBusiness', (req, res) => {
 
         fs.writeFile(newPath, rawData, function (err) {
             if (err) console.log(err);
-            return res.send("Successful Image Upload");
-        });
-    imageUpload.save(function(err, user) {
-        if(err) console.log(err);
-        return res.send("Success! Your post has been saved.");
-    });
-});
-
-app.get('/upload', (req, res) => {
-     res.render('upload', {
-         title: 'Business Image Upload'
-     });
-    req.fields; // contains non-file fields
-    req.files; // contains files
-//     const fs = require('fs');
-//     const file = './localBusiness.json';
-//     //create object from form
-//     var OwnersName = req.query.OwnersName;
-//     var BusinessName = req.query.BusinessName;
-//     var BusinessType = req.query.BusinessType;
-//     var BusinessDesc = req.query.BusinessDesc;
-//     var form = new formidable.IncomingForm();
-//     form.parse(req, function (err, fields, files) {
-//       var oldpath = './/uploaded//';
-//       var newpath = String(BusinessName);
-//       fs.rename(oldpath, newpath, function (err) {
-//         if (err) throw err;
-//         res.write('File uploaded and moved!');
-//       });
-//     });
-//     res.end();
- });
-
-
-var router = express.Router();
-router.post('/upload', (req, res) => {
-    var post = new Post(req.body);
-
-    post.save(function(err, user) {
-        if(err) console.log(err);
-        return res.send("Success! Your post has been saved.");
-    });
-});
-
-app.get('/business', (req, res) => {
-    res.render('business', {
-        title: 'Business',
-    });
-});
-
-app.get('/explore', (req, res) => {
-    res.render('explore', {
-        title: 'Explore New Markets',
-    });
+            return res.render("upload", {
+                title: "Successfully Added Business"
+            });
+        })
+    })
 });
 
 app.post('/rating', (req, res)=>{

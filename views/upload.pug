@@ -2,9 +2,10 @@ doctype html
 html(lang="en")
     head
         include includes/head.pug
+        script(src="../scripts/main.js" defer)
 
     body.background
-        form.form-horizontal(action="/upload" id="uploadForm" method="post" enctype="multipart/form-data")
+        form.form-horizontal(action="/upload" id="uploadForm" method="post")
             div.container.my-2
                 div.columns
                     div.column.col-12
@@ -42,15 +43,15 @@ html(lang="en")
                                     div.column.col-6.col-sm-12
                                         input.form-input(type="submit").btn
                                     div.col-3
-                    div.column.col-4.col-sm-12.my-2
-                        div.form-group.form
-                            div.card.moveuploadCard
-                                div.card-image
-                                    input.form-input(type="file" name="uploadImage" required)
-                                div.card-header
-                                    div.card-title.h3 Sube tu negocio!
-                                div.card-body
-                                    p1 Upload an image that best represent your business.
-                    div.column.col-2
-
-
+        form.form-horizontal(action="/uploadImage" id="uploadImage" method="post" enctype="multipart/form-data" class="d-invisible")
+            div.column.col-4.col-sm-12.my-2
+                div.form-group.form2
+                    div.card.moveuploadCard
+                       div.card-image
+                           input.form-input(type="file" name="uploadImage" required)
+                       div.card-header
+                           div.card-title.h3 Sube tu negocio!
+                       div.card-body
+                           p1 Upload an image that best represent your business.
+                           input.form-input(type="submit").btn
+            div.column.col-2

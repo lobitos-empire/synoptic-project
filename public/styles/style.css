@@ -197,7 +197,6 @@ ul{
 /* Local Business Styles */
 
 .uploadCard{
-    width: 75%;
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
     border-radius: 10px;
@@ -206,13 +205,11 @@ ul{
     margin-top: 50%;
 }
 .businessCard{
-    width: 75%;
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
     border-radius: 10px;
 }
 .exploreCard{
-    width: 75%;
     height: auto;
     filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
     border-radius: 10px;

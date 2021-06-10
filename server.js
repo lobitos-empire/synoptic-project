@@ -6,13 +6,10 @@ const fs = require('fs');
 const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 const bodyParser = require('body-parser');
 const path = require("path");
-const multer = require('multer');
-const upload = multer();
 const formidable = require("formidable");
 const cors = require('cors');
 const morgan = require('morgan');
 const fileUpload = require('express-fileupload');
-
 
 //set 8mb max file size
 const maxSize = 8 * 1024 * 1024;
@@ -21,13 +18,6 @@ app.engine('pug', require('pug').__express);
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
-// enable files upload
-app.use(fileUpload({
-    createParentPath: true,
-    limits: {
-        fileSize: 8 * 1024 * 1024 * 1024 //8MB max file(s) size
-    },
-}));
 
 //add other middleware
 app.use(express.static(__dirname + '/public'));
@@ -69,24 +59,26 @@ app.get('/hottest', (req, res) => {
 });
 
 app.get('/business', (req, res) => {
-    //pass var for the searched type here
-    var category;
-    try {
-        let olddata = fs.readFileSync('business.json', 'utf8')
-        olddata = JSON.parse(olddata);
-        for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
-            if (olddata.Businesses.Categories[i].Category.CategoryName == category) {
-                console.log(olddata.Businesses.Categories[i].Category.CategoryData);
-            }
-        }
-        olddata = JSON.stringify(olddata);
-    } catch (err) {
-        console.log(err);
-    }
+    //Pass Category variable and uncomment below once filters/dropdown setup on page
+    //var category;
+    //try {
+    //    let olddata = fs.readFileSync('business.json', 'utf8')
+    //    olddata = JSON.parse(olddata);
+    //    for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
+    //    if (olddata.Businesses.Categories[i].Category.CategoryName == category) {
+    //            console.log(olddata.Businesses.Categories[i].Category.CategoryData);
+    //        }
+    //    }
+    //    olddata = JSON.stringify(olddata);
+    //} catch (err) {
+    //    console.log(err);
+    //}
     //convert array of objects into readable format
     //add to res.render below
+
     res.render('business', {
-        title: 'Business'
+        title: 'Business',
+        businesses: getAllBusinesses()
     })
 });
 
@@ -149,8 +141,6 @@ app.post("/upload", (req, res) => {
         "Business_Location" : businessLoc,
         "Business_Price" : businessPrice,
     };
-app.post('/localBusiness', (req, res) => {
-});
 
     try {
         let olddata = fs.readFileSync('business.json', 'utf8')
@@ -367,7 +357,6 @@ function getAllBusinesses() {
     }
     return results;
 }
-
 
 app.listen(process.env.PORT || 8080, function () {
     console.log("Express server listening on port %d in %s mode",

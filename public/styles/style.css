@@ -409,6 +409,11 @@ body.background{
     /*padding: 15px;*/
     border-radius: 10px;
 }
+.searchBar{
+    position: absolute;
+    top: 45%;
+    left: 65%;
+}
 .imageFillColumn{
     column-fill: auto;
 }

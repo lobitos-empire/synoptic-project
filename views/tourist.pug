@@ -28,7 +28,7 @@ html(lang="en")
                         div.card.hottestCard
                             div.card-image
                                 a(href='/hottest')
-                                    img.img-responsive(src="../images/home4.JPG", alt="Hottest")
+                                    img.img-responsive(src="../images/localBusiness.jpg", alt="Hottest")
                             div.card-header
                                 div.card-title.h3 Hottest
                                 div.card-subtitle.text-black Explore local businesses in Lobitos
@@ -38,7 +38,7 @@ html(lang="en")
                         div.card.attractionCard
                             div.card-image
                                 a(href='/attractions')
-                                    img.img-responsive(src="../images/home4.JPG", alt="Explore local business")
+                                    img.img-responsive(src="../images/hotels.png", alt="Explore local business")
                             div.card-header
                                 div.card-title.h4 Attractions
                                 div.card-subtitle.text-black Explore Attractions in Lobitos
@@ -48,19 +48,34 @@ html(lang="en")
                         div.card.hotelsCard
                             div.card-image
                                 a(href='/hotels')
-                                    img.img-responsive(src="../images/home4.JPG", alt="Explore new markets")
+                                    img.img-responsive(src="../images/hotels.png", alt="Explore new markets")
                             div.card-header
                                 div.card-title.h4 Hotels
                                 div.card-subtitle.text-black Explore Hotels in Lobitos
-
-
             div.container
                 div.columns
                     div.column.col-12.col-sm-12.my-2
                         div.card.spanishPhraseCard2
                             div.card-header
                                 div.card-title.h3 Spanish Phrases
+                                //Creating a search bar for users to search phrases that are not on the spanish phrase card
+                                section.searchBar
+                                form(method="get", action='/tourist')
+                                    div.input-group.input-inline
+                                        input.form-input(name="search", id="search", type="text", placeholder="search phrases")
+                                        button.btn.btn-primary.input-group-btn Search
                             div.card-body
-                                p Greeting! ~  Hello = Hola | Hello = Hola | Hello = Hola
-                                p Greeting! ~  Hello = Hola | Hello = Hola | Hello = Hola
+                                // creating table to add spanish and english phrases within the card-body
+                                table.table.table-striped
+                                    thead
+                                        tr
+                                            th Category
+                                            th English
+                                            th Spanish
+                                    tbody
+                                        each n in translations
+                                            tr
+                                                td=n.category
+                                                td=n.english
+                                                td=n.spanish
 

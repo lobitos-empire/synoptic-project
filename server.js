@@ -59,24 +59,26 @@ app.get('/hottest', (req, res) => {
 });
 
 app.get('/business', (req, res) => {
-    //pass var for the searched type here
-    var category;
-    try {
-        let olddata = fs.readFileSync('business.json', 'utf8')
-        olddata = JSON.parse(olddata);
-        for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
-            if (olddata.Businesses.Categories[i].Category.CategoryName == category) {
-                console.log(olddata.Businesses.Categories[i].Category.CategoryData);
-            }
-        }
-        olddata = JSON.stringify(olddata);
-    } catch (err) {
-        console.log(err);
-    }
-    //convert array of objects into readable format
+    //Pass Category variable and uncomment below once filters/dropdown setup on page
+            //var category;
+            //try {
+            //    let olddata = fs.readFileSync('business.json', 'utf8')
+            //    olddata = JSON.parse(olddata);
+            //    for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
+            //    if (olddata.Businesses.Categories[i].Category.CategoryName == category) {
+            //            console.log(olddata.Businesses.Categories[i].Category.CategoryData);
+            //        }
+            //    }
+            //    olddata = JSON.stringify(olddata);
+            //} catch (err) {
+            //    console.log(err);
+            //}
+            //convert array of objects into readable format
     //add to res.render below
+
     res.render('business', {
-        title: 'Business'
+        title: 'Business',
+        businesses: getAllBusinesses()
     })
 });
 

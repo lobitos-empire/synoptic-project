@@ -24,8 +24,20 @@ html(lang="en")
 
                 div.container
                     div.columns
-                        div.column.col-6.text-right.col-sm-12.my-2
+
+                        // Hides the button when screen minimised
+
+                        div.column.hide-sm.col-6.text-right.col-sm-12.my-2
                             a.tButton(href="/tourist") Tourists
 
-                        div.column.col-6.text-left.col-sm-12.my-2
+                        div.column.hide-sm.col-6.text-left.col-sm-12.my-2
+                            a.lButton(href="/localBusiness") Local Business
+
+
+                        // Show the button when screen minimised
+
+                        div.column.show-sm.text-center.col-6.col-sm-12.my-2
+                            a.tButton(href="/tourist") Tourists
+
+                        div.column.show-sm.text-center.col-6.col-sm-12.my-2.py-2
                             a.lButton(href="/localBusiness") Local Business

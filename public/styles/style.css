@@ -17,6 +17,14 @@ body{
     width: auto;
     height: 6rem;
 }
+/*.logo2{*/
+/*    top: 0;*/
+/*    left: 1%;*/
+/*    position: absolute;*/
+/*    width: auto;*/
+/*    height: 3.5rem;*/
+/*}*/
+
 
 .backgroundimage{
     background-repeat: no-repeat;
@@ -35,25 +43,12 @@ body{
 }
 
 /* Home Page Heading */
-.localBusinessFont{
-    color: palevioletred;
 
-}
-.localBusinessCardText{
-    color: black;
-    font-size: medium;
 
-}
-header{
-    background-color: #CFF4D2;
-}
-.cardSubtitles{
-    font-size: medium;
-}
-.businessCardBackground{
-    background-image: url("../images/uploadimage.jpg");
+/*header{*/
+/*    background-color: #CFF4D2;*/
+/*}*/
 
-}
 
 
 .moveuploadCard{
@@ -145,6 +140,18 @@ body.background{
     background-size: cover;
 }
 
+h3{
+    position: relative;
+    /*top: 90%;*/
+    font-family: Oswald, serif;
+    font-size: 3vw;
+    line-height: 100px;
+    font-weight: 400;
+    color: black;
+    /*text-transform: uppercase;*/
+    display: inline;
+}
+
 /* Tabs Styling */
 
 ul{
@@ -178,13 +185,9 @@ ul{
 .move{
     position: absolute;
     top: 20%;
-    left:10%;
     filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
 }
 .header{
-    position: absolute;
-    top: 3%;
-    left: 45%;
     margin-top: 40px;
     font-family: Oswald, serif;
     font-size: 50px;
@@ -239,21 +242,18 @@ ul{
 /* Tourists Styles */
 
 .hottestCard{
-    width: 75%;
     height: auto;
     filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
 .attractionCard{
-    width: 75%;
     height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
 .hotelsCard{
-    width: 75%;
     height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
 .move.movePhraseCard{
@@ -263,7 +263,6 @@ ul{
     filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
 }
 .card.spanishPhraseCard2{
-    width: 90%;
     height: auto;
     border-radius: 30px;
 }
@@ -282,22 +281,20 @@ ul{
 }
 
 .vl {
-    border-left: 1px solid black;
+    border-left: 3px solid #bbb;
     height: auto;
 }
-.move2 {
-    /*.tabForTourist{*/
-    /*    position: absolute;*/
-    /*    top: 1%;*/
-    /*    left: 10%*/
-    /*}*/
+
+@media screen and (max-width: 600px) {
+    .vl {
+        border-left: none;
+        border-top: 3px solid #bbb;
+    }
 }
 
 /*Style for hotel class*/
 .hotelCard{
-    width: 75%;
     height: auto;
-
     filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
@@ -310,10 +307,7 @@ ul{
 .card-title.h4{
     font-weight: bold;
 }
-.vl {
-    border-left: 1px solid black;
-    height: auto;
-}
+
 .move2{
     position: absolute;
     top: 20%;

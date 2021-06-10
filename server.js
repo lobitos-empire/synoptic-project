@@ -71,33 +71,17 @@ app.get('/hottest', (req, res) => {
 app.get('/business', (req, res) => {
     //pass var for the searched type here
     var category;
-
-    //JSONParser jsonParser = new JSONParser();
-
-    //switch through categories and get objects
-    switch (category){
-        case "Comidas y bebidas":
-
-            break
-        case "Cosas para hacer":
-
-            break
-
-        case "Servicios":
-
-            break
-        case "Hoteles":
-
-            break
-        case "Compras":
-
-            break
-        case "Otra":
-
-            break
-        default:
-
-            break
+    try {
+        let olddata = fs.readFileSync('business.json', 'utf8')
+        olddata = JSON.parse(olddata);
+        for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
+            if (olddata.Businesses.Categories[i].Category.CategoryName == category) {
+                console.log(olddata.Businesses.Categories[i].Category.CategoryData);
+            }
+        }
+        olddata = JSON.stringify(olddata);
+    } catch (err) {
+        console.log(err);
     }
     //convert array of objects into readable format
     //add to res.render below
@@ -152,14 +136,18 @@ app.post("/upload", (req, res) => {
     var businessName = req.body.businessName;
     var businessType = req.body.businessType;
     var businessDesc = req.body.businessDesc;
+    var businessLoc = req.body.businessLoc;
+    var businessPrice = req.body.businessPrice;
 
     console.log(ownersName + businessName + businessType + businessDesc);
 
     const business = {
-        "Owners Name": ownersName,
-        "Business Name": businessName,
-        "Business Type": businessType,
-        "Business Desc": businessDesc
+        "Owners_Name": ownersName,
+        "Business_Name": businessName,
+        "Business_Type": businessType,
+        "Business_Desc": businessDesc,
+        "Business_Location" : businessLoc,
+        "Business_Price" : businessPrice,
     };
 app.post('/localBusiness', (req, res) => {
 });
@@ -173,8 +161,6 @@ app.post('/localBusiness', (req, res) => {
             }
         }
         console.log(olddata);
-
-
         const data = JSON.stringify(olddata);
 
         fs.writeFile("business.json", data, (err) => {
@@ -198,15 +184,99 @@ app.post("/uploadImage", (req, res) => {
 
         fs.writeFile(newPath, rawData, function (err) {
             if (err) console.log(err);
-            return res.render("upload", {
-                title: "Successfully Added Business"
-            });
+            //return res.render("upload", {
+            //    title: "Successfully Added Business"
+            //});
         })
     })
 });
 
 app.post('/rating', (req, res)=>{
+    //get data from page
+    var businessName = req.body.businessName;
+    var businessType = req.body.businessType;
+    var businessDesc = req.body.businessDesc;
+    var businessLoc = req.body.businessLoc;
+    var businessPrice = req.body.businessPrice;
+
+    //get rating values
+    let ratingCount = 1;
+    let businessRating = 0;
+
+    const fs = require('fs')
+    fs.readFile('./business.json', 'utf8', (err, jsonString) => {
+        if (err) {
+            console.log("Error reading file from disk:", err)
+            return
+        }
+        try {
+            const oldData = JSON.parse(jsonString)
+            for (let i = 0; i < olddata.Businesses.Ratings.length; i++) {
+                for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
+                    if (oldData.Ratings.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
+                        //get old data and populate vars
+                        businessRating = parseInt(oldData.Ratings.Ratings[i].Rating.RatingNumber);
+                        ratingCount = parseInt(oldData.Ratings.Ratings[i].CategoryData[j].Rating_Count);
+                    }
+                }
+            }
+            console.log()
+        } catch(err) {
+            console.log('Error parsing JSON string:', err)
+        }
+    })
+
+    //get new rating from page
+    var newBusinessRating = req.body.businessRating;
+
     console.log(req);
+    var businessRated = {
+        "Business_Name": businessName,
+        "Business_Type": businessType,
+        "Business_Desc": businessDesc,
+        "Business_Location" : businessLoc,
+        "Business_Price" : businessPrice,
+        "Business_Rating" : businessRating,
+        "Rating_Count" : ratingCount,
+    }
+    let olddata = fs.readFileSync('business.json', 'utf8')
+    olddata = JSON.parse(olddata);
+
+    //removes entry if present in different rating group now
+    for (let i = 0; i < olddata.Businesses.Ratings.length; i++) {
+        for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
+            if (oldData.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
+                olddata.Businesses.Ratings[i].Rating.RatingNumber.pop(businessRated);
+            }
+        }
+    }
+
+    //calculate new average rating
+    businessRating = ((businessRating*ratingCount) + newBusinessRating) / ratingCount;
+    businessRated = {
+        "Business_Name": businessName,
+        "Business_Type": businessType,
+        "Business_Desc": businessDesc,
+        "Business_Location" : businessLoc,
+        "Business_Price" : businessPrice,
+        "Business_Rating" : businessRating,
+        "Rating_Count" : ratingCount,
+    }
+
+    for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
+        if (olddata.Businesses.Ratings[i].Rating.RatingNumber == businessRating.round()) {
+            olddata.Businesses.Ratings[i].Rating.RatingNumber.push(businessRated);
+        }
+    }
+    console.log(olddata);
+    const data = JSON.stringify(olddata);
+
+    fs.writeFile("business.json", data, (err) => {
+        if (err) {
+            throw err;
+        }
+        console.log("JSON saved");
+    })
 });
 
 //Method to get all translations stored in a JSON object

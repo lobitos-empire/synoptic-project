@@ -3,6 +3,9 @@ html(lang="en")
     head
         include includes/head.pug
         script(src="../scripts/main.js" defer)
+        link(rel="stylesheet" type="text/css" href="../styles/mdtoast.min.css")
+        script(type="text/javascript" src="../scripts/mdtoast.min.js")
+        title #{ title }
 
     body.background
         form.form-horizontal(action="/upload" id="uploadForm" method="post")

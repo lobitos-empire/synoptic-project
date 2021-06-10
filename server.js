@@ -230,6 +230,7 @@ app.post('/rating', (req, res)=>{
     let olddata = fs.readFileSync('business.json', 'utf8')
     olddata = JSON.parse(olddata);
 
+    //removes entry if present in different rating group now
     for (let i = 0; i < olddata.Businesses.Ratings.length; i++) {
         for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
             if (oldData.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {

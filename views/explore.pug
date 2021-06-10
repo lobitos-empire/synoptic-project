@@ -35,8 +35,10 @@ html(lang="en")
                                     img(src="../images/smallerCycling.png", alt="Cycling").img-responsive
                             div.column.col-9.col-sm-12
                                 div.card-body
-                                    h6 Tipo de industria: Ciclismo
-                                    h6 Descripción: Consiga clientes ofreciéndoles una hermosa experiencia ciclista. Proporcione a los ciclistas los equipos y observe el flujo de efectivo, ya que se sabe que el ciclismo como atracción turística proporciona una gran cantidad de ingresos, por lo tanto, ¡por qué no comenzar hoy!
+                                    p Tipo de industria:
+                                        b  Ciclismo
+                                    p Descripción:
+                                        b  Consiga clientes ofreciéndoles una hermosa experiencia ciclista. Proporcione a los ciclistas los equipos y observe el flujo de efectivo, ya que se sabe que el ciclismo como atracción turística proporciona una gran cantidad de ingresos, por lo tanto, ¡por qué no comenzar hoy!
                                     p Ingresos estimados:
                                         b
                                          li Mecánica de bicicletas : 113555.60 Sol a year
@@ -44,7 +46,18 @@ html(lang="en")
                                          li Minorista de bicicletas : 193423.01 Sol a year
 
                                 div.card-footer
-                                   button.btn.btn-primary See references
+                                   button.btn.btn-primary#cyclebutton See references
+                    div.modal#cyclemodal
+                        a.modal-overlay(aria-label="Close" href="#Close")
+                        div.modal-container
+                            div.modal-header
+                                a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closecycle
+                                div.modal-title.h5 References
+                            div.modal-body
+                                div.content
+                                    li
+                                        a(href="https://bicycleuniverse.com/much-bike-mechanic-make/#How_Much_Does_a_Bike_Shop_Owner_Make").btn.btn-link Ciclismo
+
 
 
 

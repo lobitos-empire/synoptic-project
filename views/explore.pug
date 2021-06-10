@@ -8,6 +8,7 @@ html(lang="en")
         link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
         link(rel="stylesheet" type="text/css" href="../styles/style.css")
         link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
+        script(src="../scripts/business.js" defer)
         title #{ title }
 
     body.background
@@ -89,7 +90,17 @@ html(lang="en")
                                             h6 Descripción: El kitesurf es una actividad que permite al turista surfear a través de las olas al ser jalado con una cometa. Esta idea de turismo para hacer dinero puede generar una gran cantidad de dinero en efectivo vendiendo equipos y un estimado de 1000 a 2000 dólares cada mes por ser instructor.
                                             h6 Ingresos estimados:
                                         div.card-footer
-                                            button.btn.btn-primary See references
+                                            button.btn.btn-primary#modalbutton See references
+                                              div.modal#kitemodal
+                                                  a.modal-overlay(aria-label="Close" href="#Close")
+                                                  div.modal-container
+                                                      div.modal-header
+                                                          a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closeid
+                                                          div.modal-title.h5 References
+                                                      div.modal-body
+                                                          h6 texting stuff
+
+
                         div.column.col-4
 
                     div.container

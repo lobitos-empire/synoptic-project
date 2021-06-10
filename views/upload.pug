@@ -47,10 +47,22 @@ html(lang="en")
                                     div.col-7.col-sm-12
                                         textarea.form-input(id="businessDescription" placeholder=" Descripción del negocio" rows="3" maxlength="175" name="businessDesc" required)
                                 div.form-group
+                                    div.col-5.col-sm-12
+                                        label.form-label Localización
+                                    div.col-7.col-sm-12
+                                        input.form-input(type="text" placeholder="Localización" id="locationname" name="businessLoc" required)
+                                div.form-group
+                                    div.col-5.col-sm-12
+                                        label.form-label Precio
+                                    div.col-7.col-sm-12
+                                        input.form-input(type="text" placeholder="Precio" id="businessP" name="businessPrice" required)
+                                div.form-group
                                     div.col-3
                                     div.column.col-6.col-sm-12
                                         input.form-input(type="submit").btn
                                     div.col-3
+
+
                     div.col-4.col-sm-12.my-2
                         form.form-horizontal(action="/uploadImage" id="uploadImage" method="post" enctype="multipart/form-data" class="d-invisible" )
                             div.column.col-12.col-sm-12.my-2

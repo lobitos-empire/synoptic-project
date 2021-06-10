@@ -186,7 +186,9 @@ app.post("/uploadImage", (req, res) => {
 
         fs.writeFile(newPath, rawData, function (err) {
             if (err) console.log(err);
-            //return res.send("Successful Image Upload");
+            return res.render("upload", {
+                title: "Successfully Added Business"
+            });
         })
     })
 });

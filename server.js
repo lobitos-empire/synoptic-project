@@ -28,6 +28,38 @@ app.get('/', (req, res) => {
 });
 
 app.get('/business', (req, res) => {
+    //pass var for the searched type here
+    var category;
+
+    //JSONParser jsonParser = new JSONParser();
+
+    //switch through categories and get objects
+    switch (category){
+        case "Comidas y bebidas":
+
+            break
+        case "Cosas para hacer":
+
+            break
+
+        case "Servicios":
+
+            break
+        case "Hoteles":
+
+            break
+        case "Compras":
+
+            break
+        case "Otra":
+
+            break
+        default:
+
+            break
+    }
+    //convert array of objects into readable format
+    //add to res.render below
     res.render('business', {
         title: 'Business'
     })
@@ -80,6 +112,7 @@ app.post("/upload", (req, res) => {
         for(let i=0; i<olddata.Businesses.Categories.length; i++){
             if(olddata.Businesses.Categories[i].Category.CategoryName == businessType){
                 olddata.Businesses.Categories[i].Category.CategoryData.push(business);
+
             }
         }
         console.log(olddata);
@@ -96,7 +129,10 @@ app.post("/upload", (req, res) => {
     } catch (err) {
         console.log(err);
     }
+});
 
+
+app.post("/uploadImage", (req, res) => {
     const form = new formidable.IncomingForm();
     form.parse(req, function(err, fields, files){
         var oldPath = files.uploadImage.path;
@@ -106,7 +142,7 @@ app.post("/upload", (req, res) => {
 
         fs.writeFile(newPath, rawData, function (err){
             if(err) console.log(err);
-            return res.send("Successful Image Upload");
+            //return res.send("Successful Upload Of Business");
         })
     })
 

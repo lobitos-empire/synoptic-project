@@ -296,6 +296,11 @@ body.background{
     height: 3.5rem;
 
 }
+
+.movePasscode{
+    position: relative;
+    bottom:50%;
+}
 .move{
     position: absolute;
     top: 20%;

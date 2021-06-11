@@ -36,11 +36,11 @@ html(lang="en")
 
                             div.column.col-3
                                 div.card-body
-                                    b Number of Clicks:
+                                    p
+                                        b Number of Clicks:
+                                        |
+                                    b Rating :
                                         p
-                                    b  Rating :
-                                        p
-
                                         form-input.star-rating(method="post" action='/rating')
                                             input#star5(type='radio' name='rate' value='5')
                                             label(for='star5' title='text') 5 stars
@@ -53,4 +53,4 @@ html(lang="en")
                                             input#star1(type='radio' name='rate' value='1')
                                             label(for='star1' title='text') 1 star
 
-                                            input(hidden, value='')
+                                                input(hidden, value='')

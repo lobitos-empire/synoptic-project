@@ -341,6 +341,24 @@ function getAttractions() {
     return results;
 }
 
+
+//Method to get a list of all business
+function getAllBusiness() {
+    let rawData = fs.readFileSync('business.json');
+    let businesses = JSON.parse(rawData).Businesses;
+    let results = [];
+
+    for (let i = 0; i < businesses.Categories.length; i++) {
+            for (let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++) {
+                results.push(businesses.Categories[i].Category.CategoryData[j]);
+            }
+        }
+
+    return results;
+}
+
+
+
 function getHotels() {
     let rawData = fs.readFileSync('business.json');
     let businesses = JSON.parse(rawData).Businesses;

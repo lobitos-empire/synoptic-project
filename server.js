@@ -102,6 +102,7 @@ app.get('/localBusiness', (req, res) => {
 });
 
 app.post('/localBusiness', (req, res) => {
+
 });
 
 app.get('/upload', (req, res) => {
@@ -194,13 +195,6 @@ app.post("/uploadImage", (req, res) => {
         console.log(err);
     }
 });
-
-app.get('rating',(req, res)=>{
-    //DO SOMETHING WITH RATED HERE
-    //getAllRated();
-})
-
-
 
 app.post('/rating', (req, res)=>{
     //get data from page

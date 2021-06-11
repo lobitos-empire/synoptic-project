@@ -56,20 +56,19 @@ html(lang="en")
 
         div.container
             div.column.col-12.my-2.col-sm-12
-                let bussiness;
-                for n in bussinesses
+                for n in businesses
                     div.card
                         div.columns
                             div.column.col-3.col-sm-12
                                 div.card-image
-                                    img.img-responsive(src="../images/seashell.JPG", alt="Seashells Crafts")
+                                    img.img-responsive(src=n.Image_Src, alt="Seashells Crafts")
                             div.column.col-6.col-sm-12
                                 div.card-header
                                     div.card-title.h4 Lobitos Crafts
                                 div.card-body
                                     p
                                         b Business Owner :
-                                        |
+                                        |  !{n.Owners_Name}
 
                                     p
                                         b Business Name :

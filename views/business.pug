@@ -8,7 +8,9 @@ html(lang="en")
         link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
         link(rel="stylesheet" type="text/css" href="../styles/style.css")
         link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
+        script(src="../scripts/loadingBusiness.js" defer type="text/javascript" )
         title #{ title }
+
 
     body
         div.container
@@ -23,8 +25,9 @@ html(lang="en")
                             div.column.col-2.col-sm-12(class="imagecolumn")
                                 div.card-image.fillParentDiv
                                     img(src="../images/smallerCycling.png", alt="Cycling").img-responsive.fillParentDivForImage
-                            div.column.col-7.col-sm-12
-                                div.card-body
+                            div.column.col-7.col-sm-12#testRead
+                                div.card-body#secondTest
+                                    button.btn.btn-primary#JsonButton Testing Loading Json
                                     p Owner Name:
                                         b
                                     p Owner Business Name:

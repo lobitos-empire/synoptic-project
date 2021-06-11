@@ -57,3 +57,5 @@ document.getElementById("closeboats").addEventListener(
         document.getElementById("boatsmodal").className = "modal"
     }
 )
+
+

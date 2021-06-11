@@ -286,7 +286,7 @@ function getTranslations() {
     let translations = JSON.parse(rawData).translations;
     let resultTranslations = {"translations": []};
     for (let i = 0; i < translations.length; i++) {
-        if (i % 2 === 0) {
+        if (i % 3 === 0) {
             resultTranslations.translations.push(translations[i]);
         }
     }

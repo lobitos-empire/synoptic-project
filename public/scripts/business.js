@@ -21,3 +21,39 @@ document.getElementById("closecycle").addEventListener(
         document.getElementById("cyclemodal").className = "modal"
     }
 )
+
+document.getElementById("trekkingbutton").addEventListener(
+    "click",()=>{
+        document.getElementById("trekkingmodal").className = "modal active"
+    }
+)
+
+document.getElementById("closetrekking").addEventListener(
+    "click",()=>{
+        document.getElementById("trekkingmodal").className = "modal"
+    }
+)
+
+document.getElementById("birdwatchingbutton").addEventListener(
+    "click",()=>{
+        document.getElementById("birdwatchingmodal").className = "modal active"
+    }
+)
+
+document.getElementById("closebirdwatching").addEventListener(
+    "click",()=>{
+        document.getElementById("birdwatchingmodal").className = "modal"
+    }
+)
+
+document.getElementById("boatsbutton").addEventListener(
+    "click",()=>{
+        document.getElementById("boatsmodal").className = "modal active"
+    }
+)
+
+document.getElementById("closeboats").addEventListener(
+    "click",()=>{
+        document.getElementById("boatsmodal").className = "modal"
+    }
+)

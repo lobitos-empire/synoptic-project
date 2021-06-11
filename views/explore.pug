@@ -2,6 +2,7 @@ doctype html
 html(lang="en")
     head
         include includes/head.pug
+        script(src="../scripts/business.js" defer)
 
 
 body.background
@@ -17,12 +18,12 @@ body.background
             div.column.col-3
     div.container
         div.columns
-            div.column.col-2
-            div.column.col-8
+            div.column.col-2.col-sm-12
+            div.column.col-8.col-sm-12
 
 
                 div.card.my-2
-                    div.columns.col-sm-12
+                    div.columns
                         div.column.col-3.col-sm-12
                             div.card-image.fillParentDiv
                                 img(src="../images/smallerCycling.png", alt="Cycling").img-responsive.fillParentDivForImage
@@ -190,5 +191,5 @@ body.background
                                     a(href="https://www.ultimate-canoeandkayak.co.uk/canoe-kayak-hire-prices/").btn.btn-link Excursiones en canoa referenicas
 
 
-            div.column.col-2
+            div.column.col-2.col-sm-12
 

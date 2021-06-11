@@ -184,6 +184,13 @@ app.post("/uploadImage", (req, res) => {
     })
 });
 
+app.get('rating',(req, res)=>{
+    //DO SOMETHING WITH RATED HERE
+    //getAllRated();
+})
+
+
+
 app.post('/rating', (req, res)=>{
     //get data from page
     var businessName = req.body.businessName;
@@ -193,7 +200,7 @@ app.post('/rating', (req, res)=>{
     var businessPrice = req.body.businessPrice;
 
     //get rating values
-    let ratingCount = 1;
+    let ratingCount = 0;
     let businessRating = 0;
 
     const fs = require('fs')
@@ -356,6 +363,19 @@ function getAllBusinesses() {
     for (let i = 0; i < businesses.Categories.length; i++) {
         for (let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++) {
             results.push(businesses.Categories[i].Category.CategoryData[j]);
+        }
+    }
+    return results;
+}
+
+function getAllRated(){
+    let rawData = fs.readFileSync('business.json');
+    let businesses= JSON.parse(rawData).businesses;
+    let results = [];
+
+    for(let i=5; i>-1; i--){
+        for(let j = 0; j < businesses.Ratings[i].Rating.CategoryData.length; j++){
+            results.push(businesses.Ratings[i].Rating.CategoryData[j]);
         }
     }
     return results;

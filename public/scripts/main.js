@@ -18,6 +18,10 @@ if(window.location.pathname === "/upload"){
             document.getElementById("passCode").className = "d-invisible";
         }
     })
+} else if (window.location.pathname === "/business"){
+    document.g ('input[type=radio]').on('change', function() {
+        document.getElementById (this).closest("form").submit();
+    });
 }
 
 

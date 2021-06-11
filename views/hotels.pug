@@ -1,15 +1,116 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
-        link(rel="stylesheet" type="text/css" href="../styles/style.css")
-        title #{ title }
+        include includes/head.pug
+        script(src="../scripts/tourist.js" defer)
 
-    body
+    body.background
+
         div.container
             div.columns
                 div.column.col-12
-                    include includes/tabT.pug
+                    include includes/tabTHotels
+        div.move
+            div.container
+                div.columns
+                    div.column.col-4.col-sm-12.my-2
+                        div.card.hotelCard#hotelModal-id
+                            div.card-image
+                                img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
+                            div.card-header
+                                div.card-title.h4 La Casona
+                                div.card-subtitle.text-grey.text-italic Hotel
+                            div.card-body
+                                p Explore Attractions in Lobitos Explore Attractions in Lobitos Explore Attractions in Lobitos
+                        div.modal#modal-id
+                            a.modal-overlay(href='#close' aria-label='Close')
+                            div.modal-container
+                                div.modal-header
+                                    a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close-id
+                                    div.modal-title.h5 Hotel La Casona Map
+                                div.modal-body
+                                    div.content
+                                        img.img-responsive(src="../images/hotelMap1.JPG", alt="Hotel Image")
+                                div.modal-footer
+                                    //a(class="mapButton" href=)
+
+
+                    div.column.col-4.col-sm-12.my-2
+                        div.card.hotelCard#hotelModal2-id
+                            div.card-image
+                                    img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
+                            div.card-header
+                                div.card-title.h4 Buenavista Lobitos
+                                div.card-subtitle.text-grey.text-italic Hotel
+                            div.card-body
+                                p Explore Attractions in Lobitos Explore Attractions in Lobitos Explore Attractions in Lobitos
+                        div.modal#modal2-id
+                            a.modal-overlay(href='#close' aria-label='Close')
+                            div.modal-container
+                                div.modal-header
+                                    a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close2-id
+                                    div.modal-title.h5 Hotel Buenavista Map
+                                div.modal-body
+                                    div.content
+                                        img.img-responsive(src="../images/buenavistoMap.JPG", alt="Hotel Image")
+                                div.modal-footer
+
+                    div.column.col-4.col-sm-12.my-2
+                        div.card.hotelCard#hotelModal3-id
+                            div.card-image
+                                    img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
+                            div.card-header
+                                div.card-title.h4 El Hueco Villas
+                                div.card-subtitle.text-grey.text-italic Hotel
+                            div.card-body
+                                p Explore Attractions in Lobitos Explore Attractions in Lobitos Explore Attractions in Lobitos
+                        div.modal#modal3-id
+                            a.modal-overlay(href='#close' aria-label='Close')
+                            div.modal-container
+                                div.modal-header
+                                    a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close3-id
+                                    div.modal-title.h5 Hotel El Hueco Villas Map
+                                div.modal-body
+                                    div.content
+                                        img.img-responsive(src="../images/huecoMap.JPG", alt="Hotel Image")
+                                div.modal-footer
+
+                    div.column.col-4.col-sm-12.my-2
+                        div.card.hotelCard#hotelModal4-id
+                            div.card-image
+                                    img.img-responsive(src="../images/hotelss.jpg", alt="Explore local business")
+                            div.card-header
+                                div.card-title.h4 Mahalo Lobitos Surf House
+                                div.card-subtitle.text-grey.text-italic Hotel
+                            div.card-body
+                                p Explore Attractions in Lobitos Explore Attractions in Lobitos Explore Attractions in Lobitos
+                        div.modal#modal4-id
+                            a.modal-overlay(href='#close' aria-label='Close')
+                            div.modal-container
+                                div.modal-header
+                                    a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close4-id
+                                    div.modal-title.h5 Mahalo Lobitos Surf House Map
+                                div.modal-body
+                                    div.content
+                                        img.img-responsive(src="../images/mahaloMap.JPG", alt="Explore local business")
+                                div.modal-footer
+
+                    div.column.col-4.col-sm-12.my-2
+                        div.card.hotelCard#hotelModal5-id
+                            div.card-image
+                                    img.img-responsive(src="../images/hotelss.jpg", alt="Explore local business")
+                            div.card-header
+                                div.card-title.h4 Hotel Navego
+                                div.card-subtitle.text-grey.text-italic Hotel
+                            div.card-body
+                                p Explore Attractions in Lobitos Explore Attractions in Lobitos Explore Attractions in Lobitos
+                        div.modal#modal5-id
+                            a.modal-overlay(href='#close' aria-label='Close')
+                            div.modal-container
+                                div.modal-header
+                                    a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close5-id
+                                    div.modal-title.h5 Hotel Navego Map
+                                div.modal-body
+                                    div.content
+                                        img.img-responsive(src="../images/navegoMap.JPG", alt="Explore local business")
+                                div.modal-footer

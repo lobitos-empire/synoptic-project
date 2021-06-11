@@ -10,6 +10,26 @@
       "spanish": "Adios"
   },
     {
+      "category": "Greetings!",
+      "english": "Good Morning",
+      "spanish": "Buenos días!"
+    },
+    {
+      "category": "Greetings!",
+      "english": "Good afternoon",
+      "spanish": "Buenas tardes!"
+    },
+    {
+      "category": "Greetings!",
+      "english": "Good night",
+      "spanish": "Buenas noches!"
+    },
+    {
+      "category": "Greetings!",
+      "english": "Nice to meet you.",
+      "spanish": "Mucho gusto"
+    },
+    {
       "category": "Directions!",
       "english": "Where can I get a taxi?",
       "spanish": "¿Dónde puedo encontrar un taxi?"
@@ -20,14 +40,54 @@
       "spanish": "Dónde está la parada de autobús más cerca?"
     },
     {
-      "category": "At a restaurant",
+      "category": "Directions!",
+      "english": "I'm lost?",
+      "spanish": "Estoy perdido"
+    },
+    {
+      "category": "Directions!",
+      "english": "Where is the nearest station",
+      "spanish": "Dónde está la estación de tren más cercana?"
+    },
+    {
+      "category": "Directions!",
+      "english": "Where is the bank located?",
+      "spanish": "Donde se encuentra el banco?"
+    },
+    {
+      "category": "Directions!",
+      "english": "Where are the bathrooms?",
+      "spanish": "Donde están los baños?"
+    },
+    {
+      "category": "At a restaurant!",
       "english": "I’m a vegetarian",
       "spanish": "Soy vegetariano/a?"
     },
     {
-      "category": "At a restaurant",
+      "category": "At a restaurant!",
       "english": "The bill, please",
       "spanish": "La cuenta, por favor"
+    },
+    {
+      "category": "At a restaurant!",
+      "english": "An appetizer please?",
+      "spanish": "Un aperitivo por favor?"
+    },
+    {
+      "category": "At a restaurant!",
+      "english": "May I order?",
+      "spanish": "¿Puedo ordenar?"
+    },
+    {
+      "category": "At a restaurant!",
+      "english": "a dessert",
+      "spanish": "un postre"
+    },
+    {
+      "category": "At a restaurant!",
+      "english": "a main dish",
+      "spanish": "un plato principal"
     }
   ]
 }

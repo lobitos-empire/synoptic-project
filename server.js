@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 app.use(morgan('dev'));
 
-var tempName = "";
+let tempName = "";
 
 app.get('/', (req, res) => {
     res.render('index', {
@@ -62,22 +62,6 @@ app.get('/hottest', (req, res) => {
 });
 
 app.get('/business', (req, res) => {
-    //Pass Category variable and uncomment below once filters/dropdown setup on page
-            //var category;
-            //try {
-            //    let olddata = fs.readFileSync('business.json', 'utf8')
-            //    olddata = JSON.parse(olddata);
-            //    for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
-            //    if (olddata.Businesses.Categories[i].Category.CategoryName == category) {
-            //            console.log(olddata.Businesses.Categories[i].Category.CategoryData);
-            //        }
-            //    }
-            //    olddata = JSON.stringify(olddata);
-            //} catch (err) {
-            //    console.log(err);
-            //}
-            //convert array of objects into readable format
-    //add to res.render below
 
     res.render('business', {
         title: 'Business',
@@ -127,12 +111,12 @@ app.get('/upload', (req, res) => {
 });
 
 app.post("/upload", (req, res) => {
-    var ownersName = req.body.ownersName;
-    var businessName = req.body.businessName;
-    var businessType = req.body.businessType;
-    var businessDesc = req.body.businessDesc;
-    var businessLoc = req.body.businessLoc;
-    var businessPrice = req.body.businessPrice;
+    const ownersName = req.body.ownersName;
+    const businessName = req.body.businessName;
+    const businessType = req.body.businessType;
+    const businessDesc = req.body.businessDesc;
+    const businessLoc = req.body.businessLoc;
+    const businessPrice = req.body.businessPrice;
     tempName = businessName;
 
     console.log(ownersName + businessName + businessType + businessDesc);
@@ -397,7 +381,7 @@ function getAllBusinesses() {
 
 function getAllRated(){
     let rawData = fs.readFileSync('business.json');
-    let businesses= JSON.parse(rawData).Businesses;
+    let businesses = JSON.parse(rawData).Businesses;
     let results = [];
 
     for(let i=5; i>-1; i--){

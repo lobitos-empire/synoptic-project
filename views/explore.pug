@@ -1,202 +1,194 @@
 doctype html
 html(lang="en")
     head
-
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
-        link(rel="stylesheet" type="text/css" href="../styles/style.css")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
-        script(src="../scripts/business.js" defer)
-        title #{ title }
-
-    body.background
-        div.container
-            div.columns
-                div.column.col-12
-                    include includes/tabLExplore.pug
-        div.container
-            div.columns
-                div.column.col-3
-                div.column.col-6.col-sm-12
-                    h3.exploreTitle Mercados explorable
-                div.column.col-3
-        div.container
-            div.columns
-                div.column.col-2
-                div.column.col-8
+        include includes/head.pug
 
 
-                    div.card.my-2
-                        div.columns.col-sm-12
-                            div.column.col-3.col-sm-12
-                                div.card-image.fillParentDiv
-                                    img(src="../images/smallerCycling.png", alt="Cycling").img-responsive.fillParentDivForImage
-                            div.column.col-9.col-sm-12
-                                div.card-body
-                                    p
-                                        b Tipo de industria:
-                                        |  Ciclismo
-                                    p
-                                        b Descripción:
-                                        |  Consiga clientes ofreciéndoles una hermosa experiencia ciclista. Proporcione a los ciclistas los equipos y observe el flujo de efectivo, ya que se sabe que el ciclismo como atracción turística proporciona una gran cantidad de ingresos, por lo tanto, ¡por qué no comenzar hoy!
-                                    p
-                                        b Ingresos estimados:
-                                        li Mecánica de bicicletas : S/.113555.60  un año
-                                        li Minorista de bicicletas : S/.193423.01  un año
-
-                                div.card-footer
-                                   button.btn.btn-primary#cyclebutton Ver referencias
-                    div.modal#cyclemodal
-                        a.modal-overlay(aria-label="Close" href="#Close")
-                        div.modal-container
-                            div.modal-header
-                                a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closecycle
-                                div.modal-title.h5 Referencias
-                            div.modal-body
-                                div.content
-                                    li
-                                        a(href="https://bicycleuniverse.com/much-bike-mechanic-make/#How_Much_Does_a_Bike_Shop_Owner_Make").btn.btn-link Ciclismo referencias
-
-                    div.card.my-2
-                        div.columns
-                            div.column.col-3.col-sm-12
-                                div.card-image.fillParentDiv
-                                    img(src="../images/finaltrekking.jpg", alt="Trekking").img-responsive.fillParentDivForImage
-                            div.column.col-9.col-sm-12
-                                div.card-body
-                                    p
-                                        b Tipo de industria:
-                                        |  Trekking
-                                    p
-                                        b Descripción:
-                                        |  El trekking es una de las últimas tendencias turísticas del mundo. Involucre a los turistas permitiéndoles explorar la belleza del distrito y venderles equipos. Brinde una experiencia turística de calidad mientras gana dinero, ¡qué más podría ser mejor!
-
-                                    p
-                                        b Ingresos estimados:
-                                        |
-                                        li  Guía de senderismo: S/.701100.00 - S/.175275.00  un año
-
-                                div.card-footer
-                                    button.btn.btn-primary#trekkingbutton Ver referencias
-                    div.modal#trekkingmodal
-                        a.modal-overlay(aria-label="Close" href="#Close")
-                        div.modal-container
-                            div.modal-header
-                                a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closetrekking
-                                div.modal-title.h5 Referencias
-                            div.modal-body
-                                div.content
-                                    li
-                                        a(href="https://wildlandtrekking.com/employment-opportunities/hiking-guide-jobs/").btn.btn-link Trekking referencias
+body.background
+    div.container
+        div.columns
+            div.column.col-12
+                include includes/tabLExplore.pug
+    div.container
+        div.columns
+            div.column.col-3
+            div.column.col-6.col-sm-12
+                h3.exploreTitle Mercados explorable
+            div.column.col-3
+    div.container
+        div.columns
+            div.column.col-2
+            div.column.col-8
 
 
-
-
-
-                    div.card.my-2
-                        div.columns
-                            div.column.col-3.col-sm-12
-                                div.card-image.fillParentDiv
-                                    img(src="../images/birdwatching.jpg", alt="Bird watching").img-responsive.fillParentDivForImage
-                            div.column.col-9.col-sm-12
-                                div.card-body
-                                    p
-                                        b Tipo de industria:
-                                        |  observación de aves
-                                    p
-                                        b Descripción:
-                                        |  Con la cantidad de especies de aves increíbles en su área, ¿por qué no ganar dinero introduciendo la observación de aves donde los turistas pagan dinero para observar aves en su hábitat natural?
-                                    p
-                                        b Ingresos estimados:
-                                        li tours de observación de aves : Mínima de S/.70110.00  - S/.11685.00  un año
-
-                                div.card-footer
-                                    button.btn.btn-primary#birdwatchingbutton Ver referencias
-                    div.modal#birdwatchingmodal
-                        a.modal-overlay(aria-label="Close" href="#Close")
-                        div.modal-container
-                            div.modal-header
-                                a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closebirdwatching
-                                div.modal-title.h5 Referencias
-                            div.modal-body
-                                div.content
-                                    li
-                                        a(href="https://www.audubon.org/news/birdwatching-bright-spot-pandemic-stricken-economy").btn.btn-link Popularidad de la observación de aves
-                                    li
-                                        a(href="https://www.nytimes.com/2020/05/29/science/bird-watching-coronavirus.html").btn.btn-link Popularidad de la observación de aves 2
-                                    li
-                                        a(href="https://www.gooverseas.com/tours-trips/bird-watching#:~:text=Similarly%2C%20bird%20watching%20tours%20range,which%20include%20bird%20watching%20activities.").btn.btn-link Tours de observación de aves
-                                    li
-                                        a(href="https://www.responsibletravel.com/holidays/bird-watching").btn.btn-link Precios de tour de ejemplo
-
-                    div.card.my-2
-                        div.columns
-                            div.column.col-3.col-sm-12
-                                div.card-image.fillParentDiv
-                                    img(src="../images/editedKiteSurfing.jpg", alt="Kite surfing").img-responsive.fillParentDivForImage
-                            div.column.col-9.col-sm-12
-                                div.card-body
-                                    p
-                                        b Tipo de industria:
-                                        |   surf de vela
-                                    p
-                                        b Descripción:
-                                        |  El kitesurf es una actividad que permite al turista surfear a través de las olas al ser jalado con una cometa. Esta idea de turismo para hacer dinero puede generar una gran cantidad de dinero en efectivo vendiendo equipos y un estimado de 1000 a 2000 dólares cada mes por ser instructor.
-                                    p
-                                        b Ingresos estimados:
-
-                                        li Instructora de cometas :  Mínima de S/.46740.00  un año
-                                        li Tienda de kitesurf:   Mínima de S/.701100.00  un año
-
-                                div.card-footer
-                                    button.btn.btn-primary#modalbutton Ver referencias
-
-                    div.modal#kitemodal
-                        a.modal-overlay(aria-label="Close" href="#Close")
-                        div.modal-container
-                            div.modal-header
-                                a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closeid
-                                div.modal-title.h5 Referencias
-                            div.modal-body
-                               div.content
-                                   li
-                                        a(href="https://www.chickenloop.com/content/how-much-do-kitesurfing-instructors-earn").btn.btn-link Instructora de cometas referencia
-                                   li
-                                       a(href="https://www.atbshop.co.uk/kitesurfing-lei-kites/liquid-force-solo-v3-kitesurfing-kite?opt1=15.5m%20Kite%20Only&gclid=Cj0KCQjw8IaGBhCHARIsAGIRRYoQRlA7b3ChIrkYT7aPA_dOFjJqZ-_GSZaNZIaomyFBZn_Ih5JpuSMaArPxEALw_wcB").btn.btn-link Tienda de kitesurf
-
-                    div.card.my-2
-                        div.columns
-                            div.column.col-3.col-sm-12
-                                div.card-image.cardImageExplore.fillParentDiv
-                                    img(src="../images/boatRiding.jpg", alt="Boat riding").img-responsive.fillParentDivForImage
-                            div.column.col-9
-                                div.card-body
-                                    p
-                                        b Tipo de industria:
-                                        |  Paseo en barco
-                                    p
-                                        b Descripción:
-                                        |  Con una tonelada de barcos atados en la ciudad, esta es la oportunidad perfecta para ganar mucho dinero iniciando un negocio de paseos en barco. ¡Ofrece paseos en barco turístico y cárgalos como mejor te parezca!
-                                    p
+                div.card.my-2
+                    div.columns.col-sm-12
+                        div.column.col-3.col-sm-12
+                            div.card-image.fillParentDiv
+                                img(src="../images/smallerCycling.png", alt="Cycling").img-responsive.fillParentDivForImage
+                        div.column.col-9.col-sm-12
+                            div.card-body
+                                p
+                                    b Tipo de industria:
+                                    |  Ciclismo
+                                p
+                                    b Descripción:
+                                    |  Consiga clientes ofreciéndoles una hermosa experiencia ciclista. Proporcione a los ciclistas los equipos y observe el flujo de efectivo, ya que se sabe que el ciclismo como atracción turística proporciona una gran cantidad de ingresos, por lo tanto, ¡por qué no comenzar hoy!
+                                p
                                     b Ingresos estimados:
-                                    li Excursiones en canoa : S/.198730.30 un año
+                                    li Mecánica de bicicletas : S/.113555.60  un año
+                                    li Minorista de bicicletas : S/.193423.01  un año
 
-                                div.card-footer
-                                    button.btn.btn-primary#boatsbutton Ver referencias
-                    div.modal#boatsmodal
-                        a.modal-overlay(aria-label="Close" href="#Close")
-                        div.modal-container
-                            div.modal-header
-                                a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closeboats
-                                div.modal-title.h5 Referencias
-                            div.modal-body
-                                div.content
-                                    li
-                                        a(href="https://www.ultimate-canoeandkayak.co.uk/canoe-kayak-hire-prices/").btn.btn-link Excursiones en canoa referenicas
+                            div.card-footer
+                                button.btn.btn-primary#cyclebutton Ver referencias
+                div.modal#cyclemodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closecycle
+                            div.modal-title.h5 Referencias
+                        div.modal-body
+                            div.content
+                                li
+                                    a(href="https://bicycleuniverse.com/much-bike-mechanic-make/#How_Much_Does_a_Bike_Shop_Owner_Make").btn.btn-link Ciclismo referencias
+
+                div.card.my-2
+                    div.columns
+                        div.column.col-3.col-sm-12
+                            div.card-image.fillParentDiv
+                                img(src="../images/finaltrekking.jpg", alt="Trekking").img-responsive.fillParentDivForImage
+                        div.column.col-9.col-sm-12
+                            div.card-body
+                                p
+                                    b Tipo de industria:
+                                    |  Trekking
+                                p
+                                    b Descripción:
+                                    |  El trekking es una de las últimas tendencias turísticas del mundo. Involucre a los turistas permitiéndoles explorar la belleza del distrito y venderles equipos. Brinde una experiencia turística de calidad mientras gana dinero, ¡qué más podría ser mejor!
+
+                                p
+                                    b Ingresos estimados:
+                                    |
+                                    li  Guía de senderismo: S/.701100.00 - S/.175275.00  un año
+
+                            div.card-footer
+                                button.btn.btn-primary#trekkingbutton Ver referencias
+                div.modal#trekkingmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closetrekking
+                            div.modal-title.h5 Referencias
+                        div.modal-body
+                            div.content
+                                li
+                                    a(href="https://wildlandtrekking.com/employment-opportunities/hiking-guide-jobs/").btn.btn-link Trekking referencias
 
 
-                div.column.col-2
 
+
+
+                div.card.my-2
+                    div.columns
+                        div.column.col-3.col-sm-12
+                            div.card-image.fillParentDiv
+                                img(src="../images/birdwatching.jpg", alt="Bird watching").img-responsive.fillParentDivForImage
+                        div.column.col-9.col-sm-12
+                            div.card-body
+                                p
+                                    b Tipo de industria:
+                                    |  observación de aves
+                                p
+                                    b Descripción:
+                                    |  Con la cantidad de especies de aves increíbles en su área, ¿por qué no ganar dinero introduciendo la observación de aves donde los turistas pagan dinero para observar aves en su hábitat natural?
+                                p
+                                    b Ingresos estimados:
+                                    li tours de observación de aves : Mínima de S/.70110.00  - S/.11685.00  un año
+
+                            div.card-footer
+                                button.btn.btn-primary#birdwatchingbutton Ver referencias
+                div.modal#birdwatchingmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closebirdwatching
+                            div.modal-title.h5 Referencias
+                        div.modal-body
+                            div.content
+                                li
+                                    a(href="https://www.audubon.org/news/birdwatching-bright-spot-pandemic-stricken-economy").btn.btn-link Popularidad de la observación de aves
+                                li
+                                    a(href="https://www.nytimes.com/2020/05/29/science/bird-watching-coronavirus.html").btn.btn-link Popularidad de la observación de aves 2
+                                li
+                                    a(href="https://www.gooverseas.com/tours-trips/bird-watching#:~:text=Similarly%2C%20bird%20watching%20tours%20range,which%20include%20bird%20watching%20activities.").btn.btn-link Tours de observación de aves
+                                li
+                                    a(href="https://www.responsibletravel.com/holidays/bird-watching").btn.btn-link Precios de tour de ejemplo
+
+                div.card.my-2
+                    div.columns
+                        div.column.col-3.col-sm-12
+                            div.card-image.fillParentDiv
+                                img(src="../images/editedKiteSurfing.jpg", alt="Kite surfing").img-responsive.fillParentDivForImage
+                        div.column.col-9.col-sm-12
+                            div.card-body
+                                p
+                                    b Tipo de industria:
+                                    |   surf de vela
+                                p
+                                    b Descripción:
+                                    |  El kitesurf es una actividad que permite al turista surfear a través de las olas al ser jalado con una cometa. Esta idea de turismo para hacer dinero puede generar una gran cantidad de dinero en efectivo vendiendo equipos y un estimado de 1000 a 2000 dólares cada mes por ser instructor.
+                                p
+                                    b Ingresos estimados:
+
+                                    li Instructora de cometas :  Mínima de S/.46740.00  un año
+                                    li Tienda de kitesurf:   Mínima de S/.701100.00  un año
+
+                            div.card-footer
+                                button.btn.btn-primary#modalbutton Ver referencias
+
+                div.modal#kitemodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closeid
+                            div.modal-title.h5 Referencias
+                        div.modal-body
+                            div.content
+                                li
+                                    a(href="https://www.chickenloop.com/content/how-much-do-kitesurfing-instructors-earn").btn.btn-link Instructora de cometas referencia
+                                li
+                                    a(href="https://www.atbshop.co.uk/kitesurfing-lei-kites/liquid-force-solo-v3-kitesurfing-kite?opt1=15.5m%20Kite%20Only&gclid=Cj0KCQjw8IaGBhCHARIsAGIRRYoQRlA7b3ChIrkYT7aPA_dOFjJqZ-_GSZaNZIaomyFBZn_Ih5JpuSMaArPxEALw_wcB").btn.btn-link Tienda de kitesurf
+
+                div.card.my-2
+                    div.columns
+                        div.column.col-3.col-sm-12
+                            div.card-image.cardImageExplore.fillParentDiv
+                                img(src="../images/boatRiding.jpg", alt="Boat riding").img-responsive.fillParentDivForImage
+                        div.column.col-9
+                            div.card-body
+                                p
+                                    b Tipo de industria:
+                                    |  Paseo en barco
+                                p
+                                    b Descripción:
+                                    |  Con una tonelada de barcos atados en la ciudad, esta es la oportunidad perfecta para ganar mucho dinero iniciando un negocio de paseos en barco. ¡Ofrece paseos en barco turístico y cárgalos como mejor te parezca!
+                                p
+                                b Ingresos estimados:
+                                li Excursiones en canoa : S/.198730.30 un año
+
+                            div.card-footer
+                                button.btn.btn-primary#boatsbutton Ver referencias
+                div.modal#boatsmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closeboats
+                            div.modal-title.h5 Referencias
+                        div.modal-body
+                            div.content
+                                li
+                                    a(href="https://www.ultimate-canoeandkayak.co.uk/canoe-kayak-hire-prices/").btn.btn-link Excursiones en canoa referenicas
+
+
+            div.column.col-2
 

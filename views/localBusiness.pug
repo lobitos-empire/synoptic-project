@@ -1,63 +1,66 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
-        link(rel="stylesheet" type="text/css" href="../styles/style.css")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.icon.css")
+        include includes/head.pug
         script(src="../scripts/main.js" defer)
-        title #{ title }
+
     body.background
         div.d-invisible#lbBody
             header.navbar.py-2.px-2
                 section.navbar-section.col-sm-12
-                    img(src="../images/logo1.png", alt="Logo").logo2.img-responsive
-                    a(href="/").btn.btn-link Home
-                section.navbar-center.col-sm-12
-                    h3 Local Business
+                    a(href="/")
+                        img(src="../images/logo1.png", alt="Logo").logo1.img-responsive
+
+                section.navbar-center
+                    h3.text-center  Negocio local
                 section.navbar-section.col-sm-12
                     include includes/spanish.pug
 
 
-            div.container.cardsAdjust
+            div.container
                 div.columns
-                    div.column.col-4.col-sm-12.my-2
-                        div.card.uploadCard
-                            div.card-image
-                                img(src="../images/biggerPromote.png", alt="Upload local business").img-responsive
-                            div.card-header
-                                div.card-title.h3 Sube tu negocio!
-                            div.card-body
-                                p1.localBusinessCardText Haga clic en el botón de carga para exponer su negocio al turista local.
-                            div.card-footer
-                                a.button.btn.btn-primary.float-right(aria-label="Upload button", href="/upload") UPLOAD
-                                    i.icon.icon-upload
+                    div.column.col-1
+                    div.column.col-10
+                        div.container
+                            div.columns
+                                div.column.col-4.col-sm-12.my-2.py-2
+                                    div.card.uploadCard
+                                        div.card-image
+                                            img(src="../images/biggerPromote.png", alt="Upload local business").img-responsive
+                                        div.card-header
+                                            div.card-title.h4 Sube tu negocio!
+                                        div.card-body
+                                            p1.localBusinessCardText Haga clic en el botón de carga para exponer su negocio al turista local.
+                                        div.card-footer
+                                            a.button.btn.btn-primary.float-right(aria-label="Upload button", href="/upload") SUBIR
+                                                i.icon.icon-upload
 
 
-                    div.column.col-4.col-sm-12.my-2
-                        div.card.businessCard
-                            div.card-image
-                                img(src="../images/biggerBusiness.png", alt="Explore local business").img-responsive
-                            div.card-header
-                                div.card-title.h4 Explore su negocio local!
-                            div.card-body
-                                p1.localBusinessCardText  Haga clic en el botón en la esquina superior derecha para ver otras empresas locales y ver reseñas de turistas.
-                            div.card-footer
-                                a.button.btn.btn-primary.float-right(aria-label="Explore local business", href="/business") EXPLORE LOCAL BUSINESS.
+                                div.column.col-4.col-sm-12.my-2.py-2
+                                    div.card.businessCard
+                                        div.card-image
+                                            img(src="../images/biggerBusiness.png", alt="Explore local business").img-responsive
+                                        div.card-header
+                                            div.card-title.h4 Explore su negocio local!
+                                        div.card-body
+                                            p1.localBusinessCardText  Haga clic en el botón en la esquina superior derecha para ver otras empresas locales y ver reseñas de turistas.
+                                        div.card-footer
+                                            a.button.btn.btn-primary.float-right(aria-label="Explore local business", href="/business") EXPLORA EL NEGOCIO LOCAL
 
 
-                    div.column.col-4.col-sm-12.my-2
-                        div.card.exploreCard
-                            div.card-image
-                                img(src="../images/marketing.png", alt="Explore new markets").img-responsive
-                            div.card-header
-                                div.card-title.h4 Explorar nuevos mercados!
-                            div.card-body
-                                p1.localBusinessCardText  Haga clic en el botón en la esquina superior derecha para obtener sugerencias de nuevos mercados que se pueden explorar.
-                            div.card-footer
-                                a.button.btn.btn-primary.float-right(aria-label="Explore new markets", href="/explore") EXPLORE NEW MARKET.
+                                div.column.col-4.col-sm-12.my-2.py-2
+                                    div.card.exploreCard
+                                        div.card-image
+                                            img(src="../images/marketing.png", alt="Explore new markets").img-responsive
+                                        div.card-header
+                                            div.card-title.h4 Explorar nuevos mercados!
+                                        div.card-body
+                                            p1.localBusinessCardText  Haga clic en el botón en la esquina superior derecha para obtener sugerencias de nuevos mercados que se pueden explorar.
+                                        div.card-footer
+                                            a.button.btn.btn-primary.float-right(aria-label="Explore new markets", href="/explore") EXPLORA EL NUEVO MERCADO
+
+                    div.column.col-1
+
         div.container#passCodeDiv.centerPasccode
             div.columns
                 div.col-3.col-sm-12
@@ -67,7 +70,8 @@ html(lang="en")
                             div.col-1.col-sm-12
                             div.col-10.col-sm-12
                                 div.card-header
-                                    div.card-title.h5 Please enter your passcode:
+                                    div.card-title.h5 Ingrese su contraseña:
                                 div.card-body
-                                    input.form-input(type="text" id="passCode" placeholder="Passcode" autofocus)
+                                    input.form-input(type="text" id="passCode" placeholder="Contraseña" autofocus)
                             div.col-1.col-sm-12
+

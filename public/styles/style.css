@@ -115,7 +115,7 @@ https://www.svgbackgrounds.com/#flat-mountains
 */
 
 body.background{
-    background-color: #ffffff;
+    background-color: #f2f2f2;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%237be495' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23329d9c' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2373de96' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%231c8e98' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%236bd896' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%230d7e92' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2363d296' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%230d6f8a' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%235ccb96' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23175f7f' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2356c596' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23205072' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
@@ -144,7 +144,11 @@ ul{
 
 .tab .tab-item.active a {
     border-bottom-color: #329D9C;
-    color: #329D9C;
+    color: white;
+    background-color: #329D9C;
+    position: relative;
+    /*margin-bottom: 7%;*/
+
 }
 .tab .tab-item a {
     border-bottom: .1rem solid transparent;
@@ -153,13 +157,15 @@ ul{
     margin: 0 .4rem 0 0;
     padding: .4rem .2rem .3rem .2rem;
     text-decoration: none;
+    border-bottom-color: #329D9C;
 }
 .tab .tab-item a:hover {
-    color: #329D9C;
+    color: black;
     display: block;
     margin: 0 .4rem 0 0;
     padding: .4rem .2rem .3rem .2rem;
     text-decoration: none;
+
 }
 
 
@@ -282,6 +288,7 @@ ul{
     height: auto;
     filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
+    cursor: pointer;
 }
 .searchBar1{
     position: absolute;
@@ -351,6 +358,7 @@ ul{
 
 
 /* Star Rating */
+
 
 .star-rating:not(:checked) > input {
     position:relative;

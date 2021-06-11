@@ -111,6 +111,7 @@ app.get('/contacts', (req, res) => {
 app.get('/localBusiness', (req, res) => {
     res.render('localBusiness', {
         title: 'Local Business',
+        businesses: getAllBusinesses()
     });
 });
 

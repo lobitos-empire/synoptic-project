@@ -190,6 +190,9 @@ app.post("/uploadImage", (req, res) => {
                 throw err;
             }
             console.log("JSON saved");
+            setTimeout(() => {
+                res.redirect('/business');
+            }, 5000)
         })
     } catch (err) {
         console.log(err);

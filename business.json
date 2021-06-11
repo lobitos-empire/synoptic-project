@@ -1,1 +1,251 @@
-{"Businesses":{"Categories":[{"Category":{"CategoryName":"Comidas y bebidas","CategoryData":[{"Owners_Name":"dskfd","Business_Name":"dsjdoas","Business_Type":"Comidas y bebidas","Business_Desc":"dsfjdns","Business_Location":"64 Zoo Lane","Business_Price":"10000"},{"Owners_Name":"dsvbfds","Business_Name":"dafdafa","Business_Type":"Comidas y bebidas","Business_Desc":"sdfds","Business_Location":"64 Zoo Lane","Business_Price":"10000"},{"Owners_Name":"dsv,ldan","Business_Name":"fdldvnlkdf","Business_Type":"Comidas y bebidas","Business_Desc":"lkvnfdlkvdns"},{"Owners_Name":"dsb;m;","Business_Name":"kvdns;k","Business_Type":"Comidas y bebidas","Business_Desc":";mfd;lvm;fd"},{"Owners_Name":"dkgnlkf","Business_Name":"vfndlkvm","Business_Type":"Comidas y bebidas","Business_Desc":"lfvlkdn;"},{"Owners_Name":"dsv;sk","Business_Name":"fjdnlkfbnd","Business_Type":"Comidas y bebidas","Business_Desc":"vdlkfnkfs"}]}},{"Category":{"CategoryName":"Cosas para hacer","CategoryData":[{},{"Owners_Name":"dsfkdsj","Business_Name":"dksnjn","Business_Type":"Cosas para hacer","Business_Desc":"dsafdsf","Business_Location":"64 Zoo Lane","Business_Price":"10000"},{"Owners_Name":"afadf","Business_Name":"sdfsdf","Business_Type":"Cosas para hacer","Business_Desc":"fsdfa","Business_Location":"adsfad","Business_Price":"231"}]}},{"Category":{"CategoryName":"Servicios","CategoryData":[{},{"Owners Name":"dsnfds","Business_Name":"dsjfds","Business_Type":"Servicios","Business_Desc":"sadffaf","Business_Location":"64 Zoo Lane","Business_Price":"10000"},{"Owners_Name":"dsjddnfs","Business_Name":"jdlsnllfds","Business_Type":"Servicios","Business_Desc":"adsfdsf","Business_Location":"64 Zoo Lane","Business_Price":"10000"},{"Business_Name":"testtest","Business_Type":"Servicios","Business_Desc":"test","Business_Location":"64 Zoo Lane","Business_Price":"10000"}]}},{"Category":{"CategoryName":"Hoteles","CategoryData":[{}]}},{"Category":{"CategoryName":"Compras","CategoryData":[{}]}},{"Category":{"CategoryName":"Otra","CategoryData":[{}]}}],"Ratings":[{"Rating":{"RatingNumber":"","CategoryData":[{"Business_Name":"dsjdoas","Business_Type":"Comidas y bebidas","Business_Desc":"dsfjdns","Business_Location":"64 Zoo Lane","Business_Price":"10000","Rating_Count":"0"}]}},{"Rating":{"RatingNumber":"1","CategoryData":[{"Business_Name":"dsjdoas","Business_Type":"Comidas y bebidas","Business_Desc":"dsfjdns","Business_Location":"64 Zoo Lane","Business_Price":"10000","Rating_Count":"1"}]}},{"Rating":{"RatingNumber":"2","CategoryData":[{"Business_Name":"dsjdoas","Business_Type":"Comidas y bebidas","Business_Desc":"dsfjdns","Business_Location":"64 Zoo Lane","Business_Price":"10000","Rating_Count":"1"}]}},{"Rating":{"RatingNumber":"3","CategoryData":[{"Business_Name":"dsjdoas","Business_Type":"Comidas y bebidas","Business_Desc":"dsfjdns","Business_Location":"64 Zoo Lane","Business_Price":"10000","Rating_Count":"1"}]}},{"Rating":{"RatingNumber":"4","CategoryData":[{"Business_Name":"dsjdoas","Business_Type":"Comidas y bebidas","Business_Desc":"dsfjdns","Business_Location":"64 Zoo Lane","Business_Price":"10000","Rating_Count":"1"}]}},{"Rating":{"RatingNumber":"5","CategoryData":[{"Business_Name":"dsjdoas","Business_Type":"Comidas y bebidas","Business_Desc":"dsfjdns","Business_Location":"64 Zoo Lane","Business_Price":"10000","Rating_Count":"1"}]}}]}}
+{
+  "Businesses": {
+    "Categories": [
+      {
+        "Category": {
+          "CategoryName": "Comidas y bebidas",
+          "CategoryData": [
+            {
+              "Owners_Name": "dskfd",
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000"
+            },
+            {
+              "Owners_Name": "dsvbfds",
+              "Business_Name": "dafdafa",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "sdfds",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000"
+            },
+            {
+              "Owners_Name": "dsv,ldan",
+              "Business_Name": "fdldvnlkdf",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "lkvnfdlkvdns"
+            },
+            {
+              "Owners_Name": "dsb;m;",
+              "Business_Name": "kvdns;k",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": ";mfd;lvm;fd"
+            },
+            {
+              "Owners_Name": "dkgnlkf",
+              "Business_Name": "vfndlkvm",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "lfvlkdn;"
+            },
+            {
+              "Owners_Name": "dsv;sk",
+              "Business_Name": "fjdnlkfbnd",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "vdlkfnkfs"
+            },
+            {
+              "Owners_Name": "fnlkcdfx",
+              "Business_Name": "TESTTTTTT",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "fdknbkfdnkb",
+              "Image_Src": ""
+            },
+            {
+              "Owners_Name": "noononononnoonon",
+              "Business_Name": "nononoononononono",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "nononoononononoo",
+              "Image_Src": ""
+            },
+            {
+              "Owners_Name": "sgvmrslm",
+              "Business_Name": "pknvpkfnp",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "pkvfnvkfd",
+              "Image_Src": "C:\\Users\\spurs\\WebstormProjects\\synoptic-project\\uploadedImages/pknvpkfnp.png"
+            },
+            {
+              "Owners_Name": "tytytytytytyty",
+              "Business_Name": "tytytytyty",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "tytytytytyt",
+              "Image_Src": "C:\\Users\\spurs\\WebstormProjects\\synoptic-project\\uploadedImages/tytytytyty.png"
+            },
+            {
+              "Owners_Name": "tntntntntnttn",
+              "Business_Name": "tntntntntntntntn",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "tntntntntntntn",
+              "Image_Src": "C:\\Users\\spurs\\WebstormProjects\\synoptic-project\\uploadedImages/tntntntntntntntn.png"
+            }
+          ]
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Cosas para hacer",
+          "CategoryData": [
+            {},
+            {
+              "Owners_Name": "dsfkdsj",
+              "Business_Name": "dksnjn",
+              "Business_Type": "Cosas para hacer",
+              "Business_Desc": "dsafdsf",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000"
+            }
+          ]
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Servicios",
+          "CategoryData": [
+            {},
+            {
+              "Owners Name": "dsnfds",
+              "Business_Name": "dsjfds",
+              "Business_Type": "Servicios",
+              "Business_Desc": "sadffaf",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000"
+            },
+            {
+              "Owners_Name": "dsjddnfs",
+              "Business_Name": "jdlsnllfds",
+              "Business_Type": "Servicios",
+              "Business_Desc": "adsfdsf",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000"
+            },
+            {
+              "Business_Name": "testtest",
+              "Business_Type": "Servicios",
+              "Business_Desc": "test",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000"
+            }
+          ]
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Hoteles",
+          "CategoryData": [
+            {}
+          ]
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Compras",
+          "CategoryData": [
+            {}
+          ]
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Otra",
+          "CategoryData": [
+            {}
+          ]
+        }
+      }
+    ],
+    "Ratings": [
+      {
+        "Rating": {
+          "RatingNumber": "",
+          "CategoryData": [
+            {
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000",
+              "Rating_Count": "0"
+            }
+          ]
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "1",
+          "CategoryData": [
+            {
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000",
+              "Rating_Count": "1"
+            }
+          ]
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "2",
+          "CategoryData": [
+            {
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000",
+              "Rating_Count": "1"
+            }
+          ]
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "3",
+          "CategoryData": [
+            {
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000",
+              "Rating_Count": "1"
+            }
+          ]
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "4",
+          "CategoryData": [
+            {
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000",
+              "Rating_Count": "1"
+            }
+          ]
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "5",
+          "CategoryData": [
+            {
+              "Business_Name": "dsjdoas",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "dsfjdns",
+              "Business_Location": "64 Zoo Lane",
+              "Business_Price": "10000",
+              "Rating_Count": "1"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

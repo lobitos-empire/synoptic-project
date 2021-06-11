@@ -144,13 +144,14 @@ app.post("/upload", (req, res) => {
         "Business_Desc": businessDesc,
         "Business_Location": businessLoc,
         "Business_Price": businessPrice,
+        "Image_Src": '../uploadedImages/' + businessName + ".png"
     };
 
     try {
         let olddata = fs.readFileSync('business.json', 'utf8')
         olddata = JSON.parse(olddata);
         for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
-            if (olddata.Businesses.Categories[i].Category.CategoryName == businessType) {
+            if (olddata.Businesses.Categories[i].Category.CategoryName === businessType) {
                 olddata.Businesses.Categories[i].Category.CategoryData.push(business);
             }
         }
@@ -173,9 +174,12 @@ app.post("/uploadImage", (req, res) => {
     form.parse(req, function (err, fields, files) {
         var oldPath = files.uploadImage.path;
         var extension = files.uploadImage.name.split(".")
+        if(extension[1] !== "png"){
+            console.log("wrong file type");
+            return;
+        }
         var newPath = path.join(__dirname, 'uploadedImages') + '/' + tempName + "." + extension[1];
         var rawData = fs.readFileSync(oldPath);
-
         fs.writeFile(newPath, rawData, function (err) {
             if (err) console.log(err);
             //return res.render("upload", {
@@ -183,6 +187,28 @@ app.post("/uploadImage", (req, res) => {
             //});
         })
     })
+    try {
+        let olddata = fs.readFileSync('business.json', 'utf8')
+        olddata = JSON.parse(olddata);
+        for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
+            for (let j = 0; j < olddata.Businesses.Categories[i].Category.CategoryData[j]; j++) {
+                if (olddata.Businesses.Categories[i].Category.CategoryData[j].Business_Name === tempName) {
+                    olddata.Businesses.Categories[i].Category.CategoryData[j].Image_Src = newPath;
+                }
+            }
+        }
+        console.log(olddata);
+        const data = JSON.stringify(olddata);
+
+        fs.writeFile("business.json", data, (err) => {
+            if (err) {
+                throw err;
+            }
+            console.log("JSON saved");
+        })
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 app.get('rating',(req, res)=>{

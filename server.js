@@ -57,6 +57,7 @@ app.get('/tourist', (req, res) => {
 app.get('/hottest', (req, res) => {
     res.render('hottest', {
         title: 'Hottest',
+        businesses: getAllRated()
     });
 });
 
@@ -113,7 +114,6 @@ app.get('/contacts', (req, res) => {
 app.get('/localBusiness', (req, res) => {
     res.render('localBusiness', {
         title: 'Local Business',
-        businesses: getAllBusinesses()
     });
 });
 
@@ -371,12 +371,22 @@ function getAllBusinesses() {
 
 function getAllRated(){
     let rawData = fs.readFileSync('business.json');
-    let businesses= JSON.parse(rawData).businesses;
+    let businesses= JSON.parse(rawData).Businesses;
     let results = [];
 
     for(let i=5; i>-1; i--){
         for(let j = 0; j < businesses.Ratings[i].Rating.CategoryData.length; j++){
-            results.push(businesses.Ratings[i].Rating.CategoryData[j]);
+            let Rating = businesses.Ratings[i].Rating.RatingNumber;
+            let x = {
+                "Business_Name": businesses.Ratings[i].Rating.CategoryData.Business_Name,
+                "Business_Type": businesses.Ratings[i].Rating.CategoryData.Business_Type,
+                "Business_Desc": businesses.Ratings[i].Rating.CategoryData.Business_Desc,
+                "Business_Location": businesses.Ratings[i].Rating.CategoryData.Business_Location,
+                "Business_Price": businesses.Ratings[i].Rating.CategoryData.Business_Price,
+                "Rating_Count": businesses.Ratings[i].Rating.CategoryData.Rating_Count,
+                "Rating": Rating
+            }
+            results.push(x);
         }
     }
     return results;

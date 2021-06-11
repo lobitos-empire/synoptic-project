@@ -9,7 +9,7 @@ html(lang="en")
             section.navbar-section.col-sm-12
                 a(href="/")
                     img(src="../images/logo1.png", alt="Logo").logo1.img-responsive
-            section.navbar-center.col-sm-12
+            section.navbar-center
                 h3.text-center Tourists
             section.navbar-section.col-sm-12
                 include includes/translator.pug
@@ -35,7 +35,7 @@ html(lang="en")
                                 div.card.attractionCard
                                     div.card-image
                                         a(href='/attractions')
-                                            img.img-responsive(src="../images/hotels.png", alt="Explore local business")
+                                            img.img-responsive(src="../images/hotelss.jpg", alt="Explore local business")
                                     div.card-header
                                         div.card-title.h4 Attractions
                                         div.card-subtitle.text-black Explore Attractions in Lobitos
@@ -45,7 +45,7 @@ html(lang="en")
                                 div.card.hotelsCard
                                     div.card-image
                                         a(href='/hotels')
-                                            img.img-responsive(src="../images/hotels.png", alt="Explore new markets")
+                                            img.img-responsive(src="../images/hotelss.jpg", alt="Explore new markets")
                                     div.card-header
                                         div.card-title.h4 Hotels
                                         div.card-subtitle.text-black Explore Hotels in Lobitos
@@ -57,13 +57,14 @@ html(lang="en")
                                 div.card.spanishPhraseCard2
                                     div.card-header
                                         div.card-title.h3 Spanish Phrases
-                                        //Creating a search bar for users to search phrases that are not on the spanish phrase card
-                                        section.navbar-section(class="searchBar")
-                                            form(action="/tourist" method="get")
-                                                div.input-group.input-inline
-                                                    input.form-input(type="text", placeholder="search phrases" name="search")
-                                                    button.btn.btn-primary.input-group-btn
-                                                        i.icon.icon-search
+                                            //Creating a search bar for users to search phrases that are not on the spanish phrase card
+
+                                            section.navbar-section(class="searchBar")
+                                                form(action="/tourist" method="get")
+                                                    div.input-group.input-inline
+                                                        input.form-input(type="text", placeholder="search phrases" name="search")
+                                                        button.btn.btn-primary.input-group-btn
+                                                            i.icon.icon-search
                                     div.card-body
                                         // creating table to add spanish and english phrases within the card-body
                                         table.table.table-striped
@@ -79,8 +80,10 @@ html(lang="en")
                                                         td=n.english
                                                         td=n.spanish
 
+                            // Contacts Card with Important numbers
+
                             div.column.col-4.col-sm-12.my-2
-                                div.card
+                                div.card.contactsCard
                                     div.card-header
                                         div.card-title.h3 Contacts
                                     div.card-body

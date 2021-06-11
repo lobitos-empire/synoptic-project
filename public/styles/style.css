@@ -17,14 +17,6 @@ body{
     width: auto;
     height: 6rem;
 }
-/*.logo2{*/
-/*    top: 0;*/
-/*    left: 1%;*/
-/*    position: absolute;*/
-/*    width: auto;*/
-/*    height: 3.5rem;*/
-/*}*/
-
 
 .backgroundimage{
     background-repeat: no-repeat;
@@ -43,17 +35,6 @@ body{
 }
 
 /* Home Page Heading */
-
-
-/*header{*/
-/*    background-color: #CFF4D2;*/
-/*}*/
-
-
-
-.moveuploadCard{
-    left: 50%;
-}
 
 h1{
     position: relative;
@@ -76,7 +57,7 @@ a.tButton{
     -ms-transform: translate(-50%, -50%);
     border:0.16em solid black;
     color: black;
-    padding: 15px 75px;
+    padding: 15px 85px;
     text-decoration: none;
     display: inline;
     font-size: 1.6vw;
@@ -142,15 +123,15 @@ body.background{
 
 h3{
     position: relative;
-    /*top: 90%;*/
     font-family: Oswald, serif;
-    font-size: 3vw;
+    font-size: 40px;
     line-height: 100px;
     font-weight: 400;
     color: black;
-    /*text-transform: uppercase;*/
     display: inline;
+    text-align: center;
 }
+
 
 /* Tabs Styling */
 
@@ -200,12 +181,8 @@ ul{
 /* Local Business Styles */
 
 .uploadCard{
-    /*width: 300px;*/
-    /*height: 300px;*
-
-     */
     height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
 .home{
@@ -213,12 +190,12 @@ ul{
 }
 .businessCard{
     height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
 .exploreCard{
     height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
 .uploadImage{
@@ -270,15 +247,19 @@ ul{
     height: auto;
     border-radius: 30px;
 }
+.contactsCard{
+    height: auto;
+    border-radius: 30px;
+}
 
 .searchBar{
-    margin-top: -2%;
+    margin-top: 2%;
     float: right;
 }
 
 
 
-/* Local Business - Other Business */
+/* Local Business - Other Business/ */
 
 .card-title.h4{
     font-weight: bold;
@@ -289,7 +270,7 @@ ul{
     height: auto;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 840px) {
     .vl {
         border-left: none;
         border-top: 3px solid #bbb;
@@ -302,7 +283,7 @@ ul{
     filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
-.searchBar{
+.searchBar1{
     position: absolute;
     top: 45%;
     left: 65%;
@@ -325,8 +306,11 @@ ul{
     /*left:10%;*/
 }
 .searchBar1{
-    margin-top: 50px;
-    margin-right: 50px;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    /*margin-top: 50px;*/
+    /*margin-right: 50px;*/
 }
 .btn.btn-primary {
     background: #329D9C;
@@ -345,13 +329,8 @@ ul{
 
 /* Star Rating */
 
-.star-rating {
-    float: left;
-    height: 46px;
-    padding: 0 10px;
-}
 .star-rating:not(:checked) > input {
-    position:absolute;
+    position:relative;
     top:-9999px;
 }
 .star-rating:not(:checked) > label {
@@ -391,4 +370,11 @@ ul{
 
 .cardImageExplore{
     width:100%;
+}
+
+
+
+
+.moveuploadCard{
+    left: 50%;
 }

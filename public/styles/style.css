@@ -17,14 +17,6 @@ body{
     width: auto;
     height: 6rem;
 }
-/*.logo2{*/
-/*    top: 0;*/
-/*    left: 1%;*/
-/*    position: absolute;*/
-/*    width: auto;*/
-/*    height: 3.5rem;*/
-/*}*/
-
 
 .backgroundimage{
     background-repeat: no-repeat;
@@ -43,17 +35,6 @@ body{
 }
 
 /* Home Page Heading */
-
-
-/*header{*/
-/*    background-color: #CFF4D2;*/
-/*}*/
-
-
-
-.moveuploadCard{
-    left: 50%;
-}
 
 h1{
     position: relative;
@@ -76,7 +57,7 @@ a.tButton{
     -ms-transform: translate(-50%, -50%);
     border:0.16em solid black;
     color: black;
-    padding: 15px 75px;
+    padding: 15px 85px;
     text-decoration: none;
     display: inline;
     font-size: 1.6vw;
@@ -134,7 +115,7 @@ https://www.svgbackgrounds.com/#flat-mountains
 */
 
 body.background{
-    background-color: #ffffff;
+    background-color: #f2f2f2;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%237be495' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23329d9c' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2373de96' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%231c8e98' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%236bd896' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%230d7e92' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2363d296' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%230d6f8a' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%235ccb96' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23175f7f' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2356c596' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23205072' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
@@ -142,15 +123,15 @@ body.background{
 
 h3{
     position: relative;
-    /*top: 90%;*/
     font-family: Oswald, serif;
-    font-size: 3vw;
+    font-size: 40px;
     line-height: 100px;
     font-weight: 400;
     color: black;
-    /*text-transform: uppercase;*/
     display: inline;
+    text-align: center;
 }
+
 
 /* Tabs Styling */
 
@@ -163,7 +144,11 @@ ul{
 
 .tab .tab-item.active a {
     border-bottom-color: #329D9C;
-    color: #329D9C;
+    color: white;
+    background-color: #329D9C;
+    position: relative;
+    /*margin-bottom: 7%;*/
+
 }
 .tab .tab-item a {
     border-bottom: .1rem solid transparent;
@@ -172,13 +157,15 @@ ul{
     margin: 0 .4rem 0 0;
     padding: .4rem .2rem .3rem .2rem;
     text-decoration: none;
+    border-bottom-color: #329D9C;
 }
 .tab .tab-item a:hover {
-    color: #329D9C;
+    color: black;
     display: block;
     margin: 0 .4rem 0 0;
     padding: .4rem .2rem .3rem .2rem;
     text-decoration: none;
+
 }
 
 
@@ -201,7 +188,7 @@ ul{
 
 .uploadCard{
     height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
 .home{
@@ -209,12 +196,12 @@ ul{
 }
 .businessCard{
     height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
 .exploreCard{
     height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
 .uploadImage{
@@ -266,15 +253,19 @@ ul{
     height: auto;
     border-radius: 30px;
 }
+.contactsCard{
+    height: auto;
+    border-radius: 30px;
+}
 
 .searchBar{
-    margin-top: -2%;
+    margin-top: 2%;
     float: right;
 }
 
 
 
-/* Local Business - Other Business */
+/* Local Business - Other Business/ */
 
 .card-title.h4{
     font-weight: bold;
@@ -285,7 +276,7 @@ ul{
     height: auto;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 840px) {
     .vl {
         border-left: none;
         border-top: 3px solid #bbb;
@@ -297,6 +288,12 @@ ul{
     height: auto;
     filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
+    cursor: pointer;
+}
+.searchBar1{
+    position: absolute;
+    top: 45%;
+    left: 65%;
 }
 
 .text-green{
@@ -316,8 +313,11 @@ ul{
     /*left:10%;*/
 }
 .searchBar1{
-    margin-top: 50px;
-    margin-right: 50px;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    /*margin-top: 50px;*/
+    /*margin-right: 50px;*/
 }
 .btn.btn-primary {
     background: #329D9C;
@@ -336,13 +336,9 @@ ul{
 
 /* Star Rating */
 
-.star-rating {
-    float: left;
-    height: 46px;
-    padding: 0 10px;
-}
+
 .star-rating:not(:checked) > input {
-    position:absolute;
+    position:relative;
     top:-9999px;
 }
 .star-rating:not(:checked) > label {
@@ -382,4 +378,11 @@ ul{
 
 .cardImageExplore{
     width:100%;
+}
+
+
+
+
+.moveuploadCard{
+    left: 50%;
 }

@@ -5,56 +5,70 @@ html(lang="en")
         script(src="../scripts/main.js" defer)
         link(rel="stylesheet" type="text/css" href="../styles/mdtoast.min.css")
         script(type="text/javascript" src="../scripts/mdtoast.min.js")
-        title #{ title }
 
     body.background
-        form.form-horizontal(action="/upload" id="uploadForm" method="post")
-            div.container.my-2
-                div.columns
-                    div.column.col-12
-                        include includes/tabLUpload.pug
-                    div.column.col-2.col-sm-12
-                    div.column.col-4.col-sm-12.my-2
-                                div.form-group
-                                    div.col-5.col-sm-12
-                                        label.form-label Nombre Del Dueño
-                                    div.col-7.col-sm-12
-                                        input.form-input(type="text" placeholder="Nombre Del Dueño" id="ownerName" name="ownersName" required)
-                                div.form-group
-                                    div.col-5.col-sm-12
-                                        label.form-label Nombre del Negocio
-                                    div.col-7.col-sm-12
-                                        input.form-input(type="text" placeholder="Nombre del Negocio" id="businessName" name="businessName" required)
-                                div.form-group
-                                    div.col-5.col-sm-12
-                                        label.form-label Tipo de negocio
-                                    div.col-7.col-sm-12
-                                        select.form-select(id="businessType", name="businessType")
-                                            option Comidas y bebidas
-                                            option Cosas para hacer
-                                            option Servicios
-                                            option Hoteles
-                                            option Compras
-                                            option Otra
-                                div.form-group
-                                    div.col-5.col-sm-12
-                                        label.form-label Descripción del Negocio
-                                    div.col-7.col-sm-12
-                                        textarea.form-input(id="businessDescription" placeholder="Business Description" rows="3" maxlength="175" name="businessDesc" required)
-                                div.form-group
-                                    div.col-3
-                                    div.column.col-6.col-sm-12
+        div.container.my-2
+            div.columns
+                div.column.col-12
+                    include includes/tabLUpload.pug
+        div.container.my-2
+            div.columns
+                div.column.col-2.col-sm-12
+                div.column.col-4.col-sm-12.my-2
+                    form.form-horizontal(action="/upload" id="uploadForm" method="post")
+                        div.form-group
+                            div.col-5.col-sm-12
+                                label.form-label Nombre Del Dueño
+                            div.col-7.col-sm-12
+                                input.form-input(type="text" placeholder="Nombre Del Dueño" id="ownerName" name="ownersName" required)
+                        div.form-group
+                            div.col-5.col-sm-12
+                                label.form-label Nombre del Negocio
+                            div.col-7.col-sm-12
+                                input.form-input(type="text" placeholder="Nombre del Negocio" id="businessName" name="businessName" required)
+                        div.form-group
+                            div.col-5.col-sm-12
+                                label.form-label Tipo de negocio
+                            div.col-7.col-sm-12
+                                select.form-select(id="businessType", name="businessType")
+                                    option Comidas y bebidas
+                                    option Cosas para hacer
+                                    option Servicios
+                                    option Hoteles
+                                    option Compras
+                                    option Otra
+                        div.form-group
+                            div.col-5.col-sm-12
+                                label.form-label Descripción del Negocio
+                            div.col-7.col-sm-12
+                                textarea.form-input(id="businessDescription" placeholder=" Descripción del negocio" rows="3" maxlength="175" name="businessDesc" required)
+                        div.form-group
+                            div.col-5.col-sm-12
+                                label.form-label Localización
+                            div.col-7.col-sm-12
+                                input.form-input(type="text" placeholder="Localización" id="locationname" name="businessLoc" required)
+                        div.form-group
+                            div.col-5.col-sm-12
+                                label.form-label Precio
+                            div.col-7.col-sm-12
+                                input.form-input(type="text" placeholder="Precio" id="businessP" name="businessPrice" required)
+                        div.form-group
+                            div.col-3
+                            div.column.col-6.col-sm-12
+                                input.form-input(type="submit").btn
+                            div.col-3
+
+
+                div.col-4.col-sm-12.my-2
+                    form.form-horizontal(action="/uploadImage" id="uploadImage" method="post" enctype="multipart/form-data" class="d-invisible" )
+                        div.column.col-12.col-sm-12.my-2
+                            div.form-group.form2
+                                div.card.moveuploadCard
+                                    div.card-image
+                                        input.form-input(type="file" name="uploadImage" required)
+                                    div.card-header
+                                        div.card-title.h3 Sube tu negocio!
+                                    div.card-body
+                                        p1 Mejore la imagen que mejor represente su negocio
                                         input.form-input(type="submit").btn
-                                    div.col-3
-        form.form-horizontal(action="/uploadImage" id="uploadImage" method="post" enctype="multipart/form-data" class="d-invisible")
-            div.column.col-4.col-sm-12.my-2
-                div.form-group.form2
-                    div.card.moveuploadCard
-                       div.card-image
-                           input.form-input(type="file" name="uploadImage" required)
-                       div.card-header
-                           div.card-title.h3 Sube tu negocio!
-                       div.card-body
-                           p1 Upload an image that best represent your business.
-                           input.form-input(type="submit").btn
-            div.column.col-2
+                div.column.col-2

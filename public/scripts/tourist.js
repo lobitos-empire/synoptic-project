@@ -63,10 +63,7 @@ if(window.location.pathname === "/hotels") {
         console.log(tabs[i])
         if(tabs[i].className === "tab-item active"){
             if(tabs[i].children[0].innerText === "Hotel"){
-                let icon = document.createElement("i");
-                icon.className = "material-icons";
-                icon.innerText = "home"
-                tabs[i].children[0].appendChild(icon)
+                tabs[i].children[0].innerText = "🏨 Hotel"
             }}}
 }
 else if(window.location.pathname === "/attractions"){
@@ -74,11 +71,8 @@ else if(window.location.pathname === "/attractions"){
     for(let i = 0; i<tabs.length; i++){
         if(tabs[i].className === "tab-item active"){
             if(tabs[i].children[0].innerText === "Attractions"){
-                console.log(tabs[i].children[0])
-                let icon = document.createElement("i");
-                icon.className = "material-icons";
-                icon.innerText = "surfing"
-                tabs[i].children[0].appendChild(icon)
+                tabs[i].children[0].innerText = "🏄‍♀ Attractions"
+
             }
         }
     }
@@ -88,11 +82,7 @@ else if(window.location.pathname === "/hottest"){
     for(let i = 0; i<tabs.length; i++){
         if(tabs[i].className === "tab-item active"){
             if(tabs[i].children[0].innerText === "Hottest"){
-                console.log(tabs[i].children[0])
-                let icon = document.createElement("i");
-                icon.className = "material-icons";
-                icon.innerText = "store"
-                tabs[i].children[0].appendChild(icon)
+                tabs[i].children[0].innerText = "🔥 Hottest"
             }
         }
     }

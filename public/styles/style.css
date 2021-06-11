@@ -143,12 +143,12 @@ ul{
 }
 
 .tab .tab-item.active a {
-    /*border-bottom-color: #329D9C;*/
-
+    border-bottom-color: #329D9C;
     color: white;
     background-color: #329D9C;
     position: relative;
     /*margin-bottom: 7%;*/
+
 }
 .tab .tab-item a {
     border-bottom: .1rem solid transparent;

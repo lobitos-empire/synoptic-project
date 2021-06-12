@@ -129,7 +129,7 @@ app.post("/upload", (req, res) => {
         "Business_Desc": businessDesc,
         "Business_Location": businessLoc,
         "Business_Price": businessPrice,
-        "Image_Src": '../public/uploadedImages/' + businessName + ".png"
+        "Image_Src": '/uploadedImages/' + businessName + ".png"
     };
 
     try {
@@ -343,6 +343,23 @@ function getAttractions() {
     for (let i = 0; i < businesses.Categories.length; i++) {
         if (businesses.Categories[i].Category.CategoryName == "Cosas para hacer") {
             for (let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++) {
+                let Business_Rating;
+                for(let k=5; k>-1; k--){
+                    for(let l = 0; l < businesses.Ratings[k].Rating.CategoryData.length; l++){
+                        if(businesses.Ratings[k].Rating.CategoryData[l].Business_Name == businesses.Categories[k].Category.CategoryData[l].Business_Name){
+                            Business_Rating = businesses.Ratings[k].Rating.RatingNumber
+                        }
+                    }}
+                let business = {
+                    "Owners_Name": businesses.Categories[i].CategoryData[j].Owners_Name,
+                    "Business_Name": businesses.Categories[i].CategoryData[j].Owners_Name,
+                    "Business_Type": businesses.Categories[i].CategoryData[j].Owners_Name,
+                    "Business_Desc": businesses.Categories[i].CategoryData[j].Owners_Name,
+                    "Business_Location": businesses.Categories[i].CategoryData[j].Owners_Name,
+                    "Business_Price": businesses.Categories[i].CategoryData[j].Owners_Name,
+                    "Business_Rating": Business_Rating,
+                    "Image_Src": businesses.Categories[i].CategoryData[j].Owners_Name
+                }
                 results.push(businesses.Categories[i].Category.CategoryData[j]);
             }
         }

@@ -261,7 +261,7 @@ app.post('/rating', (req, res)=>{
     }
 
     //calculate new average rating
-    businessRating = ((businessRating*newBusinessRating)) / ratingCount;
+    businessRating = ((businessRating*ratingCount) + newBusinessRating) / ratingCount;
     businessRated = {
         "Business_Name": businessName,
         "Business_Type": businessType,
@@ -346,21 +346,22 @@ function getAttractions() {
                 let Business_Rating;
                 for(let k=5; k>-1; k--){
                     for(let l = 0; l < businesses.Ratings[k].Rating.CategoryData.length; l++){
-                        if(businesses.Ratings[k].Rating.CategoryData[l].Business_Name == businesses.Categories[k].Category.CategoryData[l].Business_Name){
+                        if(businesses.Ratings[k].Rating.CategoryData[l].Business_Name == businesses.Categories[i].Category.CategoryData[j].Business_Name){
                             Business_Rating = businesses.Ratings[k].Rating.RatingNumber
                         }
-                    }}
+                    }
+                }
                 let business = {
                     "Owners_Name": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
-                    "Business_Name": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
-                    "Business_Type": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
-                    "Business_Desc": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
-                    "Business_Location": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
-                    "Business_Price": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
+                    "Business_Name": businesses.Categories[i].Category.CategoryData[j].Business_Name,
+                    "Business_Type": businesses.Categories[i].Category.CategoryData[j].Business_Type,
+                    "Business_Desc": businesses.Categories[i].Category.CategoryData[j].Business_Desc,
+                    "Business_Location": businesses.Categories[i].Category.CategoryData[j].Business_Location,
+                    "Business_Price": businesses.Categories[i].Category.CategoryData[j].Business_Price,
                     "Business_Rating": Business_Rating,
-                    "Image_Src": businesses.Categories[i].Category.CategoryData[j].Owners_Name
+                    "Image_Src": businesses.Categories[i].Category.CategoryData[j].Image_Src
                 }
-                results.push(businesses.Categories[i].Category.CategoryData[j]);
+                results.push(business);
             }
         }
     }

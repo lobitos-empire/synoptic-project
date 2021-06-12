@@ -71,7 +71,7 @@ html(lang="en")
                                         div.columns
                                             div.column.col-3.col-sm-12.col-md-12
                                                 div.card-image
-                                                    img.img-responsive(src=n.Image_Src, alt="Business Image")
+                                                    img.img-responsive(src=n.Image_Src, alt=n.Business_Name)
 
                                             div.column.col-6.col-sm-12.col-md-12
                                                 div.card-header
@@ -95,6 +95,7 @@ html(lang="en")
                                                         |  !{n.Business_Price}
                                                     p
                                                         b Rating :
+                                                        |  !{n.Business_Rating}
 
                                                         form.form-input.star-rating(method="post" action='/rating')
                                                             input#star5(type='radio' name='businessRating' value='5' onclick='this.form.submit()')

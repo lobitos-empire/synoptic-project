@@ -212,30 +212,29 @@ app.post('/rating', (req, res)=>{
     let businessRating = 0;
 
     const fs = require('fs')
-    fs.readFile('./business.json', 'utf8', (err, jsonString) => {
-        if (err) {
-            console.log("Error reading file from disk:", err)
-            return
-        }
-        try {
-            const oldData = JSON.parse(jsonString)
-            for (let i = 0; i < olddata.Businesses.Ratings.length; i++) {
-                for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
-                    if (oldData.Ratings.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
-                        //get old data and populate vars
-                        businessRating = parseInt(oldData.Ratings.Ratings[i].Rating.RatingNumber);
-                        ratingCount = parseInt(oldData.Ratings.Ratings[i].CategoryData[j].Rating_Count);
-                    }
+    let olddata2 = fs.readFileSync('business.json', 'utf8')
+    olddata2 = JSON.parse(olddata2);
+    for (let i = 0; i < olddata2.Businesses.Ratings.length; i++) {
+        for (let j = 0; j < olddata2.Businesses.Ratings.length; j++) {
+
+            if(olddata2.Businesses.Ratings[i].Rating.CategoryData.length !== 0){
+                if (olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
+                    //get old data and populate vars
+                    businessRating = parseInt(olddata2.Businesses.Ratings[i].Rating.RatingNumber);
+                    ratingCount = parseInt(olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Rating_Count);
                 }
             }
-            console.log()
-        } catch(err) {
-            console.log('Error parsing JSON string:', err)
+            else{
+                businessRating = 0;
+                ratingCount = 0;
+            }
+
         }
-    })
+    }
 
     //get new rating from page
     var newBusinessRating = req.body.businessRating;
+    ratingCount += 1;
 
     console.log(req);
     var businessRated = {
@@ -253,8 +252,10 @@ app.post('/rating', (req, res)=>{
     //removes entry if present in different rating group now
     for (let i = 0; i < olddata.Businesses.Ratings.length; i++) {
         for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
-            if (oldData.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
-                olddata.Businesses.Ratings[i].Rating.RatingNumber.pop(businessRated);
+            if(olddata.Businesses.Ratings[i].Rating.CategoryData.length !== 0){
+                if (olddata.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
+                    olddata.Businesses.Ratings[i].Rating.RatingNumber.pop(businessRated);
+                }
             }
         }
     }
@@ -272,8 +273,8 @@ app.post('/rating', (req, res)=>{
     }
 
     for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
-        if (olddata.Businesses.Ratings[i].Rating.RatingNumber == businessRating.round()) {
-            olddata.Businesses.Ratings[i].Rating.RatingNumber.push(businessRated);
+        if (olddata.Businesses.Ratings[i].Rating.RatingNumber == Math.round(businessRating)) {
+            olddata.Businesses.Ratings[i].Rating.CategoryData.push(businessRated);
         }
     }
     console.log(olddata);
@@ -284,6 +285,7 @@ app.post('/rating', (req, res)=>{
             throw err;
         }
         console.log("JSON saved");
+        res.redirect('/business');
     })
 });
 

@@ -97,3 +97,4 @@ else if(window.location.pathname === "/tourist"){
         }
     }
 }
+

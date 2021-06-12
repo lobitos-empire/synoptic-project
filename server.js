@@ -129,7 +129,7 @@ app.post("/upload", (req, res) => {
         "Business_Desc": businessDesc,
         "Business_Location": businessLoc,
         "Business_Price": businessPrice,
-        "Image_Src": '../uploadedImages/' + businessName + ".png"
+        "Image_Src": '../public/uploadedImages/' + businessName + ".png"
     };
 
     try {
@@ -163,7 +163,7 @@ app.post("/uploadImage", (req, res) => {
             console.log("wrong file type");
             return;
         }
-        var newPath = path.join(__dirname, 'uploadedImages') + '/' + tempName + "." + extension[1];
+        var newPath = path.join(__dirname, 'public/uploadedImages') + '/' + tempName + "." + extension[1];
         var rawData = fs.readFileSync(oldPath);
         fs.writeFile(newPath, rawData, function (err) {
             if (err) console.log(err);

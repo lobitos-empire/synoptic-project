@@ -57,30 +57,30 @@ html(lang="en")
         div.container
             div.column.col-12.my-2.col-sm-12
                 for n in businesses
-                    div.card
+                    div.card.my-2
                         div.columns
                             div.column.col-3.col-sm-12
-                                div.card-image
-                                    img.img-responsive(src=n.Image_Src, alt="Seashells Crafts")
+                                div.card-image.fillParentDiv
+                                    img.img-responsive(src="../images/seashell.JPG", alt="Seashells Crafts").fillParentDivForImage
                             div.column.col-6.col-sm-12
                                 div.card-header
                                     div.card-title.h4 Lobitos Crafts
                                 div.card-body
                                     p
                                         b Business Owner :
-                                        |  !{n.Owners_Name}
+                                        |   !{n.Owners_Name}
 
                                     p
                                         b Business Name :
-                                        |  !{n.Business_Name}
+                                        |   !{n.Business_Name}
 
                                     p
                                         b Business Type :
-                                        | !{n.Business_Type}
+                                        |  !{n.Business_Type}
 
                                     p
                                         b Description :
-                                        | !{n.Business_Desc}
+                                        |  !{n.Business_Desc}
 
 
                             div.column.col-3.col-sm-12

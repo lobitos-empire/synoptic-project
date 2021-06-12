@@ -129,7 +129,7 @@ app.post("/upload", (req, res) => {
         "Business_Desc": businessDesc,
         "Business_Location": businessLoc,
         "Business_Price": businessPrice,
-        "Image_Src": '/uploadedImages/' + businessName + ".png"
+        "Image_Src": '/uploadedImages/' + businessName.replace(" ", "") + ".png"
     };
 
     try {
@@ -163,7 +163,7 @@ app.post("/uploadImage", (req, res) => {
             console.log("wrong file type");
             return;
         }
-        var newPath = path.join(__dirname, 'public/uploadedImages') + '/' + tempName + "." + extension[1];
+        var newPath = path.join(__dirname, 'public/uploadedImages') + '/' + tempName.replace(" ", "") + "." + extension[1];
         var rawData = fs.readFileSync(oldPath);
         fs.writeFile(newPath, rawData, function (err) {
             if (err) console.log(err);
@@ -351,14 +351,14 @@ function getAttractions() {
                         }
                     }}
                 let business = {
-                    "Owners_Name": businesses.Categories[i].CategoryData[j].Owners_Name,
-                    "Business_Name": businesses.Categories[i].CategoryData[j].Owners_Name,
-                    "Business_Type": businesses.Categories[i].CategoryData[j].Owners_Name,
-                    "Business_Desc": businesses.Categories[i].CategoryData[j].Owners_Name,
-                    "Business_Location": businesses.Categories[i].CategoryData[j].Owners_Name,
-                    "Business_Price": businesses.Categories[i].CategoryData[j].Owners_Name,
+                    "Owners_Name": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
+                    "Business_Name": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
+                    "Business_Type": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
+                    "Business_Desc": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
+                    "Business_Location": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
+                    "Business_Price": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
                     "Business_Rating": Business_Rating,
-                    "Image_Src": businesses.Categories[i].CategoryData[j].Owners_Name
+                    "Image_Src": businesses.Categories[i].Category.CategoryData[j].Owners_Name
                 }
                 results.push(businesses.Categories[i].Category.CategoryData[j]);
             }

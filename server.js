@@ -215,7 +215,7 @@ app.post('/rating', (req, res)=>{
     let olddata2 = fs.readFileSync('business.json', 'utf8')
     olddata2 = JSON.parse(olddata2);
     for (let i = 0; i < olddata2.Businesses.Ratings.length; i++) {
-        for (let j = 0; j < olddata2.Businesses.Ratings.length; j++) {
+        for (let j = 0; j < olddata2.Businesses.Ratings[i].Rating.CategoryData.length; j++) {
 
             if(olddata2.Businesses.Ratings[i].Rating.CategoryData.length !== 0){
                 if (olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
@@ -254,14 +254,14 @@ app.post('/rating', (req, res)=>{
         for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
             if(olddata.Businesses.Ratings[i].Rating.CategoryData.length !== 0){
                 if (olddata.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
-                    olddata.Businesses.Ratings[i].Rating.RatingNumber.pop(businessRated);
+                    olddata.Businesses.Ratings[i].Rating.CategoryData.pop(businessRated);
                 }
             }
         }
     }
 
     //calculate new average rating
-    businessRating = ((businessRating*ratingCount) + newBusinessRating) / ratingCount;
+    businessRating = ((businessRating*newBusinessRating)) / ratingCount;
     businessRated = {
         "Business_Name": businessName,
         "Business_Type": businessType,
@@ -285,7 +285,7 @@ app.post('/rating', (req, res)=>{
             throw err;
         }
         console.log("JSON saved");
-        res.redirect('/business');
+        res.redirect('/attractions');
     })
 });
 

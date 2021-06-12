@@ -376,10 +376,10 @@ function getAllBusiness() {
     let results = [];
 
     for (let i = 0; i < businesses.Categories.length; i++) {
-            for (let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++) {
-                results.push(businesses.Categories[i].Category.CategoryData[j]);
-            }
+        for (let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++) {
+            results.push(businesses.Categories[i].Category.CategoryData[j]);
         }
+    }
 
     return results;
 }

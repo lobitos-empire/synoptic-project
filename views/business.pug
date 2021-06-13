@@ -2,6 +2,7 @@ doctype html
 html(lang="en")
     head
         include includes/head.pug
+        script(src="../scripts/localBusiness.js" defer)
 
     body.background
         div.container
@@ -12,7 +13,6 @@ html(lang="en")
 
         div.container
             div.columns
-                div.column.col-1
                 div.column.col-1
                 div.column.col-7.text-right
                     div.filter
@@ -47,11 +47,13 @@ html(lang="en")
                         //    div.filter-item.card(data-tag='tag-6')
 
                 div.column.col-3.text-right
-                    section.navebar-section.searchBar.searchBar1
+                    section.navebar-section.searchBar
                         div.input-group.input-inline
-                            input.form-input(type="text", placeholder="Search ..." name="search")
+                            input.form-input(type="text", placeholder="search" name="search")
                             button.btn.btn-primary.input-group-btn
                                 i.icon.icon-search
+
+                div.column.col-1
 
 
         div.container

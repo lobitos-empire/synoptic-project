@@ -11,7 +11,6 @@ const FILES_TO_CACHE = [
     '/business',
     '/explore',
     '/hotels',
-    '/hottest',
     '/localBusiness',
     '/upload',
     '/styles/style.css',

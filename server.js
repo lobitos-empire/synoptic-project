@@ -140,16 +140,16 @@ app.post("/upload", (req, res) => {
     tempBusinessDesc = req.body.businessDesc;
     tempBusinessLoc = req.body.businessLoc;
     tempBusinessPrice = req.body.businessPrice;
-    tempImagePath = '../public/uploadedImages/' + tempBusinessName.replace(" ", "");
+    tempImagePath = '/uploadedImages/' + tempBusinessName.replace(" ", "");
 
     const business = {
-        "Owners_Name": ownersName,
-        "Business_Name": businessName,
-        "Business_Type": businessType,
-        "Business_Desc": businessDesc,
-        "Business_Location": businessLoc,
-        "Business_Price": businessPrice,
-        "Image_Src": '../uploadedImages/' + businessName + ".png"
+        "Owners_Name": tempOwnerName,
+        "Business_Name": tempBusinessName,
+        "Business_Type": tempBusinessType,
+        "Business_Desc": tempBusinessDesc,
+        "Business_Location": tempBusinessLoc,
+        "Business_Price": tempBusinessPrice,
+        "Image_Src": '/uploadedImages/' + tempBusinessName.replace(" ", "") + ".png"
     };
 
     try {
@@ -187,7 +187,7 @@ app.post("/uploadImage", (req, res) => {
         //    console.log("wrong file type");
         //    return;
         //}
-        var newPath = path.join(__dirname, 'public/uploadedImages/' + tempBusinessName) + "." + extension;
+        var newPath = path.join(__dirname, 'public/uploadedImages/' + tempBusinessName.replace(" ", "")) + "." + extension;
         var rawData = fs.readFileSync(oldPath);
         fs.writeFile(newPath, rawData, function (err) {
             if (err) console.log(err);
@@ -217,18 +217,19 @@ app.post("/uploadImage", (req, res) => {
             console.log(olddata);
             const data = JSON.stringify(olddata);
 
-        fs.writeFile("business.json", data, (err) => {
-            if (err) {
-                throw err;
-            }
-            console.log("JSON saved");
-            setTimeout(() => {
-                res.redirect('/business');
-            }, 4000)
-        })
-    } catch (err) {
-        console.log(err);
-    }
+            fs.writeFile("business.json", data, (err) => {
+                if (err) {
+                    throw err;
+                }
+                console.log("JSON saved");
+                setTimeout(() => {
+                    res.redirect('/business');
+                }, 4000)
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    })
 });
 
 app.post('/rating', (req, res)=>{

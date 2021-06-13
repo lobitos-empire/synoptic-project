@@ -27,7 +27,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 app.use(morgan('dev'));
 
-let tempName = "";
+var tempOwnerName = "";
+var tempBusinessName = "";
+var tempBusinessType = "";
+var tempBusinessDesc = "";
+var tempImagePath = "";
+var tempBusinessLoc = "";
+var tempBusinessPrice = "";
 
 app.get('/', (req, res) => {
     res.render('index', {
@@ -62,6 +68,22 @@ app.get('/hottest', (req, res) => {
 });
 
 app.get('/business', (req, res) => {
+    //Pass Category variable and uncomment below once filters/dropdown setup on page
+    //var category;
+    //try {
+    //    let olddata = fs.readFileSync('business.json', 'utf8')
+    //    olddata = JSON.parse(olddata);
+    //    for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
+    //    if (olddata.Businesses.Categories[i].Category.CategoryName == category) {
+    //            console.log(olddata.Businesses.Categories[i].Category.CategoryData);
+    //        }
+    //    }
+    //    olddata = JSON.stringify(olddata);
+    //} catch (err) {
+    //    console.log(err);
+    //}
+    //convert array of objects into readable format
+    //add to res.render below
 
     res.render('business', {
         title: 'Business',
@@ -112,24 +134,22 @@ app.get('/upload', (req, res) => {
 });
 
 app.post("/upload", (req, res) => {
-    const ownersName = req.body.ownersName;
-    const businessName = req.body.businessName;
-    const businessType = req.body.businessType;
-    const businessDesc = req.body.businessDesc;
-    const businessLoc = req.body.businessLoc;
-    const businessPrice = req.body.businessPrice;
-    tempName = businessName;
-
-    console.log(ownersName + businessName + businessType + businessDesc);
+    tempOwnerName = req.body.ownersName;
+    tempBusinessName = req.body.businessName;
+    tempBusinessType = req.body.businessType;
+    tempBusinessDesc = req.body.businessDesc;
+    tempBusinessLoc = req.body.businessLoc;
+    tempBusinessPrice = req.body.businessPrice;
+    tempImagePath = '/uploadedImages/' + tempBusinessName.replace(" ", "");
 
     const business = {
-        "Owners_Name": ownersName,
-        "Business_Name": businessName,
-        "Business_Type": businessType,
-        "Business_Desc": businessDesc,
-        "Business_Location": businessLoc,
-        "Business_Price": businessPrice,
-        "Image_Src": '/uploadedImages/' + businessName.replace(" ", "") + ".png"
+        "Owners_Name": tempOwnerName,
+        "Business_Name": tempBusinessName,
+        "Business_Type": tempBusinessType,
+        "Business_Desc": tempBusinessDesc,
+        "Business_Location": tempBusinessLoc,
+        "Business_Price": tempBusinessPrice,
+        "Image_Src": '/uploadedImages/' + tempBusinessName.replace(" ", "") + ".png"
     };
 
     try {
@@ -156,14 +176,19 @@ app.post("/upload", (req, res) => {
 
 app.post("/uploadImage", (req, res) => {
     const form = new formidable.IncomingForm();
+    var extension = "";
     form.parse(req, function (err, fields, files) {
         var oldPath = files.uploadImage.path;
-        var extension = files.uploadImage.name.split(".")
-        if(extension[1] !== "png"){
+        extension = files.uploadImage.name;
+        extension = extension.split(".")[1];
+        tempImagePath = tempImagePath + "." + extension
+        console.log("EXT: " + extension)
+        if(extension !== "jpeg" && extension !== "gif" && extension !== "png" && extension !== "webp" && extension !== "apng" && extension !== "pdf" && extension !== "xbm" && extension !== "bmp" && extension !== "ico" && extension !== "tiff"){
             console.log("wrong file type");
+            res.send("Wrong File Type");
             return;
         }
-        var newPath = path.join(__dirname, 'public/uploadedImages') + '/' + tempName.replace(" ", "") + "." + extension[1];
+        var newPath = path.join(__dirname, 'public/uploadedImages/' + tempBusinessName) + "." + extension;
         var rawData = fs.readFileSync(oldPath);
         fs.writeFile(newPath, rawData, function (err) {
             if (err) console.log(err);
@@ -171,32 +196,41 @@ app.post("/uploadImage", (req, res) => {
             //    title: "Successfully Added Business"
             //});
         })
-    })
-    try {
-        let olddata = fs.readFileSync('business.json', 'utf8')
-        olddata = JSON.parse(olddata);
-        for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
-            for (let j = 0; j < olddata.Businesses.Categories[i].Category.CategoryData[j]; j++) {
-                if (olddata.Businesses.Categories[i].Category.CategoryData[j].Business_Name === tempName) {
-                    olddata.Businesses.Categories[i].Category.CategoryData[j].Image_Src = newPath;
+        console.log("EXT: " + extension)
+        const business = {
+            "Owners_Name": tempOwnerName,
+            "Business_Name": tempBusinessName,
+            "Business_Type": tempBusinessType,
+            "Business_Desc": tempBusinessDesc,
+            "Business_Location": tempBusinessLoc,
+            "Business_Price": tempBusinessPrice,
+            "Image_Src": tempImagePath
+        };
+
+        try {
+            let olddata = fs.readFileSync('business.json', 'utf8')
+            olddata = JSON.parse(olddata);
+            for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
+                if (olddata.Businesses.Categories[i].Category.CategoryName === tempBusinessType) {
+                    olddata.Businesses.Categories[i].Category.CategoryData.push(business);
                 }
             }
-        }
-        console.log(olddata);
-        const data = JSON.stringify(olddata);
+            console.log(olddata);
+            const data = JSON.stringify(olddata);
 
-        fs.writeFile("business.json", data, (err) => {
-            if (err) {
-                throw err;
-            }
-            console.log("JSON saved");
-            setTimeout(() => {
-                res.redirect('/business');
-            }, 5000)
-        })
-    } catch (err) {
-        console.log(err);
-    }
+            fs.writeFile("business.json", data, (err) => {
+                if (err) {
+                    throw err;
+                }
+                console.log("JSON saved");
+                setTimeout(() => {
+                    res.redirect('/business');
+                }, 4000)
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    })
 });
 
 app.post('/rating', (req, res)=>{
@@ -380,10 +414,8 @@ function getAllBusiness() {
             results.push(businesses.Categories[i].Category.CategoryData[j]);
         }
     }
-
     return results;
 }
-
 
 
 function getHotels() {
@@ -416,22 +448,12 @@ function getAllBusinesses() {
 
 function getAllRated(){
     let rawData = fs.readFileSync('business.json');
-    let businesses = JSON.parse(rawData).Businesses;
+    let businesses= JSON.parse(rawData).businesses;
     let results = [];
 
     for(let i=5; i>-1; i--){
         for(let j = 0; j < businesses.Ratings[i].Rating.CategoryData.length; j++){
-            let Rating = businesses.Ratings[i].Rating.RatingNumber;
-            let x = {
-                "Business_Name": businesses.Ratings[i].Rating.CategoryData.Business_Name,
-                "Business_Type": businesses.Ratings[i].Rating.CategoryData.Business_Type,
-                "Business_Desc": businesses.Ratings[i].Rating.CategoryData.Business_Desc,
-                "Business_Location": businesses.Ratings[i].Rating.CategoryData.Business_Location,
-                "Business_Price": businesses.Ratings[i].Rating.CategoryData.Business_Price,
-                "Rating_Count": businesses.Ratings[i].Rating.CategoryData.Rating_Count,
-                "Rating": Rating
-            }
-            results.push(x);
+            results.push(businesses.Ratings[i].Rating.CategoryData[j]);
         }
     }
     return results;

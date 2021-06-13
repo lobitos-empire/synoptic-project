@@ -23,13 +23,5 @@
     }
 }*/
 
-document.getElementById('JsonButton').addEventListener('click', loadJson);
-function loadJson(){
-    fetch('testBusiness.json')
-        .then(function (response){
-            return response.json();
-        })
-        .then(function (data){
-            console.log(data)
-        })
-}
+let businessData = require('business.json');
+let

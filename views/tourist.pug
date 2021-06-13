@@ -3,6 +3,7 @@ html(lang="en")
     head
         include includes/head.pug
         script(src="../scripts/tourist.js" defer)
+        script(src="../scripts/tables.js" defer)
 
     body.background
 
@@ -51,15 +52,14 @@ html(lang="en")
                                         div.card-title.h4 Hotels
                                         div.card-subtitle.text-black Explore Hotels in Lobitos
 
-
+                    //Spanish phrase table
                     div.container
                         div.columns
                             div.column.col-8.col-sm-12.my-2
                                 div.card.spanishPhraseCard2
                                     div.card-header
-                                        div.card-title.h3 Spanish Phrases
+                                        div.card-title.h3 Survival Spanish
                                             //Creating a search bar for users to search phrases that are not on the spanish phrase card
-
                                             section.navbar-section(class="searchBar")
                                                 form(action="/tourist" method="get")
                                                     div.input-group.input-inline
@@ -68,7 +68,7 @@ html(lang="en")
                                                             i.icon.icon-search
                                     div.card-body
                                         // creating table to add spanish and english phrases within the card-body
-                                        table.table.table-striped
+                                        table.table.table-striped#tableScroll
                                             thead
                                                 tr
                                                     th Category
@@ -82,13 +82,12 @@ html(lang="en")
                                                         td=n.spanish
 
                             // Contacts Card with Important numbers
-
                             div.column.col-4.col-sm-12.my-2
                                 div.card.contactsCard
                                     div.card-header
                                         div.card-title.h3 Contacts
                                     div.card-body
-                                        table.table.table-striped
+                                        table.table.table-striped#tableScroll2
                                             thead
                                                 tr
                                                     th Service

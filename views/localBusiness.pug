@@ -10,12 +10,10 @@ html(lang="en")
                 section.navbar-section.col-sm-12
                     a(href="/")
                         img(src="../images/logo1.png", alt="Logo").logo1.img-responsive
-
                 section.navbar-center
                     h3.text-center  Negocio local
                 section.navbar-section.col-sm-12
                     include includes/spanish.pug
-
 
             div.container
                 div.columns
@@ -64,7 +62,6 @@ html(lang="en")
         div.container#passCodeDiv.centerPasccode
             div.columns
                 div.col-4.col-sm-12
-
                 div.col-4.col-sm-12
                     div.card.clearfix
                         div.columns
@@ -75,6 +72,10 @@ html(lang="en")
                                 div.card-body
                                     input.form-input(type="text" id="passCode" placeholder="Contraseña" autofocus)
                                     p Si tiene una empresa local, vaya a un cibercafé cercano para obtener el código de acceso.
+                                div.card-footer
+                                    a.btn(onclick="window.history.back()").text-light Go Back
 
                             div.col-1.col-sm-12
                 div.col-4.col-sm-12
+
+

@@ -2,6 +2,7 @@ doctype html
 html(lang="en")
     head
         include includes/head.pug
+        script(src="../scripts/localBusiness.js" defer)
 
     body.background
         div.container
@@ -9,50 +10,6 @@ html(lang="en")
                 div.column.col-12
                     include includes/tabLBusiness.pug
                     include includes/spanish.pug
-
-        div.container
-            div.columns
-                div.column.col-1
-                div.column.col-1
-                div.column.col-7.text-right
-                    div.filter
-                        input#tag-0.filter-tag(type='radio' name='filter-radio' hidden='' checked='')
-                        input#tag-1.filter-tag(type='radio' name='filter-radio' hidden='')
-                        input#tag-2.filter-tag(type='radio' name='filter-radio' hidden='')
-                        input#tag-3.filter-tag(type='radio' name='filter-radio' hidden='')
-                        input#tag-4.filter-tag(type='radio' name='filter-radio' hidden='')
-                        input#tag-5.filter-tag(type='radio' name='filter-radio' hidden='')
-                        input#tag-6.filter-tag(type='radio' name='filter-radio' hidden='')
-
-                        div.filter-nav
-                            label.chip(for='tag-0') All
-                            label.chip(for='tag-1') Food & Drink
-                            label.chip(for='tag-2') Things To Do
-                            label.chip(for='tag-3') Services
-                            label.chip(for='tag-4') Hotels
-                            label.chip(for='tag-5') Purchases
-                            label.chip(for='tag-6') Others
-
-                        //div.filter-body
-                        //    div.filter-item.card(data-tag='tag-1')
-                        //
-                        //    div.filter-item.card(data-tag='tag-2')
-                        //
-                        //    div.filter-item.card(data-tag='tag-3')
-                        //
-                        //    div.filter-item.card(data-tag='tag-4')
-                        //
-                        //    div.filter-item.card(data-tag='tag-5')
-                        //
-                        //    div.filter-item.card(data-tag='tag-6')
-
-                div.column.col-3.text-right
-                    section.navebar-section.searchBar.searchBar1
-                        div.input-group.input-inline
-                            input.form-input(type="text", placeholder="Search ..." name="search")
-                            button.btn.btn-primary.input-group-btn
-                                i.icon.icon-search
-
 
         div.container
             div.column.col-12.my-2.col-sm-12
@@ -64,15 +21,12 @@ html(lang="en")
                                     img.img-responsive(src=n.Image_Src, alt=n.Business_Name).fillParentDivForImage
                             div.column.col-6.col-sm-12
                                 div.card-header
-                                    div.card-title.h4 Lobitos Crafts
+                                    div.card-title.h4
+                                        p !{n.Business_Name}
                                 div.card-body
                                     p
                                         b Business Owner :
                                         |   !{n.Owners_Name}
-
-                                    p
-                                        b Business Name :
-                                        |   !{n.Business_Name}
 
                                     p
                                         b Business Type :
@@ -82,25 +36,26 @@ html(lang="en")
                                         b Description :
                                         |  !{n.Business_Desc}
 
-
-                            div.column.col-3.col-sm-12
-                                div.card-body.vl
                                     p
-                                        b Number of Clicks :
-                                        |  50
+                                        b Location :
+                                        |  !{n.Business_Location}
+
+
+                            div.column.col-3.col-sm-12.vl
+                                div.card-body
                                     p
                                         b Rating :
-                                        |
-                                        form-input.star-rating(method="post" action='/rating')
-                                            input#star5(type='radio' name='rate' value='5')
-                                            label(for='star5' title='text') 5 stars
-                                            input#star4(type='radio' name='rate' value='4')
-                                            label(for='star4' title='text') 4 stars
-                                            input#star3(type='radio' name='rate' value='3')
-                                            label(for='star3' title='text') 3 stars
-                                            input#star2(type='radio' name='rate' value='2')
-                                            label(for='star2' title='text') 2 stars
-                                            input#star1(type='radio' name='rate' value='1')
-                                            label(for='star1' title='text') 1 star
+
+                                            form-input.star-rating(method="post" action='/rating')
+                                                input#star5(type='radio' name='rate' value='5')
+                                                label(for='star5' title='text')
+                                                input#star4(type='radio' name='rate' value='4')
+                                                label(for='star4' title='text')
+                                                input#star3(type='radio' name='rate' value='3')
+                                                label(for='star3' title='text')
+                                                input#star2(type='radio' name='rate' value='2')
+                                                label(for='star2' title='text')
+                                                input#star1(type='radio' name='rate' value='1')
+                                                label(for='star1' title='text')
 
                                             input(hidden, value='')

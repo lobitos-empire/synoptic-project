@@ -129,7 +129,7 @@ body.background{
 }
 h3{
     position: relative;
-    font-family: "Oswald, serif";
+    font-family: Oswald, serif;
     font-size: 55px;
     line-height: 100px;
     font-weight: 400;
@@ -228,6 +228,15 @@ ul{
 }
 .cardImageExplore{
     width:100%;
+}
+.fillParentDiv{
+    height: 100%;
+    width: 100%;
+}
+.fillParentDivForImage{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 /* Tourists */

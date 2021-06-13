@@ -24,7 +24,7 @@ else if(window.location.pathname === "/explore"){
     for(let i = 0; i<tabs.length; i++){
         if(tabs[i].className === "tab-item active"){
             if(tabs[i].children[0].innerText === "Explore Nuevos Mercados"){
-                tabs[i].children[0].innerText = "🌎 Explore Nuevos Mercados"
+                tabs[i].children[0].innerText = "👩🏽‍💼 Explore Nuevos Mercados"
             }
         }
     }

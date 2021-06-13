@@ -1,27 +1,44 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" type="text/css" href="../styles/spectre.min.css")
-        link(rel="stylesheet" type="text/css" href="../styles/style.css")
-        title #{ title }
+        include includes/head.pug
+        link(rel="icon" type="image/png" href="../images/logo1.png")
 
     body.backgroundimage
 
         div.hero
             div.hero-body
-            div.container
-                div.columns
-                    div.column.col-3 col-3
-                        h1 Welcome
-                    div.column.col-3 col-3
-                        button.tButton Tourists
+                div.container
+                    div.columns
+                        div.column.col-6
+                            a(href="/")
+                                img.logo1.img-responsive(src="../images/logo1.png", alt="Logo")
 
-                    div.column.col-3 col-3
-                        button.lButton Local Business
-                    div.column.col-3 col-3
+                        div.column.col-6
+                            include includes/translator.pug
 
 
+                div.container
+                    div.columns
+                        div.column.col-12.text-center
+                            h1 Welcome to Lobitos
 
+                div.container
+                    div.columns
+
+                        // Hides the button when screen minimised
+
+                        div.column.hide-sm.col-6.text-right.col-sm-12.my-2
+                            a.tButton(href="/tourist") Tourists
+
+                        div.column.hide-sm.col-6.text-left.col-sm-12.my-2
+                            a.lButton(href="/localBusiness") Local Business
+
+
+                        // Show the button when screen minimised
+
+                        div.column.show-sm.text-center.col-6.col-sm-12.my-2
+                            a.tButton(href="/tourist") Tourists
+
+                        div.column.show-sm.text-center.col-6.col-sm-12.my-2.py-2
+                            a.lButton(href="/localBusiness") Local Business

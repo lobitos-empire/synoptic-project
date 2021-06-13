@@ -1,0 +1,84 @@
+{
+  "Businesses": {
+    "Categories": [
+      {
+        "Category": {
+          "CategoryName": "Comidas y bebidas",
+          "CategoryData": [
+          ]
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Cosas para hacer",
+          "CategoryData": [
+          ]
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Servicios",
+          "CategoryData": [
+          ]
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Hoteles",
+          "CategoryData": [
+          ]
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Compras",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Otra",
+          "CategoryData": []
+        }
+      }
+    ],
+    "Ratings": [
+      {
+        "Rating": {
+          "RatingNumber": "",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "1",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "2",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "3",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "4",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "5",
+          "CategoryData": []
+        }
+      }
+    ]
+  }
+}

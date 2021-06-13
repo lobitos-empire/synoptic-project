@@ -25,7 +25,6 @@ const FILES_TO_CACHE = [
     '/scripts/mdtoast.min.js',
     '/scripts/service-worker-init.js',
     '/scripts/tourist.js',
-    '/scripts/translations.json',
     '/manifest.webmanifest',
     '/images/logo1.png',
 

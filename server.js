@@ -140,7 +140,7 @@ app.post("/upload", (req, res) => {
     tempBusinessDesc = req.body.businessDesc;
     tempBusinessLoc = req.body.businessLoc;
     tempBusinessPrice = req.body.businessPrice;
-    tempImagePath = '/uploadedImages/' + tempBusinessName.replace("/ /g", "");
+    tempImagePath = '/uploadedImages/' + tempBusinessName.replace(/ /g, "");
 
     const business = {
         "Owners_Name": tempOwnerName,
@@ -149,7 +149,18 @@ app.post("/upload", (req, res) => {
         "Business_Desc": tempBusinessDesc,
         "Business_Location": tempBusinessLoc,
         "Business_Price": tempBusinessPrice,
-        "Image_Src": '/uploadedImages/' + tempBusinessName.replace("/ /g", "") + ".png"
+        "Image_Src": '/uploadedImages/' + tempBusinessName.replace(/ /g, "") + ".png"
+    };
+
+    const busRating = {
+        "Business_Name": tempBusinessName,
+        "Business_Type": tempBusinessType,
+        "Business_Desc": tempBusinessDesc,
+        "Business_Location": tempBusinessLoc,
+        "Business_Price": tempBusinessPrice,
+        "Image_Src": '/uploadedImages/' + tempBusinessName.replace(/ /g, "") + ".png",
+        "Business_Rating": "",
+        "Rating_Count": ""
     };
 
     try {
@@ -158,6 +169,11 @@ app.post("/upload", (req, res) => {
         for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
             if (olddata.Businesses.Categories[i].Category.CategoryName === businessType) {
                 olddata.Businesses.Categories[i].Category.CategoryData.push(business);
+            }
+        }
+        for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
+            if (olddata.Businesses.Ratings[j].Rating.RatingNumber === "") {
+                olddata.Businesses.Ratings[j].Rating.CategoryData.push(busRating);
             }
         }
         console.log(olddata);
@@ -181,7 +197,7 @@ app.post("/uploadImage", (req, res) => {
         var oldPath = files.uploadImage.path;
         extension = files.uploadImage.name;
         extension = extension.split(".")[1];
-        tempImagePath = tempImagePath + "." + extension
+        tempImagePath = tempImagePath.replace(/ /g, "") + "." + extension
         console.log("EXT: " + extension)
         if(extension !== "jpeg" && extension !== "jpg" && extension !== "gif" && extension !== "png" && extension !== "webp" && extension !== "apng" && extension !== "pdf" && extension !== "xbm" && extension !== "bmp" && extension !== "ico" && extension !== "tiff"){
             console.log("wrong file type");
@@ -241,9 +257,9 @@ app.post('/rating', (req, res)=>{
     var businessDesc = req.body.businessDesc;
     var businessLoc = req.body.businessLoc;
     var businessPrice = req.body.businessPrice;
+    var ratingCount = req.body.ratingCount + 1;
 
     //get rating values
-    let ratingCount = 0;
     let businessRating = 0;
 
     const fs = require('fs')
@@ -425,7 +441,7 @@ function getHotels() {
     let results = [];
 
     for (let i = 0; i < businesses.Categories.length; i++) {
-        if (businesses.Categories[i].Category.CategoryName == "Hoteles") {
+        if (businesses.Categories[i].Category.CategoryName === "Hoteles") {
             for (let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++) {
                 results.push(businesses.Categories[i].Category.CategoryData[j]);
             }
@@ -448,14 +464,18 @@ function getAllBusinesses() {
 }
 
 function getAllRated(){
-    let rawData = fs.readFileSync('business.json');
-    let businesses= JSON.parse(rawData).businesses;
-    let results = [];
+    var rawData = fs.readFileSync('business.json');
+    var businesses= JSON.parse(rawData);
+    var results = [];
 
-    for(let i=5; i>-1; i--){
-        for(let j = 0; j < businesses.Ratings[i].Rating.CategoryData.length; j++){
-            results.push(businesses.Ratings[i].Rating.CategoryData[j]);
-        }
+    console.log(businesses)
+
+    for(var i=businesses.Businesses.Ratings.length; i>-1; i--){
+        //for(var j = 0; j < businesses.Businesses.Ratings[i].Rating.CategoryData.length; j++){
+        //    results.push(businesses.Bussinesses.Ratings[i].Rating.CategoryData[j]);
+        //}
+        //Push everything in a rating bracket as doesn't need to be ordered by individual element necessarily
+        results.push(businesses.Businesses.Ratings[i])
     }
     return results;
 }

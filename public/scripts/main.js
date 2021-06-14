@@ -130,4 +130,18 @@ if(window.location.pathname === "/localBusiness") {
     )
 }
 
+else if(window.location.pathname === "/tourist") {
+    document.getElementById("survivalhelpicon").addEventListener(
+        "click", () => {
+            document.getElementById("survivalhelpmodal").className = "modal active"
+        }
+    )
+    document.getElementById("closesurvivalhelp").addEventListener(
+        "click", () => {
+            document.getElementById("survivalhelpmodal").className = "modal"
+        }
+    )
+
+}
+
 

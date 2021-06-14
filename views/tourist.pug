@@ -14,17 +14,20 @@ html(lang="en")
                     img(src="../images/logo1.png", alt="Logo").logo1.img-responsive
             section.navbar-center
                 h3.text-center Tourists
+                    //Modal created in order to inform users on what the page is about
                     sup
-                        i.material-icons#touristhelpicon(style = "font-size:1.0rem;") help
+                        i.material-icons.c-hand#touristhelpicon(style = "font-size:1.0rem;") help
                 div.modal#touristhelpmodal
                     a.modal-overlay(aria-label="Close" href="#Close")
                     div.modal-container
                         div.modal-header
                             a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closetouristhelp
-                            div.modal-title.h5  Información de la página 📘
+                            div.modal-title.h5.text-center  Information of the page 📘
                         div.modal-body
                             div.content
-                                p Esta página educa a las empresas locales sobre nuevas empresas de mercado que podrían beneficiarse con ellas, así como evidencia para respaldar estas increíbles sugerencias.
+                                p * Within this page, you will be able to explore the hottest businesses in Lobitos
+                                p * View the different types of attractions in Lobitos.
+                                p * As well as information of hotels in Lobitos.
 
             section.navbar-section.col-sm-12
                 include includes/translator.pug
@@ -72,6 +75,20 @@ html(lang="en")
                                 div.card.spanishPhraseCard2
                                     div.card-header
                                         div.card-title.h3 Survival Spanish
+                                            sup
+                                                i.material-icons.c-hand#survivalhelpicon(style = "font-size:1.0rem;") help
+                                            div.modal#survivalhelpmodal
+                                                a.modal-overlay(aria-label="Close" href="#Close")
+                                                div.modal-container
+                                                    div.modal-header
+                                                        a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closesurvivalhelp
+                                                        div.modal-title.h5.text-center  Information of the page 📘
+                                                    div.modal-body
+                                                        div.content
+                                                            p * Unsure on how to say certain words in Spanish? We’ve got you covered.
+                                                            p * Here you can find some essential phrases in espanol.
+
+
                                             //Creating a search bar for users to search phrases that are not on the spanish phrase card
                                             section.navbar-section(class="searchBar")
                                                 form(action="/tourist" method="get")

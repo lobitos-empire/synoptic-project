@@ -152,11 +152,12 @@ app.post("/uploadImage", (req, res) => {
         extension = extension.split(".")[1];
         tempImagePath = tempImagePath + "." + extension
         console.log("EXT: " + extension)
-        //if(extension[1] !== "png"){
-        //    console.log("wrong file type");
-        //    return;
-        //}
-        var newPath = path.join(__dirname, 'public/uploadedImages/' + tempBusinessName) + "." + extension;
+        if(extension !== "jpeg" && extension !== "jpg" && extension !== "gif" && extension !== "png" && extension !== "webp" && extension !== "apng" && extension !== "pdf" && extension !== "xbm" && extension !== "bmp" && extension !== "ico" && extension !== "tiff"){
+            console.log("wrong file type");
+            res.send("Wrong File Type");
+            return;
+        }
+        var newPath = path.join(__dirname, 'public/uploadedImages/' + tempBusinessName.replace(" ", "")) + "." + extension;
         var rawData = fs.readFileSync(oldPath);
         fs.writeFile(newPath, rawData, function (err) {
             if (err) console.log(err);

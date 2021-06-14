@@ -3,6 +3,7 @@ html(lang="en")
     head
         include includes/head.pug
         script(src="../scripts/tourist.js" defer)
+        script(src="../scripts/main.js" defer)
 
 
     body.background
@@ -18,6 +19,18 @@ html(lang="en")
                 div.column.col-2
                 div.column.col-8.col-sm-12.exploreTitle
                     h3 Hotels
+                        sup
+                            i.material-icons#hotelshelpicon(style = "font-size:1.0rem;") help
+                div.modal#hotelshelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closehotelshelp
+                            div.modal-title.h5  Información de la página 📘
+                        div.modal-body
+                            div.content
+                                p Esta página educa a las empresas locales sobre nuevas empresas de mercado que podrían beneficiarse con ellas, así como evidencia para respaldar estas increíbles sugerencias.
+
                 div.column.col-2
 
         div.container

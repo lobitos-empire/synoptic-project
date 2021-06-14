@@ -29,7 +29,6 @@ document.getElementById("trekkingbutton").addEventListener(
         document.getElementById("trekkingmodal").className = "modal active"
     }
 )
-
 document.getElementById("closetrekking").addEventListener(
     "click",()=>{
         document.getElementById("trekkingmodal").className = "modal"
@@ -41,7 +40,6 @@ document.getElementById("birdwatchingbutton").addEventListener(
         document.getElementById("birdwatchingmodal").className = "modal active"
     }
 )
-
 document.getElementById("closebirdwatching").addEventListener(
     "click",()=>{
         document.getElementById("birdwatchingmodal").className = "modal"
@@ -53,7 +51,6 @@ document.getElementById("boatsbutton").addEventListener(
         document.getElementById("boatsmodal").className = "modal active"
     }
 )
-
 document.getElementById("closeboats").addEventListener(
     "click",()=>{
         document.getElementById("boatsmodal").className = "modal"
@@ -65,13 +62,10 @@ document.getElementById("explorehelpicon").addEventListener(
         document.getElementById("explorehelpmodal").className = "modal active"
     }
 )
-
 document.getElementById("closexplorehelp").addEventListener(
     "click",()=>{
         document.getElementById("explorehelpmodal").className = "modal"
     }
 )
-
-
 
 

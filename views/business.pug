@@ -2,7 +2,9 @@ doctype html
 html(lang="en")
     head
         include includes/head.pug
+        script(src="../scripts/main.js" defer)
         script(src="../scripts/localBusiness.js" defer)
+
 
     body.background
         div.container
@@ -16,6 +18,18 @@ html(lang="en")
                 div.column.col-2
                 div.column.col-8.col-sm-12.exploreTitle
                     h3 Negocios
+                        sup
+                            i.material-icons#businesshelpicon(style = "font-size:1.0rem;") help
+                div.modal#businesshelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closebusinesshelp
+                            div.modal-title.h5  Información de la página 📘
+                        div.modal-body
+                            div.content
+                                p Esta página educa a las empresas locales sobre nuevas empresas de mercado que podrían beneficiarse con ellas, así como evidencia para respaldar estas increíbles sugerencias.
+
                 div.column.col-2
 
 

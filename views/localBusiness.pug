@@ -12,6 +12,18 @@ html(lang="en")
                         img(src="../images/logo1.png", alt="Logo").logo1.img-responsive
                 section.navbar-center
                     h3.text-center  Negocio local
+                        sup
+                            i.material-icons#localhelpicon(style = "font-size:1.0rem;") help
+                div.modal#localhelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closelocalhelp
+                            div.modal-title.h5  Información de la página 📘
+                        div.modal-body
+                            div.content
+                                p Esta página educa a las empresas locales sobre nuevas empresas de mercado que podrían beneficiarse con ellas, así como evidencia para respaldar estas increíbles sugerencias.
+
                 section.navbar-section.col-sm-12
                     include includes/spanish.pug
 

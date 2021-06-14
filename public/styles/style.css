@@ -8,7 +8,7 @@ body{
     height: 100%;
 }
 
-/* Home Style */
+/* Home Page Style */
 
 .logo1{
     top: 0;
@@ -17,13 +17,15 @@ body{
     width: auto;
     height: 6rem;
 }
-/*.logo2{*/
-/*    top: 0;*/
-/*    left: 1%;*/
-/*    position: absolute;*/
-/*    width: auto;*/
-/*    height: 3.5rem;*/
-/*}*/
+@media screen and (max-width: 600px) {
+    .logo1 {
+        top: 0;
+        left: 1%;
+        position: absolute;
+        width: auto;
+        height: 3rem;
+    }
+}
 
 
 .backgroundimage{
@@ -43,17 +45,6 @@ body{
 }
 
 /* Home Page Heading */
-
-
-/*header{*/
-/*    background-color: #CFF4D2;*/
-/*}*/
-
-
-
-.moveuploadCard{
-    left: 50%;
-}
 
 h1{
     position: relative;
@@ -76,7 +67,7 @@ a.tButton{
     -ms-transform: translate(-50%, -50%);
     border:0.16em solid black;
     color: black;
-    padding: 15px 75px;
+    padding: 15px 85px;
     text-decoration: none;
     display: inline;
     font-size: 1.6vw;
@@ -86,7 +77,6 @@ a.tButton{
     line-height: normal;
     background: none;
 }
-
 .tButton:hover {
     background: black;
     color: #cff4d2;
@@ -111,45 +101,41 @@ a.lButton{
     font-weight: 600;
     line-height: normal;
 }
-
 .lButton:hover {
     background: none;
     border:0.16em solid black;
     color: black;
 }
 
+/* General All Pages */
+
 /* Google Translator */
 
 #google_translate_element {
-    position: absolute;
-    top: 17px;
-    z-index: 99999;
-    right: 23px;
+    position: fixed;
+    top: 0;
+    right: 0;
 }
-
-/* General All Pages */
 
 /* Reference to background image
 https://www.svgbackgrounds.com/#flat-mountains
 */
 
 body.background{
-    background-color: #ffffff;
+    background-color: #f2f2f2;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%237be495' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23329d9c' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%2373de96' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%231c8e98' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%236bd896' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%230d7e92' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%2363d296' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%230d6f8a' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%235ccb96' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23175f7f' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2356c596' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23205072' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
 }
-
 h3{
     position: relative;
-    /*top: 90%;*/
     font-family: Oswald, serif;
-    font-size: 3vw;
+    font-size: 55px;
     line-height: 100px;
     font-weight: 400;
     color: black;
-    /*text-transform: uppercase;*/
     display: inline;
+    text-align: center;
 }
 
 /* Tabs Styling */
@@ -159,87 +145,104 @@ ul{
 }
 .tab{
     border-bottom: none;
+    margin: 2%;
 }
-
 .tab .tab-item.active a {
     border-bottom-color: #329D9C;
-    color: #329D9C;
+    color: white;
+    background-color: #329D9C;
+    position: relative;
 }
 .tab .tab-item a {
     border-bottom: .1rem solid transparent;
+    color: black;
+    display: block;
+    /*margin: 0 .4rem 0 0;*/
+    padding: .4rem .2rem .3rem .2rem;
+    text-decoration: none;
+    border-bottom-color: #329D9C;
+    font-weight: bold;
+}
+.tab .tab-item a:hover {
     color: black;
     display: block;
     margin: 0 .4rem 0 0;
     padding: .4rem .2rem .3rem .2rem;
     text-decoration: none;
 }
-.tab .tab-item a:hover {
-    color: #329D9C;
+
+/* Local Business */
+
+/* Password Style */
+
+.centerPasccode {
     display: block;
-    margin: 0 .4rem 0 0;
-    padding: .4rem .2rem .3rem .2rem;
-    text-decoration: none;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
 }
 
 
-.move{
-    position: absolute;
-    top: 20%;
-    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
-}
-.header{
-    margin-top: 40px;
-    font-family: Oswald, serif;
-    font-size: 50px;
-}
-.exploreTitle{
-    text-align: center;
-}
-
-
-/* Local Business Styles */
-
+/* Card Styles */
 .uploadCard{
     height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
-}
-.home{
-    margin-top: 50%;
 }
 .businessCard{
     height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
 .exploreCard{
     height: auto;
-    filter: drop-shadow(5px 4px 20px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
     border-radius: 10px;
 }
 .uploadImage{
     display: inline;
 }
 
+.card-title.h4{
+    font-weight: bold;
+}
 .localBusinessCardText{
     color: black;
     font-size: medium;
 }
 
-.cardSubtitles{
-    font-size: medium;
-}
-.uploadBusinessCard{
-    background-image: url("../images/uploadimage.jpg");
-}
-.cardsAdjust{
-    margin-top: 3%;
-}
-.reduceImage{
-    height: 5%;
+/* Upload */
+
+.moveuploadCard{
+    left: 50%;
 }
 
-/* Tourists Styles */
+/* Business */
+
+/* Explore */
+
+.exploreTitle{
+    text-align: center;
+}
+.cardImageExplore{
+    width:100%;
+}
+.fillParentDiv{
+    height: 100%;
+    width: 100%;
+}
+.fillParentDivForImage{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Tourists */
+
+/* Card Styles */
 
 .hottestCard{
     height: auto;
@@ -266,59 +269,19 @@ ul{
     height: auto;
     border-radius: 30px;
 }
-
+.contactsCard{
+    height: auto;
+    border-radius: 30px;
+}
 .searchBar{
-    margin-top: -2%;
+    margin-top: 2%;
     float: right;
 }
 
+/* Hottest */
 
+/* Attractions */
 
-/* Local Business - Other Business */
-
-.card-title.h4{
-    font-weight: bold;
-}
-
-.vl {
-    border-left: 3px solid #bbb;
-    height: auto;
-}
-
-@media screen and (max-width: 600px) {
-    .vl {
-        border-left: none;
-        border-top: 3px solid #bbb;
-    }
-}
-
-/*Style for hotel class*/
-.hotelCard{
-    height: auto;
-    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
-    border-radius: 10px;
-}
-
-.text-green{
-    color: #5a5a5a;
-
-}
-
-.card-title.h4{
-    font-weight: bold;
-}
-
-.move2{
-    position: absolute;
-    top: 20%;
-    padding-left: 5%;
-    padding-right: 5%;
-    /*left:10%;*/
-}
-.searchBar1{
-    margin-top: 50px;
-    margin-right: 50px;
-}
 .btn.btn-primary {
     background: #329D9C;
     border-color: #329D9C;
@@ -333,20 +296,50 @@ ul{
     margin-top: 50px;
 }
 
+/* Card Divider */
+
+.vl {
+    border-left: 3px solid #bbb;
+    height: auto;
+}
+
+@media screen and (max-width: 840px) {
+    .vl {
+        border-left: none;
+        border-top: 3px solid #bbb;
+    }
+}
+.fillParentDiv{
+    height: 100%;
+    width: 100%;
+
+}
+.fillParentDivForImage{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.centerPasccode{
+    display:block;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
 
 /* Star Rating */
 
-.star-rating {
-    float: left;
-    height: 46px;
-    padding: 0 10px;
-}
 .star-rating:not(:checked) > input {
-    position:absolute;
+    position:relative;
     top:-9999px;
 }
 .star-rating:not(:checked) > label {
-    float:right;
+    /*float:left;*/
     width:1em;
     overflow:hidden;
     white-space:nowrap;
@@ -373,13 +366,25 @@ ul{
     top: 20%;
     padding-left: 5%;
     padding-right: 5%;
-    /*left:10%;*/
 }
 
-.imageFillColumn{
-    column-fill: auto;
+/* Hotels */
+
+.btn{
+    background: #329D9C;
+    border-color: #329D9C;
+}
+.btn:hover {
+    background: #329D9C;
+    border-color: #329D9C;
+    color: #ffffff;
 }
 
-.cardImageExplore{
-    width:100%;
+/* Card Styles */
+
+.hotelCard{
+    height: auto;
+    filter: drop-shadow(0px 4px 4px rgba(68, 177, 153, 0.498958));
+    border-radius: 10px;
+    cursor: pointer;
 }

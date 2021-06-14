@@ -2,112 +2,73 @@ doctype html
 html(lang="en")
     head
         include includes/head.pug
+        script(src="../scripts/tourist.js" defer)
 
-    body
+    body.background
         div.container
             div.columns
                 div.column.col-12
                     include includes/tabTHottest
                     include includes/translator.pug
 
-        div.container.move2
-            div.column.col-12.my-2.col-sm-12
+        div.container
+            div.columns
+                div.column.col-1
+                div.column.col-10
+                    div.container
+                        div.columns.mt-2
+                            div.column.col-12.my-2.col-sm-12.col-md-12
 
-                for n in businesses
+                                for n in businesses
 
-                    div.card
-                        div.columns
-                            div.column.col-3
-                                div.card-image
-                                    img.img-responsive(src="../images/hottestIMG.png", alt="Seashells Crafts")
-                            div.column.col-6
-                                div.card-header
-                                    div.card-title.h4 Surfing
-                                div.card-body
-                                    p
-                                        b Business Owner :
-                                        |  !{n.businessOwner}
-                                    p
-                                        b Business Type :
-                                        |  !{n.businessType}
-                                    p
-                                        b Description :
-                                        |  !{n.businessDescription}
+                                    div.card.mt-2
+                                        div.columns
+                                            div.column.col-3.col-sm-12.col-md-12
+                                                div.card-image.fillParentDiv
+                                                    img.img-responsive(src=n.Image_Src, alt=n.Business_Name).fillParentDivForImage
 
-                            div.column.col-3
-                                div.card-body.vl
-                                    p
-                                        b Estimate Payment :
-                                        |  !{n.businessPrice}
+                                            div.column.col-6.col-sm-12.col-md-12
+                                                div.card-header
+                                                    div.card-title.h4
+                                                        p !{n.Business_Name}
 
-                                    p
-                                        b Rating :
-                                        |
-                                        form-input.star-rating(method="post" action='/rating')
-                                            input#star5(type='radio' name='rate' value='5')
-                                            label(for='star5' title='text') 5 stars
-                                            input#star4(type='radio' name='rate' value='4')
-                                            label(for='star4' title='text') 4 stars
-                                            input#star3(type='radio' name='rate' value='3')
-                                            label(for='star3' title='text') 3 stars
-                                            input#star2(type='radio' name='rate' value='2')
-                                            label(for='star2' title='text') 2 stars
-                                            input#star1(type='radio' name='rate' value='1')
-                                            label(for='star1' title='text') 1 star
+                                                div.card-body
 
-                                            input(hidden, value='' name='businessOwner')
-                                            input(hidden, value='' name='businessName')
-                                            input(hidden, value='' name='businessType')
-                                            input(hidden, value='' name='businessDescription')
-                                            input(hidden, value='' name='businessPrice')
+                                                    p
+                                                        b Description :
+                                                        |  !{n.Business_Desc}
 
+                                                    p
+                                                        b Location :
+                                                        |  !{n.Business_Location}
 
-            div.column.col-12.my-2.col-sm-12
+                                            div.column.col-3.col-sm-12.col-md-12.vl
+                                                div.card-body
+                                                    p
+                                                        b Estimate Payment :
+                                                        |  !{n.Business_Price}
 
+                                                    p
+                                                        b Rating :
+                                                        | !{n.Business_Rating}
 
+                                                        form.form-input.star-rating(method="post" action='/rating')
+                                                            input#star5(type='radio' name='rate' value='5' onclick='this.form.submit()')
+                                                            label(for='star5' title='text')
+                                                            input#star4(type='radio' name='rate' value='4' onclick='this.form.submit()')
+                                                            label(for='star4' title='text')
+                                                            input#star3(type='radio' name='rate' value='3' onclick='this.form.submit()')
+                                                            label(for='star3' title='text')
+                                                            input#star2(type='radio' name='rate' value='2' onclick='this.form.submit()')
+                                                            label(for='star2' title='text')
+                                                            input#star1(type='radio' name='rate' value='1' onclick='this.form.submit()')
+                                                            label(for='star1' title='text')
 
-                div.card
-                    div.columns
-                        div.column.col-3
-                            div.card-image
-                                img.img-responsive(src="../images/seashell.JPG", alt="Seashells Crafts")
-                        div.column.col-6
-                            div.card-header
-                                div.card-title.h4 Arts and Crafts
-                            div.card-body
-                                p
-                                    b Business Owner :
-                                    |  Quenni Carreño
-                                p
-                                    b Business Type :
-                                    |  Things To Do
-                                p
-                                    b Description :
-                                    |
-                                    | I make crafts out of local materials, such as shells
-                                    | and bones, which are sold as souvenirs.
+                                                            input(hidden, value=n.Owners_Name name='ownersName')
+                                                            input(hidden, value=n.Business_Name name='businessName')
+                                                            input(hidden, value=n.Business_Type name='businessType')
+                                                            input(hidden, value=n.Business_Desc name='businessDesc')
+                                                            input(hidden, value=n.Business_Price name='businessPrice')
+                                                            input(hidden, value=n.Business_Location name='businessLoc')
 
-                        div.column.col-3
-                            div.card-body.vl
-                                p
-                                    b Estimate Payment :
-                                    |  50
-                                p
-                                    b Tourist Interest :
-                                    |  50
-                                p
-                                    b Rating :
-                                    |
-                                    //form-input.star-rating(method="post" action='/rating')
-                                    //    input(type='radio' name='rate' value='5')
-                                    //    label(for='star5' title='text') 5 stars
-                                    //    input(type='radio' name='rate' value='4')
-                                    //    label(for='star4' title='text') 4 stars
-                                    //    input(type='radio' name='rate' value='3')
-                                    //    label(for='star3' title='text') 3 stars
-                                    //    input(type='radio' name='rate' value='2')
-                                    //    label(for='star2' title='text') 2 stars
-                                    //    input(type='radio' name='rate' value='1')
-                                    //    label(for='star1' title='text') 1 star
-                                    //
-                                    //    input(hidden, value='')
+                div.column.col-1

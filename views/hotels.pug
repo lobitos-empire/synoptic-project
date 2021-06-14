@@ -4,113 +4,123 @@ html(lang="en")
         include includes/head.pug
         script(src="../scripts/tourist.js" defer)
 
+
     body.background
 
         div.container
             div.columns
                 div.column.col-12
                     include includes/tabTHotels
-        div.move
-            div.container
-                div.columns
-                    div.column.col-4.col-sm-12.my-2
-                        div.card.hotelCard#hotelModal-id
-                            div.card-image
-                                img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
-                            div.card-header
-                                div.card-title.h4 La Casona
-                                div.card-subtitle.text-grey.text-italic Hotel
-                            div.card-body
-                                p Explore Attractions in Lobitos Explore Attractions in Lobitos Explore Attractions in Lobitos
-                        div.modal#modal-id
-                            a.modal-overlay(href='#close' aria-label='Close')
-                            div.modal-container
-                                div.modal-header
-                                    a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close-id
-                                    div.modal-title.h5 Hotel La Casona Map
-                                div.modal-body
-                                    div.content
-                                        img.img-responsive(src="../images/hotelMap1.JPG", alt="Hotel Image")
-                                div.modal-footer
-                                    //a(class="mapButton" href=)
+                    include includes/translator.pug
+        div.container.move
+            div.columns
+                div.column.col-1.col-sm-12
+                div.column.col-10.col-sm-12
+                    div.container
+                        div.columns
+                            div.column.col-4.col-sm-12.my-2
+                                div.card.hotelCard#hotelModal-id
+                                    div.card-image
+                                        img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
+                                    div.card-header
+                                        div.card-title.h4 La Casona
+                                        div.card-subtitle.text-grey.text-italic Hotel
+                                    div.card-body
+                                        p A surf hostel on Lobito’s beach. La Casona welcomes you into a relaxed environment that boast peaceful sound of the Pacific Ocean.
 
+                                div.modal#modal-id
+                                    a.modal-overlay(href='#close' aria-label='Close')
+                                    div.modal-container
+                                        div.modal-header
+                                            a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close-id
+                                            div.modal-title.h5 Hotel La Casona Map
+                                        div.modal-body
+                                            div.content
+                                                img.img-responsive(src="../images/hotelMap1.JPG", alt="Hotel Image")
+                                        div.modal-footer
+                                            a.btn(href="https://www.google.com/maps/dir//La+Casona+de+Lobitos,+Lobitos-Piura-Per%C3%B9,+073,+Lobitos,+Peru/@-4.4547133,-81.4217108,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x90365bb0a9e39579:0x5270d0671c0ab8b0!2m2!1d-81.2819665!2d-4.4547265" aria-label="live map button").text-light 🗺 View Live Map 🗺
 
-                    div.column.col-4.col-sm-12.my-2
-                        div.card.hotelCard#hotelModal2-id
-                            div.card-image
-                                    img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
-                            div.card-header
-                                div.card-title.h4 Buenavista Lobitos
-                                div.card-subtitle.text-grey.text-italic Hotel
-                            div.card-body
-                                p Explore Attractions in Lobitos Explore Attractions in Lobitos Explore Attractions in Lobitos
-                        div.modal#modal2-id
-                            a.modal-overlay(href='#close' aria-label='Close')
-                            div.modal-container
-                                div.modal-header
-                                    a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close2-id
-                                    div.modal-title.h5 Hotel Buenavista Map
-                                div.modal-body
-                                    div.content
-                                        img.img-responsive(src="../images/buenavistoMap.JPG", alt="Hotel Image")
-                                div.modal-footer
+                            div.column.col-4.col-sm-12.my-2
+                                div.card.hotelCard#hotelModal2-id
+                                    div.card-image
+                                        img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
+                                    div.card-header
+                                        div.card-title.h4 Buenavista Lobitos
+                                        div.card-subtitle.text-grey.text-italic Hotel
+                                    div.card-body
+                                        p Hotel Buenavista Lobitos incorporates eco-friendly practices.Rooms include free WiFi and Breakfast as well as an on-site Gym.
+                                div.modal#modal2-id
+                                    a.modal-overlay(href='#close' aria-label='Close')
+                                    div.modal-container
+                                        div.modal-header
+                                            a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close2-id
+                                            div.modal-title.h5 Hotel Buenavista Map
+                                        div.modal-body
+                                            div.content
+                                                img.img-responsive(src="../images/buenavistoMap.JPG", alt="Hotel Image")
+                                        div.modal-footer
+                                            a.btn(href="https://www.google.com/maps/dir//Buenavista+Lobitos,+Tablista+en+Nuevo,+Lobitos+District,+Peru/@-4.455504,-81.319848,13z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x90365baf66cb0239:0xbe93d4ef48d349e2!2m2!1d-81.2848283!2d-4.4555048" aria-label="live map button").text-light 🗺 View Live Map 🗺
 
-                    div.column.col-4.col-sm-12.my-2
-                        div.card.hotelCard#hotelModal3-id
-                            div.card-image
-                                    img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
-                            div.card-header
-                                div.card-title.h4 El Hueco Villas
-                                div.card-subtitle.text-grey.text-italic Hotel
-                            div.card-body
-                                p Explore Attractions in Lobitos Explore Attractions in Lobitos Explore Attractions in Lobitos
-                        div.modal#modal3-id
-                            a.modal-overlay(href='#close' aria-label='Close')
-                            div.modal-container
-                                div.modal-header
-                                    a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close3-id
-                                    div.modal-title.h5 Hotel El Hueco Villas Map
-                                div.modal-body
-                                    div.content
-                                        img.img-responsive(src="../images/huecoMap.JPG", alt="Hotel Image")
-                                div.modal-footer
+                            div.column.col-4.col-sm-12.my-2
+                                div.card.hotelCard#hotelModal3-id
+                                    div.card-image
+                                        img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
+                                    div.card-header
+                                        div.card-title.h4 El Hueco Villas
+                                        div.card-subtitle.text-grey.text-italic Hotel
+                                    div.card-body
+                                        p This hotel is in front of one of the best waves in northern Peru. The hotel has opportunities for canoeing as well exercising.
+                                div.modal#modal3-id
+                                    a.modal-overlay(href='#close' aria-label='Close')
+                                    div.modal-container
+                                        div.modal-header
+                                            a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close3-id
+                                            div.modal-title.h5 Hotel El Hueco Villas Map
+                                        div.modal-body
+                                            div.content
+                                                img.img-responsive(src="../images/huecoMap.JPG", alt="Hotel Image")
+                                        div.modal-footer
+                                            a.btn(href="https://www.google.com/maps/dir//El+Hueco+Villas,+Nuevo+Lobitos,+Lobitos,+Peru/@-4.4561787,-81.4258956,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x90365bb08874c83b:0x23648554e37c504f!2m2!1d-81.2861397!2d-4.4564757" aria-label="live map button").text-light 🗺 View Live Map 🗺
 
-                    div.column.col-4.col-sm-12.my-2
-                        div.card.hotelCard#hotelModal4-id
-                            div.card-image
-                                    img.img-responsive(src="../images/hotelss.jpg", alt="Explore local business")
-                            div.card-header
-                                div.card-title.h4 Mahalo Lobitos Surf House
-                                div.card-subtitle.text-grey.text-italic Hotel
-                            div.card-body
-                                p Explore Attractions in Lobitos Explore Attractions in Lobitos Explore Attractions in Lobitos
-                        div.modal#modal4-id
-                            a.modal-overlay(href='#close' aria-label='Close')
-                            div.modal-container
-                                div.modal-header
-                                    a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close4-id
-                                    div.modal-title.h5 Mahalo Lobitos Surf House Map
-                                div.modal-body
-                                    div.content
-                                        img.img-responsive(src="../images/mahaloMap.JPG", alt="Explore local business")
-                                div.modal-footer
+                            div.column.col-4.col-sm-12.my-2
+                                div.card.hotelCard#hotelModal4-id
+                                    div.card-image
+                                        img.img-responsive(src="../images/hotelss.jpg", alt="Explore local business")
+                                    div.card-header
+                                        div.card-title.h4 Mahalo Lobitos Surf House
+                                        div.card-subtitle.text-grey.text-italic Hotel
+                                    div.card-body
+                                        p Has free Wi-Fi and private parking. The accommodation has a terrace as well as a private beach area.
+                                div.modal#modal4-id
+                                    a.modal-overlay(href='#close' aria-label='Close')
+                                    div.modal-container
+                                        div.modal-header
+                                            a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close4-id
+                                            div.modal-title.h5 Mahalo Lobitos Surf House Map
+                                        div.modal-body
+                                            div.content
+                                                img.img-responsive(src="../images/mahaloMap.JPG", alt="Explore local business")
+                                        div.modal-footer
+                                            a.btn(href="https://www.google.com/maps/dir//Lobitos+Surf+House,+s%2Fn+barrio+nuevo+lobitos+al+costado+del+albergue+Lobitos,+Lobitos,+Peru/@-4.4541427,-81.425181,11z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x90365bb0af9e3c59:0x2518b3e7ba234418!2m2!1d-81.2854364!2d-4.4544982" aria-label="live map button").text-light 🗺 View Live Map 🗺
 
-                    div.column.col-4.col-sm-12.my-2
-                        div.card.hotelCard#hotelModal5-id
-                            div.card-image
-                                    img.img-responsive(src="../images/hotelss.jpg", alt="Explore local business")
-                            div.card-header
-                                div.card-title.h4 Hotel Navego
-                                div.card-subtitle.text-grey.text-italic Hotel
-                            div.card-body
-                                p Explore Attractions in Lobitos Explore Attractions in Lobitos Explore Attractions in Lobitos
-                        div.modal#modal5-id
-                            a.modal-overlay(href='#close' aria-label='Close')
-                            div.modal-container
-                                div.modal-header
-                                    a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close5-id
-                                    div.modal-title.h5 Hotel Navego Map
-                                div.modal-body
-                                    div.content
-                                        img.img-responsive(src="../images/navegoMap.JPG", alt="Explore local business")
-                                div.modal-footer
+                            div.column.col-4.col-sm-12.my-2
+                                div.card.hotelCard#hotelModal5-id
+                                    div.card-image
+                                        img.img-responsive(src="../images/hotelss.jpg", alt="Explore local business")
+                                    div.card-header
+                                        div.card-title.h4 Hotel Navego
+                                        div.card-subtitle.text-grey.text-italic Hotel
+                                    div.card-body
+                                        p Quiet eco boutique hotel. Rooms with some of the best views of the Pacific Ocean waves.
+                                div.modal#modal5-id
+                                    a.modal-overlay(href='#close' aria-label='Close')
+                                    div.modal-container
+                                        div.modal-header
+                                            a(href="#close" class="btn btn-clear float-right" aria-label="Close")#close5-id
+                                            div.modal-title.h5 Hotel Navego Map
+                                        div.modal-body
+                                            div.content
+                                                img.img-responsive(src="../images/navegoMap.JPG", alt="Explore local business")
+                                        div.modal-footer
+                                            a.btn(href="https://www.google.com/maps/dir//Hotel+Navego,+Nuevo+Lobitos,+Rivera+del+Mar+s%2Fn,+Talara,+Lobitos,+Peru/@-4.4537072,-81.4250651,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x90365bb0ac8eb7bd:0x94fa9848079bb655!2m2!1d-81.2853205!2d-4.4540627" aria-label="live map button").text-light 🗺 View Live Map 🗺
+                div.column.col-1.col-sm-12

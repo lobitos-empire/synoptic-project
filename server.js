@@ -63,6 +63,7 @@ app.get('/tourist', (req, res) => {
 app.get('/hottest', (req, res) => {
     res.render('hottest', {
         title: 'Hottest',
+        businesses: getAllRated()
     });
 });
 
@@ -123,6 +124,7 @@ app.get('/localBusiness', (req, res) => {
 });
 
 app.post('/localBusiness', (req, res) => {
+
 });
 
 app.get('/upload', (req, res) => {
@@ -138,9 +140,38 @@ app.post("/upload", (req, res) => {
     tempBusinessDesc = req.body.businessDesc;
     tempBusinessLoc = req.body.businessLoc;
     tempBusinessPrice = req.body.businessPrice;
-    tempImagePath = '../public/uploadedImages/' + tempBusinessName
+    tempImagePath = '/uploadedImages/' + tempBusinessName.replace(" ", "");
 
-    //console.log(ownersName + businessName + businessType + businessDesc);
+    const business = {
+        "Owners_Name": tempOwnerName,
+        "Business_Name": tempBusinessName,
+        "Business_Type": tempBusinessType,
+        "Business_Desc": tempBusinessDesc,
+        "Business_Location": tempBusinessLoc,
+        "Business_Price": tempBusinessPrice,
+        "Image_Src": '/uploadedImages/' + tempBusinessName.replace(" ", "") + ".png"
+    };
+
+    try {
+        let olddata = fs.readFileSync('business.json', 'utf8')
+        olddata = JSON.parse(olddata);
+        for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
+            if (olddata.Businesses.Categories[i].Category.CategoryName === businessType) {
+                olddata.Businesses.Categories[i].Category.CategoryData.push(business);
+            }
+        }
+        console.log(olddata);
+        const data = JSON.stringify(olddata);
+
+        fs.writeFile("business.json", data, (err) => {
+            if (err) {
+                throw err;
+            }
+            console.log("JSON saved");
+        })
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 app.post("/uploadImage", (req, res) => {
@@ -193,20 +224,15 @@ app.post("/uploadImage", (req, res) => {
                     throw err;
                 }
                 console.log("JSON saved");
-            })
+                setTimeout(() => {
+                    res.redirect('/business');
+                }, 4000)
+            });
         } catch (err) {
             console.log(err);
         }
     })
-
 });
-
-app.get('rating',(req, res)=>{
-    //DO SOMETHING WITH RATED HERE
-    //getAllRated();
-})
-
-
 
 app.post('/rating', (req, res)=>{
     //get data from page
@@ -221,30 +247,29 @@ app.post('/rating', (req, res)=>{
     let businessRating = 0;
 
     const fs = require('fs')
-    fs.readFile('./business.json', 'utf8', (err, jsonString) => {
-        if (err) {
-            console.log("Error reading file from disk:", err)
-            return
-        }
-        try {
-            const oldData = JSON.parse(jsonString)
-            for (let i = 0; i < olddata.Businesses.Ratings.length; i++) {
-                for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
-                    if (oldData.Ratings.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
-                        //get old data and populate vars
-                        businessRating = parseInt(oldData.Ratings.Ratings[i].Rating.RatingNumber);
-                        ratingCount = parseInt(oldData.Ratings.Ratings[i].CategoryData[j].Rating_Count);
-                    }
+    let olddata2 = fs.readFileSync('business.json', 'utf8')
+    olddata2 = JSON.parse(olddata2);
+    for (let i = 0; i < olddata2.Businesses.Ratings.length; i++) {
+        for (let j = 0; j < olddata2.Businesses.Ratings[i].Rating.CategoryData.length; j++) {
+
+            if(olddata2.Businesses.Ratings[i].Rating.CategoryData.length !== 0){
+                if (olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
+                    //get old data and populate vars
+                    businessRating = parseInt(olddata2.Businesses.Ratings[i].Rating.RatingNumber);
+                    ratingCount = parseInt(olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Rating_Count);
                 }
             }
-            console.log()
-        } catch(err) {
-            console.log('Error parsing JSON string:', err)
+            else{
+                businessRating = 0;
+                ratingCount = 0;
+            }
+
         }
-    })
+    }
 
     //get new rating from page
     var newBusinessRating = req.body.businessRating;
+    ratingCount += 1;
 
     console.log(req);
     var businessRated = {
@@ -262,8 +287,10 @@ app.post('/rating', (req, res)=>{
     //removes entry if present in different rating group now
     for (let i = 0; i < olddata.Businesses.Ratings.length; i++) {
         for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
-            if (oldData.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
-                olddata.Businesses.Ratings[i].Rating.RatingNumber.pop(businessRated);
+            if(olddata.Businesses.Ratings[i].Rating.CategoryData.length !== 0){
+                if (olddata.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
+                    olddata.Businesses.Ratings[i].Rating.CategoryData.pop(businessRated);
+                }
             }
         }
     }
@@ -281,8 +308,8 @@ app.post('/rating', (req, res)=>{
     }
 
     for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
-        if (olddata.Businesses.Ratings[i].Rating.RatingNumber == businessRating.round()) {
-            olddata.Businesses.Ratings[i].Rating.RatingNumber.push(businessRated);
+        if (olddata.Businesses.Ratings[i].Rating.RatingNumber == Math.round(businessRating)) {
+            olddata.Businesses.Ratings[i].Rating.CategoryData.push(businessRated);
         }
     }
     console.log(olddata);
@@ -293,6 +320,7 @@ app.post('/rating', (req, res)=>{
             throw err;
         }
         console.log("JSON saved");
+        res.redirect('/attractions');
     })
 });
 
@@ -302,7 +330,7 @@ function getTranslations() {
     let translations = JSON.parse(rawData).translations;
     let resultTranslations = {"translations": []};
     for (let i = 0; i < translations.length; i++) {
-        if (i % 2 === 0) {
+        if (i % 3 === 0) {
             resultTranslations.translations.push(translations[i]);
         }
     }
@@ -350,12 +378,46 @@ function getAttractions() {
     for (let i = 0; i < businesses.Categories.length; i++) {
         if (businesses.Categories[i].Category.CategoryName == "Cosas para hacer") {
             for (let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++) {
-                results.push(businesses.Categories[i].Category.CategoryData[j]);
+                let Business_Rating;
+                for(let k=5; k>-1; k--){
+                    for(let l = 0; l < businesses.Ratings[k].Rating.CategoryData.length; l++){
+                        if(businesses.Ratings[k].Rating.CategoryData[l].Business_Name == businesses.Categories[i].Category.CategoryData[j].Business_Name){
+                            Business_Rating = businesses.Ratings[k].Rating.RatingNumber
+                        }
+                    }
+                }
+                let business = {
+                    "Owners_Name": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
+                    "Business_Name": businesses.Categories[i].Category.CategoryData[j].Business_Name,
+                    "Business_Type": businesses.Categories[i].Category.CategoryData[j].Business_Type,
+                    "Business_Desc": businesses.Categories[i].Category.CategoryData[j].Business_Desc,
+                    "Business_Location": businesses.Categories[i].Category.CategoryData[j].Business_Location,
+                    "Business_Price": businesses.Categories[i].Category.CategoryData[j].Business_Price,
+                    "Business_Rating": Business_Rating,
+                    "Image_Src": businesses.Categories[i].Category.CategoryData[j].Image_Src
+                }
+                results.push(business);
             }
         }
     }
     return results;
 }
+
+
+//Method to get a list of all business
+function getAllBusiness() {
+    let rawData = fs.readFileSync('business.json');
+    let businesses = JSON.parse(rawData).Businesses;
+    let results = [];
+
+    for (let i = 0; i < businesses.Categories.length; i++) {
+        for (let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++) {
+            results.push(businesses.Categories[i].Category.CategoryData[j]);
+        }
+    }
+    return results;
+}
+
 
 function getHotels() {
     let rawData = fs.readFileSync('business.json');

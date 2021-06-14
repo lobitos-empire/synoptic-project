@@ -448,7 +448,7 @@ function getAllBusinesses() {
 
 function getAllRated(){
     let rawData = fs.readFileSync('business.json');
-    let businesses= JSON.parse(rawData).businesses;
+    let businesses= JSON.parse(rawData).Businesses;
     let results = [];
 
     for(let i=5; i>-1; i--){

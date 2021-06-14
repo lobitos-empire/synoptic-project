@@ -143,6 +143,33 @@ h3{
 ul{
     padding-top: 25px;
 }
+.tablist{
+    padding: 0;
+    margin-top: 3%;
+    overflow-x: scroll;
+    height: 3rem;
+}
+.tablist::-webkit-scrollbar {
+    display: none;
+}
+.tablist > .inner {
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.tab-item {
+    box-sizing: border-box;
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0 20px;
+    text-align: center;
+    height: 3rem;
+    white-space: nowrap;
+    color: #fff;
+    cursor: pointer;
+}
 .tab{
     border-bottom: none;
     margin: 2%;
@@ -309,17 +336,20 @@ ul{
         border-top: 3px solid #bbb;
     }
 }
+
+/* Image Responsive */
+
 .fillParentDiv{
     height: 100%;
     width: 100%;
-
 }
 .fillParentDivForImage{
     height: 100%;
     width: 100%;
     object-fit: cover;
-
 }
+
+/* Password style */
 
 .centerPasccode{
     display:block;
@@ -333,13 +363,16 @@ ul{
 
 
 /* Star Rating */
+.star-rating{
+    float: left;
+}
 
 .star-rating:not(:checked) > input {
-    position:relative;
+    position:absolute;
     top:-9999px;
 }
 .star-rating:not(:checked) > label {
-    /*float:left;*/
+    float: right;
     width:1em;
     overflow:hidden;
     white-space:nowrap;
@@ -351,21 +384,18 @@ ul{
     content: '★ ';
 }
 .star-rating > input:checked ~ label {
-    color: #ffc700;
+    color: #329D9C;
 }
 .star-rating:not(:checked) > label:hover,
 .star-rating:not(:checked) > label:hover ~ label {
-    color: #deb217;
+    color: #329D9C;
 }
 .star-rating > input:checked + label:hover,
 .star-rating > input:checked + label:hover ~ label,
 .star-rating > input:checked ~ label:hover,
 .star-rating > input:checked ~ label:hover ~ label,
 .star-rating > label:hover ~ input:checked ~ label {
-    color: #c59b08;
-    top: 20%;
-    padding-left: 5%;
-    padding-right: 5%;
+    color: #329D9C;
 }
 
 /* Hotels */

@@ -11,6 +11,12 @@ html(lang="en")
                     include includes/tabTAttractions
                     include includes/translator.pug
 
+        div.container
+            div.columns
+                div.column.col-2
+                div.column.col-8.col-sm-12.exploreTitle
+                    h3 Attractions
+                div.column.col-2
 
         div.container
             div.columns
@@ -54,15 +60,15 @@ html(lang="en")
 
                                                         form.form-input.star-rating(method="post" action='/rating')
                                                             input#star5(type='radio' name='businessRating' value='5' onclick='this.form.submit()')
-                                                            label(for='star5' title='text')
+                                                            label(for='star5' title='text') 5 stars
                                                             input#star4(type='radio' name='businessRating' value='4' onclick='this.form.submit()')
-                                                            label(for='star4' title='text')
+                                                            label(for='star4' title='text') 4 stars
                                                             input#star3(type='radio' name='businessRating' value='3' onclick='this.form.submit()')
-                                                            label(for='star3' title='text')
+                                                            label(for='star3' title='text') 3 stars
                                                             input#star2(type='radio' name='businessRating' value='2' onclick='this.form.submit()')
-                                                            label(for='star2' title='text')
+                                                            label(for='star2' title='text') 2 stars
                                                             input#star1(type='radio' name='businessRating' value='1' onclick='this.form.submit()')
-                                                            label(for='star1' title='text')
+                                                            label(for='star1' title='text') 1 stars
 
                                                             input(hidden, value=n.Owners_Name name='ownersName')
                                                             input(hidden, value=n.Business_Name name='businessName')

@@ -15,7 +15,7 @@ if(window.location.pathname === "/upload"){
     window.addEventListener('DOMContentLoaded',  ()=> {
         const element = document.getElementById('google_translate_element');
         if(element){
-            console.log("not showing");
+
             element.className= "d-visible"
         }
         console.log('DOM F');

@@ -19,7 +19,16 @@ html(lang="en")
                 div.column.col-8.col-sm-12.exploreTitle
                     h3 Mercados explorable
                         sup
-                            i.material-icons(style = "font-size:1.0rem;") help
+                            i.material-icons#explorehelpicon(style = "font-size:1.0rem;") help
+                div.modal#explorehelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closexplorehelp
+                            div.modal-title.h5  Información de la página
+                        div.modal-body
+                            div.content
+
                 div.column.col-2
 
         div.container

@@ -5,6 +5,8 @@ document.getElementById("modalbutton").addEventListener(
         document.getElementById("kitemodal").className = "modal active"
     }
 )
+
+
 document.getElementById("closeid").addEventListener(
     "click",()=>{
         document.getElementById("kitemodal").className = "modal"
@@ -57,6 +59,19 @@ document.getElementById("closeboats").addEventListener(
         document.getElementById("boatsmodal").className = "modal"
     }
 )
+
+document.getElementById("explorehelpicon").addEventListener(
+    "click",()=>{
+        document.getElementById("explorehelpmodal").className = "modal active"
+    }
+)
+
+document.getElementById("closexplorehelp").addEventListener(
+    "click",()=>{
+        document.getElementById("explorehelpmodal").className = "modal"
+    }
+)
+
 
 
 

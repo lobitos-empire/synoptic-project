@@ -39,7 +39,16 @@ if(window.location.pathname === "/upload"){
             sessionStorage.setItem('existingUser', true);
             document.getElementById("lbBody").className = "background";
             document.getElementById("passCodeDiv").className = "d-invisible";
+        }else{
+            if(document.getElementById("passCode").value.length===4){
+                //validation for the passcode. If password is incorrect.
+                mdtoast('Contraseña incorrecta', { duration: 2000, type: mdtoast.ERROR });    // or type: 'error'
+            }
+
+
+
         }
+
     })
 }
 

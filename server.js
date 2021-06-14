@@ -157,7 +157,8 @@ app.post("/uploadImage", (req, res) => {
             res.send("Wrong File Type");
             return;
         }
-        var newPath = path.join(__dirname, 'public/uploadedImages/' + tempBusinessName.replace(" ", "")) + "." + extension;
+
+        var newPath = path.join(__dirname, 'public/uploadedImages/' + tempBusinessName.replace(/ /g, '%20')) + "." + extension;
         var rawData = fs.readFileSync(oldPath);
         fs.writeFile(newPath, rawData, function (err) {
             if (err) console.log(err);

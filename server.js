@@ -140,7 +140,7 @@ app.post("/upload", (req, res) => {
     tempBusinessDesc = req.body.businessDesc;
     tempBusinessLoc = req.body.businessLoc;
     tempBusinessPrice = req.body.businessPrice;
-    tempImagePath = '/uploadedImages/' + tempBusinessName.replace(" ", "");
+    tempImagePath = '/uploadedImages/' + tempBusinessName.replace("/ /g", "");
 
     const business = {
         "Owners_Name": tempOwnerName,
@@ -149,7 +149,7 @@ app.post("/upload", (req, res) => {
         "Business_Desc": tempBusinessDesc,
         "Business_Location": tempBusinessLoc,
         "Business_Price": tempBusinessPrice,
-        "Image_Src": '/uploadedImages/' + tempBusinessName.replace(" ", "") + ".png"
+        "Image_Src": '/uploadedImages/' + tempBusinessName.replace("/ /g", "") + ".png"
     };
 
     try {

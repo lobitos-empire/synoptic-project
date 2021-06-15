@@ -482,13 +482,26 @@ function getAllRated(){
     var rawData = fs.readFileSync('business.json');
     var businesses= JSON.parse(rawData);
     var results = [];
+    var Business_Rating = 0;
 
     console.log(businesses)
 
     for(var i=5; i>-1; i--){
         for(var j = 0; j < businesses.Businesses.Ratings[i].Rating.CategoryData.length; j++){
             console.log(businesses.Businesses)
-            results.push(businesses.Businesses.Ratings[i].Rating.CategoryData[j]);
+            //results.push(businesses.Businesses.Ratings[i].Rating.CategoryData[j]);
+            Business_Rating = businesses.Businesses.Ratings[i].Rating.RatingNumber;
+            let business = {
+                "Business_Name": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name,
+                "Business_Type": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Business_Type,
+                "Business_Desc": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Business_Desc,
+                "Business_Location": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Business_Location,
+                "Business_Price": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Business_Price,
+                "Rating_Count": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Rating_Count,
+                "Business_Rating": Business_Rating,
+                "Image_Src": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Image_Src
+            }
+            results.push(business);
         }
         //Push everything in a rating bracket as doesn't need to be ordered by individual element necessarily
         //

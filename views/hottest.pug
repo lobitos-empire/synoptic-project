@@ -16,9 +16,10 @@ html(lang="en")
             div.columns
                 div.column.col-2
                 div.column.col-8.col-sm-12.exploreTitle
-                    h3 Hottest
+                    h3 Hottest Businesses
                         sup
                             i.material-icons.c-hand#hottesthelpicon(style = "font-size:1.0rem;") help
+
                 div.modal#hottesthelpmodal
                     a.modal-overlay(aria-label="Close" href="#Close")
                     div.modal-container
@@ -29,10 +30,7 @@ html(lang="en")
                             div.content
                                 p * If you have ever wondered where you can find the perfect souvenirs, you’ve come to the right place.
                                 p * This page displays the hottest (most highly rated) local businesses in Lobitos.
-
-
                 div.column.col-2
-
 
         div.container
             div.columns
@@ -93,7 +91,6 @@ html(lang="en")
                                                         input(hidden, value=n.Business_Desc name='businessDesc')
                                                         input(hidden, value=n.Business_Price name='businessPrice')
                                                         input(hidden, value=n.Business_Location name='businessLoc')
-
                 div.column.col-1.col-sm-12
                     button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='To Go Up')
                         i.icon.icon-arrow-up

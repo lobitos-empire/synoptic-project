@@ -19,6 +19,7 @@ html(lang="en")
                     h3 Attractions
                         sup
                             i.material-icons.c-hand#attractionhelpicon(style = "font-size:1.0rem;") help
+
                 div.modal#attractionhelpmodal
                     a.modal-overlay(aria-label="Close" href="#Close")
                     div.modal-container
@@ -55,7 +56,6 @@ html(lang="en")
                                                         p !{n.Business_Name}
 
                                                 div.card-body
-
                                                     p
                                                         b Description :
                                                         |  !{n.Business_Desc}
@@ -72,7 +72,6 @@ html(lang="en")
                                                     p
                                                         b Rating :
                                                         | !{n.Business_Rating}
-
                                                     form.form-input.star-rating(method="post" action='/rating')
                                                         input#star5(type='radio' name='businessRating' value='5' onclick='this.form.submit()')
                                                         label(for='star5' title='text') 5 stars

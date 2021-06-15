@@ -35,14 +35,14 @@ else if (window.location.pathname === "/localBusiness"){
 
     });
 
-//    document.getElementById("passCode").addEventListener('input', ()=>{
-//        if(document.getElementById("passCode").value === "0000"){
-//            sessionStorage.setItem('existingUser', true);
-//            document.getElementById("lbBody").className = "background";
-//            document.getElementById("passCodeDiv").className = "d-invisible";
-//        }
-//    })
-}
+  document.getElementById("passCode").addEventListener('input', ()=>{
+     if(document.getElementById("passCode").value === "0000"){
+        sessionStorage.setItem('existingUser', true);
+        document.getElementById("lbBody").className = "background";
+         document.getElementById("passCodeDiv").className = "d-invisible";
+       }
+    })
+ }
 
 
 

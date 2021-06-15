@@ -25,6 +25,25 @@ body{
         width: auto;
         height: 3rem;
     }
+
+    .reduceLocalBusinessButons{
+        font-size: small;
+    }
+}
+/* Catering to an extremely small screen with a max screen width of 300 px*/
+@media screen and (max-width: 300px) {
+    .logo1 {
+        top: 0;
+        left: 1%;
+        position: absolute;
+        width: auto;
+        height: 3rem;
+    }
+
+    .reduceLocalBusinessButons{
+        /*redcue the size of the buttons to fit the cards in the local business page */
+        font-size: 0.45rem;
+    }
 }
 
 
@@ -130,6 +149,7 @@ a.lButton{
 .goog-te-menu-value {
     color: black !important;
 }
+
 
 
 /* Reference to background image

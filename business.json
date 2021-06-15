@@ -1,1 +1,83 @@
-{"Businesses":{"Categories":[{"Category":{"CategoryName":"Comidas y bebidas","CategoryData":[{"Owners_Name":"AReallyBadPlace","Business_Name":"AReallyBadPlace","Business_Type":"Comidas y bebidas","Business_Desc":"AReallyBadPlaceAReallyBadPlaceAReallyBadPlaceAReallyBadPlaceAReallyBadPlaceAReallyBadPlaceAReallyBadPlaceAReallyBadPlaceAReallyBadPlace","Business_Location":"AReallyBadPlace","Business_Price":"10000","Image_Src":"/uploadedImages/AReallyBadPlace.png"}]}},{"Category":{"CategoryName":"Cosas para hacer","CategoryData":[{"Owners_Name":"reallycoolplace","Business_Name":"reallycoolplace","Business_Type":"Cosas para hacer","Business_Desc":"reallycoolplacereallycoolplacereallycoolplacereallycoolplacereallycoolplacereallycoolplacereallycoolplacereallycoolplacereallycoolplacereallycoolplace","Business_Location":"reallycoolplace","Business_Price":"1000","Image_Src":"/uploadedImages/reallycoolplace.png"},{"Owners_Name":"aVeryAveragePlace","Business_Name":"aVeryAveragePlace","Business_Type":"Cosas para hacer","Business_Desc":"aVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlace","Business_Location":"aVeryAveragePlace","Business_Price":"1000","Image_Src":"/uploadedImages/aVeryAveragePlace.png"}]}},{"Category":{"CategoryName":"Servicios","CategoryData":[]}},{"Category":{"CategoryName":"Hoteles","CategoryData":[]}},{"Category":{"CategoryName":"Compras","CategoryData":[]}},{"Category":{"CategoryName":"Otra","CategoryData":[]}}],"Ratings":[{"Rating":{"RatingNumber":"0","CategoryData":[]}},{"Rating":{"RatingNumber":"1","CategoryData":[]}},{"Rating":{"RatingNumber":"2","CategoryData":[{"Business_Name":"reallycoolplace","Business_Type":"Cosas para hacer","Business_Desc":"reallycoolplacereallycoolplacereallycoolplacereallycoolplacereallycoolplacereallycoolplacereallycoolplacereallycoolplacereallycoolplacereallycoolplace","Business_Location":"reallycoolplace","Business_Price":"1000","Rating_Count":"4","Image_Src":"/uploadedImages/reallycoolplace.png"}]}},{"Rating":{"RatingNumber":"3","CategoryData":[{"Business_Name":"aVeryAveragePlace","Business_Type":"Cosas para hacer","Business_Desc":"aVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlaceaVeryAveragePlace","Business_Location":"aVeryAveragePlace","Business_Price":"1000","Rating_Count":"1","Image_Src":"/uploadedImages/aVeryAveragePlace.png"}]}},{"Rating":{"RatingNumber":"4","CategoryData":[{"Business_Name":"AReallyBadPlace","Business_Type":"Comidas y bebidas","Business_Desc":"AReallyBadPlaceAReallyBadPlaceAReallyBadPlaceAReallyBadPlaceAReallyBadPlaceAReallyBadPlaceAReallyBadPlaceAReallyBadPlaceAReallyBadPlace","Business_Location":"AReallyBadPlace","Business_Price":"10000","Rating_Count":"3","Image_Src":"/uploadedImages/AReallyBadPlace.png"}]}},{"Rating":{"RatingNumber":"5","CategoryData":[]}}]}}
+{
+  "Businesses": {
+    "Categories": [
+      {
+        "Category": {
+          "CategoryName": "Comidas y bebidas",
+          "CategoryData": [
+          ]
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Cosas para hacer",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Servicios",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Hoteles",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Compras",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Otra",
+          "CategoryData": []
+        }
+      }
+    ],
+    "Ratings": [
+      {
+        "Rating": {
+          "RatingNumber": "0",
+          "CategoryData": [
+          ]
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "1",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "2",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "3",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "4",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "5",
+          "CategoryData": [
+          ]
+        }
+      }
+    ]
+  }
+}

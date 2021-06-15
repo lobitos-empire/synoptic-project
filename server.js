@@ -162,32 +162,6 @@ app.post("/upload", (req, res) => {
         "Business_Rating": "",
         "Rating_Count": ""
     };
-
-    try {
-        let olddata = fs.readFileSync('business.json', 'utf8')
-        olddata = JSON.parse(olddata);
-        for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
-            if (olddata.Businesses.Categories[i].Category.CategoryName === businessType) {
-                olddata.Businesses.Categories[i].Category.CategoryData.push(business);
-            }
-        }
-        for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
-            if (olddata.Businesses.Ratings[j].Rating.RatingNumber === "") {
-                olddata.Businesses.Ratings[j].Rating.CategoryData.push(busRating);
-            }
-        }
-        console.log(olddata);
-        const data = JSON.stringify(olddata);
-
-        fs.writeFile("business.json", data, (err) => {
-            if (err) {
-                throw err;
-            }
-            console.log("JSON saved");
-        })
-    } catch (err) {
-        console.log(err);
-    }
 });
 
 app.post("/uploadImage", (req, res) => {

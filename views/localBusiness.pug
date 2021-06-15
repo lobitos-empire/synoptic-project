@@ -12,6 +12,7 @@ html(lang="en")
         include includes/head.pug
         //Loads the main javascript for this page.
         script(src="../scripts/main.js" defer)
+        script(src="../scripts/localBusiness.js" defer)
 
     body.background
         //This is the div of the page, upon first entry it is invisible and the passcode div is displayed.
@@ -87,6 +88,7 @@ html(lang="en")
                                             a.button.btn.btn-primary.float-right(aria-label="Explore new markets", href="/explore") EXPLORA EL NUEVO MERCADO
 
                     div.column.col-1.col-sm-12
+                            //This button takes you to the start of the page.
                             button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='Subir')
                                 i.icon.icon-arrow-up
 

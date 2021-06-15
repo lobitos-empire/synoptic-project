@@ -6,6 +6,7 @@
 doctype html
 html(lang="en")
     head
+        //This includes a file that has all the necessary links, scripts and metas for this page and all pages
         include includes/head.pug
         //This loads the business and local business JavaScripts for the page.
         script(src="../scripts/business.js" defer)
@@ -218,3 +219,6 @@ html(lang="en")
 
 
                 div.column.col-2.col-sm-12
+                    //This button takes you to the start of the page.
+                    button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='Subir')
+                        i.icon.icon-arrow-up

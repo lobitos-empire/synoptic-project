@@ -1,1 +1,110 @@
-{"Businesses":{"Categories":[{"Category":{"CategoryName":"Comidas y bebidas","CategoryData":[{"Owners_Name":"Abena","Business_Name":"Sandwich","Business_Type":"Comidas y bebidas","Business_Desc":"Make tasty Sandwiches","Business_Location":"Peru","Business_Price":"S./1000","Image_Src":"../uploadedImages/Sandwich.png"},{"Owners_Name":"af","Business_Name":"af","Business_Type":"Comidas y bebidas","Business_Desc":"af","Business_Location":"af","Business_Price":"af","Image_Src":"/uploadedImages/af.png"},{"Owners_Name":"af","Business_Name":"af","Business_Type":"Comidas y bebidas","Business_Desc":"af","Business_Location":"af","Business_Price":"af","Image_Src":"/uploadedImages/af.png"}]}},{"Category":{"CategoryName":"Cosas para hacer","CategoryData":[{"Owners_Name":"Quenni","Business_Name":"Arts and Crafts","Business_Type":"Cosas para hacer","Business_Desc":"Arts and Crafts Business","Business_Location":"Lobitos","Business_Price":"£12","Image_Src":"../uploadedImages/Arts and Crafts.png"},{"Owners_Name":"Chelli","Business_Name":"Crafts","Business_Type":"Cosas para hacer","Business_Desc":"Test","Business_Location":"Test","Business_Price":"15","Image_Src":"/uploadedImages/Crafts.png"}]}},{"Category":{"CategoryName":"Servicios","CategoryData":[]}},{"Category":{"CategoryName":"Hoteles","CategoryData":[{"Owners_Name":"Kelly","Business_Name":"Hotel de Express","Business_Type":"Hoteles","Business_Desc":"Nice hotels for an incredible time","Business_Location":"Peru","Business_Price":"S./2000","Image_Src":"../uploadedImages/Hotel de Express.png"}]}},{"Category":{"CategoryName":"Compras","CategoryData":[]}},{"Category":{"CategoryName":"Otra","CategoryData":[]}}],"Ratings":[{"Rating":{"RatingNumber":"","CategoryData":[]}},{"Rating":{"RatingNumber":"1","CategoryData":[]}},{"Rating":{"RatingNumber":"2","CategoryData":[]}},{"Rating":{"RatingNumber":"3","CategoryData":[]}},{"Rating":{"RatingNumber":"4","CategoryData":[{"Business_Name":"Arts and Crafts","Business_Type":"Cosas para hacer","Business_Desc":"Arts and Crafts Business","Business_Location":"Lobitos","Business_Price":"£12","Business_Rating":4,"Rating_Count":1}]}},{"Rating":{"RatingNumber":"5","CategoryData":[]}}]}}
+{
+  "Businesses": {
+    "Categories": [
+      {
+        "Category": {
+          "CategoryName": "Comidas y bebidas",
+          "CategoryData": [
+            {
+              "Owners_Name": "Testificate",
+              "Business_Name": "Testificate",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "Testificate",
+              "Business_Location": "Testificate",
+              "Business_Price": "Testificate",
+              "Image_Src": "/uploadedImages/Testificate.png"
+            },
+            {
+              "Owners_Name": "TestRating56",
+              "Business_Name": "TestRating56",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "TestRating56",
+              "Business_Location": "TestRating56",
+              "Business_Price": "TestRating56",
+              "Image_Src": "/uploadedImages/TestRating56.png"
+            }
+          ]
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Cosas para hacer",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Servicios",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Hoteles",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Compras",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Otra",
+          "CategoryData": []
+        }
+      }
+    ],
+    "Ratings": [
+      {
+        "Rating": {
+          "RatingNumber": "0",
+          "CategoryData": [
+            {
+              "Business_Name": "tempBusinessName",
+              "Business_Type": "tempBusinessType",
+              "Business_Desc": "tempBusinessDesc",
+              "Business_Location": "tempBusinessLoc",
+              "Business_Price": "tempBusinessPrice",
+              "Image_Src": "/uploadedImages/TestData3.png",
+              "Business_Rating": "0",
+              "Rating_Count": "0"
+            }
+          ]
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "1",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "2",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "3",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "4",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "5",
+          "CategoryData": []
+        }
+      }
+    ]
+  }
+}

@@ -58,25 +58,25 @@ html(lang="en")
 
                                                     p
                                                         b Rating :
-                                                        | !{n.Business_Rating}
+                                                        |  !{n.Business_Rating}
 
-                                                        form.form-input.star-rating(method="post" action='/rating')
-                                                            input#star5(type='radio' name='rate' value='5' onclick='this.form.submit()')
-                                                            label(for='star5' title='text') 5 stars
-                                                            input#star4(type='radio' name='rate' value='4' onclick='this.form.submit()')
-                                                            label(for='star4' title='text') 4 stars
-                                                            input#star3(type='radio' name='rate' value='3' onclick='this.form.submit()')
-                                                            label(for='star3' title='text') 3 stars
-                                                            input#star2(type='radio' name='rate' value='2' onclick='this.form.submit()')
-                                                            label(for='star2' title='text') 2 stars
-                                                            input#star1(type='radio' name='rate' value='1' onclick='this.form.submit()')
-                                                            label(for='star1' title='text') 1 stars
+                                                    form.form-input.star-rating(method="post" action='/rating')
+                                                        input#star5(type='radio' name='rate' value='5' onclick='this.form.submit()')
+                                                        label(for='star5' title='text') 5 stars
+                                                        input#star4(type='radio' name='rate' value='4' onclick='this.form.submit()')
+                                                        label(for='star4' title='text') 4 stars
+                                                        input#star3(type='radio' name='rate' value='3' onclick='this.form.submit()')
+                                                        label(for='star3' title='text') 3 stars
+                                                        input#star2(type='radio' name='rate' value='2' onclick='this.form.submit()')
+                                                        label(for='star2' title='text') 2 stars
+                                                        input#star1(type='radio' name='rate' value='1' onclick='this.form.submit()')
+                                                        label(for='star1' title='text') 1 stars
 
-                                                            input(hidden, value=n.Owners_Name name='ownersName')
-                                                            input(hidden, value=n.Business_Name name='businessName')
-                                                            input(hidden, value=n.Business_Type name='businessType')
-                                                            input(hidden, value=n.Business_Desc name='businessDesc')
-                                                            input(hidden, value=n.Business_Price name='businessPrice')
-                                                            input(hidden, value=n.Business_Location name='businessLoc')
+                                                        input(hidden, value=n.Owners_Name name='ownersName')
+                                                        input(hidden, value=n.Business_Name name='businessName')
+                                                        input(hidden, value=n.Business_Type name='businessType')
+                                                        input(hidden, value=n.Business_Desc name='businessDesc')
+                                                        input(hidden, value=n.Business_Price name='businessPrice')
+                                                        input(hidden, value=n.Business_Location name='businessLoc')
 
                 div.column.col-1

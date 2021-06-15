@@ -23,8 +23,8 @@ else if(window.location.pathname === "/explore"){
     let tabs = document.getElementsByClassName("tab-item");
     for(let i = 0; i<tabs.length; i++){
         if(tabs[i].className === "tab-item active"){
-            if(tabs[i].children[0].innerText === "Explore Nuevos Mercados"){
-                tabs[i].children[0].innerText = "🌎 Explore Nuevos Mercados"
+            if(tabs[i].children[0].innerText === "Explorar Nuevos Mercados"){
+                tabs[i].children[0].innerText = "🌎 Explorar Nuevos Mercados"
             }
         }
     }

@@ -435,11 +435,11 @@ ul{
     border-color: #329D9C;
     color: #ffffff;
 }
+.hotelContainer{
+    /*padding-left: 50%;*/
 
-.hotelsIcons{
-    position: relative;
-    top: 10%;
 }
+
 
 
 /* Card Styles */

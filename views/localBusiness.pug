@@ -3,6 +3,8 @@ html(lang="en")
     head
         include includes/head.pug
         script(src="../scripts/main.js" defer)
+        script(src="../scripts/localBusiness.js" defer)
+
 
     body.background
         div.d-invisible#lbBody
@@ -69,9 +71,11 @@ html(lang="en")
                                         div.card-footer
                                             a.button.btn.btn-primary.float-right(aria-label="Explore new markets", href="/explore") EXPLORA EL NUEVO MERCADO
 
+
+                    // Go to the top button
                     div.column.col-1.col-sm-12
-                            button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='Subir')
-                                i.icon.icon-arrow-up
+                        button.btn.btn-action.btn-lg.s-circle#myBtn(onclick='topFunction()' title='Subir')
+                            i.icon.icon-arrow-up
 
         div.container#passCodeDiv.centerPasccode
             div.columns

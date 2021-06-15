@@ -186,7 +186,6 @@ ul{
     border-bottom: .1rem solid transparent;
     color: black;
     display: block;
-    /*margin: 0 .4rem 0 0;*/
     padding: .4rem .2rem .3rem .2rem;
     text-decoration: none;
     border-bottom-color: #329D9C;
@@ -206,7 +205,7 @@ ul{
     display: none;
     position: fixed;
     bottom: 20px;
-    right: 30px;
+    right: 10px;
     z-index: 100;
     font-size: 18px;
     border: none;
@@ -215,8 +214,8 @@ ul{
     color: white;
     cursor: pointer;
     padding: 15px;
-    width: auto;
-    height: auto;
+    width: 70px;
+    height: 70px;
 }
 
 #myBtn:hover {

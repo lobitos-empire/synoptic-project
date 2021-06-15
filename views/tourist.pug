@@ -28,7 +28,16 @@ html(lang="en")
                                 p * Within this page, you will be able to explore the hottest businesses in Lobitos
                                 p * View the different types of attractions in Lobitos.
                                 p * As well as information of hotels in Lobitos.
-
+                div.modal#survivalhelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closesurvivalhelp
+                            div.modal-title.h5.text-center  Information of the page 📘
+                        div.modal-body
+                            div.content
+                                p * Unsure on how to say certain words in Spanish? We’ve got you covered.
+                                p * Here you can find some essential phrases in espanol.
             section.navbar-section.col-sm-12
                 include includes/translator.pug
 
@@ -77,17 +86,6 @@ html(lang="en")
                                         div.card-title.h3 Survival Spanish
                                             sup
                                                 i.material-icons.c-hand#survivalhelpicon(style = "font-size:1.0rem;") help
-                                            div.modal#survivalhelpmodal
-                                                a.modal-overlay(aria-label="Close" href="#Close")
-                                                div.modal-container
-                                                    div.modal-header
-                                                        a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closesurvivalhelp
-                                                        div.modal-title.h5.text-center  Information of the page 📘
-                                                    div.modal-body
-                                                        div.content
-                                                            p * Unsure on how to say certain words in Spanish? We’ve got you covered.
-                                                            p * Here you can find some essential phrases in espanol.
-
 
                                             //Creating a search bar for users to search phrases that are not on the spanish phrase card
                                             section.navbar-section(class="searchBar")

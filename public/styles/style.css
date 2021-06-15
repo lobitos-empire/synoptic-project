@@ -422,6 +422,26 @@ ul{
     color: #ffffff;
 }
 
+.viewHotelBtn{
+    position: relative;
+    /*left:45%;*/
+    background: #329D9C;
+    border-color: #329D9C;
+
+
+}
+.viewHotelBtn:hover{
+    background: #329D9C;
+    border-color: #329D9C;
+    color: #ffffff;
+}
+
+.hotelsIcons{
+    position: relative;
+    top: 10%;
+}
+
+
 /* Card Styles */
 
 .hotelCard{

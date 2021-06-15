@@ -408,22 +408,6 @@ function getAttractions() {
     return results;
 }
 
-
-//Method to get a list of all business
-function getAllBusiness() {
-    let rawData = fs.readFileSync('business.json');
-    let businesses = JSON.parse(rawData).Businesses;
-    let results = [];
-
-    for (let i = 0; i < businesses.Categories.length; i++) {
-        for (let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++) {
-            results.push(businesses.Categories[i].Category.CategoryData[j]);
-        }
-    }
-    return results;
-}
-
-
 function getHotels() {
     let rawData = fs.readFileSync('business.json');
     let businesses = JSON.parse(rawData).Businesses;
@@ -439,17 +423,44 @@ function getHotels() {
     return results;
 }
 
+//Method to get a list of all business
 function getAllBusinesses() {
     let rawData = fs.readFileSync('business.json');
     let businesses = JSON.parse(rawData).Businesses;
     let results = [];
 
     for (let i = 0; i < businesses.Categories.length; i++) {
+
         for (let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++) {
-            results.push(businesses.Categories[i].Category.CategoryData[j]);
+            let Business_Rating;
+            for(let k=5; k>-1; k--){
+                for(let l = 0; l < businesses.Ratings[k].Rating.CategoryData.length; l++){
+                    if(businesses.Ratings[k].Rating.CategoryData[l].Business_Name == businesses.Categories[i].Category.CategoryData[j].Business_Name){
+                        Business_Rating = businesses.Ratings[k].Rating.RatingNumber
+                    }
+                }
+            }
+            let business = {
+                "Owners_Name": businesses.Categories[i].Category.CategoryData[j].Owners_Name,
+                "Business_Name": businesses.Categories[i].Category.CategoryData[j].Business_Name,
+                "Business_Type": businesses.Categories[i].Category.CategoryData[j].Business_Type,
+                "Business_Desc": businesses.Categories[i].Category.CategoryData[j].Business_Desc,
+                "Business_Location": businesses.Categories[i].Category.CategoryData[j].Business_Location,
+                "Business_Price": businesses.Categories[i].Category.CategoryData[j].Business_Price,
+                "Business_Rating": Business_Rating,
+                "Image_Src": businesses.Categories[i].Category.CategoryData[j].Image_Src
+            }
+            results.push(business);
         }
     }
     return results;
+
+    // for (let i = 0; i < businesses.Categories.length; i++) {
+    //     for (let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++) {
+    //         results.push(businesses.Categories[i].Category.CategoryData[j]);
+    //     }
+    // }
+    // return results;
 }
 
 function getAllRated(){

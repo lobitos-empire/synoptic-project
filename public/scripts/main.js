@@ -44,6 +44,95 @@ else if (window.location.pathname === "/localBusiness"){
     })
  }
 
+if(window.location.pathname === "/localBusiness") {
+    document.getElementById("localhelpicon").addEventListener(
+        "click", () => {
+            document.getElementById("localhelpmodal").className = "modal active"
+        }
+    )
+    document.getElementById("closelocalhelp").addEventListener(
+        "click", () => {
+            document.getElementById("localhelpmodal").className = "modal"
+        }
+    )
+} else if(window.location.pathname === "/upload") {
+    document.getElementById("uploadhelpicon").addEventListener(
+        "click", () => {
+            document.getElementById("uploadhelpmodal").className = "modal active"
+        }
+    )
+    document.getElementById("closeuploadhelp").addEventListener(
+        "click", () => {
+            document.getElementById("uploadhelpmodal").className = "modal"
+        }
+    )
+} else if(window.location.pathname === "/business") {
+    document.getElementById("businesshelpicon").addEventListener(
+        "click", () => {
+            document.getElementById("businesshelpmodal").className = "modal active"
+        }
+    )
+    document.getElementById("closebusinesshelp").addEventListener(
+        "click", () => {
+            document.getElementById("businesshelpmodal").className = "modal"
+        }
+    )
+} else if(window.location.pathname === "/tourist") {
+    document.getElementById("touristhelpicon").addEventListener(
+        "click", () => {
+            document.getElementById("touristhelpmodal").className = "modal active"
+        }
+    )
+    document.getElementById("closetouristhelp").addEventListener(
+        "click", () => {
+            document.getElementById("touristhelpmodal").className = "modal"
+        }
+    )
+
+    document.getElementById("survivalhelpicon").addEventListener(
+        "click", () => {
+            document.getElementById("survivalhelpmodal").className = "modal active"
+        }
+    )
+    document.getElementById("closesurvivalhelp").addEventListener(
+        "click", () => {
+            document.getElementById("survivalhelpmodal").className = "modal"
+        }
+    )
+} else if(window.location.pathname === "/hottest") {
+    document.getElementById("hottesthelpicon").addEventListener(
+        "click", () => {
+            document.getElementById("hottesthelpmodal").className = "modal active"
+        }
+    )
+    document.getElementById("closehottesthelp").addEventListener(
+        "click", () => {
+            document.getElementById("hottesthelpmodal").className = "modal"
+        }
+    )
+} else if(window.location.pathname === "/attractions") {
+    document.getElementById("attractionhelpicon").addEventListener(
+        "click", () => {
+            document.getElementById("attractionhelpmodal").className = "modal active"
+        }
+    )
+    document.getElementById("closeattractionhelp").addEventListener(
+        "click", () => {
+            document.getElementById("attractionhelpmodal").className = "modal"
+        }
+    )
+} else if(window.location.pathname === "/hotels") {
+    document.getElementById("hotelshelpicon").addEventListener(
+        "click", () => {
+            document.getElementById("hotelshelpmodal").className = "modal active"
+        }
+    )
+    document.getElementById("closehotelshelp").addEventListener(
+        "click", () => {
+            document.getElementById("hotelshelpmodal").className = "modal"
+        }
+    )
+}
 
 
 

@@ -3,6 +3,7 @@ html(lang="en")
     head
         include includes/head.pug
         script(src="../scripts/tourist.js" defer)
+        script(src="../scripts/main.js" defer)
 
 
     body.background
@@ -18,6 +19,18 @@ html(lang="en")
                 div.column.col-2
                 div.column.col-8.col-sm-12.exploreTitle
                     h3 Hotels
+                        sup
+                            i.material-icons#hotelshelpicon(style = "font-size:1.0rem;") help
+                div.modal#hotelshelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closehotelshelp
+                            div.modal-title.h5  Información de la página 📘
+                        div.modal-body
+                            div.content
+                                p Esta página educa a las empresas locales sobre nuevas empresas de mercado que podrían beneficiarse con ellas, así como evidencia para respaldar estas increíbles sugerencias.
+
                 div.column.col-2
 
         div.container
@@ -131,4 +144,7 @@ html(lang="en")
                                                 img.img-responsive(src="../images/navegoMap.JPG", alt="Explore local business")
                                         div.modal-footer
                                             a.btn(href="https://www.google.com/maps/dir//Hotel+Navego,+Nuevo+Lobitos,+Rivera+del+Mar+s%2Fn,+Talara,+Lobitos,+Peru/@-4.4537072,-81.4250651,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x90365bb0ac8eb7bd:0x94fa9848079bb655!2m2!1d-81.2853205!2d-4.4540627" aria-label="live map button").text-light 🗺 View Live Map 🗺
+
                 div.column.col-1.col-sm-12
+                    button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='To Go Up')
+                        i.icon.icon-arrow-up

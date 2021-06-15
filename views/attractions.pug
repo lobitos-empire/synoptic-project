@@ -3,6 +3,7 @@ html(lang="en")
     head
         include includes/head.pug
         script(src="../scripts/tourist.js" defer)
+        script(src="../scripts/main.js" defer)
 
     body.background
         div.container
@@ -16,6 +17,18 @@ html(lang="en")
                 div.column.col-2
                 div.column.col-8.col-sm-12.exploreTitle
                     h3 Attractions
+                        sup
+                            i.material-icons#attractionhelpicon(style = "font-size:1.0rem;") help
+                div.modal#attractionhelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closeattractionhelp
+                            div.modal-title.h5  Información de la página 📘
+                        div.modal-body
+                            div.content
+                                p Esta página educa a las empresas locales sobre nuevas empresas de mercado que podrían beneficiarse con ellas, así como evidencia para respaldar estas increíbles sugerencias.
+
                 div.column.col-2
 
         div.container
@@ -58,17 +71,18 @@ html(lang="en")
                                                         b Rating :
                                                         | !{n.Business_Rating}
 
-                                                    form.form-input.star-rating(method="post" action='/rating')
-                                                        input#star5(type='radio' name='businessRating' value='5' onclick='this.form.submit()')
-                                                        label(for='star5' title='text') 5 stars
-                                                        input#star4(type='radio' name='businessRating' value='4' onclick='this.form.submit()')
-                                                        label(for='star4' title='text') 4 stars
-                                                        input#star3(type='radio' name='businessRating' value='3' onclick='this.form.submit()')
-                                                        label(for='star3' title='text') 3 stars
-                                                        input#star2(type='radio' name='businessRating' value='2' onclick='this.form.submit()')
-                                                        label(for='star2' title='text') 2 stars
-                                                        input#star1(type='radio' name='businessRating' value='1' onclick='this.form.submit()')
-                                                        label(for='star1' title='text') 1 stars
+                                                    form.form-input(method="post" action='/rating')
+                                                        input(type='radio' name='businessRating' value='1' onclick='this.form.submit()')
+
+                                                        input(type='radio' name='businessRating' value='2' onclick='this.form.submit()')
+
+                                                        input(type='radio' name='businessRating' value='3' onclick='this.form.submit()')
+
+                                                        input(type='radio' name='businessRating' value='4' onclick='this.form.submit()')
+
+                                                        input(type='radio' name='businessRating' value='5' onclick='this.form.submit()')
+
+
 
                                                         input(hidden, value=n.Owners_Name name='ownersName')
                                                         input(hidden, value=n.Business_Name name='businessName')
@@ -78,4 +92,6 @@ html(lang="en")
                                                         input(hidden, value=n.Business_Location name='businessLoc')
 
 
-                div.column.col-1
+                div.column.col-1.col-sm-12
+                    button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='To Go Up')
+                        i.icon.icon-arrow-up

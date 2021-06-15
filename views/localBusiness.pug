@@ -3,6 +3,8 @@ html(lang="en")
     head
         include includes/head.pug
         script(src="../scripts/main.js" defer)
+        script(src="../scripts/localBusiness.js" defer)
+
 
     body.background
         div.d-invisible#lbBody
@@ -12,6 +14,18 @@ html(lang="en")
                         img(src="../images/logo1.png", alt="Logo").logo1.img-responsive
                 section.navbar-center
                     h3.text-center  Negocio local
+                        sup
+                            i.material-icons.c-hand#localhelpicon(style = "font-size:1.0rem;") help
+                div.modal#localhelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closelocalhelp
+                            div.modal-title.h5  Información de la página 📘
+                        div.modal-body
+                            div.content
+                                p Esta página educa a las empresas locales sobre nuevas empresas de mercado que podrían beneficiarse con ellas, así como evidencia para respaldar estas increíbles sugerencias.
+
                 section.navbar-section.col-sm-12
                     include includes/spanish.pug
 
@@ -57,7 +71,10 @@ html(lang="en")
                                         div.card-footer
                                             a.button.btn.btn-primary.float-right(aria-label="Explore new markets", href="/explore") EXPLORA EL NUEVO MERCADO
 
-                    div.column.col-1
+
+                    div.column.col-1.col-sm-12
+                        button.btn.btn-action.btn-lg.s-circle#myBtn(onclick='topFunction()' title='Subir')
+                            i.icon.icon-arrow-up
 
         div.container#passCodeDiv.centerPasccode
             div.columns
@@ -70,7 +87,7 @@ html(lang="en")
                                 div.card-header
                                     div.card-title.h5 Ingrese su contraseña:
                                 div.card-body
-                                    input.form-input(type="text" id="passCode" placeholder="Contraseña" autofocus)
+                                    input.form-input(type="password"  inputmode="numeric" id="passCode" placeholder="Contraseña" maxlength=4 minlength=4 autofocus)
                                     p Si tiene una empresa local, vaya a un cibercafé cercano para obtener el código de acceso.
 
                                 div.card-footer

@@ -1,7 +1,9 @@
 doctype html
 html(lang="en")
     head
+        //This includes a file that has all the necessary links, scripts and metas for this page and all pages
         include includes/head.pug
+        //This loads the main and local business javascript files.
         script(src="../scripts/main.js" defer)
         script(src="../scripts/localBusiness.js" defer)
 
@@ -20,6 +22,7 @@ html(lang="en")
                     h3 Negocios
                         sup
                             i.material-icons#businesshelpicon(style = "font-size:1.0rem;") help
+                //This modal is accessed when the help icon is clicked and displays a description of the business  page.
                 div.modal#businesshelpmodal
                     a.modal-overlay(aria-label="Close" href="#Close")
                     div.modal-container
@@ -39,37 +42,56 @@ html(lang="en")
                     div.container
                         div.columns.mt-2
                             div.column.col-12.my-2.col-sm-12
+                                //For every business in the business.json file:
+                                    (for every business that has been submitted to the backend)
                                 for n in businesses
+                                    //Create a card.
                                     div.card.my-2
                                         div.columns
                                             div.column.col-3.col-sm-12
                                                 div.card-image.fillParentDiv
+                                                    //The first three columns and card-image div should contain the image of the business they uploaded.
                                                     img.img-responsive(src=n.Image_Src, alt=n.Business_Name).fillParentDivForImage
                                             div.column.col-6.col-sm-12
                                                 div.card-header
+                                                    //Card title should contain the name of the business.
                                                     div.card-title.h4
                                                         p !{n.Business_Name}
                                                 div.card-body
+                                                    //Card body should have the following:
                                                     p
                                                         b Business Owner :
+                                                        //The owner's name
                                                         |   !{n.Owners_Name}
 
                                                     p
                                                         b Business Type :
+                                                        //The business type (food and drink, service, hotels etc)
                                                         |  !{n.Business_Type}
 
                                                     p
                                                         b Description :
+                                                        //The business description that they submitted
                                                         |  !{n.Business_Desc}
 
                                                     p
                                                         b Location :
+                                                        //The location of the business submitted.
                                                         |  !{n.Business_Location}
+
+                                                    p
+                                                        b Ratings :
+                                                        //The overall ratings of the business
+                                                        |  !{n.Business_Rating}
 
 
                                             div.column.col-3.col-sm-12.col-md-12.vl
+                                                //The last three columns should contain a different card body containing:
                                                 div.card-body
                                                     p
+                                                        //This allows businesses to rate other businesses.
+                                                        //This is to give some sort of advantage for businesses to be able to rate themselves.
+
                                                         b Rating :
 
                                                     form.form-input.star-rating(method="post" action='/rating')
@@ -88,5 +110,6 @@ html(lang="en")
 
 
                 div.column.col-1.col-sm-12
+                        //This allows the user to go back up to the start of the page.
                         button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='Subir')
                             i.icon.icon-arrow-up

@@ -8,7 +8,9 @@ doctype html
 
 html(lang="en")
     head
+        //This includes a file that has all the necessary links, scripts and metas for this page and all pages
         include includes/head.pug
+        //Loads the main javascript for this page.
         script(src="../scripts/main.js" defer)
 
     body.background
@@ -23,7 +25,7 @@ html(lang="en")
                     h3.text-center  Negocio local
                         sup
                             i.material-icons#localhelpicon(style = "font-size:1.0rem;") help
-                //This modal is clicked when the help icon is clicked and displays a description of the local business page.
+                //This modal is accessed when the help icon is clicked and displays a description of the local business page.
                 div.modal#localhelpmodal
                     a.modal-overlay(aria-label="Close" href="#Close")
                     div.modal-container
@@ -36,6 +38,7 @@ html(lang="en")
                                 Cargue su negocio, vea todos los negocios en el distrito o lea sobre las nuevas empresas del mercado. Todo lo relacionado con los negocios en Lobitos a tu alcance
 
                 section.navbar-section.col-sm-12
+                    //Loads the google translate element for the page to enable translation from spanish to english.
                     include includes/spanish.pug
 
             div.container

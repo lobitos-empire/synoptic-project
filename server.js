@@ -223,6 +223,15 @@ app.post("/uploadImage", (req, res) => {
             "Business_Price": tempBusinessPrice,
             "Image_Src": tempImagePath
         };
+        const businessRated = {
+            "Business_Name": tempBusinessName,
+            "Business_Type": tempBusinessType,
+            "Business_Desc": tempBusinessDesc,
+            "Business_Location": tempBusinessLoc,
+            "Business_Price": tempBusinessPrice,
+            "Rating_Count": "0",
+            "Image_Src": tempImagePath
+        };
 
         try {
             let olddata = fs.readFileSync('business.json', 'utf8')
@@ -230,6 +239,7 @@ app.post("/uploadImage", (req, res) => {
             for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
                 if (olddata.Businesses.Categories[i].Category.CategoryName === tempBusinessType) {
                     olddata.Businesses.Categories[i].Category.CategoryData.push(business);
+                    olddata.Businesses.Ratings[0].Rating.CategoryData.push(businessRated);
                 }
             }
             console.log(olddata);
@@ -257,10 +267,12 @@ app.post('/rating', (req, res)=>{
     var businessDesc = req.body.businessDesc;
     var businessLoc = req.body.businessLoc;
     var businessPrice = req.body.businessPrice;
-    var ratingCount = req.body.ratingCount + 1;
+    var newRating = req.body.businessRating;
 
-    //get rating values
-    let businessRating = 0;
+    var ratingCount //= parseInt(req.body.ratingCount) + 1;
+    var imageSrc //= req.body.Image_Src;
+
+    var businessRating = 0;
 
     const fs = require('fs')
     let olddata2 = fs.readFileSync('business.json', 'utf8')
@@ -270,39 +282,41 @@ app.post('/rating', (req, res)=>{
 
             if(olddata2.Businesses.Ratings[i].Rating.CategoryData.length !== 0){
                 if (olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
+                    ratingCount = parseInt(olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Rating_Count) + 1;
+                    imageSrc = olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Image_Src;
                     //get old data and populate vars
+                    console.log("Old Rating: " + parseInt(olddata2.Businesses.Ratings[i].Rating.RatingNumber))
                     businessRating = parseInt(olddata2.Businesses.Ratings[i].Rating.RatingNumber);
-                    ratingCount = parseInt(olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Rating_Count);
+                    if(ratingCount > 0){
+                        businessRating *= parseInt(ratingCount)-1;
+                    }
+                    console.log("Old Total: " + businessRating)
+                    businessRating += parseInt(newRating);
+                    console.log("New Total: " + newRating)
+                    console.log("Rating Count " + ratingCount)
+                    businessRating /= ratingCount;
+                    console.log("New Average: " + ratingCount);
                 }
             }
-            else{
-                businessRating = 0;
-                ratingCount = 0;
-            }
-
         }
     }
-
-    //get new rating from page
-    var newBusinessRating = req.body.businessRating;
-    ratingCount += 1;
-
     console.log(req);
+
     var businessRated = {
         "Business_Name": businessName,
         "Business_Type": businessType,
         "Business_Desc": businessDesc,
         "Business_Location" : businessLoc,
         "Business_Price" : businessPrice,
-        "Business_Rating" : businessRating,
         "Rating_Count" : ratingCount,
+        "Image_Src" : imageSrc
     }
     let olddata = fs.readFileSync('business.json', 'utf8')
     olddata = JSON.parse(olddata);
 
     //removes entry if present in different rating group now
     for (let i = 0; i < olddata.Businesses.Ratings.length; i++) {
-        for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
+        for (let j = 0; j < olddata.Businesses.Ratings[i].Rating.CategoryData.length; j++) {
             if(olddata.Businesses.Ratings[i].Rating.CategoryData.length !== 0){
                 if (olddata.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
                     olddata.Businesses.Ratings[i].Rating.CategoryData.pop(businessRated);
@@ -311,32 +325,33 @@ app.post('/rating', (req, res)=>{
         }
     }
 
-    //calculate new average rating
-    businessRating = ((businessRating*ratingCount) + newBusinessRating) / ratingCount;
-    businessRated = {
+    var businessRated2 = {
         "Business_Name": businessName,
         "Business_Type": businessType,
         "Business_Desc": businessDesc,
         "Business_Location" : businessLoc,
         "Business_Price" : businessPrice,
-        "Business_Rating" : businessRating,
-        "Rating_Count" : ratingCount,
+        "Rating_Count" : String(ratingCount),
+        "Image_Src" : imageSrc
     }
 
     for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
-        if (olddata.Businesses.Ratings[i].Rating.RatingNumber == Math.round(businessRating)) {
-            olddata.Businesses.Ratings[i].Rating.CategoryData.push(businessRated);
+        console.log(String(Math.round(businessRating)))
+        if (olddata.Businesses.Ratings[i].Rating.RatingNumber === String(Math.round(businessRating))) {
+            console.log("pushing: " + businessRated2)
+            olddata.Businesses.Ratings[i].Rating.CategoryData.push(businessRated2);
         }
     }
     console.log(olddata);
     const data = JSON.stringify(olddata);
+    console.log(">>Average: " + businessRating)
 
     fs.writeFile("business.json", data, (err) => {
         if (err) {
             throw err;
         }
         console.log("JSON saved");
-        res.redirect('/attractions');
+        res.redirect('back');
     })
 });
 
@@ -470,12 +485,14 @@ function getAllRated(){
 
     console.log(businesses)
 
-    for(var i=businesses.Businesses.Ratings.length; i>-1; i--){
-        //for(var j = 0; j < businesses.Businesses.Ratings[i].Rating.CategoryData.length; j++){
-        //    results.push(businesses.Bussinesses.Ratings[i].Rating.CategoryData[j]);
-        //}
+    for(var i=5; i>-1; i--){
+        for(var j = 0; j < businesses.Businesses.Ratings[i].Rating.CategoryData.length; j++){
+            console.log(businesses.Businesses)
+            results.push(businesses.Businesses.Ratings[i].Rating.CategoryData[j]);
+        }
         //Push everything in a rating bracket as doesn't need to be ordered by individual element necessarily
-        results.push(businesses.Businesses.Ratings[i])
+        //
+        //results.push(businesses.Businesses.Ratings[i].CategoryData)
     }
     return results;
 }

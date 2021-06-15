@@ -140,7 +140,7 @@ app.post("/upload", (req, res) => {
     tempBusinessDesc = req.body.businessDesc;
     tempBusinessLoc = req.body.businessLoc;
     tempBusinessPrice = req.body.businessPrice;
-    tempImagePath = '/uploadedImages/' + tempBusinessName.replace(" ", "");
+    tempImagePath = '/uploadedImages/' + tempBusinessName.replace(/ /g, "");
 
     const business = {
         "Owners_Name": tempOwnerName,
@@ -149,7 +149,18 @@ app.post("/upload", (req, res) => {
         "Business_Desc": tempBusinessDesc,
         "Business_Location": tempBusinessLoc,
         "Business_Price": tempBusinessPrice,
-        "Image_Src": '/uploadedImages/' + tempBusinessName.replace(" ", "") + ".png"
+        "Image_Src": '/uploadedImages/' + tempBusinessName.replace(/ /g, "") + ".png"
+    };
+
+    const busRating = {
+        "Business_Name": tempBusinessName,
+        "Business_Type": tempBusinessType,
+        "Business_Desc": tempBusinessDesc,
+        "Business_Location": tempBusinessLoc,
+        "Business_Price": tempBusinessPrice,
+        "Image_Src": '/uploadedImages/' + tempBusinessName.replace(/ /g, "") + ".png",
+        "Business_Rating": "",
+        "Rating_Count": ""
     };
 
     try {
@@ -158,6 +169,11 @@ app.post("/upload", (req, res) => {
         for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
             if (olddata.Businesses.Categories[i].Category.CategoryName === businessType) {
                 olddata.Businesses.Categories[i].Category.CategoryData.push(business);
+            }
+        }
+        for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
+            if (olddata.Businesses.Ratings[j].Rating.RatingNumber === "") {
+                olddata.Businesses.Ratings[j].Rating.CategoryData.push(busRating);
             }
         }
         console.log(olddata);
@@ -181,14 +197,15 @@ app.post("/uploadImage", (req, res) => {
         var oldPath = files.uploadImage.path;
         extension = files.uploadImage.name;
         extension = extension.split(".")[1];
-        tempImagePath = tempImagePath + "." + extension
+        tempImagePath = tempImagePath.replace(/ /g, "") + "." + extension
         console.log("EXT: " + extension)
-        if(extension !== "jpeg" && extension !== "gif" && extension !== "png" && extension !== "webp" && extension !== "apng" && extension !== "pdf" && extension !== "xbm" && extension !== "bmp" && extension !== "ico" && extension !== "tiff"){
+        if(extension !== "jpeg" && extension !== "jpg" && extension !== "gif" && extension !== "png" && extension !== "webp" && extension !== "apng" && extension !== "pdf" && extension !== "xbm" && extension !== "bmp" && extension !== "ico" && extension !== "tiff"){
             console.log("wrong file type");
             res.send("Wrong File Type");
             return;
         }
-        var newPath = path.join(__dirname, 'public/uploadedImages/' + tempBusinessName) + "." + extension;
+
+        var newPath = path.join(__dirname, 'public/uploadedImages/' + tempBusinessName.replace(/ /g, "")) + "." + extension;
         var rawData = fs.readFileSync(oldPath);
         fs.writeFile(newPath, rawData, function (err) {
             if (err) console.log(err);
@@ -206,6 +223,15 @@ app.post("/uploadImage", (req, res) => {
             "Business_Price": tempBusinessPrice,
             "Image_Src": tempImagePath
         };
+        const businessRated = {
+            "Business_Name": tempBusinessName,
+            "Business_Type": tempBusinessType,
+            "Business_Desc": tempBusinessDesc,
+            "Business_Location": tempBusinessLoc,
+            "Business_Price": tempBusinessPrice,
+            "Rating_Count": "0",
+            "Image_Src": tempImagePath
+        };
 
         try {
             let olddata = fs.readFileSync('business.json', 'utf8')
@@ -213,6 +239,7 @@ app.post("/uploadImage", (req, res) => {
             for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
                 if (olddata.Businesses.Categories[i].Category.CategoryName === tempBusinessType) {
                     olddata.Businesses.Categories[i].Category.CategoryData.push(business);
+                    olddata.Businesses.Ratings[0].Rating.CategoryData.push(businessRated);
                 }
             }
             console.log(olddata);
@@ -240,10 +267,12 @@ app.post('/rating', (req, res)=>{
     var businessDesc = req.body.businessDesc;
     var businessLoc = req.body.businessLoc;
     var businessPrice = req.body.businessPrice;
+    var newRating = req.body.businessRating;
 
-    //get rating values
-    let ratingCount = 0;
-    let businessRating = 0;
+    var ratingCount //= parseInt(req.body.ratingCount) + 1;
+    var imageSrc //= req.body.Image_Src;
+
+    var businessRating = 0;
 
     const fs = require('fs')
     let olddata2 = fs.readFileSync('business.json', 'utf8')
@@ -253,39 +282,41 @@ app.post('/rating', (req, res)=>{
 
             if(olddata2.Businesses.Ratings[i].Rating.CategoryData.length !== 0){
                 if (olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
+                    ratingCount = parseInt(olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Rating_Count) + 1;
+                    imageSrc = olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Image_Src;
                     //get old data and populate vars
+                    console.log("Old Rating: " + parseInt(olddata2.Businesses.Ratings[i].Rating.RatingNumber))
                     businessRating = parseInt(olddata2.Businesses.Ratings[i].Rating.RatingNumber);
-                    ratingCount = parseInt(olddata2.Businesses.Ratings[i].Rating.CategoryData[j].Rating_Count);
+                    if(ratingCount > 0){
+                        businessRating *= parseInt(ratingCount)-1;
+                    }
+                    console.log("Old Total: " + businessRating)
+                    businessRating += parseInt(newRating);
+                    console.log("New Total: " + newRating)
+                    console.log("Rating Count " + ratingCount)
+                    businessRating /= ratingCount;
+                    console.log("New Average: " + ratingCount);
                 }
             }
-            else{
-                businessRating = 0;
-                ratingCount = 0;
-            }
-
         }
     }
-
-    //get new rating from page
-    var newBusinessRating = req.body.businessRating;
-    ratingCount += 1;
-
     console.log(req);
+
     var businessRated = {
         "Business_Name": businessName,
         "Business_Type": businessType,
         "Business_Desc": businessDesc,
         "Business_Location" : businessLoc,
         "Business_Price" : businessPrice,
-        "Business_Rating" : businessRating,
         "Rating_Count" : ratingCount,
+        "Image_Src" : imageSrc
     }
     let olddata = fs.readFileSync('business.json', 'utf8')
     olddata = JSON.parse(olddata);
 
     //removes entry if present in different rating group now
     for (let i = 0; i < olddata.Businesses.Ratings.length; i++) {
-        for (let j = 0; j < olddata.Businesses.Ratings.length; j++) {
+        for (let j = 0; j < olddata.Businesses.Ratings[i].Rating.CategoryData.length; j++) {
             if(olddata.Businesses.Ratings[i].Rating.CategoryData.length !== 0){
                 if (olddata.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name === businessName) {
                     olddata.Businesses.Ratings[i].Rating.CategoryData.pop(businessRated);
@@ -294,32 +325,33 @@ app.post('/rating', (req, res)=>{
         }
     }
 
-    //calculate new average rating
-    businessRating = ((businessRating*ratingCount) + newBusinessRating) / ratingCount;
-    businessRated = {
+    var businessRated2 = {
         "Business_Name": businessName,
         "Business_Type": businessType,
         "Business_Desc": businessDesc,
         "Business_Location" : businessLoc,
         "Business_Price" : businessPrice,
-        "Business_Rating" : businessRating,
-        "Rating_Count" : ratingCount,
+        "Rating_Count" : String(ratingCount),
+        "Image_Src" : imageSrc
     }
 
     for (let i = 0; i < olddata.Businesses.Categories.length; i++) {
-        if (olddata.Businesses.Ratings[i].Rating.RatingNumber == Math.round(businessRating)) {
-            olddata.Businesses.Ratings[i].Rating.CategoryData.push(businessRated);
+        console.log(String(Math.round(businessRating)))
+        if (olddata.Businesses.Ratings[i].Rating.RatingNumber === String(Math.round(businessRating))) {
+            console.log("pushing: " + businessRated2)
+            olddata.Businesses.Ratings[i].Rating.CategoryData.push(businessRated2);
         }
     }
     console.log(olddata);
     const data = JSON.stringify(olddata);
+    console.log(">>Average: " + businessRating)
 
     fs.writeFile("business.json", data, (err) => {
         if (err) {
             throw err;
         }
         console.log("JSON saved");
-        res.redirect('/attractions');
+        res.redirect('back');
     })
 });
 
@@ -424,7 +456,7 @@ function getHotels() {
     let results = [];
 
     for (let i = 0; i < businesses.Categories.length; i++) {
-        if (businesses.Categories[i].Category.CategoryName == "Hoteles") {
+        if (businesses.Categories[i].Category.CategoryName === "Hoteles") {
             for (let j = 0; j < businesses.Categories[i].Category.CategoryData.length; j++) {
                 results.push(businesses.Categories[i].Category.CategoryData[j]);
             }
@@ -447,14 +479,33 @@ function getAllBusinesses() {
 }
 
 function getAllRated(){
-    let rawData = fs.readFileSync('business.json');
-    let businesses= JSON.parse(rawData).Businesses;
-    let results = [];
+    var rawData = fs.readFileSync('business.json');
+    var businesses= JSON.parse(rawData);
+    var results = [];
+    var Business_Rating = 0;
 
-    for(let i=5; i>-1; i--){
-        for(let j = 0; j < businesses.Ratings[i].Rating.CategoryData.length; j++){
-            results.push(businesses.Ratings[i].Rating.CategoryData[j]);
+    console.log(businesses)
+
+    for(var i=5; i>-1; i--){
+        for(var j = 0; j < businesses.Businesses.Ratings[i].Rating.CategoryData.length; j++){
+            console.log(businesses.Businesses)
+            //results.push(businesses.Businesses.Ratings[i].Rating.CategoryData[j]);
+            Business_Rating = businesses.Businesses.Ratings[i].Rating.RatingNumber;
+            let business = {
+                "Business_Name": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Business_Name,
+                "Business_Type": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Business_Type,
+                "Business_Desc": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Business_Desc,
+                "Business_Location": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Business_Location,
+                "Business_Price": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Business_Price,
+                "Rating_Count": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Rating_Count,
+                "Business_Rating": Business_Rating,
+                "Image_Src": businesses.Businesses.Ratings[i].Rating.CategoryData[j].Image_Src
+            }
+            results.push(business);
         }
+        //Push everything in a rating bracket as doesn't need to be ordered by individual element necessarily
+        //
+        //results.push(businesses.Businesses.Ratings[i].CategoryData)
     }
     return results;
 }

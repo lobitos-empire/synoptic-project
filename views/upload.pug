@@ -20,7 +20,7 @@ html(lang="en")
                 div.column.col-8.col-sm-12.exploreTitle
                     h3 Subir Negocio
                         sup
-                            i.material-icons#uploadhelpicon(style = "font-size:1.0rem;") help
+                            i.material-icons.c-hand#uploadhelpicon(style = "font-size:1.0rem;") help
                 div.modal#uploadhelpmodal
                     a.modal-overlay(aria-label="Close" href="#Close")
                     div.modal-container
@@ -93,9 +93,12 @@ html(lang="en")
                                     div.card-header
                                         div.card-title.h3 Sube tu negocio!
                                     div.card-body
-                                        p1 Mejore la imagen que mejor represente su negocio
+                                        p Mejore la imagen que mejor represente su negocio.
+                                        p  Los tipos de archivos compatibles incluyen:
+                                        p png, jpeg, pdf, gif, webp, apng, xbm, bmp, ico, tiff
+
                                         input.form-input(type="submit" value="Someter").btn
 
                 div.column.col-2.col-sm-12
-                        button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='Subir')
-                            i.icon.icon-arrow-up
+                    button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='Subir')
+                        i.icon.icon-arrow-up

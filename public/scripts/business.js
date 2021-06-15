@@ -67,5 +67,9 @@ document.getElementById("closexplorehelp").addEventListener(
         document.getElementById("explorehelpmodal").className = "modal"
     }
 )
-
+document.getElementById("businesshelpicon").addEventListener(
+    "click",()=>{
+        document.getElementById("explorehelpmodal").className = "modal active"
+    }
+)
 

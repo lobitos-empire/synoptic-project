@@ -435,9 +435,8 @@ ul{
     border-color: #329D9C;
     color: #ffffff;
 }
-.hotelContainer{
-    /*padding-left: 50%;*/
-
+.cardBody{
+    cursor: auto;
 }
 
 

@@ -1,10 +1,19 @@
+
+
+//This page is the local business home page that contains all the cards to the various aspect of the local business
+//This includes cards that gives a summary and takes you to the explore, upload and local business page.
+
+
 doctype html
+
 html(lang="en")
     head
         include includes/head.pug
         script(src="../scripts/main.js" defer)
 
     body.background
+        //This is the div of the page, upon first entry it is invisible and the passcode div is displayed.
+        //When the accurate password is entered, then the user is able to see the main local business page.
         div.d-invisible#lbBody
             header.navbar.py-2.px-2
                 section.navbar-section.col-sm-12
@@ -14,6 +23,7 @@ html(lang="en")
                     h3.text-center  Negocio local
                         sup
                             i.material-icons#localhelpicon(style = "font-size:1.0rem;") help
+                //This modal is clicked when the help icon is clicked and displays a description of the local business page.
                 div.modal#localhelpmodal
                     a.modal-overlay(aria-label="Close" href="#Close")
                     div.modal-container
@@ -35,6 +45,7 @@ html(lang="en")
                         div.container
                             div.columns
                                 div.column.col-4.col-sm-12.my-2.py-2
+                                    //Upload card that gives a brief description of the upload page and has a button link to the page.
                                     div.card.uploadCard
                                         div.card-image
                                             img(src="../images/biggerPromote.png", alt="Upload local business").img-responsive
@@ -48,6 +59,7 @@ html(lang="en")
 
 
                                 div.column.col-4.col-sm-12.my-2.py-2
+                                    //Business card that gives a brief description of the business page and has a button link to the page.
                                     div.card.businessCard
                                         div.card-image
                                             img(src="../images/biggerBusiness.png", alt="Explore local business").img-responsive
@@ -60,6 +72,7 @@ html(lang="en")
 
 
                                 div.column.col-4.col-sm-12.my-2.py-2
+                                    //Explore card that gives a brief description of the explore page and has a button link to the page.
                                     div.card.exploreCard
                                         div.card-image
                                             img(src="../images/marketing.png", alt="Explore new markets").img-responsive
@@ -74,6 +87,8 @@ html(lang="en")
                             button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='Subir')
                                 i.icon.icon-arrow-up
 
+        //This is the passcode div that first appears upon first entry of the local business page.
+        //Users must type the right passcode to be able to enter the local business page.
         div.container#passCodeDiv.centerPasccode
             div.columns
                 div.col-4.col-sm-12
@@ -89,6 +104,7 @@ html(lang="en")
                                     p Si tiene una empresa local, vaya a un cibercafé cercano para obtener el código de acceso.
 
                                 div.card-footer
+                                    //This button takes as the home page of the entire website.
                                     a.btn(onclick="window.history.back()" aria-label="Go Back button").text-light Regresa
 
 

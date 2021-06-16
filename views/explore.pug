@@ -4,8 +4,9 @@
 doctype html
 html(lang="en")
     head
-        //This loads the business and local business JavaScripts for the page.
+        //This includes a file that has all the necessary links, scripts and metas for this page and all pages
         include includes/head.pug
+        //This loads the business and local business JavaScripts for the page.
         script(src="../scripts/business.js" defer)
         script(src="../scripts/localBusiness.js" defer)
 

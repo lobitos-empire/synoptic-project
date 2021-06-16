@@ -10,6 +10,7 @@ const formidable = require("formidable");
 const cors = require('cors');
 const morgan = require('morgan');
 const fileUpload = require('express-fileupload');
+const compression = require('compression');
 
 //set 8mb max file size
 const maxSize = 8 * 1024 * 1024;
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 app.use(morgan('dev'));
+app.use(compression());
 
 var tempOwnerName = "";
 var tempBusinessName = "";

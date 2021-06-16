@@ -1,1 +1,80 @@
-{"Businesses":{"Categories":[{"Category":{"CategoryName":"Comidas y bebidas","CategoryData":[{"Owners_Name":"Abena","Business_Name":"Sandwich","Business_Type":"Comidas y bebidas","Business_Desc":"Make tasty Sandwiches","Business_Location":"Peru","Business_Price":"S./1000","Image_Src":"../uploadedImages/Sandwich.png"}]}},{"Category":{"CategoryName":"Cosas para hacer","CategoryData":[{"Owners_Name":"Quenni","Business_Name":"Arts and Crafts","Business_Type":"Cosas para hacer","Business_Desc":"Arts and Crafts Business","Business_Location":"Lobitos","Business_Price":"£12","Image_Src":"../uploadedImages/Arts and Crafts.png"}]}},{"Category":{"CategoryName":"Servicios","CategoryData":[]}},{"Category":{"CategoryName":"Hoteles","CategoryData":[{"Owners_Name":"Kelly","Business_Name":"Hotel de Express","Business_Type":"Hoteles","Business_Desc":"Nice hotels for an incredible time","Business_Location":"Peru","Business_Price":"S./2000","Image_Src":"../uploadedImages/Hotel de Express.png"}]}},{"Category":{"CategoryName":"Compras","CategoryData":[]}},{"Category":{"CategoryName":"Otra","CategoryData":[]}}],"Ratings":[{"Rating":{"RatingNumber":"","CategoryData":[]}},{"Rating":{"RatingNumber":"1","CategoryData":[]}},{"Rating":{"RatingNumber":"2","CategoryData":[{"Business_Name":"Arts and Crafts","Business_Type":"Cosas para hacer","Business_Desc":"Arts and Crafts Business","Business_Location":"Lobitos","Business_Price":"£12","Business_Rating":2,"Rating_Count":1}]}},{"Rating":{"RatingNumber":"3","CategoryData":[]}},{"Rating":{"RatingNumber":"4","CategoryData":[]}},{"Rating":{"RatingNumber":"5","CategoryData":[]}}]}}
+{
+  "Businesses": {
+    "Categories": [
+      {
+        "Category": {
+          "CategoryName": "Comidas y bebidas",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Cosas para hacer",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Servicios",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Hoteles",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Compras",
+          "CategoryData": []
+        }
+      },
+      {
+        "Category": {
+          "CategoryName": "Otra",
+          "CategoryData": []
+        }
+      }
+    ],
+    "Ratings": [
+      {
+        "Rating": {
+          "RatingNumber": "0",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "1",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "2",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "3",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "4",
+          "CategoryData": []
+        }
+      },
+      {
+        "Rating": {
+          "RatingNumber": "5",
+          "CategoryData": []
+        }
+      }
+    ]
+  }
+}

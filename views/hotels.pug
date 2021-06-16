@@ -3,6 +3,7 @@ html(lang="en")
     head
         include includes/head.pug
         script(src="../scripts/tourist.js" defer)
+        script(src="../scripts/main.js" defer)
 
 
     body.background
@@ -18,6 +19,18 @@ html(lang="en")
                 div.column.col-2
                 div.column.col-8.col-sm-12.exploreTitle
                     h3 Hotels
+                        sup
+                            i.material-icons.c-hand#hotelshelpicon(style = "font-size:1.0rem;") help
+                div.modal#hotelshelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closehotelshelp
+                            div.modal-title.h5.text-center  Information of the page 📘
+                        div.modal-body
+                            div.content
+                                p * Use this page to view the fantastic amenities that are provided within the hotels in Lobitos.
+                                p * Lost? Click on your desired hotel to view an offline or online map of the hotel.
                 div.column.col-2
 
         div.container
@@ -27,15 +40,27 @@ html(lang="en")
                     div.container
                         div.columns
                             div.column.col-4.col-sm-12.my-2
-                                div.card.hotelCard#hotelModal-id
-                                    div.card-image
-                                        img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
-                                    div.card-header
+                                //The card has been created in order to store the hotels map model, + icons for the hotel amenities & a view Hotel button
+                                div.card.hotelCard
+                                    div.card-image#hotelModal-id
+                                        img.img-responsive(src="../images/laCasonaHotel.jpg", alt="Hotel Image")
+                                    div.card-header(class="cardBody")
                                         div.card-title.h4 La Casona
                                         div.card-subtitle.text-grey.text-italic Hotel
-                                    div.card-body
+                                    div.card-body(class="cardBody")
                                         p A surf hostel on Lobito’s beach. La Casona welcomes you into a relaxed environment that boast peaceful sound of the Pacific Ocean.
+                                    div.card-footer(class="cardBody")
 
+                                        div.container.hotelContainer
+                                            //using material.io icons
+                                            span.material-icons.py-1 wifi
+                                            span.material-icons.py-1 time_to_leave
+                                            span.material-icons.py-1 nightlife
+                                            span.material-icons.py-1 pets
+                                            //view Hotel button use to redirect user to a website that displays more details of the the hotel
+                                            a.btn.float-right(class="viewHotelBtn" href="https://www.booking.com/hotel/pe/la-casona-lobitos" aria-label="view hotel button").text-light 🏩 View Hotel
+
+                                //Modal for the online and offline maps of the La Casona Hotel
                                 div.modal#modal-id
                                     a.modal-overlay(href='#close' aria-label='Close')
                                     div.modal-container
@@ -46,17 +71,31 @@ html(lang="en")
                                             div.content
                                                 img.img-responsive(src="../images/hotelMap1.JPG", alt="Hotel Image")
                                         div.modal-footer
+                                            //button to direct users to the live map of the hotel
                                             a.btn(href="https://www.google.com/maps/dir//La+Casona+de+Lobitos,+Lobitos-Piura-Per%C3%B9,+073,+Lobitos,+Peru/@-4.4547133,-81.4217108,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x90365bb0a9e39579:0x5270d0671c0ab8b0!2m2!1d-81.2819665!2d-4.4547265" aria-label="live map button").text-light 🗺 View Live Map 🗺
 
                             div.column.col-4.col-sm-12.my-2
-                                div.card.hotelCard#hotelModal2-id
-                                    div.card-image
-                                        img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
-                                    div.card-header
+                                //The card has been created in order to store the hotels map model, + icons for the hotel amenities & a view Hotel button
+                                div.card.hotelCard
+                                    div.card-image#hotelModal2-id
+                                        img.img-responsive(src="../images/buenavistaHotel.jpg", alt="Hotel Image")
+                                    div.card-header(class="cardBody")
                                         div.card-title.h4 Buenavista Lobitos
                                         div.card-subtitle.text-grey.text-italic Hotel
-                                    div.card-body
+                                    div.card-body(class="cardBody")
                                         p Hotel Buenavista Lobitos incorporates eco-friendly practices.Rooms include free WiFi and Breakfast as well as an on-site Gym.
+                                    div.card-footer(class="cardBody")
+                                        div.container.hotelContainer
+
+                                            //using material.io icons
+                                            span.material-icons.py-1 wifi
+                                            span.material-icons.py-1 time_to_leave
+                                            span.material-icons.py-1 pool
+                                            span.material-icons.py-1 accessible
+                                            //view Hotel button use to redirect user to a website that displays more details of the the hotel
+                                            a.btn.float-right(class="viewHotelBtn" href="https://www.booking.com/hotel/pe/buenavista-lobitos" aria-label="view hotel button").text-light 🏩 View Hotel
+
+                                //Modal for the online and offline maps of the Buenavista Lobitos Hotel
                                 div.modal#modal2-id
                                     a.modal-overlay(href='#close' aria-label='Close')
                                     div.modal-container
@@ -70,14 +109,27 @@ html(lang="en")
                                             a.btn(href="https://www.google.com/maps/dir//Buenavista+Lobitos,+Tablista+en+Nuevo,+Lobitos+District,+Peru/@-4.455504,-81.319848,13z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x90365baf66cb0239:0xbe93d4ef48d349e2!2m2!1d-81.2848283!2d-4.4555048" aria-label="live map button").text-light 🗺 View Live Map 🗺
 
                             div.column.col-4.col-sm-12.my-2
-                                div.card.hotelCard#hotelModal3-id
-                                    div.card-image
-                                        img.img-responsive(src="../images/hotelss.jpg", alt="Hotel Image")
-                                    div.card-header
+                                //The card has been created in order to store the hotels map model, + icons for the hotel amenities & a view Hotel button
+                                div.card.hotelCard
+                                    div.card-image#hotelModal3-id
+                                        img.img-responsive(src="../images/elHuecoHotel.jpg", alt="Hotel Image")
+                                    div.card-header(class="cardBody")
                                         div.card-title.h4 El Hueco Villas
                                         div.card-subtitle.text-grey.text-italic Hotel
-                                    div.card-body
-                                        p This hotel is in front of one of the best waves in northern Peru. The hotel has opportunities for canoeing as well exercising.
+                                    div.card-body(class="cardBody")
+                                        p El Hueco Villas hotel is in front of one of the best waves in northern Peru. The hotel has opportunities for canoeing as well exercising.
+                                    div.card-footer(class="cardBody")
+                                        div.container.hotelContainer
+
+                                            //using material.io icons
+                                            span.material-icons.py-1 wifi
+                                            span.material-icons.py-1 time_to_leave
+                                            span.material-icons.py-1 spa
+                                            span.material-icons.py-1 accessible
+                                            //view Hotel button use to redirect user to a website that displays more details of the the hotel
+                                            a.btn.float-right(class="viewHotelBtn" href="https://www.booking.com/hotel/pe/el-hueco-villas" aria-label="view hotel button").text-light 🏩 View Hotel
+
+                                //Modal for the online and offline maps of the El Hueco Villas Hotel
                                 div.modal#modal3-id
                                     a.modal-overlay(href='#close' aria-label='Close')
                                     div.modal-container
@@ -91,14 +143,27 @@ html(lang="en")
                                             a.btn(href="https://www.google.com/maps/dir//El+Hueco+Villas,+Nuevo+Lobitos,+Lobitos,+Peru/@-4.4561787,-81.4258956,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x90365bb08874c83b:0x23648554e37c504f!2m2!1d-81.2861397!2d-4.4564757" aria-label="live map button").text-light 🗺 View Live Map 🗺
 
                             div.column.col-4.col-sm-12.my-2
-                                div.card.hotelCard#hotelModal4-id
-                                    div.card-image
-                                        img.img-responsive(src="../images/hotelss.jpg", alt="Explore local business")
-                                    div.card-header
+                                //The card has been created in order to store the hotels map model, + icons for the hotel amenities & a view Hotel button
+                                div.card.hotelCard
+                                    div.card-image#hotelModal4-id
+                                        img.img-responsive(src="../images/mahaloHotel.jpg", alt="Explore local business")
+                                    div.card-header(class="cardBody")
                                         div.card-title.h4 Mahalo Lobitos Surf House
                                         div.card-subtitle.text-grey.text-italic Hotel
-                                    div.card-body
+                                    div.card-body(class="cardBody")
                                         p Has free Wi-Fi and private parking. The accommodation has a terrace as well as a private beach area.
+                                    div.card-footer(class="cardBody")
+                                        div.container.hotelContainer
+
+                                            //using material.io icons
+                                            span.material-icons.py-1 wifi
+                                            span.material-icons.py-1 time_to_leave
+                                            span.material-icons.py-1 pets
+                                            span.material-icons.py-1 deck
+                                            //view Hotel button use to redirect user to a website that displays more details of the the hotel
+                                            a.btn.float-right(class="viewHotelBtn" href="https://www.booking.com/hotel/pe/mahalo-lobitos-surf-house" aria-label="view hotel button").text-light 🏩 View Hotel
+
+                                //Modal for the online and offline maps of the Mahalo Lobitos Surf House Hotel
                                 div.modal#modal4-id
                                     a.modal-overlay(href='#close' aria-label='Close')
                                     div.modal-container
@@ -112,14 +177,27 @@ html(lang="en")
                                             a.btn(href="https://www.google.com/maps/dir//Lobitos+Surf+House,+s%2Fn+barrio+nuevo+lobitos+al+costado+del+albergue+Lobitos,+Lobitos,+Peru/@-4.4541427,-81.425181,11z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x90365bb0af9e3c59:0x2518b3e7ba234418!2m2!1d-81.2854364!2d-4.4544982" aria-label="live map button").text-light 🗺 View Live Map 🗺
 
                             div.column.col-4.col-sm-12.my-2
-                                div.card.hotelCard#hotelModal5-id
-                                    div.card-image
-                                        img.img-responsive(src="../images/hotelss.jpg", alt="Explore local business")
-                                    div.card-header
+                                //The card has been created in order to store the hotels map model, + icons for the hotel amenities & a view Hotel button
+                                div.card.hotelCard
+                                    div.card-image#hotelModal5-id
+                                        img.img-responsive(src="../images/navegoHotel.jpg", alt="Explore local business")
+                                    div.card-header(class="cardBody")
                                         div.card-title.h4 Hotel Navego
                                         div.card-subtitle.text-grey.text-italic Hotel
-                                    div.card-body
+                                    div.card-body(class="cardBody")
                                         p Quiet eco boutique hotel. Rooms with some of the best views of the Pacific Ocean waves.
+                                    div.card-footer(class="cardBody")
+
+                                        div.container.hotelContainer
+                                            //using material.io icons
+                                            span.material-icons.py-1 wifi
+                                            span.material-icons.py-1 time_to_leave
+                                            span.material-icons.py-1 pool
+                                            span.material-icons.py-1 spa
+                                            //view Hotel button use to redirect user to a website that displays more details of the the hotel
+                                            a.btn.float-right(class="viewHotelBtn" href="https://www.booking.com/hotel/pe/navego" aria-label="view hotel button").text-light 🏩 View Hotel
+
+                                //Modal for the online and offline maps of the Hotel Navego
                                 div.modal#modal5-id
                                     a.modal-overlay(href='#close' aria-label='Close')
                                     div.modal-container
@@ -131,4 +209,8 @@ html(lang="en")
                                                 img.img-responsive(src="../images/navegoMap.JPG", alt="Explore local business")
                                         div.modal-footer
                                             a.btn(href="https://www.google.com/maps/dir//Hotel+Navego,+Nuevo+Lobitos,+Rivera+del+Mar+s%2Fn,+Talara,+Lobitos,+Peru/@-4.4537072,-81.4250651,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x90365bb0ac8eb7bd:0x94fa9848079bb655!2m2!1d-81.2853205!2d-4.4540627" aria-label="live map button").text-light 🗺 View Live Map 🗺
+
                 div.column.col-1.col-sm-12
+                    //button created in order to allow users to scroll back to the top page
+                    button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='To Go Up')
+                        i.icon.icon-arrow-up

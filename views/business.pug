@@ -2,7 +2,9 @@ doctype html
 html(lang="en")
     head
         include includes/head.pug
+        script(src="../scripts/main.js" defer)
         script(src="../scripts/localBusiness.js" defer)
+
 
     body.background
         div.container
@@ -16,6 +18,18 @@ html(lang="en")
                 div.column.col-2
                 div.column.col-8.col-sm-12.exploreTitle
                     h3 Negocios
+                        sup
+                            i.material-icons.c-hand#businesshelpicon(style = "font-size:1.0rem;") help
+                div.modal#businesshelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closebusinesshelp
+                            div.modal-title.h5  Información de la página 📘
+                        div.modal-body
+                            div.content
+                                p Esta página educa a las empresas locales sobre nuevas empresas de mercado que podrían beneficiarse con ellas, así como evidencia para respaldar estas increíbles sugerencias.
+
                 div.column.col-2
 
 
@@ -45,7 +59,7 @@ html(lang="en")
                                                         b Business Type :
                                                         |  !{n.Business_Type}
 
-                                                    p
+                                                    p.text-break
                                                         b Description :
                                                         |  !{n.Business_Desc}
 
@@ -56,19 +70,31 @@ html(lang="en")
 
                                             div.column.col-3.col-sm-12.col-md-12.vl
                                                 div.card-body
+
                                                     p
                                                         b Rating :
+                                                        |  !{n.Business_Rating}
 
-                                                    form.form-input.star-rating(method="post" action='/rating')
-                                                        input#star5(type='radio' name='rate' value='5')
-                                                        label(for='star5' title='text') 5 stars
-                                                        input#star4(type='radio' name='rate' value='4')
-                                                        label(for='star4' title='text') 4 stars
-                                                        input#star3(type='radio' name='rate' value='3')
-                                                        label(for='star3' title='text') 3 stars
-                                                        input#star2(type='radio' name='rate' value='2')
-                                                        label(for='star2' title='text') 2 stars
-                                                        input#star1(type='radio' name='rate' value='1')
-                                                        label(for='star1' title='text') 1 stars
+                                                    form.form-input(method="post" action='/rating')
+                                                        input(type='radio' name='businessRating' value='1' onclick='this.form.submit()')
 
-                                                        input(hidden, value='')
+                                                        input(type='radio' name='businessRating' value='2' onclick='this.form.submit()')
+
+                                                        input(type='radio' name='businessRating' value='3' onclick='this.form.submit()')
+
+                                                        input(type='radio' name='businessRating' value='4' onclick='this.form.submit()')
+
+                                                        input(type='radio' name='businessRating' value='5' onclick='this.form.submit()')
+
+                                                        input(hidden, value=n.Owners_Name name='ownersName')
+                                                        input(hidden, value=n.Business_Name name='businessName')
+                                                        input(hidden, value=n.Business_Type name='businessType')
+                                                        input(hidden, value=n.Business_Desc name='businessDesc')
+                                                        input(hidden, value=n.Business_Price name='businessPrice')
+                                                        input(hidden, value=n.Business_Location name='businessLoc')
+
+
+
+                div.column.col-1.col-sm-12
+                    button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='Subir')
+                        i.icon.icon-arrow-up

@@ -25,6 +25,25 @@ body{
         width: auto;
         height: 3rem;
     }
+
+    .reduceLocalBusinessButons{
+        font-size: small;
+    }
+}
+/* Catering to an extremely small screen with a max screen width of 300 px*/
+@media screen and (max-width: 300px) {
+    .logo1 {
+        top: 0;
+        left: 1%;
+        position: absolute;
+        width: auto;
+        height: 3rem;
+    }
+
+    .reduceLocalBusinessButons{
+        /*redcue the size of the buttons to fit the cards in the local business page */
+        font-size: 0.45rem;
+    }
 }
 
 
@@ -116,6 +135,21 @@ a.lButton{
     top: 0;
     right: 0;
 }
+.goog-te-gadget {
+    text-transform: uppercase;
+}
+.goog-te-gadget-simple {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    font-size: 0.8rem !important;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.goog-te-menu-value {
+    color: black !important;
+}
+
 
 
 /* Reference to background image
@@ -186,7 +220,6 @@ ul{
     border-bottom: .1rem solid transparent;
     color: black;
     display: block;
-    /*margin: 0 .4rem 0 0;*/
     padding: .4rem .2rem .3rem .2rem;
     text-decoration: none;
     border-bottom-color: #329D9C;
@@ -198,6 +231,29 @@ ul{
     margin: 0 .4rem 0 0;
     padding: .4rem .2rem .3rem .2rem;
     text-decoration: none;
+}
+
+/* Go To The Top */
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 100;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #329D9C;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 70px;
+    height: 70px;
+}
+
+#myBtn:hover {
+    background-color: #555;
 }
 
 /* Local Business */
@@ -351,41 +407,6 @@ ul{
 
 /* Star Rating */
 
-.star-rating{
-    float: left;
-    width: auto;
-}
-
-.star-rating:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-}
-.star-rating:not(:checked) > label {
-    float: right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
-}
-.star-rating:not(:checked) > label:before {
-    content: '★ ';
-}
-.star-rating > input:checked ~ label {
-    color: #329D9C;
-}
-.star-rating:not(:checked) > label:hover,
-.star-rating:not(:checked) > label:hover ~ label {
-    color: #329D9C;
-}
-.star-rating > input:checked + label:hover,
-.star-rating > input:checked + label:hover ~ label,
-.star-rating > input:checked ~ label:hover,
-.star-rating > input:checked ~ label:hover ~ label,
-.star-rating > label:hover ~ input:checked ~ label {
-    color: #329D9C;
-}
 
 /* Hotels */
 
@@ -398,6 +419,25 @@ ul{
     border-color: #329D9C;
     color: #ffffff;
 }
+
+.viewHotelBtn{
+    position: relative;
+    /*left:45%;*/
+    background: #329D9C;
+    border-color: #329D9C;
+
+
+}
+.viewHotelBtn:hover{
+    background: #329D9C;
+    border-color: #329D9C;
+    color: #ffffff;
+}
+.cardBody{
+    cursor: auto;
+}
+
+
 
 /* Card Styles */
 

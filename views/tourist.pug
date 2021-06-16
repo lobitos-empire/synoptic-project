@@ -4,18 +4,43 @@ html(lang="en")
         include includes/head.pug
         script(src="../scripts/tourist.js" defer)
         script(src="../scripts/tables.js" defer)
+        script(src="../scripts/main.js" defer)
 
     body.background
-
         header.navbar.py-2.px-2
             section.navbar-section.col-sm-12
                 a(href="/")
                     img(src="../images/logo1.png", alt="Logo").logo1.img-responsive
             section.navbar-center
                 h3.text-center Tourists
+                    sup
+                        i.material-icons.c-hand#touristhelpicon(style = "font-size:1.0rem;") help
+                //Modal created in order to inform users on what the tourists page is about
+                div.modal#touristhelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closetouristhelp
+                            div.modal-title.h5.text-center  Information of the page 📘
+                        div.modal-body
+                            div.content
+                                p * Within this page, you will be able to explore the hottest businesses in Lobitos
+                                p * View the different types of attractions in Lobitos.
+                                p * As well as information of hotels in Lobitos.
+
+                //Modal created in order to inform users on how to use the survival phrase card
+                div.modal#survivalhelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closesurvivalhelp
+                            div.modal-title.h5.text-center  Information of the page 📘
+                        div.modal-body
+                            div.content
+                                p * Unsure on how to say certain words in Spanish? We’ve got you covered.
+                                p * Here you can find some essential phrases in espanol.
             section.navbar-section.col-sm-12
                 include includes/translator.pug
-
 
         div.container
             div.columns
@@ -24,18 +49,20 @@ html(lang="en")
                     div.container
                         div.columns
                             div.column.col-4.col-sm-12.my-2.py-2
+                                //Creating a card that will act as a button
                                 div.card.hottestCard
+                                    //when the user clicks on the card image, the code below is executed and enables the user to view the hottest businesses page
                                     div.card-image
                                         a(href='/hottest')
                                             img.img-responsive(src="../images/localBusiness.jpg", alt="Hottest")
                                     div.card-header
-                                        div.card-title.h4 Hottest
+                                        div.card-title.h4 Hottest Businesses
                                         div.card-subtitle.text-black Explore local businesses in Lobitos
-
 
                             div.column.col-4.col-sm-12.my-2.py-2
                                 div.card.attractionCard
                                     div.card-image
+                                        //when the user clicks on the card image, the code below is executed and enables the user to view the attractions page
                                         a(href='/attractions')
                                             img.img-responsive(src="../images/seashell.JPG", alt="Explore local business")
                                     div.card-header
@@ -46,19 +73,22 @@ html(lang="en")
                             div.column.col-4.col-sm-12.my-2.py-2
                                 div.card.hotelsCard
                                     div.card-image
+                                        //when the user clicks on the card image, the code below is executed and enables the user to view the hotels page
                                         a(href='/hotels')
                                             img.img-responsive(src="../images/hotelss.jpg", alt="Explore new markets")
                                     div.card-header
                                         div.card-title.h4 Hotels
                                         div.card-subtitle.text-black Explore Hotels in Lobitos
 
-                    //Spanish phrase table
                     div.container
                         div.columns
                             div.column.col-8.col-sm-12.my-2
+                                //Survival Spanish card used to store the phrases table as well as the survival description modal
                                 div.card.spanishPhraseCard2
                                     div.card-header
                                         div.card-title.h3 Survival Spanish
+                                            sup
+                                                i.material-icons.c-hand#survivalhelpicon(style = "font-size:1.0rem;") help
                                             //Creating a search bar for users to search phrases that are not on the spanish phrase card
                                             section.navbar-section(class="searchBar")
                                                 form(action="/tourist" method="get")
@@ -81,7 +111,7 @@ html(lang="en")
                                                         td=n.english
                                                         td=n.spanish
 
-                            // Contacts Card with Important numbers
+                            // Contacts Card which stores a table with vital emergency details
                             div.column.col-4.col-sm-12.my-2
                                 div.card.contactsCard
                                     div.card-header
@@ -111,8 +141,7 @@ html(lang="en")
                                                 tr
                                                     td Taxi Services
                                                     td +51 980723924
-
-
-
-
-                div.column.col-1
+                div.column.col-1.col-sm-12
+                    //button created in order to allow users to scroll back to the top page
+                    button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='To Go Up')
+                        i.icon.icon-arrow-up

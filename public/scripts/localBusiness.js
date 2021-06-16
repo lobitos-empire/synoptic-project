@@ -68,8 +68,10 @@ element.addEventListener("click", () => {
       lowercase
      */
    if(locationame.value !== "" && locationame.value.toLowerCase() !== "lobitos"){
+       //Showcase that the name of the location is input using the spectre class.
        locationame.className = "form-input is-error"
    }else{
+       //Leave the input as it is, since it isn't an error
        locationame.className = "form-input "
 
    }

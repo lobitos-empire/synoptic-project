@@ -1,7 +1,12 @@
+//- This page is the explore  page that contains relevant information for new market that locals can explore.
+    This page is made with the aim of encouraging locals to venture into new markets.
+//
 doctype html
 html(lang="en")
     head
+        //This includes a file that has all the necessary links, scripts and metas for this page and all pages
         include includes/head.pug
+        //This loads the business and local business JavaScripts for the page.
         script(src="../scripts/business.js" defer)
         script(src="../scripts/localBusiness.js" defer)
 
@@ -10,7 +15,9 @@ html(lang="en")
         div.container
             div.columns
                 div.column.col-12
+                    //This includes a file that has all the html tab items for the explore page.
                     include includes/tabLExplore.pug
+                    //This adds the google translate element in order to be able to translate to english if necessary.
                     include includes/spanish
 
         div.container
@@ -20,6 +27,7 @@ html(lang="en")
                     h3 Mercados Explorable
                         sup
                             i.material-icons.c-hand#explorehelpicon(style = "font-size:1.0rem;") help
+                //This modal is accessed when the help icon is clicked and displays a description of the explore  page.
                 div.modal#explorehelpmodal
                     a.modal-overlay(aria-label="Close" href="#Close")
                     div.modal-container
@@ -36,7 +44,7 @@ html(lang="en")
             div.columns
                 div.column.col-2.col-sm-12
                 div.column.col-8.col-sm-12
-
+                    //This card displays the relevant information of the cycling tourism market in order to encourage locals into this venture.
                     div.card.my-2
                         div.columns
                             div.column.col-3.col-sm-12
@@ -57,6 +65,7 @@ html(lang="en")
 
                                 div.card-footer
                                     button.btn.btn-primary(aria-label="Reference Button")#cyclebutton Ver referencias
+                    //This modal is accessed when the reference button is clicked and it contains linked references for the cycling information provided.
                     div.modal#cyclemodal
                         a.modal-overlay(aria-label="Close" href="#Close")
                         div.modal-container
@@ -67,7 +76,7 @@ html(lang="en")
                                 div.content
                                     li
                                         a(href="https://bicycleuniverse.com/much-bike-mechanic-make/#How_Much_Does_a_Bike_Shop_Owner_Make" aria-label="button").btn.btn-link Ciclismo referencias
-
+                    //This card displays the relevant information of the trekking tourism market in order to encourage locals into this venture.
                     div.card.my-2
                         div.columns
                             div.column.col-3.col-sm-12
@@ -89,6 +98,7 @@ html(lang="en")
 
                                 div.card-footer
                                     button.btn.btn-primary(aria-label="Reference Button")#trekkingbutton Ver referencias
+                    //This modal is accessed when the reference button is clicked and it  contains linked references for the trekking information provided
                     div.modal#trekkingmodal
                         a.modal-overlay(aria-label="Close" href="#Close")
                         div.modal-container
@@ -99,11 +109,7 @@ html(lang="en")
                                 div.content
                                     li
                                         a(href="https://wildlandtrekking.com/employment-opportunities/hiking-guide-jobs/" aria-label="button").btn.btn-link Trekking referencias
-
-
-
-
-
+                    //This card displays the relevant information of the bird watching tourism market in order to encourage locals into this venture.
                     div.card.my-2
                         div.columns
                             div.column.col-3.col-sm-12
@@ -123,6 +129,7 @@ html(lang="en")
 
                                 div.card-footer
                                     button.btn.btn-primary(aria-label="Reference Button")#birdwatchingbutton Ver referencias
+                    //This modal is accessed when the reference button is clicked and it contains linked references for the birdwatching information provided
                     div.modal#birdwatchingmodal
                         a.modal-overlay(aria-label="Close" href="#Close")
                         div.modal-container
@@ -139,7 +146,7 @@ html(lang="en")
                                         a(href="https://www.gooverseas.com/tours-trips/bird-watching#:~:text=Similarly%2C%20bird%20watching%20tours%20range,which%20include%20bird%20watching%20activities.",aria-label="button").btn.btn-link Tours de observación de aves
                                     li
                                         a(href="https://www.responsibletravel.com/holidays/bird-watching" aria-label="button").btn.btn-link Precios de tour de ejemplo
-
+                    //This card displays the relevant information of the kite surfing tourism market in order to encourage locals into this venture.
                     div.card.my-2
                         div.columns
                             div.column.col-3.col-sm-12
@@ -161,7 +168,7 @@ html(lang="en")
 
                                 div.card-footer
                                     button.btn.btn-primary(aria-label="Reference Button")#modalbutton Ver referencias
-
+                    //This modal is accessed when the reference button is clicked and it contains linked references for the kite information provided
                     div.modal#kitemodal
                         a.modal-overlay(aria-label="Close" href="#Close")
                         div.modal-container
@@ -174,7 +181,7 @@ html(lang="en")
                                         a(href="https://www.chickenloop.com/content/how-much-do-kitesurfing-instructors-earn" aria-label="button").btn.btn-link Instructora de cometas referencia
                                     li
                                         a(href="https://www.atbshop.co.uk/kitesurfing-lei-kites/liquid-force-solo-v3-kitesurfing-kite?opt1=15.5m%20Kite%20Only&gclid=Cj0KCQjw8IaGBhCHARIsAGIRRYoQRlA7b3ChIrkYT7aPA_dOFjJqZ-_GSZaNZIaomyFBZn_Ih5JpuSMaArPxEALw_wcB" aria-label="button").btn.btn-link Tienda de kitesurf
-
+                    //This card displays the relevant information of the boat riding tourism market in order to encourage locals into this venture.
                     div.card.my-2
                         div.columns
                             div.column.col-3.col-sm-12
@@ -193,7 +200,8 @@ html(lang="en")
                                     li Excursiones en canoa : S/.198730.30 un año
 
                                 div.card-footer
-                                    button.btn.btn-primary#boatsbutton Ver referencias
+                                    button.btn.btn-primary#boatsbutton Ver
+                    //This modal is accessed when the reference button is clicked and it contains linked references for the boat information provided in the card.
                     div.modal#boatsmodal
                         a.modal-overlay(aria-label="Close" href="#Close")
                         div.modal-container
@@ -207,5 +215,6 @@ html(lang="en")
 
 
                 div.column.col-2.col-sm-12
+                    //This button takes you back up to the start of the page.
                     button.btn.btn-action.btn-lg.s-circle#myBtn(onclick='topFunction()' title='Subir')
                         i.icon.icon-arrow-up

@@ -55,25 +55,25 @@ function topFunction() {
 
 
 
-//Form validation for the location to ensure it is always lobitos:
-
-const element = document.getElementById('continuebtn');
-
-// always checking if the element is clicked, if so, do alert('hello')
+//Form validation for the location to ensure it is always lobitos:const element = document.getElementById('continuebtn');
+// always checking if the element is clicked, if so, the event should be done
 element.addEventListener("click", () => {
     const locationame = document.getElementById('locationname');
     console.log(locationame.value.toLowerCase());
-    //Ensure that all input information has been filled before alerting them on the error:
+    /*
+      The if condition  checks if the location input is not null and
+      if it is equal to lobitos.
+      .toLowerCase() ensures that whatever input is placed is turned to
+      lowercase
+     */
    if(locationame.value !== "" && locationame.value.toLowerCase() !== "lobitos"){
+       //Showcase that the name of the location is input using the spectre class.
        locationame.className = "form-input is-error"
    }else{
+       //Leave the input as it is, since it isn't an error
        locationame.className = "form-input "
 
    }
-
-
-
-
 });
 
 

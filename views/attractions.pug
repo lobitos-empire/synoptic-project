@@ -19,7 +19,7 @@ html(lang="en")
                     h3 Attractions
                         sup
                             i.material-icons.c-hand#attractionhelpicon(style = "font-size:1.0rem;") help
-
+                //Modal created in order to inform users on what the attraction page is about
                 div.modal#attractionhelpmodal
                     a.modal-overlay(aria-label="Close" href="#Close")
                     div.modal-container
@@ -43,36 +43,42 @@ html(lang="en")
                             div.column.col-12.my-2.col-sm-12.col-md-12
 
                                 for n in attractions
-
+                                    //Create a card.
                                     div.card.mt-2
                                         div.columns
                                             div.column.col-3.col-sm-12.col-md-12
                                                 div.card-image.fillParentDiv
+                                                    //The first three columns and card-image div should contain the image of the business they uploaded.
                                                     img.img-responsive(src=n.Image_Src, alt=n.Business_Name).fillParentDivForImage
 
                                             div.column.col-6.col-sm-12.col-md-12
                                                 div.card-header
+                                                    //Card title should contain the name of the business.
                                                     div.card-title.h4
                                                         p !{n.Business_Name}
 
                                                 div.card-body
-
+                                                    //Card body should have the following:
                                                     p.text-break
 
                                                         b Description :
+                                                        //The business description that they submitted
                                                         |  !{n.Business_Desc}
 
                                                     p
                                                         b Location :
+                                                        //The location of the business submitted.
                                                         |  !{n.Business_Location}
 
                                             div.column.col-3.col-sm-12.col-md-12.vl
                                                 div.card-body
                                                     p
                                                         b Estimate Payment :
+                                                        // The estimated payment for the business
                                                         |  !{n.Business_Price}
                                                     p
                                                         b Rating :
+                                                        //The overall ratings of the business
                                                         | !{n.Business_Rating}
 
                                                     form.form-input(method="post" action='/rating')
@@ -86,8 +92,6 @@ html(lang="en")
 
                                                         input(type='radio' name='businessRating' value='5' onclick='this.form.submit()')
 
-
-
                                                         input(hidden, value=n.Owners_Name name='ownersName')
                                                         input(hidden, value=n.Business_Name name='businessName')
                                                         input(hidden, value=n.Business_Type name='businessType')
@@ -96,6 +100,7 @@ html(lang="en")
                                                         input(hidden, value=n.Business_Location name='businessLoc')
 
 
+                //This allows the user to go back up to the top of the page.
                 div.column.col-1.col-sm-12
                     button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='To Go Up')
                         i.icon.icon-arrow-up

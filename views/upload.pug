@@ -1,6 +1,7 @@
 doctype html
 html(lang="en")
     head
+        //This includes a file that has all the necessary links, scripts and metas for this page and all pages
         include includes/head.pug
         script(src="../scripts/main.js" defer)
         script(src="../scripts/localBusiness.js" defer)
@@ -99,6 +100,7 @@ html(lang="en")
 
                                         input.form-input(type="submit" value="Someter").btn
 
+                //This button takes you to the top of the page.
                 div.column.col-2.col-sm-12
                     button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='Subir')
                         i.icon.icon-arrow-up

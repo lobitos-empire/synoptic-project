@@ -4,19 +4,112 @@
       {
         "Category": {
           "CategoryName": "Comidas y bebidas",
-          "CategoryData": []
+          "CategoryData": [
+            {
+              "Owners_Name": "Israel Stewart",
+              "Business_Name": "El Ancla Restobar",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "We offer Peruvian, South American cuisines at a cheap price",
+              "Business_Location": "Lobitos",
+              "Business_Price": "8",
+              "Image_Src": "/uploadedImages/ElAnclaRestobar.png"
+            },
+            {
+              "Owners_Name": "Bronwen Dominguez",
+              "Business_Name": "El Tranqui",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "We offer Peruvian, South American cuisines for breakfast, lunch and dinner. ",
+              "Business_Location": "Lobitos",
+              "Business_Price": "7",
+              "Image_Src": "/uploadedImages/ElTranqui.png"
+            },
+            {
+              "Owners_Name": "Luna Buchanan",
+              "Business_Name": "Q'Bravo",
+              "Business_Type": "Comidas y bebidas",
+              "Business_Desc": "We offer Mexican, fast food cuisines",
+              "Business_Location": "Lobitos",
+              "Business_Price": "6",
+              "Image_Src": "/uploadedImages/Q'Bravo.png"
+            }
+          ]
         }
       },
       {
         "Category": {
           "CategoryName": "Cosas para hacer",
-          "CategoryData": []
+          "CategoryData": [
+            {
+              "Owners_Name": "Quenni Carreno",
+              "Business_Name": "Arts and Crafts",
+              "Business_Type": "Cosas para hacer",
+              "Business_Desc": "Makes crafts out of local materials, such as shells and bones, which are sold as souvenirs to tourists",
+              "Business_Location": "Lobitos",
+              "Business_Price": "15",
+              "Image_Src": "/uploadedImages/ArtsandCrafts.png"
+            },
+            {
+              "Owners_Name": "Gino Perez",
+              "Business_Name": "Surfing School",
+              "Business_Type": "Cosas para hacer",
+              "Business_Desc": "I hold sports activity and competitions which will attract tourists",
+              "Business_Location": "Lobitos",
+              "Business_Price": "20",
+              "Image_Src": "/uploadedImages/SurfingSchool.png"
+            },
+            {
+              "Owners_Name": "Tullio Chapilliquen",
+              "Business_Name": "Lobitos Ocean Adventures",
+              "Business_Type": "Cosas para hacer",
+              "Business_Desc": "Lobitos Ocean Adventures was founded for tourists who are interested in fishing. ",
+              "Business_Location": "Lobitos",
+              "Business_Price": "12",
+              "Image_Src": "/uploadedImages/LobitosOceanAdventures.png"
+            },
+            {
+              "Owners_Name": "Lukasz Esparza",
+              "Business_Name": "Lobitos Wildlife ",
+              "Business_Type": "Cosas para hacer",
+              "Business_Desc": "Birdwatching is an enjoyed activity among tourists. Tourists can see local birds and other wildlife in Lobitos",
+              "Business_Location": "Lobitos",
+              "Business_Price": "15",
+              "Image_Src": "/uploadedImages/LobitosWildlife.png"
+            },
+            {
+              "Owners_Name": "Samera Fritz",
+              "Business_Name": "Punta Lobitos Beach",
+              "Business_Type": "Cosas para hacer",
+              "Business_Desc": "Punta Lobitos Beach is a beach where tourists can enjoy swimming and other activities",
+              "Business_Location": "Lobitos",
+              "Business_Price": "10",
+              "Image_Src": "/uploadedImages/PuntaLobitosBeach.png"
+            }
+          ]
         }
       },
       {
         "Category": {
           "CategoryName": "Servicios",
-          "CategoryData": []
+          "CategoryData": [
+            {
+              "Owners_Name": "Eliot Martinez",
+              "Business_Name": "Taxis Talara",
+              "Business_Type": "Servicios",
+              "Business_Desc": "Taxis Talara takes you from the airport to lobitos ",
+              "Business_Location": "Lobitos",
+              "Business_Price": "20",
+              "Image_Src": "/uploadedImages/TaxisTalara.png"
+            },
+            {
+              "Owners_Name": "Felix Cornish",
+              "Business_Name": "Lobitos Hairdresser",
+              "Business_Type": "Servicios",
+              "Business_Desc": "We offer tourist a range of hair styles ",
+              "Business_Location": "Lobitos",
+              "Business_Price": "12",
+              "Image_Src": "/uploadedImages/LobitosHairdresser.png"
+            }
+          ]
         }
       },
       {
@@ -42,7 +135,35 @@
       {
         "Rating": {
           "RatingNumber": "0",
-          "CategoryData": []
+          "CategoryData": [
+            {
+              "Business_Name": "Arts and Crafts",
+              "Business_Type": "Cosas para hacer",
+              "Business_Desc": "Makes crafts out of local materials, such as shells and bones, which are sold as souvenirs to tourists",
+              "Business_Location": "Lobitos",
+              "Business_Price": "15",
+              "Rating_Count": "0",
+              "Image_Src": "/uploadedImages/ArtsandCrafts.png"
+            },
+            {
+              "Business_Name": "Surfing School",
+              "Business_Type": "Cosas para hacer",
+              "Business_Desc": "I hold sports activity and competitions which will attract tourists",
+              "Business_Location": "Lobitos",
+              "Business_Price": "20",
+              "Rating_Count": "0",
+              "Image_Src": "/uploadedImages/SurfingSchool.png"
+            },
+            {
+              "Business_Name": "Lobitos Ocean Adventures",
+              "Business_Type": "Cosas para hacer",
+              "Business_Desc": "Lobitos Ocean Adventures was founded for tourists who are interested in fishing. ",
+              "Business_Location": "Lobitos",
+              "Business_Price": "12",
+              "Rating_Count": "0",
+              "Image_Src": "/uploadedImages/LobitosOceanAdventures.png"
+            }
+          ]
         }
       },
       {
@@ -72,7 +193,17 @@
       {
         "Rating": {
           "RatingNumber": "5",
-          "CategoryData": []
+          "CategoryData": [
+            {
+              "Business_Name": "Lobitos Wildlife ",
+              "Business_Type": "Cosas para hacer",
+              "Business_Desc": "Birdwatching is an enjoyed activity among tourists. Tourists can see local birds and other wildlife in Lobitos",
+              "Business_Location": "Lobitos",
+              "Business_Price": "15",
+              "Rating_Count": "1",
+              "Image_Src": "/uploadedImages/LobitosWildlife.png"
+            }
+          ]
         }
       }
     ]

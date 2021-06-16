@@ -24,25 +24,7 @@ const FILES_TO_CACHE = [
     '/scripts/mdtoast.min.js',
     '/scripts/service-worker-init.js',
     '/scripts/tourist.js',
-    '/manifest.webmanifest',
-    '/images/logo1.png',
-    '/images/biggerBusiness.png',
-    '/images/biggerPromote.png',
-    '/images/birdwatching.png',
-    '/images/boatRiding.jpg',
-    '/images/buenavistoMap.JPG',
-    '/images/cycling.jpg',
-    '/images/hotelMap1.JPG',
-    '/images/hotelss.jpg',
-    '/images/huecoMap.JPG',
-    '/images/kitesurfing.jpg',
-    '/images/localBusiness.jpg',
-    '/images/mahaloMap.JPG',
-    '/images/marketing.png',
-    '/images/navegoMap.JPG',
-    '/images/seashell.JPG',
-    '/images/trekking.jpg',
-    '/images/uploadimage.jpg',
+    '/manifest.webmanifest'
 
 
 

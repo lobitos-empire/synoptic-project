@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+    head
+        include includes/head.pug
+        script(src="../scripts/localBusiness.js" defer)
+
+    body.background
+        div.container
+            div.columns
+                div.column.col-12
+                    include includes/tabLBusiness.pug
+                    include includes/spanish.pug
+
+        div.container
+            div.column.col-12.my-2.col-sm-12
+                for n in businesses
+                    div.card.my-2
+                        div.columns
+                            div.column.col-3.col-sm-12
+                                div.card-image.fillParentDiv
+                                    img.img-responsive(src=n.Image_Src, alt=n.Business_Name).fillParentDivForImage
+                            div.column.col-6.col-sm-12
+                                div.card-header
+                                    div.card-title.h4
+                                        p !{n.Business_Name}
+                                div.card-body
+                                    p
+                                        b Business Owner :
+                                        |   !{n.Owners_Name}
+
+                                    p
+                                        b Business Type :
+                                        |  !{n.Business_Type}
+
+                                    p
+                                        b Description :
+                                        |  !{n.Business_Desc}
+
+                                    p
+                                        b Location :
+                                        |  !{n.Business_Location}
+
+
+                            div.column.col-3.col-sm-12.vl
+                                div.card-body
+                                    p
+                                        b Rating :
+
+                                            form-input.star-rating(method="post" action='/rating')
+                                                input#star5(type='radio' name='rate' value='5')
+                                                label(for='star5' title='text')
+                                                input#star4(type='radio' name='rate' value='4')
+                                                label(for='star4' title='text')
+                                                input#star3(type='radio' name='rate' value='3')
+                                                label(for='star3' title='text')
+                                                input#star2(type='radio' name='rate' value='2')
+                                                label(for='star2' title='text')
+                                                input#star1(type='radio' name='rate' value='1')
+                                                label(for='star1' title='text')
+
+                                            input(hidden, value='')

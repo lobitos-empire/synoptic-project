@@ -1,0 +1,75 @@
+doctype html
+html(lang="en")
+    head
+        include includes/head.pug
+        script(src="../scripts/tourist.js" defer)
+
+    body.background
+        div.container
+            div.columns
+                div.column.col-12
+                    include includes/tabTAttractions
+                    include includes/translator.pug
+
+
+        div.container
+            div.columns
+                div.column.col-1
+                div.column.col-10
+                    div.container
+                        div.columns.mt-2
+                            div.column.col-12.my-2.col-sm-12.col-md-12
+
+                                for n in attractions
+
+                                    div.card.mt-2
+                                        div.columns
+                                            div.column.col-3.col-sm-12.col-md-12
+                                                div.card-image.fillParentDiv
+                                                    img.img-responsive(src=n.Image_Src, alt=n.Business_Name).fillParentDivForImage
+
+                                            div.column.col-6.col-sm-12.col-md-12
+                                                div.card-header
+                                                    div.card-title.h4
+                                                        p !{n.Business_Name}
+
+                                                div.card-body
+
+                                                    p
+                                                        b Description :
+                                                        |  !{n.Business_Desc}
+
+                                                    p
+                                                        b Location :
+                                                        |  !{n.Business_Location}
+
+                                            div.column.col-3.col-sm-12.col-md-12.vl
+                                                div.card-body
+                                                    p
+                                                        b Estimate Payment :
+                                                        |  !{n.Business_Price}
+                                                    p
+                                                        b Rating :
+                                                        | !{n.Business_Rating}
+
+                                                        form.form-input.star-rating(method="post" action='/rating')
+                                                            input#star5(type='radio' name='businessRating' value='5' onclick='this.form.submit()')
+                                                            label(for='star5' title='text')
+                                                            input#star4(type='radio' name='businessRating' value='4' onclick='this.form.submit()')
+                                                            label(for='star4' title='text')
+                                                            input#star3(type='radio' name='businessRating' value='3' onclick='this.form.submit()')
+                                                            label(for='star3' title='text')
+                                                            input#star2(type='radio' name='businessRating' value='2' onclick='this.form.submit()')
+                                                            label(for='star2' title='text')
+                                                            input#star1(type='radio' name='businessRating' value='1' onclick='this.form.submit()')
+                                                            label(for='star1' title='text')
+
+                                                            input(hidden, value=n.Owners_Name name='ownersName')
+                                                            input(hidden, value=n.Business_Name name='businessName')
+                                                            input(hidden, value=n.Business_Type name='businessType')
+                                                            input(hidden, value=n.Business_Desc name='businessDesc')
+                                                            input(hidden, value=n.Business_Price name='businessPrice')
+                                                            input(hidden, value=n.Business_Location name='businessLoc')
+
+
+                div.column.col-1

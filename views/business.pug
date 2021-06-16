@@ -1,7 +1,11 @@
 doctype html
 html(lang="en")
     head
+        //-This includes a file that has all the necessary links,
+          scripts and metas for this page and all pages
+        //
         include includes/head.pug
+        //This loads the main and local business javascript files.
         script(src="../scripts/main.js" defer)
         script(src="../scripts/localBusiness.js" defer)
 
@@ -20,6 +24,7 @@ html(lang="en")
                     h3 Negocios
                         sup
                             i.material-icons.c-hand#businesshelpicon(style = "font-size:1.0rem;") help
+                //This modal is accessed when the help icon is clicked and displays a description of the business  page.
                 div.modal#businesshelpmodal
                     a.modal-overlay(aria-label="Close" href="#Close")
                     div.modal-container
@@ -40,30 +45,53 @@ html(lang="en")
                     div.container
                         div.columns.mt-2
                             div.column.col-12.my-2.col-sm-12
+                                //-For every business in the business.json file:
+                                 (for every business that has been submitted to the backend)
+                                //
                                 for n in businesses
+                                    //Create a card.
                                     div.card.my-2
                                         div.columns
+                                            //The first three columns and card-image div should contain the image of the business they uploaded.
                                             div.column.col-3.col-sm-12
                                                 div.card-image.fillParentDiv
+                                                    //- n.Image_Src gets the image src from the business.json file
+                                                        n.Business_Name gets the business name from the business.json file
+                                                    //
                                                     img.img-responsive(src=n.Image_Src, alt=n.Business_Name).fillParentDivForImage
                                             div.column.col-6.col-sm-12
                                                 div.card-header
+                                                    //Card title should contain the name of the business.
                                                     div.card-title.h4
+                                                        //n.Business_Name gets the business name from the business.json file
                                                         p !{n.Business_Name}
                                                 div.card-body
+                                                    //Card body should have the following:
                                                     p
                                                         b Business Owner :
+                                                        //- Business Owner's name submitted is retrieved from json
+                                                             file through n.Owners_Name
+                                                        //
                                                         |   !{n.Owners_Name}
 
                                                     p
                                                         b Business Type :
+                                                        //- The Business Type submitted  is retrieved from
+                                                            json file through n.Business_Type
+                                                        //
                                                         |  !{n.Business_Type}
 
                                                     p.text-break
+                                                        //- The Business description submitted is retrieved from json
+                                                           file through n.Business_Desc
+                                                        //
                                                         b Description :
                                                         |  !{n.Business_Desc}
 
                                                     p
+                                                        //- Business location submitted retrieved from json file
+                                                             through n.Business_Location
+                                                        //
                                                         b Location :
                                                         |  !{n.Business_Location}
 
@@ -72,6 +100,9 @@ html(lang="en")
                                                 div.card-body
 
                                                     p
+                                                        //- Business Rating retrieved from json file through
+                                                            n.Business_Rating
+                                                        //
                                                         b Rating :
                                                         |  !{n.Business_Rating}
 
@@ -96,5 +127,6 @@ html(lang="en")
 
 
                 div.column.col-1.col-sm-12
+                    //This allows the user to go back up to the start of the page.
                     button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='Subir')
                         i.icon.icon-arrow-up

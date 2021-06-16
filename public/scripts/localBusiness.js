@@ -1,3 +1,5 @@
+// Emojis for the local business tabs
+
 if (window.location.pathname === "/upload") {
     let tabs = document.getElementsByClassName("tab-item");
     for (let i = 0; i < tabs.length; i++) {
@@ -28,10 +30,11 @@ if (window.location.pathname === "/upload") {
     }
 }
 
+// Go back up button
 //Get the button
 var mybutton = document.getElementById("myBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
+// When the user scrolls down 20px from the top of the page the button is shown
 window.onscroll = function () {
     scrollFunction()
 };
@@ -44,7 +47,7 @@ function scrollFunction() {
     }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+// When clicked on the button, scroll to the top of page
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;

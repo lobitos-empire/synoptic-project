@@ -407,40 +407,6 @@ ul{
 
 /* Star Rating */
 
-.star-rating{
-    float: left;
-    width: auto;
-}
-.star-rating:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-}
-.star-rating:not(:checked) > label {
-    float: right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
-}
-.star-rating:not(:checked) > label:before {
-    content: '★ ';
-}
-.star-rating > input:checked ~ label {
-    color: #329D9C;
-}
-.star-rating:not(:checked) > label:hover,
-.star-rating:not(:checked) > label:hover ~ label {
-    color: #329D9C;
-}
-.star-rating > input:checked + label:hover,
-.star-rating > input:checked + label:hover ~ label,
-.star-rating > input:checked ~ label:hover,
-.star-rating > input:checked ~ label:hover ~ label,
-.star-rating > label:hover ~ input:checked ~ label {
-    color: #329D9C;
-}
 
 /* Hotels */
 

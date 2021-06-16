@@ -28,7 +28,7 @@ const FILES_TO_CACHE = [
     '/images/logo1.png',
     '/images/biggerBusiness.png',
     '/images/biggerPromote.png',
-    '/images/birdwatching.png',
+    '/images/birdwatching.jpg',
     '/images/boatRiding.jpg',
     '/images/buenavistoMap.JPG',
     '/images/cycling.jpg',
@@ -42,7 +42,7 @@ const FILES_TO_CACHE = [
     '/images/navegoMap.JPG',
     '/images/seashell.JPG',
     '/images/trekking.jpg',
-    '/images/uploadimage.jpg',
+    '/images/uploadimage.jpg'
 
 
 

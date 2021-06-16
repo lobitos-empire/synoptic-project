@@ -14,11 +14,30 @@ html(lang="en")
                     include includes/tabLUpload.pug
                     include includes/spanish.pug
 
+        div.container
+            div.columns
+                div.column.col-2
+                div.column.col-8.col-sm-12.exploreTitle
+                    h3 Subir Negocio
+                        sup
+                            i.material-icons.c-hand#uploadhelpicon(style = "font-size:1.0rem;") help
+                div.modal#uploadhelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closeuploadhelp
+                            div.modal-title.h5  Información de la página 📘
+                        div.modal-body
+                            div.content
+                                p Esta página educa a las empresas locales sobre nuevas empresas de mercado que podrían beneficiarse con ellas, así como evidencia para respaldar estas increíbles sugerencias.
+
+                div.column.col-2
+
         div.container.my-2
             div.columns
                 div.column.col-2.col-sm-12
                 div.column.col-4.col-sm-12.my-2
-                    form.form-horizontal(action="/upload" id="uploadForm" method="post")
+                    form.form-horizontal(action="/upload" id="uploadForm" method="post" name="uploadForm" )
                         div.form-group
                             div.col-5.col-sm-12
                                 label.form-label Nombre Del Dueño
@@ -50,20 +69,22 @@ html(lang="en")
                                 label.form-label Localización
                             div.col-7.col-sm-12
                                 input.form-input(type="text" placeholder="Localización" id="locationname" name="businessLoc" required)
+                                p.form-input-hint El negocio debe estar en el distrito correcto.
+
                         div.form-group
                             div.col-5.col-sm-12
                                 label.form-label Precio
                             div.col-7.col-sm-12
-                                input.form-input(type="text" placeholder="Precio" id="businessP" name="businessPrice" required)
+                                input.form-input(type="number" placeholder="Precio" id="businessP" name="businessPrice" required min="0")
                         div.form-group
                             div.col-3
                             div.column.col-6.col-sm-12
-                                button.btn.text-light Continue...
+                                button.btn.text-light(aria-label="continue button")#continuebtn Continuar...
                             div.col-3
 
 
                 div.col-4.col-sm-12.my-2
-                    form.form-horizontal(action="/uploadImage" id="uploadImage" method="post" enctype="multipart/form-data" class="d-invisible" )
+                    form.form-horizontal(action="/uploadImage" id="uploadImage" method="post" enctype="multipart/form-data" class="d-invisible"  )
                         div.column.col-12.col-sm-12.my-2
                             div.form-group.form2
                                 div.card.moveuploadCard
@@ -72,6 +93,12 @@ html(lang="en")
                                     div.card-header
                                         div.card-title.h3 Sube tu negocio!
                                     div.card-body
-                                        p1 Mejore la imagen que mejor represente su negocio
-                                        input.form-input(type="submit").btn
-                div.column.col-2
+                                        p Mejore la imagen que mejor represente su negocio.
+                                        p  Los tipos de archivos compatibles incluyen:
+                                        p png, jpeg, pdf, gif, webp, apng, xbm, bmp, ico, tiff
+
+                                        input.form-input(type="submit" value="Someter").btn
+
+                div.column.col-2.col-sm-12
+                    button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='Subir')
+                        i.icon.icon-arrow-up

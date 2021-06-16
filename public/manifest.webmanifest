@@ -1,10 +1,10 @@
 {
-    "theme_color": "#f69435",
-    "background_color": "#f69435",
+    "theme_color": "#329D9C",
+    "background_color": "#329D9C",
     "display": "minimal-ui",
     "scope": "/",
     "start_url": "/",
-    "name": "Lobitos Empire",
+    "name": "Go-Go Lobitos",
     "short_name": "Lobitos",
     "description": "App to support the Lobitos tourist industry.",
     "icons": [

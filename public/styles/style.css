@@ -25,7 +25,7 @@ body{
         width: auto;
         height: 3rem;
     }
-
+/* This is to reduce the local business buttons */
     .reduceLocalBusinessButons{
         font-size: small;
     }

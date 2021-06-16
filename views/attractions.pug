@@ -1,0 +1,101 @@
+doctype html
+html(lang="en")
+    head
+        include includes/head.pug
+        script(src="../scripts/tourist.js" defer)
+        script(src="../scripts/main.js" defer)
+
+    body.background
+        div.container
+            div.columns
+                div.column.col-12
+                    include includes/tabTAttractions
+                    include includes/translator.pug
+
+        div.container
+            div.columns
+                div.column.col-2
+                div.column.col-8.col-sm-12.exploreTitle
+                    h3 Attractions
+                        sup
+                            i.material-icons.c-hand#attractionhelpicon(style = "font-size:1.0rem;") help
+
+                div.modal#attractionhelpmodal
+                    a.modal-overlay(aria-label="Close" href="#Close")
+                    div.modal-container
+                        div.modal-header
+                            a(aria-label="Close" href="#close" class="btn btn-clear float-right")#closeattractionhelp
+                            div.modal-title.h5.text-center  Information of the page 📘
+                        div.modal-body
+                            div.content
+                                p * Within this page, you will find all the amazing and fun attractions in Lobitos.
+                                p * Feel free to give ratings on your favorite attractions.
+
+
+                div.column.col-2
+
+        div.container
+            div.columns
+                div.column.col-1
+                div.column.col-10
+                    div.container
+                        div.columns.mt-2
+                            div.column.col-12.my-2.col-sm-12.col-md-12
+
+                                for n in attractions
+
+                                    div.card.mt-2
+                                        div.columns
+                                            div.column.col-3.col-sm-12.col-md-12
+                                                div.card-image.fillParentDiv
+                                                    img.img-responsive(src=n.Image_Src, alt=n.Business_Name).fillParentDivForImage
+
+                                            div.column.col-6.col-sm-12.col-md-12
+                                                div.card-header
+                                                    div.card-title.h4
+                                                        p !{n.Business_Name}
+
+                                                div.card-body
+
+                                                    p.text-break
+
+                                                        b Description :
+                                                        |  !{n.Business_Desc}
+
+                                                    p
+                                                        b Location :
+                                                        |  !{n.Business_Location}
+
+                                            div.column.col-3.col-sm-12.col-md-12.vl
+                                                div.card-body
+                                                    p
+                                                        b Estimate Payment :
+                                                        |  !{n.Business_Price}
+                                                    p
+                                                        b Rating :
+                                                        | !{n.Business_Rating}
+
+                                                    form.form-input(method="post" action='/rating')
+                                                        input(type='radio' name='businessRating' value='1' onclick='this.form.submit()')
+
+                                                        input(type='radio' name='businessRating' value='2' onclick='this.form.submit()')
+
+                                                        input(type='radio' name='businessRating' value='3' onclick='this.form.submit()')
+
+                                                        input(type='radio' name='businessRating' value='4' onclick='this.form.submit()')
+
+                                                        input(type='radio' name='businessRating' value='5' onclick='this.form.submit()')
+
+
+
+                                                        input(hidden, value=n.Owners_Name name='ownersName')
+                                                        input(hidden, value=n.Business_Name name='businessName')
+                                                        input(hidden, value=n.Business_Type name='businessType')
+                                                        input(hidden, value=n.Business_Desc name='businessDesc')
+                                                        input(hidden, value=n.Business_Price name='businessPrice')
+                                                        input(hidden, value=n.Business_Location name='businessLoc')
+
+
+                div.column.col-1.col-sm-12
+                    button.btn.btn-action.s-circle#myBtn(onclick='topFunction()' title='To Go Up')
+                        i.icon.icon-arrow-up
